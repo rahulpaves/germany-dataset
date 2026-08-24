@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Germany Application Dataset — Pave</title>
+<meta name="description" content="Verified German university application requirements, deadlines, and the full student visa process — structured per student profile, for counsellors.">
+
+<!--
+================================================================================
+  EDIT ME — ALL THE NUMBERS YOU'LL WANT TO CHANGE LIVE IN THE CONFIG BLOCK BELOW.
+  The sample roadmap content is further down, marked with its own banner:
+        <!== SAMPLE DATA — DROP REAL VERIFIED DATA IN HERE ==>
+================================================================================
+-->
+<script>
+/* ============================================================================
+   CONFIG — single source of truth for price, email, and headline counts.
+   Change a value here and it updates everywhere on the page.
+   ========================================================================= */
+const CONFIG = {
+  PRICE:            "$99",          // full Germany dataset, one-off
+  EMAIL:            "rahul@pavetheway.ai",
+  MAIL_SUBJECT:     "Germany dataset - early access",
+  MAIL_BODY:
+      "Hi Rahul,\n\n" +
+      "I'd like early access to the Germany dataset.\n\n" +
+      "My firm: []\n" +
+      "Number of students I work with: []\n\n" +
+      "Thanks",
+
+  // Coverage counts. These match the current verified Germany sheet
+  // (27 institutions / 54 English-taught programmes). Keep them HONEST --
+  // counsellors will check, and an inflated number kills the test.
+  UNI_COUNT:        27,
+  PROGRAMME_COUNT:  54,
+
+  LAST_VERIFIED:    "",             // e.g. "August 2026" -> "; last checked August 2026". Blank hides it.
+
+  /* ==========================================================================
+     ANALYTICS  ---  currently OFF. Two-minute setup to turn it on:
+
+       1. Sign up (free)  ->  https://www.goatcounter.com/signup
+       2. Choose a site code, e.g.  pave-germany
+       3. Put that code in GOATCOUNTER_CODE below and set ANALYTICS_ENABLED true
+       4. Your dashboard is then  https://pave-germany.goatcounter.com
+
+     GoatCounter is cookie-free, so the page needs no consent banner -- which
+     matters because you are sending this to EU/UAE counsellors.
+
+     While ANALYTICS_ENABLED is false the page tracks NOTHING, loads no third
+     party script, and behaves exactly as it does now. Events still print to
+     the browser console, so you can verify the funnel before going live.
+
+     Events recorded:
+       pageview-<src>       someone opened the page
+       sample-viewed-<src>  they scrolled far enough to read the TUM sample
+       pricing-viewed-<src> they reached the price
+       buy-click-<src>      they clicked a Buy button (NOT the same as a sale)
+       email-click-<src>    they clicked the plain-text email fallback
+     ========================================================================= */
+  ANALYTICS_ENABLED: false,
+  GOATCOUNTER_CODE:  "",
+
+  /* Channel attribution. Tag your links like:
+        https://<your-url>/?src=whatsapp
+        https://<your-url>/?src=crm
+        https://<your-url>/?src=geebee
+     ...and the purchase email arrives with "(ref: whatsapp)" at the bottom, so
+     you know which channel produced each buyer even with analytics switched
+     off. Set false to drop that line. */
+  TAG_EMAIL_WITH_SOURCE: true
+};
+</script>
+
+<style>
+/* ---------- Pave brand ---------- */
+:root{
+  --navy:#1a3a5c;
+  --navy-deep:#12293f;
+  --navy-soft:#2d5480;
+  --orange:#f0a12e;
+  --orange-dark:#d8891a;
+  --ink:#1c2430;
+  --muted:#5b6b7c;
+  --line:#e2e8f0;
+  --bg-tint:#f6f8fb;
+  --white:#fff;
+  --radius:10px;
+  --maxw:1080px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,"Helvetica Neue",Arial,sans-serif;
+  color:var(--ink);
+  background:var(--white);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+h1,h2,h3,h4{line-height:1.25;margin:0 0 .5em;font-weight:700;letter-spacing:-.015em;}
+p{margin:0 0 1em;}
+a{color:var(--navy-soft);}
+.eyebrow{
+  font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--orange);margin:0 0 14px;
+}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-block;background:var(--orange);color:#20303f;
+  font-weight:700;font-size:16px;text-decoration:none;
+  padding:15px 30px;border-radius:var(--radius);
+  border:none;cursor:pointer;transition:background .15s ease, transform .15s ease;
+  text-align:center;
+}
+.btn:hover{background:var(--orange-dark);transform:translateY(-1px);}
+.btn-lg{font-size:17px;padding:17px 38px;}
+
+/* ---------- Header ---------- */
+header.site{
+  border-bottom:1px solid rgba(255,255,255,.12);
+  background:var(--navy);
+}
+.site .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{color:#fff;font-weight:700;font-size:19px;letter-spacing:-.02em;text-decoration:none;}
+.logo span{color:var(--orange);}
+.site nav a{color:#cbd8e6;text-decoration:none;font-size:14px;font-weight:600;margin-left:26px;}
+.site nav a:hover{color:#fff;}
+@media(max-width:600px){.site nav{display:none;}}
+
+/* ---------- Hero ---------- */
+.hero{
+  background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);
+  color:#fff;padding:84px 0 92px;
+}
+.hero h1{font-size:46px;max-width:17ch;margin-bottom:20px;}
+.hero .sub{font-size:19px;color:#c3d3e3;max-width:62ch;margin-bottom:34px;}
+.hero .meta{margin-top:26px;font-size:14px;color:#93a9c0;}
+.flag{
+  display:inline-flex;align-items:center;gap:9px;
+  background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);
+  padding:6px 14px;border-radius:99px;font-size:13px;font-weight:600;
+  color:#dce7f2;margin-bottom:22px;
+}
+.flag i{width:16px;height:11px;display:inline-block;border-radius:2px;
+  background:linear-gradient(to bottom,#000 33%,#dd0000 33%,#dd0000 66%,#ffce00 66%);}
+@media(max-width:700px){
+  .hero{padding:56px 0 62px;}
+  .hero h1{font-size:33px;}
+  .hero .sub{font-size:17px;}
+  .btn{display:block;width:100%;}
+}
+
+/* ---------- Sections ---------- */
+section{padding:78px 0;}
+.tint{background:var(--bg-tint);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.section-head{max-width:64ch;margin-bottom:44px;}
+.section-head h2{font-size:32px;color:var(--navy);}
+.section-head p{color:var(--muted);font-size:17px;margin:0;}
+@media(max-width:700px){section{padding:52px 0;}.section-head h2{font-size:26px;}}
+
+/* ---------- Problem ---------- */
+.problem p{font-size:19px;color:var(--ink);max-width:66ch;}
+.problem strong{color:var(--navy);}
+
+/* ---------- What's inside ---------- */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+@media(max-width:880px){.grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.grid{grid-template-columns:1fr;}}
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px 24px;
+}
+.card h3{font-size:16px;color:var(--navy);margin-bottom:8px;}
+.card p{font-size:14.5px;color:var(--muted);margin:0;}
+.card .ico{
+  width:34px;height:34px;border-radius:8px;background:rgba(240,161,46,.15);
+  color:var(--orange-dark);display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:15px;margin-bottom:14px;
+}
+.assurance{
+  margin-top:34px;padding:20px 24px;border-left:3px solid var(--orange);
+  background:#fff;border-radius:0 var(--radius) var(--radius) 0;
+  font-size:15.5px;color:var(--ink);border-top:1px solid var(--line);
+  border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+
+/* ---------- Sample ---------- */
+.sample{
+  border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden;
+  box-shadow:0 2px 20px rgba(26,58,92,.07);
+}
+.sample-head{background:var(--navy);color:#fff;padding:24px 28px;}
+.sample-head .tag{
+  display:inline-block;background:var(--orange);color:#20303f;font-size:11px;
+  font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  padding:4px 10px;border-radius:4px;margin-bottom:12px;
+}
+.sample-head h3{font-size:23px;margin-bottom:4px;}
+.sample-head .inst{color:#bed0e2;font-size:15px;margin:0;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+.chip{
+  background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.18);
+  color:#e3edf6;font-size:12.5px;font-weight:600;padding:5px 11px;border-radius:6px;
+}
+.sample-body{padding:8px 28px 28px;}
+@media(max-width:600px){.sample-head,.sample-body{padding-left:18px;padding-right:18px;}}
+
+.block{padding:24px 0;border-bottom:1px solid var(--line);}
+.block:last-child{border-bottom:none;}
+.block h4{
+  font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--orange-dark);margin-bottom:14px;
+}
+dl.spec{display:grid;grid-template-columns:200px 1fr;gap:0;margin:0;}
+dl.spec dt{
+  font-size:14px;color:var(--muted);padding:9px 0;border-top:1px solid #f0f4f8;font-weight:600;
+}
+dl.spec dd{
+  font-size:14.5px;margin:0;padding:9px 0;border-top:1px solid #f0f4f8;color:var(--ink);
+}
+dl.spec dt:first-of-type,dl.spec dd:first-of-type{border-top:none;}
+@media(max-width:640px){
+  dl.spec{grid-template-columns:1fr;}
+  dl.spec dt{padding-bottom:0;border-top:1px solid #f0f4f8;}
+  dl.spec dd{padding-top:2px;border-top:none;padding-bottom:12px;}
+}
+.reqs{margin:0;padding-left:20px;}
+.reqs li{font-size:14.5px;margin-bottom:7px;}
+.reqs li b{color:var(--navy);}
+
+/* deadline callout */
+.deadline{
+  display:flex;flex-wrap:wrap;gap:14px;align-items:center;
+  background:#fff8ec;border:1px solid #f6dcb0;border-radius:var(--radius);
+  padding:14px 18px;margin-bottom:16px;
+}
+.deadline .d{font-size:20px;font-weight:700;color:var(--navy);}
+.deadline .l{font-size:13.5px;color:#8a6a2f;font-weight:600;}
+
+/* visa timeline */
+.timeline{list-style:none;margin:0;padding:0;}
+.timeline li{
+  position:relative;padding:0 0 22px 40px;border-left:2px solid var(--line);
+  margin-left:11px;
+}
+.timeline li:last-child{border-left-color:transparent;padding-bottom:0;}
+.timeline .n{
+  position:absolute;left:-13px;top:0;width:24px;height:24px;border-radius:50%;
+  background:var(--navy);color:#fff;font-size:12px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+}
+.timeline .t{font-weight:700;font-size:15px;color:var(--navy);display:block;margin-bottom:2px;}
+.timeline .w{
+  display:inline-block;font-size:11.5px;font-weight:700;color:var(--orange-dark);
+  background:rgba(240,161,46,.14);padding:2px 8px;border-radius:4px;margin-bottom:6px;
+}
+.timeline p{font-size:14px;color:var(--muted);margin:0;}
+
+/* locked */
+.locked{
+  margin-top:32px;border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  background:#fff;position:relative;
+}
+.locked-list{
+  padding:26px 28px 44px;filter:blur(4.5px);user-select:none;pointer-events:none;
+  opacity:.75;
+}
+.locked-list .row{
+  display:flex;justify-content:space-between;gap:16px;font-size:14.5px;
+  padding:8px 0;border-bottom:1px solid #f0f4f8;color:var(--ink);
+}
+.locked-list .row span:last-child{color:var(--muted);white-space:nowrap;}
+.locked-veil{
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(255,255,255,.35) 0%,rgba(255,255,255,.93) 62%,#fff 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
+  text-align:center;padding:0 24px 30px;
+}
+.locked-veil .lock{
+  width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--orange);
+  display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:19px;
+}
+.locked-veil strong{display:block;font-size:17px;color:var(--navy);margin-bottom:4px;}
+.locked-veil span{font-size:14.5px;color:var(--muted);max-width:46ch;}
+
+/* ---------- Pricing ---------- */
+.price-card{
+  max-width:560px;margin:0 auto;background:#fff;border:1px solid var(--line);
+  border-top:4px solid var(--orange);border-radius:14px;padding:38px 36px;
+  box-shadow:0 4px 26px rgba(26,58,92,.09);text-align:center;
+}
+.price-card .amt{font-size:56px;font-weight:700;color:var(--navy);line-height:1;letter-spacing:-.03em;}
+.price-card .terms{font-size:14.5px;color:var(--muted);margin:8px 0 26px;}
+.includes{text-align:left;list-style:none;padding:0;margin:0 0 30px;}
+.includes li{
+  font-size:15px;padding:9px 0 9px 28px;position:relative;border-bottom:1px solid #f0f4f8;
+}
+.includes li:last-child{border-bottom:none;}
+.includes li::before{
+  content:"";position:absolute;left:2px;top:15px;width:13px;height:7px;
+  border-left:2.5px solid var(--orange);border-bottom:2.5px solid var(--orange);
+  transform:rotate(-45deg);
+}
+.fallback{font-size:14px;color:var(--muted);margin:16px 0 0;}
+.fallback a{color:var(--navy);font-weight:600;}
+@media(max-width:600px){.price-card{padding:30px 22px;}.price-card .amt{font-size:46px;}}
+
+/* ---------- How buying works ---------- */
+.steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:8px;}
+@media(max-width:700px){.steps3{grid-template-columns:1fr;}}
+.step3{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;}
+.step3 .n{
+  width:26px;height:26px;border-radius:50%;background:var(--orange);color:#20303f;
+  font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;
+}
+.step3 h4{font-size:15.5px;color:var(--navy);margin-bottom:5px;}
+.step3 p{font-size:14px;color:var(--muted);margin:0;}
+
+/* ---------- Footer ---------- */
+footer{background:var(--navy);color:#b9cadb;padding:44px 0 38px;font-size:14px;}
+footer .verified{
+  border-left:3px solid var(--orange);padding-left:16px;margin-bottom:28px;
+  max-width:74ch;color:#d4e1ee;
+}
+footer .base{
+  display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+  border-top:1px solid rgba(255,255,255,.13);padding-top:22px;
+}
+footer .logo{font-size:17px;}
+footer a{color:#b9cadb;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="https://pavetheway.ai">Pave<span>.</span></a>
+    <nav>
+      <a href="#inside">What's inside</a>
+      <a href="#sample">Sample</a>
+      <a href="#pricing">Pricing</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============================ 1. HERO ============================ -->
+<div class="hero">
+  <div class="wrap">
+    <div class="flag"><i></i> Germany · 2026/27 intake · early access</div>
+    <h1>Everything your students need to apply to Germany — verified, current, in one place.</h1>
+    <p class="sub">
+      Verified programme requirements, application deadlines, English-language thresholds,
+      tuition, and the complete non-EU student visa process — structured so you can hand a
+      student their exact roadmap in minutes, not evenings.
+    </p>
+    <a class="btn btn-lg" href="#pricing">Request early access</a>
+    <p class="meta" id="heroMeta">English-taught programmes across German institutions · verified from official sources</p>
+  </div>
+</div>
+
+<!-- ========================== 2. THE PROBLEM ========================== -->
+<section class="problem">
+  <div class="wrap">
+    <p class="eyebrow">The problem</p>
+    <p>
+      Advising one student on Germany means opening fifteen tabs: the programme page for entry
+      requirements, <strong>uni-assist</strong> to work out whether their board is even recognised,
+      a PDF for the English threshold, and the local German mission's site for a visa process that
+      differs by nationality.
+    </p>
+    <p>
+      Then the deadline moves, the blocked-account figure changes for the new year, or a programme
+      switches from German to English — and <strong>the notes you built last cycle are quietly wrong</strong>.
+    </p>
+    <p>
+      Multiply that by every student asking about Germany, and the research is costing you more
+      hours than the counselling.
+    </p>
+  </div>
+</section>
+
+<!-- ======================= 3. WHAT'S INSIDE ======================= -->
+<section class="tint" id="inside">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What's inside</p>
+      <h2>The full Germany dataset</h2>
+      <p>Every field you currently chase across university sites, uni-assist, DAAD and the German mission — verified, structured, and in one file.</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="ico">01</div>
+        <h3>Programme requirements</h3>
+        <p>Entry requirements per programme, mapped to IB, A-Levels, CBSE, ISC and other boards — so you know admissibility before you advise.</p>
+      </div>
+      <div class="card">
+        <div class="ico">02</div>
+        <h3>Application deadlines</h3>
+        <p>Winter and summer semester deadlines per programme, including the earlier uni-assist cut-offs that catch students out.</p>
+      </div>
+      <div class="card">
+        <div class="ico">03</div>
+        <h3>English requirements</h3>
+        <p>Exact IELTS / TOEFL / Cambridge thresholds per programme, plus which programmes are genuinely English-taught and which are not.</p>
+      </div>
+      <div class="card">
+        <div class="ico">04</div>
+        <h3>Tuition &amp; living costs</h3>
+        <p>Semester contributions, non-EU tuition where it applies (incl. Baden-Württemberg), realistic living-cost ranges and scholarship routes.</p>
+      </div>
+      <div class="card">
+        <div class="ico">05</div>
+        <h3>How to apply, step by step</h3>
+        <p>The actual route for each programme — uni-assist, direct portal, or TUMonline — with what gets submitted where, in order.</p>
+      </div>
+      <div class="card">
+        <div class="ico">06</div>
+        <h3>Full student visa process</h3>
+        <p>The complete non-EU national visa (Type D) sequence: documents, blocked account, appointment lead times, fees, and post-arrival residence permit.</p>
+      </div>
+    </div>
+
+    <div class="assurance">
+      <strong>Built from official sources</strong> — university programme pages, uni-assist, DAAD
+      and the German Federal Foreign Office — not scraped aggregator listings. Every record is
+      source-checked before release, and structured per field so you can filter it to a single
+      student's profile rather than reading it like a brochure.
+    </div>
+  </div>
+</section>
+
+<!-- =========================== 4. LIVE SAMPLE =========================== -->
+<section id="sample">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Live sample</p>
+      <h2>One complete roadmap, exactly as it appears in the dataset</h2>
+      <p>This is a real record, unedited. Every programme in the dataset carries this same structure.</p>
+    </div>
+
+<!--
+================================================================================
+  SAMPLE DATA — DROP REAL VERIFIED DATA IN HERE
+  --------------------------------------------------------------------------
+  This sample is seeded from your existing Germany sheet (_expand_germany.py →
+  TUM Informatics BSc row), so the programme facts below come from your own
+  data, not invented placeholders.
+
+  BEFORE SENDING THIS LINK TO ANY COUNSELLOR, re-verify these against source:
+    - Deadline (15 July 2026) ....... check TUM application portal for 2026/27
+    - Semester contribution ......... TUM fees page
+    - Non-EU tuition (EUR 6,000/yr) . TUM international tuition page
+    - Blocked account amount ........ Federal Foreign Office (updates ANNUALLY —
+                                      the figure below is the 2025/26 rate)
+    - Visa appointment wait times ... your local German mission
+  Anything you can't verify, delete rather than ship. One wrong number in the
+  sample is what loses the sale.
+================================================================================
+-->
+    <div class="sample">
+      <div class="sample-head">
+        <span class="tag">Sample record · 1 of <span id="progCountTag">54</span></span>
+        <h3>Informatics (BSc)</h3>
+        <p class="inst">Technical University of Munich (TUM) · Garching campus, Bavaria</p>
+        <div class="chips">
+          <span class="chip">Bachelor of Science</span>
+          <span class="chip">Taught in English</span>
+          <span class="chip">3 years</span>
+          <span class="chip">Public technical university</span>
+        </div>
+      </div>
+
+      <div class="sample-body">
+
+        <!-- ---- Programme facts ---- -->
+        <div class="block">
+          <h4>Programme &amp; cost</h4>
+          <dl class="spec">
+            <dt>Degree awarded</dt>          <dd>BSc Informatics (180 ECTS)</dd>
+            <dt>Language of instruction</dt> <dd>English (full programme)</dd>
+            <dt>Duration</dt>                <dd>3 years / 6 semesters</dd>
+            <dt>Semester contribution</dt>   <dd>EUR 162 per semester (~EUR 324/year)</dd>
+            <dt>Non-EU tuition</dt>          <dd>EUR 6,000 per year (EUR 2,000–3,000/semester, introduced WS 2024/25)</dd>
+            <dt>Living costs (est.)</dt>     <dd>EUR 11,000 – 14,000 per year, Munich</dd>
+            <dt>Scholarships</dt>            <dd>Deutschlandstipendium; TUM internal scholarships</dd>
+          </dl>
+        </div>
+
+        <!-- ---- Entry requirements ---- -->
+        <div class="block">
+          <h4>Entry requirements</h4>
+          <ul class="reqs">
+            <li><b>General:</b> Recognised upper-secondary school leaving certificate granting higher-education entrance, with strong Mathematics.</li>
+            <li><b>IB:</b> Higher Level Mathematics required.</li>
+            <li><b>A-Levels:</b> Must include Mathematics.</li>
+            <li><b>CBSE / ISC:</b> Science stream with Mathematics, 85%+ aggregate.</li>
+            <li><b>Other boards:</b> Assessed for country equivalence via uni-assist before TUM will review the file.</li>
+            <li><b>English:</b> IELTS 6.5 or TOEFL iBT 88.</li>
+            <li><b>Selection:</b> TUM aptitude assessment (Eignungsfeststellungsverfahren) — multi-stage and genuinely competitive.</li>
+          </ul>
+        </div>
+
+        <!-- ---- Deadline + how to apply ---- -->
+        <div class="block">
+          <h4>Deadline &amp; how to apply</h4>
+          <div class="deadline">
+            <span class="d">15 July 2026</span>
+            <span class="l">Winter semester 2026/27 · international applicants should start ~10 weeks earlier for uni-assist processing</span>
+          </div>
+          <ul class="reqs">
+            <li><b>Step 1 —</b> Submit certificates to <b>uni-assist</b> for recognition of the foreign qualification (allow 4–6 weeks; this is the step students under-estimate).</li>
+            <li><b>Step 2 —</b> Create a <b>TUMonline</b> account and complete the online application for the programme.</li>
+            <li><b>Step 3 —</b> Upload English proficiency evidence and the uni-assist preliminary review documentation (VPD).</li>
+            <li><b>Step 4 —</b> Sit the TUM aptitude assessment if shortlisted after the document stage.</li>
+            <li><b>Step 5 —</b> Receive the admission decision (Zulassungsbescheid) — required before any visa step can begin.</li>
+          </ul>
+        </div>
+
+        <!-- ---- Visa roadmap ---- -->
+        <div class="block">
+          <h4>Student visa process — non-EU applicant</h4>
+          <ol class="timeline">
+            <li>
+              <span class="n">1</span>
+              <span class="t">Admission letter (Zulassungsbescheid)</span>
+              <span class="w">4–8 weeks after deadline</span>
+              <p>Nothing in the visa chain can start without it. Conditional offers are not accepted for the visa file.</p>
+            </li>
+            <li>
+              <span class="n">2</span>
+              <span class="t">Open a blocked account (Sperrkonto)</span>
+              <span class="w">1–2 weeks</span>
+              <p>Proof of financial resources for one year — EUR 11,904 at the 2025/26 rate (EUR 992/month). The figure is revised annually. A parental guarantee (Verpflichtungserklärung) is the main alternative.</p>
+            </li>
+            <li>
+              <span class="n">3</span>
+              <span class="t">Arrange German health insurance</span>
+              <span class="w">3–7 days</span>
+              <p>Public insurer confirmation (TK, AOK or similar) for enrolled students; a travel policy covering the arrival gap is usually also requested.</p>
+            </li>
+            <li>
+              <span class="n">4</span>
+              <span class="t">Book the visa appointment</span>
+              <span class="w">2–12 weeks wait</span>
+              <p>The real bottleneck. Appointment availability at the German mission varies sharply by country and season — book the moment admission lands, not once documents are complete.</p>
+            </li>
+            <li>
+              <span class="n">5</span>
+              <span class="t">Submit the national visa (Type D) application</span>
+              <span class="w">Appointment day</span>
+              <p>Passport, admission letter, blocked-account confirmation, insurance, academic transcripts, CV, motivation letter, biometric photos. Fee EUR 75.</p>
+            </li>
+            <li>
+              <span class="n">6</span>
+              <span class="t">Visa processing</span>
+              <span class="w">6–12 weeks</span>
+              <p>Runs via the local Ausländerbehörde of the university city. Build this into the application timeline — it is why a July deadline becomes a tight October start.</p>
+            </li>
+            <li>
+              <span class="n">7</span>
+              <span class="t">Arrive and register (Anmeldung)</span>
+              <span class="w">Within 2 weeks of arrival</span>
+              <p>City registration at the Bürgeramt, which requires a signed accommodation confirmation from the landlord.</p>
+            </li>
+            <li>
+              <span class="n">8</span>
+              <span class="t">Convert to a residence permit</span>
+              <span class="w">Before the visa expires</span>
+              <p>Apply at the Ausländerbehörde for the student residence permit (Aufenthaltserlaubnis), typically issued for two years and renewable.</p>
+            </li>
+          </ol>
+        </div>
+
+      </div><!-- /sample-body -->
+    </div><!-- /sample -->
+
+<!-- =================== LOCKED BREADTH INDICATOR =================== -->
+    <div class="locked">
+      <div class="locked-list" aria-hidden="true">
+        <div class="row"><span>Ludwig Maximilian University Munich (LMU) — 2 programmes</span><span>Munich</span></div>
+        <div class="row"><span>RWTH Aachen University — English MSc routes</span><span>Aachen</span></div>
+        <div class="row"><span>Heidelberg University — 2 programmes</span><span>Heidelberg</span></div>
+        <div class="row"><span>Free University of Berlin (FU Berlin)</span><span>Berlin</span></div>
+        <div class="row"><span>Karlsruhe Institute of Technology — Carl Benz School</span><span>Karlsruhe</span></div>
+        <div class="row"><span>University of Mannheim</span><span>Mannheim</span></div>
+        <div class="row"><span>University of Freiburg</span><span>Freiburg</span></div>
+        <div class="row"><span>University of Bonn</span><span>Bonn</span></div>
+        <div class="row"><span>Constructor University Bremen</span><span>Bremen</span></div>
+        <div class="row"><span>Frankfurt School of Finance &amp; Management</span><span>Frankfurt</span></div>
+        <div class="row"><span>ESMT Berlin</span><span>Berlin</span></div>
+        <div class="row"><span>WHU Otto Beisheim School of Management</span><span>Vallendar</span></div>
+        <div class="row"><span>IU International University of Applied Sciences</span><span>Multiple</span></div>
+        <div class="row"><span>CODE University of Applied Sciences</span><span>Berlin</span></div>
+      </div>
+      <div class="locked-veil">
+        <div class="lock">&#128274;</div>
+        <strong id="lockedHeadline">+ 26 more German institutions and 53 more programmes</strong>
+        <span>Full entry requirements, deadlines, application routes and the complete visa process — including per-nationality steps — unlocked with purchase.</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================ 5. PRICING ============================ -->
+<section class="tint" id="pricing">
+  <div class="wrap">
+    <div class="section-head" style="text-align:center;margin-left:auto;margin-right:auto;">
+      <p class="eyebrow">Early access</p>
+      <h2>The complete Germany dataset</h2>
+      <p style="margin:0 auto;">The first release is in final verification. We're confirming who actually wants it before finishing the rest.</p>
+    </div>
+
+    <div class="price-card">
+      <div class="amt" id="priceAmount">$99</div>
+      <p class="terms">Launch price, one-off · <strong>nothing to pay now</strong></p>
+
+      <ul class="includes">
+        <li id="incUnis">All 27 covered German institutions, 54 English-taught programmes</li>
+        <li>Verified entry requirements mapped to IB, A-Levels, CBSE, ISC and more</li>
+        <li>Application deadlines and the exact application route per programme</li>
+        <li>English thresholds, tuition, semester contributions and living costs</li>
+        <li>The full non-EU student visa roadmap, with per-nationality steps</li>
+        <li>Delivered as a structured file you can filter per student</li>
+      </ul>
+
+      <a class="btn btn-lg" id="buyBtn" href="mailto:rahul@pavetheway.ai?subject=Germany%20dataset%20-%20early%20access&amp;body=Hi%20Rahul%2C%0A%0AI'd%20like%20early%20access%20to%20the%20Germany%20dataset.%0A%0AMy%20firm%3A%20%5B%5D%0ANumber%20of%20students%20I%20work%20with%3A%20%5B%5D%0A%0AThanks" style="width:100%;">Request early access</a>
+      <p class="fallback">
+        No payment is taken on this page — email us and we'll send you the file to look at first.<br>
+        Or email <a id="plainEmail" href="mailto:rahul@pavetheway.ai?subject=Germany%20dataset%20-%20early%20access&amp;body=Hi%20Rahul%2C%0A%0AI'd%20like%20early%20access%20to%20the%20Germany%20dataset.%0A%0AMy%20firm%3A%20%5B%5D%0ANumber%20of%20students%20I%20work%20with%3A%20%5B%5D%0A%0AThanks">rahul@pavetheway.ai</a> directly.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== 6. HOW BUYING WORKS ====================== -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How it works</p>
+      <h2>How early access works</h2>
+      <p>No checkout, no card, no obligation. You tell us it's useful, we show you the file.</p>
+    </div>
+
+    <div class="steps3">
+      <div class="step3">
+        <div class="n">1</div>
+        <h4>Email us</h4>
+        <p>The button opens your mail app pre-filled — just add your firm name and roughly how many students you work with.</p>
+      </div>
+      <div class="step3">
+        <div class="n">2</div>
+        <h4>We send you the file</h4>
+        <p>You see the dataset and judge it against how you actually work. Nothing is charged and you're committed to nothing.</p>
+      </div>
+      <div class="step3">
+        <div class="n">3</div>
+        <h4>You decide</h4>
+        <p>If it earns its keep it's $99 at launch. If it doesn't, tell us what's missing — right now that's the more useful answer for us.</p>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:44px;">
+      <a class="btn btn-lg" id="buyBtn2" href="mailto:rahul@pavetheway.ai?subject=Germany%20dataset%20-%20early%20access&amp;body=Hi%20Rahul%2C%0A%0AI'd%20like%20early%20access%20to%20the%20Germany%20dataset.%0A%0AMy%20firm%3A%20%5B%5D%0ANumber%20of%20students%20I%20work%20with%3A%20%5B%5D%0A%0AThanks">Request early access</a>
+      <p class="fallback">Or email <a id="plainEmail2" href="mailto:rahul@pavetheway.ai?subject=Germany%20dataset%20-%20early%20access&amp;body=Hi%20Rahul%2C%0A%0AI'd%20like%20early%20access%20to%20the%20Germany%20dataset.%0A%0AMy%20firm%3A%20%5B%5D%0ANumber%20of%20students%20I%20work%20with%3A%20%5B%5D%0A%0AThanks">rahul@pavetheway.ai</a> directly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== 7. FOOTER =========================== -->
+<footer>
+  <div class="wrap">
+    <p class="verified">
+      Built from official German sources — DAAD, university programme pages, uni-assist, and the
+      German Federal Foreign Office. Every record is source-checked before release<span id="verifiedDate"></span>.
+    </p>
+    <div class="base">
+      <a class="logo" href="https://pavetheway.ai" style="color:#fff;text-decoration:none;">Pave<span style="color:var(--orange);">.</span></a>
+      <div><a href="https://pavetheway.ai" target="_blank" rel="noopener">pavetheway.ai</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ---------------------------------------------------------------------------
+   Minimal JS. Three jobs:
+     1. apply CONFIG values to the page
+     2. build the mailto links (with channel ref appended)
+     3. record funnel events, if analytics is switched on in CONFIG
+   No cookies, no personal data, no external calls unless ANALYTICS_ENABLED.
+   ------------------------------------------------------------------------ */
+(function () {
+
+  /* ---- 1. which channel did this visitor arrive from? ---- */
+  var src = "direct";
+  try {
+    var q = new URLSearchParams(window.location.search).get("src");
+    if (q) src = q.replace(/[^a-zA-Z0-9_-]/g, "").slice(0, 24) || "direct";
+  } catch (e) { /* very old browser - stay on "direct" */ }
+
+  /* ---- 2. analytics shim (no-op unless enabled) ---- */
+  function track(name, isEvent) {
+    var label = name + "-" + src;
+    if (window.goatcounter && window.goatcounter.count) {
+      window.goatcounter.count({
+        path:  label,
+        title: label,
+        event: isEvent !== false
+      });
+    }
+    if (window.console && console.debug) console.debug("[track]", label);
+  }
+
+  if (CONFIG.ANALYTICS_ENABLED && CONFIG.GOATCOUNTER_CODE) {
+    window.goatcounter = { no_onload: true };          // we send the pageview ourselves
+    var gc = document.createElement("script");
+    gc.async = true;
+    gc.src = "//gc.zgo.at/count.js";
+    gc.setAttribute("data-goatcounter",
+      "https://" + CONFIG.GOATCOUNTER_CODE + ".goatcounter.com/count");
+    gc.onload = function () { track("pageview", false); };
+    document.head.appendChild(gc);
+  } else {
+    track("pageview", false);                          // console only
+  }
+
+  /* ---- 3. scroll milestones: did they read the proof? did they reach price? ---- */
+  var fired = {};
+  function once(name) {
+    if (fired[name]) return;
+    fired[name] = true;
+    track(name);
+  }
+  function watch(selector, name, threshold) {
+    var el = document.querySelector(selector);
+    if (!el || !("IntersectionObserver" in window)) return;
+    var io = new IntersectionObserver(function (entries) {
+      for (var i = 0; i < entries.length; i++) {
+        if (entries[i].isIntersecting) { once(name); io.disconnect(); return; }
+      }
+    }, { threshold: threshold });
+    io.observe(el);
+  }
+  watch(".sample",  "sample-viewed",  0.20);
+  watch("#pricing", "pricing-viewed", 0.30);
+
+  /* ---- 4. mailto links, with the channel ref appended ---- */
+  var body = CONFIG.MAIL_BODY;
+  if (CONFIG.TAG_EMAIL_WITH_SOURCE) body += "\n\n(ref: " + src + ")";
+
+  var mailto = "mailto:" + CONFIG.EMAIL +
+               "?subject=" + encodeURIComponent(CONFIG.MAIL_SUBJECT) +
+               "&body="    + encodeURIComponent(body);
+
+  [["buyBtn", "buy-click"], ["buyBtn2", "buy-click"],
+   ["plainEmail", "email-click"], ["plainEmail2", "email-click"]
+  ].forEach(function (pair) {
+    var el = document.getElementById(pair[0]);
+    if (!el) return;
+    el.setAttribute("href", mailto);
+    el.addEventListener("click", function () { track(pair[1]); });
+  });
+
+  /* ---- 5. CONFIG values into the copy ---- */
+  function set(id, txt) {
+    var el = document.getElementById(id);
+    if (el) el.textContent = txt;
+  }
+  set("plainEmail",   CONFIG.EMAIL);
+  set("plainEmail2",  CONFIG.EMAIL);
+  set("priceAmount",  CONFIG.PRICE);
+  set("progCountTag", CONFIG.PROGRAMME_COUNT);
+  set("heroMeta",
+      CONFIG.PROGRAMME_COUNT + " English-taught programmes across " + CONFIG.UNI_COUNT +
+      " German institutions \u00b7 verified from official sources");
+  set("incUnis",
+      "All " + CONFIG.UNI_COUNT + " covered German institutions, " +
+      CONFIG.PROGRAMME_COUNT + " English-taught programmes");
+  set("lockedHeadline",
+      "+ " + (CONFIG.UNI_COUNT - 1) + " more German institutions and " +
+      (CONFIG.PROGRAMME_COUNT - 1) + " more programmes");
+  set("verifiedDate", CONFIG.LAST_VERIFIED ? "; last checked " + CONFIG.LAST_VERIFIED : "");
+})();
+</script>
+
+</body>
+</html>
