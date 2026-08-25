@@ -599,6 +599,7 @@ footer a:hover{color:#fff;}
     <nav>
       <a href="#inside">What's inside</a>
       <a href="#sample">Sample</a>
+      <a href="search.html">Programme finder</a>
       <a href="#requestForm">Request access</a>
     </nav>
   </div>
@@ -620,9 +621,10 @@ footer a:hover{color:#fff;}
         <select id="heroCountry">
           <option value="">Select a country…</option>
         </select>
-        <a class="btn btn-lg" id="heroCta" href="#requestForm">Request access — $99 per country</a>
+        <a class="btn btn-lg" id="heroCta" href="search.html">Try the programme finder — free</a>
       </div>
       <p class="heropick-out" id="heroOut"></p>
+      <p style="font-size:13.5px;margin:14px 0 0;opacity:.8;">Free to search all 980 programmes · $40/month for unlimited roadmaps</p>
     </div>
     <p class="meta" id="heroMeta">31 countries · 389 institutions · 977 English-taught programmes · built from official sources</p>
   </div>
@@ -1460,7 +1462,7 @@ footer a:hover{color:#fff;}
       if (n === "__other") {
         out.innerHTML = "Tell us which one — <b>what you ask for is what we build next.</b>";
         out.classList.add("on");
-        if (cta) cta.textContent = "Request access — $99 per country";
+        if (cta) cta.textContent = "Try the programme finder — free";
         if (!picked.__other) { picked.__other = 1; track("country-interest-other"); }
         setFormCountry("Another country — I'll say below");
         return;
@@ -1474,7 +1476,7 @@ footer a:hover{color:#fff;}
           ? "Germany is the country we've taken through verification, and the sample below is from it."
           : "Not yet verified — tell us and it goes next in the queue.");
       out.classList.add("on");
-      if (cta) cta.textContent = "Request " + n + " — $99";
+      if (cta) cta.textContent = "Search " + n + " — free";
 
       setFormCountry(n);
 
