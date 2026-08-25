@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Student Roadmap — Pave</title>
+<meta name="description" content="Generate a dated, step-by-step application and visa plan for one student and one programme — shareable with the student and their parents.">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+
+<script>
+/* ===========================================================================
+   CONFIG
+   Lead times are in WEEKS and drive every generated date. Change them here.
+   Sources: verified 25 Aug 2026 against TUM, uni-assist and Federal Foreign
+   Office guidance for the German case; treat as sensible defaults elsewhere.
+   ======================================================================== */
+const CFG = {
+  PRICE_LABEL: "$40/month",
+  PAYMENT_LINK: "",
+  FALLBACK_URL: "/#requestForm",
+  GOATCOUNTER: "pave-germany",
+
+  LEAD: {
+    aps:            { min: 4,  max: 12, label: "APS certificate" },
+    english:        { min: 3,  max: 8,  label: "English test booked and sat" },
+    documents:      { min: 2,  max: 4,  label: "Documents gathered and attested" },
+    recognition:    { min: 4,  max: 6,  label: "Credential recognition (uni-assist / VPD)" },
+    decision:       { min: 4,  max: 8,  label: "Admission decision" },
+    finance:        { min: 1,  max: 2,  label: "Blocked account / proof of funds" },
+    insurance:      { min: 1,  max: 1,  label: "Health insurance" },
+    appointment:    { min: 2,  max: 12, label: "Visa appointment wait" },
+    visaProcessing: { min: 4,  max: 8,  label: "Visa processing" }
+  }
+};
+
+/* Visa tracks — the same four verified routes used across the site. */
+const TRACKS = {
+  a:{key:"a",name:"EU / EEA / Switzerland",
+     note:"Freedom of movement. No visa, no residence permit, no blocked account.",
+     countries:["Austria","Belgium","Bulgaria","Croatia","Cyprus","Czechia","Denmark","Estonia","Finland","France","Germany","Greece","Hungary","Iceland","Ireland","Italy","Latvia","Liechtenstein","Lithuania","Luxembourg","Malta","Netherlands","Norway","Poland","Portugal","Romania","Slovakia","Slovenia","Spain","Sweden","Switzerland"]},
+  b:{key:"b",name:"Visa-free entry, permit obtained on arrival",
+     note:"Enters without a visa and applies for the residence permit within 90 days of arrival. No embassy appointment.",
+     countries:["Australia","Canada","Israel","Japan","New Zealand","South Korea","United Kingdom","United States"]},
+  c:{key:"c",name:"Student visa + APS certificate",
+     note:"APS must be completed before the visa, and often before the application itself.",
+     countries:["China","India","Mongolia","Vietnam"]},
+  d:{key:"d",name:"Student visa, no APS",
+     note:"Standard national student visa. Appointment availability is the main variable.",
+     countries:["Bangladesh","Brazil","Egypt","Ghana","Indonesia","Jordan","Kazakhstan","Kenya","Kuwait","Lebanon","Malaysia","Morocco","Nepal","Nigeria","Oman","Pakistan","Philippines","Qatar","Saudi Arabia","South Africa","Sri Lanka","Thailand","Tunisia","Turkey","Uganda","Ukraine","United Arab Emirates","Uzbekistan","Other"]}
+};
+</script>
+
+<style>
+:root{
+  --primary:#2b4fe3; --primary-dark:#2140c0; --primary-tint:#eef2ff;
+  --accent:#00b7c2; --navy:#0c3851; --orange:#f28230;
+  --ink:#0f172a; --body:#444b59; --muted:#f5f8ff; --line:#e5e7eb; --white:#fff;
+  --warn:#b3261e; --warn-bg:#fdecea; --warn-line:#f5c4bf;
+  --ok:#166a4a; --ok-bg:#e4f4ed;
+  --radius:14px; --radius-sm:10px; --pill:999px;
+  --shadow-sm:0 1px 2px rgba(15,23,42,.05);
+  --shadow-md:0 4px 16px rgba(15,23,42,.07);
+  --shadow-lg:0 10px 40px rgba(15,23,42,.13);
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--muted);color:var(--body);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  line-height:1.62;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{color:var(--ink);margin:0;letter-spacing:-.02em;}
+a{color:var(--primary);}
+:focus-visible{outline:2px solid var(--primary);outline-offset:2px;border-radius:4px;}
+
+header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);
+  backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px);
+  border-bottom:1px solid var(--line);}
+.hwrap{max-width:1080px;margin:0 auto;padding:0 22px;height:62px;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;}
+.logo{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:20px;
+  color:var(--primary);text-decoration:none;letter-spacing:-.03em;}
+.logo img{width:27px;height:27px;}
+.logo span{color:var(--body);font-weight:500;font-size:14px;letter-spacing:0;
+  border-left:1px solid var(--line);padding-left:10px;}
+@media(max-width:640px){.logo span{display:none;}}
+.hnav{display:flex;gap:8px;align-items:center;}
+.hnav a{font-size:14.5px;font-weight:500;color:var(--body);text-decoration:none;}
+.hnav a:hover{color:var(--primary);}
+@media(max-width:560px){.hnav a.hide{display:none;}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--primary);color:#fff;font-family:inherit;font-weight:600;font-size:15px;
+  text-decoration:none;padding:11px 22px;border-radius:var(--pill);border:none;cursor:pointer;
+  box-shadow:0 2px 10px rgba(43,79,227,.25);transition:background .15s ease;}
+.btn:hover{background:var(--primary-dark);}
+.btn.ghost{background:#fff;color:var(--primary);border:1px solid var(--line);box-shadow:none;}
+.btn.ghost:hover{background:var(--primary-tint);}
+.btn.sm{font-size:13.5px;padding:9px 16px;}
+
+.shell{max-width:1080px;margin:0 auto;padding:26px 22px 90px;
+  display:grid;grid-template-columns:320px 1fr;gap:26px;align-items:start;}
+@media(max-width:940px){.shell{grid-template-columns:1fr;}}
+
+/* form panel */
+.panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;box-shadow:var(--shadow-sm);position:sticky;top:84px;}
+@media(max-width:940px){.panel{position:static;}}
+.panel h2{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--primary);margin-bottom:16px;}
+.f{margin-bottom:14px;}
+.f label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px;}
+.f input,.f select{width:100%;font-family:inherit;font-size:14.5px;color:var(--ink);
+  background:#fff;padding:10px 12px;border:1px solid var(--line);border-radius:var(--radius-sm);}
+.f select{appearance:none;cursor:pointer;padding-right:34px;
+  background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath fill='%23444b59' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 12px center;}
+.f .hint{font-size:11.5px;color:var(--body);opacity:.75;margin:5px 0 0;}
+.picked{background:var(--primary-tint);border:1px solid rgba(43,79,227,.3);
+  border-radius:var(--radius-sm);padding:12px 14px;margin-bottom:14px;font-size:13.5px;}
+.picked b{display:block;color:var(--ink);font-size:14.5px;margin-bottom:2px;}
+.picked a{font-size:12.5px;font-weight:600;}
+.results{max-height:230px;overflow-y:auto;border:1px solid var(--line);
+  border-radius:var(--radius-sm);margin-top:8px;}
+.results button{display:block;width:100%;text-align:left;background:none;border:none;
+  border-bottom:1px solid var(--line);padding:10px 12px;cursor:pointer;font-family:inherit;
+  font-size:13.5px;color:var(--body);}
+.results button:last-child{border-bottom:none;}
+.results button:hover{background:var(--muted);}
+.results button b{display:block;color:var(--ink);font-size:14px;font-weight:600;}
+
+/* plan */
+.plan{background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;box-shadow:var(--shadow-md);}
+.plan-head{background:linear-gradient(150deg,var(--navy) 0%,#082738 100%);color:#fff;padding:26px 30px;}
+.plan-head h1{color:#fff;font-size:23px;margin-bottom:4px;}
+.plan-head p{color:#b9d0de;font-size:14.5px;margin:0;}
+.plan-head .who{font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--orange);font-weight:700;margin-bottom:9px;}
+.plan-body{padding:0 30px 30px;}
+@media(max-width:600px){.plan-head,.plan-body{padding-left:18px;padding-right:18px;}}
+
+.alert{margin:22px 0 0;border-radius:var(--radius-sm);padding:15px 18px;font-size:14.5px;}
+.alert.warn{background:var(--warn-bg);border:1px solid var(--warn-line);color:#7d1a15;}
+.alert.ok{background:var(--ok-bg);border:1px solid #bfe3d3;color:#12543b;}
+.alert b{display:block;margin-bottom:3px;color:inherit;}
+
+.tl{list-style:none;margin:24px 0 0;padding:0;}
+.tl li{position:relative;padding:0 0 22px 74px;border-left:2px solid var(--line);margin-left:64px;}
+.tl li:last-child{border-left-color:transparent;padding-bottom:0;}
+.tl .date{position:absolute;left:-64px;top:0;width:56px;text-align:right;
+  font-size:12.5px;font-weight:700;color:var(--ink);line-height:1.3;font-variant-numeric:tabular-nums;}
+.tl .date small{display:block;font-weight:500;color:var(--body);opacity:.8;font-size:11px;}
+.tl .dot{position:absolute;left:-9px;top:3px;width:16px;height:16px;border-radius:50%;
+  background:#fff;border:3px solid var(--primary);}
+.tl li.who-student .dot{border-color:var(--orange);}
+.tl li.past .dot{border-color:#c3cad6;}
+.tl h4{font-size:15.5px;margin-bottom:3px;}
+.tl .tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;padding:3px 8px;border-radius:var(--pill);margin-left:7px;
+  vertical-align:middle;background:var(--primary-tint);color:var(--primary);}
+.tl li.who-student .tag{background:#fff2e6;color:#a5551b;}
+.tl p{font-size:14px;margin:4px 0 0;}
+@media(max-width:620px){
+  .tl li{margin-left:0;padding-left:34px;}
+  .tl .date{position:static;width:auto;text-align:left;margin-bottom:4px;}
+  .tl .date small{display:inline;margin-left:6px;}
+  .tl .dot{left:-9px;top:2px;}
+}
+
+.foot-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;
+  border-top:1px solid var(--line);padding-top:22px;}
+.src{font-size:13px;margin-top:18px;padding:13px 16px;background:var(--muted);
+  border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:0 var(--radius-sm) var(--radius-sm) 0;}
+.src a{font-weight:600;word-break:break-all;}
+.empty{background:#fff;border:1px dashed var(--line);border-radius:var(--radius);
+  padding:60px 30px;text-align:center;}
+.empty h2{font-size:19px;margin-bottom:8px;}
+.empty p{font-size:15px;margin:0 auto;max-width:44ch;}
+.copied{font-size:13px;color:var(--ok);font-weight:600;align-self:center;}
+
+@media print{
+  header,.panel,.foot-actions,.hnav{display:none!important;}
+  body{background:#fff;}
+  .shell{display:block;padding:0;max-width:none;}
+  .plan{border:none;box-shadow:none;}
+  .plan-head{background:var(--navy)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hwrap">
+    <a class="logo" href="/"><img src="logo.png" alt=""> Pave <span>Student Roadmap</span></a>
+    <nav class="hnav">
+      <a class="hide" href="search.html">Programme finder</a>
+      <button class="btn sm" id="subTop">Subscribe — $40/mo</button>
+    </nav>
+  </div>
+</header>
+
+<div class="shell">
+  <aside class="panel">
+    <h2>Build the plan</h2>
+
+    <div id="pickedBox"></div>
+
+    <div class="f" id="searchWrap">
+      <label for="q">1 · Find the programme</label>
+      <input id="q" type="search" placeholder="sustainability, computer science…" autocomplete="off">
+      <div class="results" id="results" hidden></div>
+    </div>
+
+    <div class="f">
+      <label for="sName">2 · Student's name <span style="font-weight:400;opacity:.7;">(optional)</span></label>
+      <input id="sName" type="text" placeholder="e.g. Aisha">
+    </div>
+
+    <div class="f">
+      <label for="sNat">3 · Nationality</label>
+      <select id="sNat"><option value="">Select…</option></select>
+      <p class="hint">Decides the whole visa half of the plan.</p>
+    </div>
+
+    <div class="f">
+      <label for="sResults">4 · When do final results arrive?</label>
+      <input id="sResults" type="date">
+      <p class="hint">Board or school results. Used to catch timing clashes.</p>
+    </div>
+
+    <div class="f">
+      <label for="sIntake">5 · Target intake</label>
+      <select id="sIntake">
+        <option value="auto">Next available</option>
+        <option value="2027">Winter 2027/28</option>
+        <option value="2028">Winter 2028/29</option>
+      </select>
+    </div>
+
+    <button class="btn" id="build" style="width:100%;">Generate roadmap</button>
+  </aside>
+
+  <main id="out">
+    <div class="empty">
+      <h2>Pick a programme to start</h2>
+      <p>Search on the left, add the student's nationality and results date, and you'll get a dated plan you can send them.</p>
+    </div>
+  </main>
+</div>
+
+<script>
+(function () {
+  var DATA = [], picked = null;
+
+  /* ---------- analytics ---------- */
+  var src = "direct";
+  try { var qp = new URLSearchParams(location.search).get("src");
+        if (qp) src = qp.replace(/[^a-zA-Z0-9_-]/g,"").slice(0,24) || "direct"; } catch(e){}
+  if (CFG.GOATCOUNTER) {
+    var gc = document.createElement("script");
+    gc.async = true; gc.src = "//gc.zgo.at/count.js";
+    gc.setAttribute("data-goatcounter","https://"+CFG.GOATCOUNTER+".goatcounter.com/count");
+    document.head.appendChild(gc);
+  }
+  function track(n){
+    if (window.goatcounter && window.goatcounter.count)
+      window.goatcounter.count({path:n+"-"+src,title:n,event:true});
+    if (window.console && console.debug) console.debug("[track]",n);
+  }
+  function subscribe(where){ track("subscribe-click-"+where);
+    location.href = CFG.PAYMENT_LINK || CFG.FALLBACK_URL; }
+  document.getElementById("subTop").onclick = function(){ subscribe("header"); };
+
+  /* ---------- helpers ---------- */
+  function esc(s){ return String(s==null?"":s)
+    .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+  function slug(d){ return (d.country+"-"+d.institution+"-"+d.programme)
+    .toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,90); }
+  function trackFor(nat){
+    for (var k in TRACKS) if (TRACKS[k].countries.indexOf(nat) > -1) return TRACKS[k];
+    return nat ? TRACKS.d : null;
+  }
+  var MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  function fmt(d){ return d.getDate()+" "+MON[d.getMonth()]+"\n"+d.getFullYear(); }
+  function fmtLong(d){ return d.getDate()+" "+MON[d.getMonth()]+" "+d.getFullYear(); }
+  function addWeeks(d,w){ var x=new Date(d.getTime()); x.setDate(x.getDate()+w*7); return x; }
+  function parseDeadline(s, year){
+    if (!s) return null;
+    var p = s.split("-"); if (p.length!==3) return null;
+    var d = new Date(Date.UTC(year, parseInt(p[1],10)-1, parseInt(p[2],10)));
+    return new Date(d.getTime() + d.getTimezoneOffset()*60000);
+  }
+
+  /* ---------- the generator ---------- */
+  function build(){
+    if (!picked){ alert("Pick a programme first."); return; }
+    var nat  = document.getElementById("sNat").value;
+    var name = document.getElementById("sName").value.trim();
+    var resV = document.getElementById("sResults").value;
+    var results = resV ? new Date(resV+"T00:00:00") : null;
+    var t = trackFor(nat);
+
+    var today = new Date();
+    var yearSel = document.getElementById("sIntake").value;
+    var year = yearSel === "auto" ? today.getFullYear() : parseInt(yearSel,10);
+
+    var deadline = parseDeadline(picked.deadline, year);
+    if (yearSel === "auto" && deadline && deadline < today){
+      year += 1; deadline = parseDeadline(picked.deadline, year);
+    }
+    if (!deadline){                      // no deadline on record — assume a July close
+      deadline = new Date(year, 6, 15);
+      if (deadline < today){ year += 1; deadline = new Date(year, 6, 15); }
+    }
+    var intake = new Date(year, 8, 25);          // typical late-September start
+    if (intake < deadline) intake = new Date(year+1, 8, 25);
+
+    var L = CFG.LEAD, steps = [], warnings = [];
+    function add(date, title, who, note){ steps.push({d:date,t:title,who:who,n:note}); }
+
+    /* --- before the deadline --- */
+    if (t && t.key === "c"){
+      add(addWeeks(deadline, -(L.aps.max + 4)), "Start the APS certificate", "student",
+        "Academic Evaluation Centre verification — "+L.aps.min+"–"+L.aps.max+" weeks, and required before the visa. For Indian Master's applicants from Engineering, Commerce, Finance, Economics or Business, a dMAT certificate is also required from Summer Semester 2027.");
+    }
+    add(addWeeks(deadline, -12), "Book and sit the English test", "student",
+      picked.english && !/^n\/?a$/i.test(picked.english) ? picked.english : "Check the programme's current requirement.");
+    add(addWeeks(deadline, -10), "Gather and attest documents", "student",
+      "Transcripts, passport, certificates. Attestation can take longer than expected — start early.");
+    if (t && t.key !== "a"){
+      add(addWeeks(deadline, -8), "Submit for credential recognition", "counsellor",
+        "Where the country requires it — uni-assist VPD in Germany, or the local equivalent. Allow "+L.recognition.min+"–"+L.recognition.max+" weeks.");
+    }
+    add(addWeeks(deadline, -3), "Complete and review the application", "counsellor",
+      picked.apply && !/^n\/?a$/i.test(picked.apply) ? picked.apply : "Submit through the university's own portal.");
+    add(deadline, "APPLICATION DEADLINE", "student",
+      "Everything must be submitted by this date.");
+
+    /* --- after the deadline --- */
+    var decision = addWeeks(deadline, L.decision.max);
+    add(decision, "Admission decision expected", "counsellor",
+      "Nothing in the visa chain can begin without the formal offer. Conditional offers are usually not accepted for a visa file.");
+
+    if (t && t.key === "a"){
+      add(addWeeks(decision, 1), "Arrange health insurance", "student",
+        "Required for enrolment. No visa and no residence permit needed.");
+      add(addWeeks(intake, -2), "Travel and register your address", "student",
+        "Register with the local authority within two weeks of arriving.");
+    } else if (t && t.key === "b"){
+      add(addWeeks(decision, L.finance.max), "Arrange proof of funds", "student",
+        "Presented in-country rather than at an embassy.");
+      add(addWeeks(decision, L.finance.max + 1), "Arrange health insurance", "student", "");
+      add(addWeeks(intake, -2), "Travel — no visa needed", "student",
+        "Enters visa-free and applies for the residence permit after arrival.");
+      add(addWeeks(intake, 1), "Apply for the residence permit", "student",
+        "At the local immigration office, within 90 days of arrival.");
+    } else if (t){
+      var fin = addWeeks(decision, L.finance.max);
+      add(fin, "Open the blocked account / prove funds", "student",
+        "Germany: EUR 11,904 for the year, released at EUR 992 a month. Re-check the figure — it is revised annually.");
+      add(addWeeks(fin, 1), "Arrange health insurance", "student", "");
+      add(addWeeks(decision, 1), "Book the visa appointment NOW", "counsellor",
+        "The single worst bottleneck. Waits run "+L.appointment.min+"–"+L.appointment.max+" weeks depending on the mission. Book the day the offer lands, not once documents are ready.");
+      var appt = addWeeks(decision, 1 + L.appointment.max);
+      add(appt, "Attend the visa appointment", "student",
+        "Passport, offer, proof of funds, insurance, transcripts, CV, motivation letter, photos"+(t.key==="c"?", APS certificate":"")+". Fee around EUR 75 in Germany.");
+      var visaDone = addWeeks(appt, L.visaProcessing.max);
+      add(visaDone, "Visa decision expected", "counsellor",
+        "Processing runs "+L.visaProcessing.min+"–"+L.visaProcessing.max+" weeks after the appointment.");
+      add(addWeeks(intake, -2), "Travel and register your address", "student", "");
+      add(addWeeks(intake, 4), "Convert to a residence permit", "student",
+        "Before the entry visa expires.");
+      if (visaDone > intake){
+        warnings.push("The visa chain does not fit before the intake. On these lead times the visa decision lands around "+fmtLong(visaDone)+", after a start date of "+fmtLong(intake)+". Either bring the application forward or plan for the following intake.");
+      }
+    }
+
+    add(intake, "Programme starts", "student", "");
+
+    /* --- conflict checks --- */
+    if (results && results > deadline){
+      warnings.push("Final results arrive on "+fmtLong(results)+", which is after the "+fmtLong(deadline)+" deadline. Ask the university whether they will accept predicted results and issue a conditional offer — this is the standard mechanism, but it must be confirmed in writing before you rely on it.");
+    }
+    var apsStart = addWeeks(deadline, -(L.aps.max+4));
+    if (t && t.key === "c" && apsStart < today){
+      warnings.push("APS should already have started for this deadline. It takes up to "+L.aps.max+" weeks and the visa cannot proceed without it — treat this as urgent or move to the next intake.");
+    }
+    if (deadline < today){
+      warnings.push("This deadline has already passed for the selected year.");
+    }
+
+    steps.sort(function(a,b){ return a.d - b.d; });
+    render(picked, name, nat, t, steps, warnings, deadline, intake);
+    track("roadmap-generated");
+  }
+
+  function render(d, name, nat, t, steps, warnings, deadline, intake){
+    var who = name ? name : "this student";
+    var html = '<div class="plan"><div class="plan-head">'+
+      '<div class="who">Application roadmap'+(name ? " · "+esc(name) : "")+'</div>'+
+      '<h1>'+esc(d.programme)+'</h1>'+
+      '<p>'+esc(d.institution)+' · '+esc(d.city||"")+', '+esc(d.country)+
+      (nat ? ' &nbsp;·&nbsp; '+esc(nat)+' passport' : '')+'</p></div><div class="plan-body">';
+
+    warnings.forEach(function(w){
+      html += '<div class="alert warn"><b>Timing conflict</b>'+esc(w)+'</div>';
+    });
+    if (!warnings.length && nat){
+      html += '<div class="alert ok"><b>No timing conflicts found</b>On these lead times, '+esc(who)+
+              ' can make the '+esc(fmtLong(deadline))+' deadline and start on time.</div>';
+    }
+    if (!nat){
+      html += '<div class="alert warn"><b>Add a nationality</b>The visa half of this plan is blank until you set one — it changes the steps completely.</div>';
+    }
+
+    html += '<ol class="tl">';
+    var today = new Date();
+    steps.forEach(function(s){
+      html += '<li class="who-'+s.who+(s.d<today?' past':'')+'">'+
+        '<span class="dot"></span>'+
+        '<span class="date">'+esc(fmt(s.d)).replace("\\n","<small>")+'</small></span>'+
+        '<h4>'+esc(s.t)+'<span class="tag">'+(s.who==="student"?"Student":"You")+'</span></h4>'+
+        (s.n ? '<p>'+esc(s.n)+'</p>' : '')+'</li>';
+    });
+    html += '</ol>';
+
+    html += '<div class="src">Every fact in this plan comes from the university\'s own page. '+
+      'Confirm before advising: <a href="'+esc(d.url)+'" target="_blank" rel="noopener">'+esc(d.url)+'</a></div>';
+
+    html += '<div class="foot-actions">'+
+      '<button class="btn" id="shareBtn">Copy link for '+esc(name||"the student")+'</button>'+
+      '<button class="btn ghost" id="printBtn">Print / save as PDF</button>'+
+      '<span class="copied" id="copied" hidden>Link copied</span>'+
+      '</div>';
+
+    html += '</div></div>';
+    document.getElementById("out").innerHTML = html;
+
+    document.getElementById("printBtn").onclick = function(){ track("roadmap-print"); window.print(); };
+    document.getElementById("shareBtn").onclick = function(){
+      var u = location.origin + location.pathname + "?p=" + encodeURIComponent(slug(d)) +
+              "&nat=" + encodeURIComponent(nat) +
+              (name ? "&n=" + encodeURIComponent(name) : "") +
+              (document.getElementById("sResults").value ? "&r=" + document.getElementById("sResults").value : "") +
+              "&y=" + document.getElementById("sIntake").value;
+      function done(){ var c=document.getElementById("copied"); c.hidden=false;
+        setTimeout(function(){ c.hidden=true; },2500); track("roadmap-shared"); }
+      if (navigator.clipboard) navigator.clipboard.writeText(u).then(done, done);
+      else { prompt("Copy this link:", u); done(); }
+    };
+  }
+
+  /* ---------- programme search ---------- */
+  function showPicked(){
+    document.getElementById("pickedBox").innerHTML = picked
+      ? '<div class="picked"><b>'+esc(picked.programme)+'</b>'+esc(picked.institution)+
+        ', '+esc(picked.country)+'<br><a href="#" id="changeP">Change programme</a></div>' : "";
+    document.getElementById("searchWrap").hidden = !!picked;
+    var c = document.getElementById("changeP");
+    if (c) c.onclick = function(e){ e.preventDefault(); picked=null; showPicked(); };
+  }
+  var timer;
+  document.getElementById("q").addEventListener("input", function(){
+    clearTimeout(timer); var v = this.value.trim().toLowerCase();
+    timer = setTimeout(function(){
+      var box = document.getElementById("results");
+      if (v.length < 2){ box.hidden = true; return; }
+      var hits = DATA.filter(function(d){
+        return (d.programme+" "+d.institution+" "+d.country).toLowerCase().indexOf(v) > -1;
+      }).slice(0,40);
+      box.innerHTML = hits.length ? hits.map(function(d){
+        return '<button data-s="'+esc(slug(d))+'"><b>'+esc(d.programme)+'</b>'+
+               esc(d.institution)+' · '+esc(d.country)+'</button>';
+      }).join("") : '<button disabled style="cursor:default;">No matches</button>';
+      box.hidden = false;
+    }, 200);
+  });
+  document.getElementById("results").addEventListener("click", function(e){
+    var b = e.target.closest("[data-s]"); if (!b) return;
+    var s = b.getAttribute("data-s");
+    picked = DATA.filter(function(d){ return slug(d) === s; })[0] || null;
+    document.getElementById("results").hidden = true;
+    document.getElementById("q").value = "";
+    showPicked(); track("programme-picked");
+  });
+  document.getElementById("build").onclick = build;
+
+  /* ---------- boot ---------- */
+  fetch("data.json").then(function(r){ return r.json(); }).then(function(rows){
+    DATA = rows;
+    var nsel = document.getElementById("sNat"), seen = {};
+    Object.keys(TRACKS).forEach(function(k){
+      TRACKS[k].countries.forEach(function(c){ seen[c]=1; });
+    });
+    Object.keys(seen).sort().forEach(function(c){
+      var o=document.createElement("option"); o.value=c; o.textContent=c; nsel.appendChild(o);
+    });
+
+    /* restore a shared link */
+    try {
+      var p = new URLSearchParams(location.search);
+      if (p.get("p")){
+        picked = DATA.filter(function(d){ return slug(d) === p.get("p"); })[0] || null;
+        if (p.get("nat")) nsel.value = p.get("nat");
+        if (p.get("n")) document.getElementById("sName").value = p.get("n");
+        if (p.get("r")) document.getElementById("sResults").value = p.get("r");
+        if (p.get("y")) document.getElementById("sIntake").value = p.get("y");
+        showPicked();
+        if (picked){ build(); track("roadmap-opened-from-link"); }
+      }
+    } catch(e){}
+  }).catch(function(){
+    document.getElementById("out").innerHTML =
+      '<div class="empty"><h2>Couldn\'t load the programmes</h2>'+
+      '<p>Refresh, or <a href="/#requestForm">get in touch</a>.</p></div>';
+  });
+})();
+</script>
+</body>
+</html>

@@ -196,6 +196,7 @@ dl.spec dt:first-of-type,dl.spec dd:first-of-type{border-top:none;}
 <header>
   <div class="hwrap">
     <a class="logo" href="/"><img src="logo.png" alt=""> Pave <span>Programme Finder</span></a>
+    <a href="roadmap.html" style="font-size:14.5px;font-weight:500;color:var(--body);text-decoration:none;margin-right:6px;">Student roadmap</a>
     <button class="btn" id="subTop">Subscribe — $40/mo</button>
   </div>
 </header>
@@ -332,6 +333,8 @@ dl.spec dt:first-of-type,dl.spec dd:first-of-type{border-top:none;}
     var m = String(s).replace(/,/g,"").match(/(\d{3,6})/);
     return m ? parseInt(m[1],10) : null;
   }
+  function slug(d){ return (d.country+"-"+d.institution+"-"+d.programme)
+    .toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,90); }
   function esc(s){ return String(s==null?"":s)
     .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
   function accepts(v){ return v && !/^n\/?a$/i.test(v.trim()) && v.trim() !== "-"; }
@@ -484,6 +487,13 @@ dl.spec dt:first-of-type,dl.spec dd:first-of-type{border-top:none;}
         '</div>'+
 
         (d.notes ? '<div class="blk"><h4>Notes</h4><p style="font-size:14.5px;margin:0;">'+esc(d.notes)+'</p></div>' : '')+
+
+        '<div class="blk"><h4>Build the student\'s plan</h4>'+
+          '<p style="font-size:14.5px;margin:0 0 14px;">Turn this into a dated, step-by-step roadmap you can send the student.</p>'+
+          '<a class="btn" href="roadmap.html?p='+encodeURIComponent(slug(d))+
+            (document.getElementById("fNat").value ? "&nat="+encodeURIComponent(document.getElementById("fNat").value) : "")+
+            '">Generate student roadmap →</a>'+
+        '</div>'+
 
         '<div class="blk"><h4>Check it at source</h4>'+
           '<div class="src-note">Counsellors shouldn\'t take our word for it. This record was built from the '+
