@@ -53,14 +53,15 @@ const CONFIG = {
      the browser console, so you can verify the funnel before going live.
 
      Events recorded:
-       pageview-<src>       someone opened the page
+       visit-<src>          someone opened the page (plus GoatCounter's own
+                            pageview, which powers the Pages/Referrers reports)
        sample-viewed-<src>  they scrolled far enough to read the TUM sample
        pricing-viewed-<src> they reached the price
        buy-click-<src>      they clicked a Buy button (NOT the same as a sale)
        email-click-<src>    they clicked the plain-text email fallback
      ========================================================================= */
-  ANALYTICS_ENABLED: false,
-  GOATCOUNTER_CODE:  "",
+  ANALYTICS_ENABLED: true,
+  GOATCOUNTER_CODE:  "pave-germany",   // dashboard: https://pave-germany.goatcounter.com
 
   /* Channel attribution. Tag your links like:
         https://<your-url>/?src=whatsapp
@@ -717,16 +718,16 @@ footer a{color:#b9cadb;}
   }
 
   if (CONFIG.ANALYTICS_ENABLED && CONFIG.GOATCOUNTER_CODE) {
-    window.goatcounter = { no_onload: true };          // we send the pageview ourselves
     var gc = document.createElement("script");
     gc.async = true;
     gc.src = "//gc.zgo.at/count.js";
     gc.setAttribute("data-goatcounter",
       "https://" + CONFIG.GOATCOUNTER_CODE + ".goatcounter.com/count");
-    gc.onload = function () { track("pageview", false); };
+    // GoatCounter records the pageview itself on load; this adds the channel tag.
+    gc.onload = function () { track("visit"); };
     document.head.appendChild(gc);
   } else {
-    track("pageview", false);                          // console only
+    track("visit");                                    // console only
   }
 
   /* ---- 3. scroll milestones: did they read the proof? did they reach price? ---- */
