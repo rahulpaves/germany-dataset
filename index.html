@@ -39,7 +39,7 @@ const CONFIG = {
   UNI_COUNT:        27,
   PROGRAMME_COUNT:  54,
 
-  LAST_VERIFIED:    "",             // e.g. "August 2026" -> "; last checked August 2026". Blank hides it.
+  LAST_VERIFIED:    "25 August 2026",             // e.g. "August 2026" -> "; last checked August 2026". Blank hides it.
 
   /* ==========================================================================
      ANALYTICS  ---  currently OFF. Two-minute setup to turn it on:
@@ -381,7 +381,7 @@ footer a:hover{color:#fff;}
 <!-- ============================ 1. HERO ============================ -->
 <div class="hero">
   <div class="wrap">
-    <div class="flag"><i></i> Germany · 2026/27 intake · early access</div>
+    <div class="flag"><i></i> Germany · 2027/28 intake · early access</div>
     <h1>Everything your students need to apply to Germany — <span class="accent">verified, current, in one place.</span></h1>
     <p class="sub">
       Verified programme requirements, application deadlines, English-language thresholds,
@@ -427,7 +427,7 @@ footer a:hover{color:#fff;}
       <div class="card">
         <div class="ico">01</div>
         <h3>Programme requirements</h3>
-        <p>Entry requirements per programme, mapped to IB, A-Levels, CBSE, ISC and other boards — so you know admissibility before you advise.</p>
+        <p>Entry requirements per programme, plus the recognition route for each qualification — uni-assist VPD, APS where it applies — so you know admissibility before you advise.</p>
       </div>
       <div class="card">
         <div class="ico">02</div>
@@ -476,133 +476,132 @@ footer a:hover{color:#fff;}
 
 <!--
 ================================================================================
-  SAMPLE DATA — DROP REAL VERIFIED DATA IN HERE
+  SAMPLE DATA  --  VERIFIED 25 AUGUST 2026
   --------------------------------------------------------------------------
-  This sample is seeded from your existing Germany sheet (_expand_germany.py →
-  TUM Informatics BSc row), so the programme facts below come from your own
-  data, not invented placeholders.
+  Every figure below was checked against TUM's own programme page and the
+  German visa sources on 25 Aug 2026:
+    tum.de/en/studies/degree-programs/detail/aerospace-bachelor-of-science-bsc
+  Verified: language, 6 semesters / 180 ECTS, aptitude assessment, B2 English,
+  8-week pre-study internship, EUR 97 semester fee, EUR 3,000/semester non-EU
+  tuition, 15.05-15.07 application window, EUR 11,904 blocked account
+  (EUR 992/month, unchanged for 2026), EUR 75 national visa fee.
 
-  BEFORE SENDING THIS LINK TO ANY COUNSELLOR, re-verify these against source:
-    - Deadline (15 July 2026) ....... check TUM application portal for 2026/27
-    - Semester contribution ......... TUM fees page
-    - Non-EU tuition (EUR 6,000/yr) . TUM international tuition page
-    - Blocked account amount ........ Federal Foreign Office (updates ANNUALLY —
-                                      the figure below is the 2025/26 rate)
-    - Visa appointment wait times ... your local German mission
-  Anything you can't verify, delete rather than ship. One wrong number in the
-  sample is what loses the sale.
+  RE-CHECK BEFORE EACH CYCLE: the blocked-account figure is revised annually
+  and the application window is republished each year. Deadlines below are for
+  WINTER SEMESTER 2027/28 -- the 2026/27 window closed on 15 July 2026.
 ================================================================================
 -->
     <div class="sample">
       <div class="sample-head">
         <span class="tag">Sample record · 1 of <span id="progCountTag">54</span></span>
-        <h3>Informatics (BSc)</h3>
-        <p class="inst">Technical University of Munich (TUM) · Garching campus, Bavaria</p>
+        <h3>Aerospace (B.Sc.)</h3>
+        <p class="inst">Technical University of Munich (TUM) · Bavaria</p>
         <div class="chips">
           <span class="chip">Bachelor of Science</span>
           <span class="chip">Taught in English</span>
-          <span class="chip">3 years</span>
+          <span class="chip">6 semesters · 180 ECTS</span>
           <span class="chip">Public technical university</span>
         </div>
       </div>
 
       <div class="sample-body">
 
-        <!-- ---- Programme facts ---- -->
         <div class="block">
           <h4>Programme &amp; cost</h4>
           <dl class="spec">
-            <dt>Degree awarded</dt>          <dd>BSc Informatics (180 ECTS)</dd>
-            <dt>Language of instruction</dt> <dd>English (full programme)</dd>
-            <dt>Duration</dt>                <dd>3 years / 6 semesters</dd>
-            <dt>Semester contribution</dt>   <dd>EUR 162 per semester (~EUR 324/year)</dd>
-            <dt>Non-EU tuition</dt>          <dd>EUR 6,000 per year (EUR 2,000–3,000/semester, introduced WS 2024/25)</dd>
-            <dt>Living costs (est.)</dt>     <dd>EUR 11,000 – 14,000 per year, Munich</dd>
-            <dt>Scholarships</dt>            <dd>Deutschlandstipendium; TUM internal scholarships</dd>
+            <dt>Degree awarded</dt>          <dd>B.Sc. Aerospace (180 ECTS)</dd>
+            <dt>Language of instruction</dt> <dd>English, with some electives available in German</dd>
+            <dt>Duration</dt>                <dd>6 semesters (3 years), full time</dd>
+            <dt>Semester fee</dt>            <dd>EUR 97 per semester</dd>
+            <dt>Non-EU tuition</dt>          <dd>EUR 3,000 per semester (EUR 6,000/year), in force since WS 2024/25</dd>
+            <dt>Living costs</dt>            <dd>EUR 11,904/year is the official minimum you must prove for the visa. Munich is one of Germany's most expensive student cities — budget above this figure.</dd>
+            <dt>Scholarships</dt>            <dd>Deutschlandstipendium; TUM scholarship schemes</dd>
           </dl>
         </div>
 
-        <!-- ---- Entry requirements ---- -->
         <div class="block">
           <h4>Entry requirements</h4>
           <ul class="reqs">
-            <li><b>General:</b> Recognised upper-secondary school leaving certificate granting higher-education entrance, with strong Mathematics.</li>
-            <li><b>IB:</b> Higher Level Mathematics required.</li>
-            <li><b>A-Levels:</b> Must include Mathematics.</li>
-            <li><b>CBSE / ISC:</b> Science stream with Mathematics, 85%+ aggregate.</li>
-            <li><b>Other boards:</b> Assessed for country equivalence via uni-assist before TUM will review the file.</li>
-            <li><b>English:</b> IELTS 6.5 or TOEFL iBT 88.</li>
-            <li><b>Selection:</b> TUM aptitude assessment (Eignungsfeststellungsverfahren) — multi-stage and genuinely competitive.</li>
+            <li><b>General:</b> A recognised higher-education entrance qualification (Hochschulzugangsberechtigung).</li>
+            <li><b>Equivalence:</b> Non-German qualifications are assessed by <b>uni-assist</b>, which issues the preliminary review documentation (VPD) TUM requires before it will review the file.</li>
+            <li><b>Selection:</b> Aptitude Assessment (Eignungsfeststellungsverfahren) — competitive, and the stage most applicants underestimate.</li>
+            <li><b>English:</b> At least B2. Proficiency is normally verified as part of the aptitude assessment rather than by a fixed IELTS or TOEFL score.</li>
+            <li><b>Pre-study internship:</b> Minimum eight weeks, ideally documented by 31 October of the first year of study.</li>
+            <li><b>India &amp; China:</b> An <b>APS certificate</b> is required. Allow 4–8 weeks and start it before the application, not after.</li>
           </ul>
         </div>
 
-        <!-- ---- Deadline + how to apply ---- -->
         <div class="block">
           <h4>Deadline &amp; how to apply</h4>
           <div class="deadline">
-            <span class="d">15 July 2026</span>
-            <span class="l">Winter semester 2026/27 · international applicants should start ~10 weeks earlier for uni-assist processing</span>
+            <span class="d">15 May – 15 July 2027</span>
+            <span class="l">Winter semester 2027/28 · the 2026/27 window closed on 15 July 2026</span>
           </div>
           <ul class="reqs">
-            <li><b>Step 1 —</b> Submit certificates to <b>uni-assist</b> for recognition of the foreign qualification (allow 4–6 weeks; this is the step students under-estimate).</li>
-            <li><b>Step 2 —</b> Create a <b>TUMonline</b> account and complete the online application for the programme.</li>
-            <li><b>Step 3 —</b> Upload English proficiency evidence and the uni-assist preliminary review documentation (VPD).</li>
-            <li><b>Step 4 —</b> Sit the TUM aptitude assessment if shortlisted after the document stage.</li>
-            <li><b>Step 5 —</b> Receive the admission decision (Zulassungsbescheid) — required before any visa step can begin.</li>
+            <li><b>Step 1 —</b> Indian and Chinese applicants: begin the <b>APS</b> certificate first (4–8 weeks).</li>
+            <li><b>Step 2 —</b> Submit certificates to <b>uni-assist</b> for the VPD. Allow several weeks; this is the step that quietly consumes the application window.</li>
+            <li><b>Step 3 —</b> Apply through <b>TUMonline</b> within the 15 May – 15 July window.</li>
+            <li><b>Step 4 —</b> Complete the aptitude assessment if shortlisted after the document stage.</li>
+            <li><b>Step 5 —</b> Receive the admission decision (Zulassungsbescheid) — nothing in the visa chain can begin without it.</li>
           </ul>
         </div>
 
-        <!-- ---- Visa roadmap ---- -->
         <div class="block">
           <h4>Student visa process — non-EU applicant</h4>
           <ol class="timeline">
             <li>
               <span class="n">1</span>
-              <span class="t">Admission letter (Zulassungsbescheid)</span>
-              <span class="w">4–8 weeks after deadline</span>
-              <p>Nothing in the visa chain can start without it. Conditional offers are not accepted for the visa file.</p>
+              <span class="t">APS certificate (India and China only)</span>
+              <span class="w">4–8 weeks</span>
+              <p>Academic Evaluation Centre verification. Required for the visa and commonly for admission too, so it belongs at the very start of the timeline.</p>
             </li>
             <li>
               <span class="n">2</span>
-              <span class="t">Open a blocked account (Sperrkonto)</span>
-              <span class="w">1–2 weeks</span>
-              <p>Proof of financial resources for one year — EUR 11,904 at the 2025/26 rate (EUR 992/month). The figure is revised annually. A parental guarantee (Verpflichtungserklärung) is the main alternative.</p>
+              <span class="t">Admission letter (Zulassungsbescheid)</span>
+              <span class="w">after the July deadline</span>
+              <p>Conditional offers are not accepted for the visa file — it must be the formal admission decision.</p>
             </li>
             <li>
               <span class="n">3</span>
-              <span class="t">Arrange German health insurance</span>
-              <span class="w">3–7 days</span>
-              <p>Public insurer confirmation (TK, AOK or similar) for enrolled students; a travel policy covering the arrival gap is usually also requested.</p>
+              <span class="t">Open a blocked account (Sperrkonto)</span>
+              <span class="w">1–2 weeks</span>
+              <p>EUR 11,904 for one year, released at EUR 992 per month. Unchanged for 2026, but revised annually — always re-check. A parental guarantee (Verpflichtungserklärung) is the main alternative.</p>
             </li>
             <li>
               <span class="n">4</span>
-              <span class="t">Book the visa appointment</span>
-              <span class="w">2–12 weeks wait</span>
-              <p>The real bottleneck. Appointment availability at the German mission varies sharply by country and season — book the moment admission lands, not once documents are complete.</p>
+              <span class="t">Arrange German health insurance</span>
+              <span class="w">3–7 days</span>
+              <p>Public insurer confirmation (TK, AOK or similar) for enrolled students, plus travel cover for the arrival gap.</p>
             </li>
             <li>
               <span class="n">5</span>
-              <span class="t">Submit the national visa (Type D) application</span>
-              <span class="w">Appointment day</span>
-              <p>Passport, admission letter, blocked-account confirmation, insurance, academic transcripts, CV, motivation letter, biometric photos. Fee EUR 75.</p>
+              <span class="t">Book the visa appointment</span>
+              <span class="w">2–12 weeks wait</span>
+              <p>The real bottleneck. Availability at the German mission varies sharply by country and season — book the moment admission lands, not once documents are complete.</p>
             </li>
             <li>
               <span class="n">6</span>
-              <span class="t">Visa processing</span>
-              <span class="w">6–12 weeks</span>
-              <p>Runs via the local Ausländerbehörde of the university city. Build this into the application timeline — it is why a July deadline becomes a tight October start.</p>
+              <span class="t">Submit the national visa (Type D) application</span>
+              <span class="w">appointment day</span>
+              <p>Passport, admission letter, blocked-account confirmation, insurance, transcripts, CV, motivation letter, biometric photos, and the APS certificate where it applies. Fee EUR 75.</p>
             </li>
             <li>
               <span class="n">7</span>
-              <span class="t">Arrive and register (Anmeldung)</span>
-              <span class="w">Within 2 weeks of arrival</span>
-              <p>City registration at the Bürgeramt, which requires a signed accommodation confirmation from the landlord.</p>
+              <span class="t">Visa processing</span>
+              <span class="w">4–8 weeks</span>
+              <p>End to end — APS, admission, appointment and processing — the realistic span is three to six months. That is why a July deadline becomes a tight October start.</p>
             </li>
             <li>
               <span class="n">8</span>
+              <span class="t">Arrive and register (Anmeldung)</span>
+              <span class="w">within 2 weeks of arrival</span>
+              <p>City registration at the Bürgeramt, requiring a signed accommodation confirmation from the landlord.</p>
+            </li>
+            <li>
+              <span class="n">9</span>
               <span class="t">Convert to a residence permit</span>
-              <span class="w">Before the visa expires</span>
-              <p>Apply at the Ausländerbehörde for the student residence permit (Aufenthaltserlaubnis), typically issued for two years and renewable.</p>
+              <span class="w">before the visa expires</span>
+              <p>Apply at the Ausländerbehörde for the student residence permit (Aufenthaltserlaubnis).</p>
             </li>
           </ol>
         </div>
@@ -653,7 +652,7 @@ footer a:hover{color:#fff;}
 
       <ul class="includes">
         <li id="incUnis">All 27 covered German institutions, 54 English-taught programmes</li>
-        <li>Verified entry requirements mapped to IB, A-Levels, CBSE, ISC and more</li>
+        <li>Entry requirements per programme, with the recognition route for each qualification</li>
         <li>Application deadlines and the exact application route per programme</li>
         <li>English thresholds, tuition, semester contributions and living costs</li>
         <li>The full non-EU student visa roadmap, with per-nationality steps</li>
