@@ -46,6 +46,17 @@ const CONFIG = {
   TOTAL_INSTS:      389,
   TOTAL_PROGRAMMES: 977,
 
+  // country -> [programmes, institutions]. Drives the hero picker.
+  COUNTRY_DATA: {
+    "Germany":[61,29],"Netherlands":[105,30],"Hungary":[111,20],"Italy":[61,18],
+    "Denmark":[55,9],"UAE":[53,28],"Ireland":[43,12],"France":[38,25],"Finland":[35,11],
+    "Belgium":[34,17],"Sweden":[34,12],"Poland":[33,15],"Czechia":[29,10],"India":[28,25],
+    "Portugal":[26,17],"Austria":[26,12],"Switzerland":[21,11],"Romania":[21,9],
+    "Norway":[17,11],"Slovenia":[16,5],"Bulgaria":[15,9],"Iceland":[14,7],"Lithuania":[14,7],
+    "Estonia":[13,5],"Greece":[12,7],"Slovakia":[12,6],"Latvia":[11,6],"Croatia":[11,4],
+    "Cyprus":[11,6],"Luxembourg":[9,3],"Malta":[8,3]
+  },
+
   LAST_VERIFIED:    "25 August 2026",             // e.g. "August 2026" -> "; last checked August 2026". Blank hides it.
 
   /* ==========================================================================
@@ -394,6 +405,53 @@ dl.spec dt:first-of-type,dl.spec dd:first-of-type{border-top:none;}
 .track.c .badge{background:rgba(242,130,48,.16);color:#a5551b;}
 .track.d .badge{background:#eef1f5;color:#54606f;}
 
+/* ---------- Hero country picker ---------- */
+.heropick{margin:0 0 8px;}
+.heropick label{display:block;font-size:14px;font-weight:600;color:var(--ink);margin-bottom:10px;}
+.heropick-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
+.heropick select{
+  font-family:inherit;font-size:16px;color:var(--ink);background:#fff;cursor:pointer;
+  padding:15px 44px 15px 18px;border:1px solid var(--line);border-radius:var(--pill);
+  min-width:250px;appearance:none;box-shadow:var(--shadow-sm);
+  background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath fill='%23444b59' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 18px center;
+}
+.heropick select:focus{outline:2px solid var(--primary);outline-offset:1px;}
+.heropick-out{
+  display:none;margin:16px 0 0;font-size:15px;color:var(--ink);
+  background:#fff;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:0 10px 10px 0;padding:13px 18px;max-width:62ch;box-shadow:var(--shadow-sm);
+}
+.heropick-out.on{display:block;}
+.heropick-out b{color:var(--primary);}
+@media(max-width:700px){
+  .heropick select{width:100%;min-width:0;}
+  .heropick-row .btn{width:100%;}
+}
+
+/* ---------- Mid-page CTA ---------- */
+.midcta{
+  display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;
+  background:var(--primary-tint);border:1px solid rgba(43,79,227,.25);
+  border-radius:var(--radius);padding:26px 30px;
+}
+.midcta h3{font-size:19px;margin-bottom:4px;}
+.midcta p{font-size:14.5px;margin:0;max-width:56ch;}
+.midcta .btn{flex:none;}
+@media(max-width:640px){.midcta{padding:22px 20px;}.midcta .btn{width:100%;}}
+
+/* ---------- Sticky mobile CTA ---------- */
+.stickycta{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;padding:12px 16px
+    calc(12px + env(safe-area-inset-bottom,0px));
+  background:rgba(255,255,255,.94);
+  backdrop-filter:saturate(180%) blur(12px);
+  -webkit-backdrop-filter:saturate(180%) blur(12px);
+  border-top:1px solid var(--line);
+}
+.stickycta .btn{width:100%;padding:14px 24px;font-size:15.5px;}
+@media(min-width:761px){.stickycta{display:none!important;}}
+
 /* ---------- Stat strip ---------- */
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
   border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
@@ -541,7 +599,7 @@ footer a:hover{color:#fff;}
     <nav>
       <a href="#inside">What's inside</a>
       <a href="#sample">Sample</a>
-      <a href="#pricing">Early access</a>
+      <a href="#requestForm">Request access</a>
     </nav>
   </div>
 </header>
@@ -549,14 +607,23 @@ footer a:hover{color:#fff;}
 <!-- ============================ 1. HERO ============================ -->
 <div class="hero">
   <div class="wrap">
-    <div class="flag"><i></i> 31 countries · Germany verified first · early access</div>
+    <div class="flag"><i></i> 31 countries · Germany verified first · $99 per country</div>
     <h1>Everything your students need to apply abroad — <span class="accent">verified, current, per nationality.</span></h1>
     <p class="sub">
       Verified programme requirements, application deadlines, English-language thresholds,
       tuition, and the visa route for your student's specific nationality. Germany is the first
       country through verification — tell us which one you need next.
     </p>
-    <a class="btn btn-lg" href="#pricing">Tell us which country you need</a>
+    <div class="heropick">
+      <label for="heroCountry">Which country do your students ask about most?</label>
+      <div class="heropick-row">
+        <select id="heroCountry">
+          <option value="">Select a country…</option>
+        </select>
+        <a class="btn btn-lg" id="heroCta" href="#requestForm">Request access — $99 per country</a>
+      </div>
+      <p class="heropick-out" id="heroOut"></p>
+    </div>
     <p class="meta" id="heroMeta">31 countries · 389 institutions · 977 English-taught programmes · built from official sources</p>
   </div>
 </div>
@@ -1038,6 +1105,18 @@ footer a:hover{color:#fff;}
   </div>
 </section>
 
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="midcta">
+      <div>
+        <h3>That's one record. Which country do you need?</h3>
+        <p>Germany is verified. Thirty more are compiled and waiting — tell us which one matters to your students.</p>
+      </div>
+      <a class="btn" href="#requestForm">Request access — $99</a>
+    </div>
+  </div>
+</section>
+
 <!-- ============================ 5. PRICING ============================ -->
 <section class="tint" id="pricing">
   <div class="wrap">
@@ -1049,7 +1128,7 @@ footer a:hover{color:#fff;}
 
     <div class="price-card">
       <div class="amt" id="priceAmount">$99</div>
-      <p class="terms">Per country, one-off · <strong>nothing to pay now</strong></p>
+      <p class="terms">Per country, one-off · <strong>paid once your country is verified</strong></p>
 
       <ul class="includes">
         <li id="incUnis">Every covered institution and programme in your country</li>
@@ -1060,8 +1139,8 @@ footer a:hover{color:#fff;}
         <li>Delivered as a structured file you can filter per student</li>
       </ul>
 
-      <a class="btn btn-lg" id="buyBtn" href="#requestForm" style="width:100%;">Tell us which country you need</a>
-      <p class="fallback">Takes about 30 seconds. No payment is taken on this page.</p>
+      <a class="btn btn-lg" id="buyBtn" href="#requestForm" style="width:100%;">Request access — $99 per country</a>
+      <p class="fallback">Takes about 30 seconds. Payment details follow once your country is verified.</p>
     </div>
   </div>
 </section>
@@ -1089,14 +1168,14 @@ footer a:hover{color:#fff;}
       <div class="step3">
         <div class="n">3</div>
         <h4>You decide</h4>
-        <p>If it earns its keep it's $99 for that country. If it doesn't, tell us what's missing — right now that's the more useful answer for us.</p>
+        <p>If it earns its keep, it's $99 for that country and we'll send payment details. If it doesn't, tell us what's missing — that's genuinely the more useful answer for us.</p>
       </div>
     </div>
 
     <div style="margin-top:44px;">
       <div class="formwrap" id="requestForm">
-        <h3>Tell us which country you need</h3>
-        <p class="sub">One reply from me, usually same day. Nothing is charged from this page.</p>
+        <h3>Request access — $99 per country</h3>
+        <p class="sub">One reply from me, usually same day. Nothing is charged on this page — payment details follow once your country is verified and ready.</p>
 
         <!-- FormSubmit delivers straight to rahul@pavetheway.ai. No backend required.
              FIRST-RUN STEP: the very first submission triggers a one-time activation
@@ -1171,6 +1250,17 @@ footer a:hover{color:#fff;}
               </select>
             </div>
             <div class="field full">
+              <label for="f-pay">If this covered your country, verified, what would it be worth to you? <span class="req">*</span></label>
+              <select id="f-pay" name="Would pay" required>
+                <option value="">Select…</option>
+                <option>Nothing — I'd only use it if it were free</option>
+                <option>Up to $99 for one country</option>
+                <option>$100–299 for one country</option>
+                <option>$300+, or an annual price for several countries</option>
+                <option>I'd want to see it before saying</option>
+              </select>
+            </div>
+            <div class="field full">
               <label for="f-msg">Anything else? (optional)</label>
               <textarea id="f-msg" name="Notes" placeholder="Which countries your students ask about most, what you use today, what's missing…"></textarea>
             </div>
@@ -1178,7 +1268,7 @@ footer a:hover{color:#fff;}
 
           <button type="submit">Request early access</button>
           <p class="assure">
-            No payment is taken here. Prefer email? Write to
+            Nothing is charged today. Prefer email? Write to
             <a id="plainEmail" href="mailto:rahul@pavetheway.ai">rahul@pavetheway.ai</a> instead.
           </p>
         </form>
@@ -1211,6 +1301,11 @@ footer a:hover{color:#fff;}
     </div>
   </div>
 </section>
+
+<!-- sticky CTA, mobile only -->
+<div class="stickycta" id="stickyCta" hidden>
+  <a class="btn" href="#requestForm">Request access — $99 per country</a>
+</div>
 
 <!-- =========================== 7. FOOTER =========================== -->
 <footer>
@@ -1286,8 +1381,10 @@ footer a:hover{color:#fff;}
     }, { threshold: threshold });
     io.observe(el);
   }
-  watch(".sample",  "sample-viewed",  0.20);
-  watch("#pricing", "pricing-viewed", 0.30);
+  watch(".sample",       "sample-viewed",  0.20);
+  watch(".coverage",     "coverage-viewed",0.15);
+  watch("#pricing",      "pricing-viewed", 0.30);
+  watch("#requestForm",  "form-viewed",    0.30);   // did they even reach the form?
 
   /* ---- 4. mailto links, with the channel ref appended ---- */
   var body = CONFIG.MAIL_BODY;
@@ -1333,6 +1430,85 @@ footer a:hover{color:#fff;}
       "+ " + (CONFIG.UNI_COUNT - 1) + " more German institutions and " +
       (CONFIG.PROGRAMME_COUNT - 1) + " more programmes");
   set("verifiedDate", CONFIG.LAST_VERIFIED ? "; last checked " + CONFIG.LAST_VERIFIED : "");
+
+
+  /* ---- 7. hero country picker: the page's main question, asked first ------
+     Selecting a country records the interest even if the visitor never
+     submits the form. That is the point: country demand is the finding, and
+     this captures it from everyone rather than only from converters. ------ */
+  (function () {
+    var sel  = document.getElementById("heroCountry");
+    var out  = document.getElementById("heroOut");
+    var cta  = document.getElementById("heroCta");
+    if (!sel || typeof CONFIG.COUNTRY_DATA !== "object") return;
+
+    var names = Object.keys(CONFIG.COUNTRY_DATA).sort();
+    names.forEach(function (n) {
+      var o = document.createElement("option");
+      o.value = n; o.textContent = n;
+      sel.appendChild(o);
+    });
+    var other = document.createElement("option");
+    other.value = "__other"; other.textContent = "Another country…";
+    sel.appendChild(other);
+
+    var picked = {};
+    sel.addEventListener("change", function () {
+      var n = sel.value;
+      if (!n) { out.classList.remove("on"); return; }
+
+      if (n === "__other") {
+        out.innerHTML = "Tell us which one — <b>what you ask for is what we build next.</b>";
+        out.classList.add("on");
+        if (cta) cta.textContent = "Request access — $99 per country";
+        if (!picked.__other) { picked.__other = 1; track("country-interest-other"); }
+        setFormCountry("Another country — I'll say below");
+        return;
+      }
+
+      var d = CONFIG.COUNTRY_DATA[n];
+      var verified = (n === "Germany");
+      out.innerHTML = "<b>" + n + "</b> — " + d[0] + " programmes across " + d[1] +
+        " institutions already compiled. " +
+        (verified
+          ? "Germany is the country we've taken through verification, and the sample below is from it."
+          : "Not yet verified — tell us and it goes next in the queue.");
+      out.classList.add("on");
+      if (cta) cta.textContent = "Request " + n + " — $99";
+
+      setFormCountry(n);
+
+      var key = "country-interest-" + n.toLowerCase().replace(/[^a-z]+/g, "-");
+      if (!picked[key]) { picked[key] = 1; track(key); }
+    });
+
+    function setFormCountry(n) {
+      var f = document.getElementById("f-country");
+      if (!f) return;
+      for (var i = 0; i < f.options.length; i++) {
+        if (f.options[i].text === n) { f.selectedIndex = i; return; }
+      }
+    }
+  })();
+
+  /* ---- 8. sticky CTA on mobile, revealed once they are past the hero ---- */
+  (function () {
+    var bar = document.getElementById("stickyCta");
+    var form = document.getElementById("requestForm");
+    if (!bar || !("IntersectionObserver" in window)) return;
+    var hero = document.querySelector(".hero");
+    if (!hero) return;
+    new IntersectionObserver(function (e) {
+      // show once the hero has scrolled away, hide again over the form itself
+      bar.hidden = e[0].isIntersecting;
+    }, { threshold: 0 }).observe(hero);
+    if (form) {
+      new IntersectionObserver(function (e) {
+        if (e[0].isIntersecting) bar.hidden = true;
+      }, { threshold: 0.2 }).observe(form);
+    }
+    bar.querySelector("a").addEventListener("click", function () { track("sticky-cta-click"); });
+  })();
 
   /* ---- 6. nationality picker: filters the visa timeline by passport ---- */
   (function () {
