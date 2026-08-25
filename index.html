@@ -76,6 +76,48 @@ const CONFIG = {
      off. Set false to drop that line. */
   TAG_EMAIL_WITH_SOURCE: true
 };
+
+/* ============================================================================
+   NATIONALITY  ->  VISA TRACK
+   Add or move a country here and the picker in the sample updates itself.
+     a = EU / EEA / Switzerland ....... no visa, no residence permit
+     b = visa-free entry .............. permit obtained inside Germany
+     c = APS required ................. Type D visa + APS certificate
+     d = standard non-EU .............. Type D visa, no APS
+   Tracks a, b and c are closed lists fixed by law/policy and verified
+   25 Aug 2026. Track d is everyone else — the list below is only the
+   countries counsellors ask about most, and "Other" covers the rest.
+   ========================================================================= */
+const TRACKS = {
+  a: { name: "EU / EEA / Switzerland", countries: [
+       "Austria","Belgium","Bulgaria","Croatia","Cyprus","Czechia","Denmark","Estonia",
+       "Finland","France","Germany","Greece","Hungary","Iceland","Ireland","Italy",
+       "Latvia","Liechtenstein","Lithuania","Luxembourg","Malta","Netherlands","Norway",
+       "Poland","Portugal","Romania","Slovakia","Slovenia","Spain","Sweden","Switzerland"] },
+
+  b: { name: "Visa-free entry, permit obtained in Germany", countries: [
+       "Australia","Canada","Israel","Japan","New Zealand","South Korea",
+       "United Kingdom","United States"] },
+
+  c: { name: "Type D visa + APS certificate", countries: [
+       "China","India","Mongolia","Vietnam"] },
+
+  d: { name: "Type D visa, no APS", countries: [
+       "Algeria","Argentina","Bahrain","Bangladesh","Brazil","Colombia","Egypt","Ethiopia",
+       "Ghana","Indonesia","Iraq","Jordan","Kazakhstan","Kenya","Kuwait","Lebanon","Malaysia",
+       "Mexico","Morocco","Nepal","Nigeria","Oman","Pakistan","Philippines","Qatar",
+       "Saudi Arabia","South Africa","Sri Lanka","Tanzania","Thailand","Tunisia","Turkey",
+       "Uganda","Ukraine","United Arab Emirates","Uzbekistan","Other (non-EU)"] }
+};
+
+/* One-line summary shown when a nationality is picked. */
+const TRACK_SUMMARY = {
+  a: "No visa and no residence permit. Enrol, arrange health insurance, and register the address within two weeks of arrival.",
+  b: "No visa needed to enter. Your student travels first, then applies for the residence permit inside Germany within 90 days — this skips the embassy appointment entirely.",
+  c: "Full Type D visa, and an APS certificate must come first — allow four weeks to three months. Indian Master's applicants from Engineering, Commerce, Finance, Economics or Business also need dMAT from Summer Semester 2027.",
+  d: "Standard Type D student visa. No APS. The variable that matters most is appointment availability at your student's local German mission."
+};
+
 </script>
 
 <style>
@@ -305,6 +347,30 @@ dl.spec dt:first-of-type,dl.spec dd:first-of-type{border-top:none;}
   background:rgba(0,183,194,.12);padding:3px 10px;border-radius:var(--pill);margin-bottom:7px;
 }
 .timeline p{font-size:14px;margin:0;}
+
+/* ---------- Nationality picker ---------- */
+.natpick{
+  background:var(--muted);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:16px 18px;margin:0 0 20px;
+}
+.natpick label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:8px;}
+.natpick select{
+  width:100%;max-width:380px;font-family:inherit;font-size:15px;color:var(--ink);
+  padding:11px 14px;border:1px solid var(--line);border-radius:var(--pill);
+  background:#fff;cursor:pointer;appearance:none;
+  background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath fill='%23444b59' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 16px center;
+}
+.natpick select:focus{outline:2px solid var(--primary);outline-offset:1px;}
+.natresult{
+  font-size:14px;margin:12px 0 0;color:var(--ink);display:none;
+  padding-left:13px;border-left:3px solid var(--primary);
+}
+.natresult.on{display:block;}
+.natresult b{color:var(--primary);}
+.timeline li[hidden]{display:none;}
+.track.dim{opacity:.42;}
+.track.active{border-color:var(--primary);box-shadow:0 0 0 3px rgba(43,79,227,.13);}
 
 /* ---------- Nationality tracks ---------- */
 .tracks{display:grid;gap:14px;}
@@ -562,61 +628,68 @@ footer a:hover{color:#fff;}
         </div>
 
         <div class="block">
-          <h4>Student visa process — non-EU applicant</h4>
+          <h4 id="visaHeading">Student visa process — non-EU applicant</h4>
+          <div class="natpick" id="natPick" hidden>
+            <label for="natSelect">Check your student's nationality</label>
+            <select id="natSelect">
+              <option value="">Show the standard non-EU route</option>
+            </select>
+            <p class="natresult" id="natResult"></p>
+          </div>
           <ol class="timeline">
-            <li>
+            <li data-tracks="c">
               <span class="n">1</span>
-              <span class="t">APS certificate (India and China only)</span>
+              <span class="t">APS certificate</span>
               <span class="w">4–8 weeks</span>
               <p>Academic Evaluation Centre verification. Required for the visa and commonly for admission too, so it belongs at the very start of the timeline.</p>
             </li>
-            <li>
+            <li data-tracks="a b c d">
               <span class="n">2</span>
               <span class="t">Admission letter (Zulassungsbescheid)</span>
               <span class="w">after the July deadline</span>
               <p>Conditional offers are not accepted for the visa file — it must be the formal admission decision.</p>
             </li>
-            <li>
+            <li data-tracks="b c d">
               <span class="n">3</span>
               <span class="t">Open a blocked account (Sperrkonto)</span>
               <span class="w">1–2 weeks</span>
               <p>EUR 11,904 for one year, released at EUR 992 per month. Unchanged for 2026, but revised annually — always re-check. A parental guarantee (Verpflichtungserklärung) is the main alternative.</p>
             </li>
-            <li>
+            <li data-tracks="a b c d">
               <span class="n">4</span>
               <span class="t">Arrange German health insurance</span>
               <span class="w">3–7 days</span>
               <p>Public insurer confirmation (TK, AOK or similar) for enrolled students, plus travel cover for the arrival gap.</p>
             </li>
-            <li>
+            <li data-tracks="c d">
               <span class="n">5</span>
               <span class="t">Book the visa appointment</span>
               <span class="w">2–12 weeks wait</span>
               <p>The real bottleneck. Availability at the German mission varies sharply by country and season — book the moment admission lands, not once documents are complete.</p>
             </li>
-            <li>
+            <li data-tracks="c d">
               <span class="n">6</span>
               <span class="t">Submit the national visa (Type D) application</span>
               <span class="w">appointment day</span>
               <p>Passport, admission letter, blocked-account confirmation, insurance, transcripts, CV, motivation letter, biometric photos, and the APS certificate where it applies. Fee EUR 75.</p>
             </li>
-            <li>
+            <li data-tracks="c d">
               <span class="n">7</span>
               <span class="t">Visa processing</span>
               <span class="w">4–8 weeks</span>
               <p>End to end — APS, admission, appointment and processing — the realistic span is three to six months. That is why a July deadline becomes a tight October start.</p>
             </li>
-            <li>
+            <li data-tracks="a b c d">
               <span class="n">8</span>
               <span class="t">Arrive and register (Anmeldung)</span>
               <span class="w">within 2 weeks of arrival</span>
               <p>City registration at the Bürgeramt, requiring a signed accommodation confirmation from the landlord.</p>
             </li>
-            <li>
+            <li data-tracks="b c d">
               <span class="n">9</span>
               <span class="t">Convert to a residence permit</span>
               <span class="w">before the visa expires</span>
-              <p>Apply at the Ausländerbehörde for the student residence permit (Aufenthaltserlaubnis).</p>
+              <p>Apply at the Ausländerbehörde for the student residence permit (Aufenthaltserlaubnis) — before the visa expires, or within 90 days of arrival if your student entered visa-free.</p>
             </li>
           </ol>
         </div>
@@ -865,6 +938,79 @@ footer a:hover{color:#fff;}
       "+ " + (CONFIG.UNI_COUNT - 1) + " more German institutions and " +
       (CONFIG.PROGRAMME_COUNT - 1) + " more programmes");
   set("verifiedDate", CONFIG.LAST_VERIFIED ? "; last checked " + CONFIG.LAST_VERIFIED : "");
+
+  /* ---- 6. nationality picker: filters the visa timeline by passport ---- */
+  (function () {
+    var sel = document.getElementById("natSelect");
+    var pick = document.getElementById("natPick");
+    var out = document.getElementById("natResult");
+    var heading = document.getElementById("visaHeading");
+    if (!sel || !pick || typeof TRACKS === "undefined") return;
+
+    // build the option list from TRACKS, alphabetically
+    var all = [];
+    Object.keys(TRACKS).forEach(function (k) {
+      TRACKS[k].countries.forEach(function (c) { all.push({ name: c, track: k }); });
+    });
+    all.sort(function (x, y) {
+      if (x.name === "Other (non-EU)") return 1;
+      if (y.name === "Other (non-EU)") return -1;
+      return x.name.localeCompare(y.name);
+    });
+    all.forEach(function (c) {
+      var o = document.createElement("option");
+      o.value = c.track; o.textContent = c.name; o.dataset.country = c.name;
+      sel.appendChild(o);
+    });
+    pick.hidden = false;   // only reveal once it actually works
+
+    var steps = Array.prototype.slice.call(
+      document.querySelectorAll(".timeline li[data-tracks]"));
+    var cards = Array.prototype.slice.call(document.querySelectorAll(".track"));
+
+    function apply(track, country) {
+      // show only the steps that apply, and renumber them
+      var n = 0;
+      steps.forEach(function (li) {
+        var on = !track || li.getAttribute("data-tracks").split(" ").indexOf(track) > -1;
+        li.hidden = !on;
+        if (on) { n++; var b = li.querySelector(".n"); if (b) b.textContent = n; }
+      });
+
+      // highlight the matching track card
+      cards.forEach(function (c) {
+        if (!track) { c.classList.remove("dim", "active"); return; }
+        var mine = c.className.indexOf("track " + track) > -1 ||
+                   c.classList.contains(track);
+        c.classList.toggle("active", mine);
+        c.classList.toggle("dim", !mine);
+      });
+
+      if (track) {
+        out.innerHTML = "<b>" + country + "</b> — " + TRACK_SUMMARY[track] +
+                        " <b>" + n + " steps.</b>";
+        out.classList.add("on");
+        if (heading) heading.textContent = "Student visa process — " + country;
+        track_event(track, country);
+      } else {
+        out.classList.remove("on");
+        if (heading) heading.textContent = "Student visa process — non-EU applicant";
+      }
+    }
+
+    var seen = {};
+    function track_event(t, country) {
+      var key = "nationality-" + country.toLowerCase().replace(/[^a-z]+/g, "-");
+      if (seen[key]) return;
+      seen[key] = true;
+      track(key);                     // which passports counsellors actually check
+    }
+
+    sel.addEventListener("change", function () {
+      var o = sel.options[sel.selectedIndex];
+      apply(sel.value, o ? o.dataset.country : "");
+    });
+  })();
 })();
 </script>
 
