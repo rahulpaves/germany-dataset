@@ -306,6 +306,21 @@ dl.spec dt:first-of-type,dl.spec dd:first-of-type{border-top:none;}
 }
 .timeline p{font-size:14px;margin:0;}
 
+/* ---------- Nationality tracks ---------- */
+.tracks{display:grid;gap:14px;}
+.track{border:1px solid var(--line);border-radius:var(--radius-sm);padding:18px 20px;background:#fff;}
+.track .badge{
+  display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;padding:4px 10px;border-radius:var(--pill);margin-bottom:9px;
+}
+.track h5{margin:0 0 5px;font-size:15.5px;color:var(--ink);font-weight:600;}
+.track .who{font-size:13px;color:var(--body);opacity:.85;margin:0 0 9px;line-height:1.5;}
+.track p{font-size:14px;margin:0;}
+.track.a .badge{background:rgba(0,183,194,.14);color:#0b7f87;}
+.track.b .badge{background:var(--primary-tint);color:var(--primary);}
+.track.c .badge{background:rgba(242,130,48,.16);color:#a5551b;}
+.track.d .badge{background:#eef1f5;color:#54606f;}
+
 /* ---------- Locked ---------- */
 .locked{margin-top:30px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;position:relative;box-shadow:var(--shadow-sm);}
 .locked-list{padding:26px 30px 46px;filter:blur(4.5px);user-select:none;pointer-events:none;opacity:.7;}
@@ -452,7 +467,7 @@ footer a:hover{color:#fff;}
       <div class="card">
         <div class="ico">06</div>
         <h3>Full student visa process</h3>
-        <p>The complete non-EU national visa (Type D) sequence: documents, blocked account, appointment lead times, fees, and post-arrival residence permit.</p>
+        <p>The visa route per nationality — who needs a Type D visa, who needs APS, and who can skip the embassy entirely — with documents, blocked account, lead times and fees.</p>
       </div>
     </div>
 
@@ -604,6 +619,41 @@ footer a:hover{color:#fff;}
               <p>Apply at the Ausländerbehörde for the student residence permit (Aufenthaltserlaubnis).</p>
             </li>
           </ol>
+        </div>
+
+        <div class="block">
+          <h4>Same programme — four different paths, by nationality</h4>
+          <p style="font-size:14.5px;margin:-4px 0 16px;">The timeline above is the standard non-EU route. Which steps actually apply depends entirely on the passport your student holds.</p>
+          <div class="tracks">
+
+            <div class="track a">
+              <span class="badge">No visa, no permit</span>
+              <h5>EU / EEA / Switzerland</h5>
+              <p class="who">All EU member states, plus Iceland, Liechtenstein, Norway and Switzerland.</p>
+              <p>Freedom of movement applies. No visa, no residence permit, no blocked account. Enrol, then register the address (Anmeldung) within two weeks of arrival. That is the entire process.</p>
+            </div>
+
+            <div class="track b">
+              <span class="badge">Visa-free entry, permit obtained in Germany</span>
+              <h5>The privileged eight</h5>
+              <p class="who">Australia, Canada, Israel, Japan, New Zealand, Republic of Korea, United Kingdom, United States.</p>
+              <p>Your student may enter Germany without a visa and apply for the residence permit at the local Ausländerbehörde within the first 90 days. This removes the embassy appointment entirely — which is the single biggest bottleneck in the standard route. Financial proof and health insurance are still required, just presented in Germany rather than beforehand.</p>
+            </div>
+
+            <div class="track c">
+              <span class="badge">Type D visa + APS</span>
+              <h5>APS countries</h5>
+              <p class="who">India, China, Vietnam and Mongolia.</p>
+              <p>The full Type D chain, preceded by an APS certificate from the Academic Evaluation Centre — without it there is no student visa. Budget four weeks to three months, and roughly INR 18,000 in India. <strong>New for Summer Semester 2027:</strong> Indian Master's applicants coming from Engineering, Commerce, Accounting, Finance, Economics, Business or Management must also submit a dMAT certificate alongside APS.</p>
+            </div>
+
+            <div class="track d">
+              <span class="badge">Type D visa, no APS</span>
+              <h5>All other non-EU nationalities</h5>
+              <p>The standard nine-step route above, without the APS stage. The variable that matters most is appointment availability at your student's local German mission, which swings from a fortnight to three months by country and season.</p>
+            </div>
+
+          </div>
         </div>
 
       </div><!-- /sample-body -->
