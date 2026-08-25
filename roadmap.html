@@ -320,60 +320,93 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);
     var L = CFG.LEAD, steps = [], warnings = [];
     function add(date, title, who, note){ steps.push({d:date,t:title,who:who,n:note}); }
 
+    var DE = /germany/i.test(picked.country);   // German-specific facts only apply to Germany
+
     /* --- before the deadline --- */
     if (t && t.key === "c"){
       add(addWeeks(deadline, -(L.aps.max + 4)), "Start the APS certificate", "student",
-        "Academic Evaluation Centre verification — "+L.aps.min+"–"+L.aps.max+" weeks, and required before the visa. For Indian Master's applicants from Engineering, Commerce, Finance, Economics or Business, a dMAT certificate is also required from Summer Semester 2027.");
+        "Academic Evaluation Centre verification — "+L.aps.min+"\u2013"+L.aps.max+" weeks, and required before the visa. Indian Master's applicants from Engineering, Commerce, Finance, Economics or Business also need a dMAT certificate from Summer Semester 2027.");
     }
     add(addWeeks(deadline, -12), "Book and sit the English test", "student",
       picked.english && !/^n\/?a$/i.test(picked.english) ? picked.english : "Check the programme's current requirement.");
     add(addWeeks(deadline, -10), "Gather and attest documents", "student",
-      "Transcripts, passport, certificates. Attestation can take longer than expected — start early.");
+      "Transcripts, passport, certificates. Attestation often takes longer than expected \u2014 start early.");
+
+    /* entrance exam / selection stage, straight from the record */
+    if (picked.selection && !/^n\/?a$/i.test(picked.selection)){
+      var isExam = /exam|test|interview|assessment|aptitude/i.test(picked.selection);
+      add(addWeeks(deadline, -6),
+        isExam ? "Selection stage: " + picked.selection : "Selection requirement",
+        "student",
+        picked.selection + ". Confirm the sitting dates and locations directly with the university \u2014 many run several rounds, and places fill as they go.");
+    }
+
     if (t && t.key !== "a"){
       add(addWeeks(deadline, -8), "Submit for credential recognition", "counsellor",
-        "Where the country requires it — uni-assist VPD in Germany, or the local equivalent. Allow "+L.recognition.min+"–"+L.recognition.max+" weeks.");
+        DE ? "Germany requires a uni-assist preliminary review (VPD) before the university will assess the file. Allow "+L.recognition.min+"\u2013"+L.recognition.max+" weeks."
+           : "Check whether "+picked.country+" requires a recognition or equivalence step for this qualification, and allow "+L.recognition.min+"\u2013"+L.recognition.max+" weeks if it does.");
     }
     add(addWeeks(deadline, -3), "Complete and review the application", "counsellor",
       picked.apply && !/^n\/?a$/i.test(picked.apply) ? picked.apply : "Submit through the university's own portal.");
     add(deadline, "APPLICATION DEADLINE", "student",
       "Everything must be submitted by this date.");
 
-    /* --- after the deadline --- */
+    /* --- after the deadline: chained so nothing can precede its cause --- */
     var decision = addWeeks(deadline, L.decision.max);
     add(decision, "Admission decision expected", "counsellor",
-      "Nothing in the visa chain can begin without the formal offer. Conditional offers are usually not accepted for a visa file.");
+      "Nothing in the visa chain can begin without the formal offer.");
+
+    var travel, ready = decision;
 
     if (t && t.key === "a"){
       add(addWeeks(decision, 1), "Arrange health insurance", "student",
         "Required for enrolment. No visa and no residence permit needed.");
-      add(addWeeks(intake, -2), "Travel and register your address", "student",
-        "Register with the local authority within two weeks of arriving.");
+      travel = addWeeks(intake, -2);
+      add(travel, "Travel", "student", "Freedom of movement \u2014 no visa required.");
+      add(addWeeks(travel, 2), "Register your address", "student",
+        "Within two weeks of arriving.");
     } else if (t && t.key === "b"){
-      add(addWeeks(decision, L.finance.max), "Arrange proof of funds", "student",
-        "Presented in-country rather than at an embassy.");
-      add(addWeeks(decision, L.finance.max + 1), "Arrange health insurance", "student", "");
-      add(addWeeks(intake, -2), "Travel — no visa needed", "student",
+      ready = addWeeks(decision, L.finance.max);
+      add(ready, "Arrange proof of funds and insurance", "student",
+        "Presented in "+picked.country+" rather than at an embassy.");
+      travel = addWeeks(intake, -2);
+      add(travel, "Travel \u2014 no visa needed", "student",
         "Enters visa-free and applies for the residence permit after arrival.");
-      add(addWeeks(intake, 1), "Apply for the residence permit", "student",
+      add(addWeeks(travel, 3), "Apply for the residence permit", "student",
         "At the local immigration office, within 90 days of arrival.");
     } else if (t){
-      var fin = addWeeks(decision, L.finance.max);
-      add(fin, "Open the blocked account / prove funds", "student",
-        "Germany: EUR 11,904 for the year, released at EUR 992 a month. Re-check the figure — it is revised annually.");
-      add(addWeeks(fin, 1), "Arrange health insurance", "student", "");
       add(addWeeks(decision, 1), "Book the visa appointment NOW", "counsellor",
-        "The single worst bottleneck. Waits run "+L.appointment.min+"–"+L.appointment.max+" weeks depending on the mission. Book the day the offer lands, not once documents are ready.");
+        "The worst bottleneck in the whole plan. Waits run "+L.appointment.min+"\u2013"+L.appointment.max+
+        " weeks depending on the mission. Book the day the offer lands, not once documents are ready.");
+
+      var fin = addWeeks(decision, L.finance.max);
+      add(fin, "Prove funds for the year", "student",
+        DE ? "Germany: a blocked account of EUR 11,904, released at EUR 992 a month. The figure is revised annually \u2014 re-check it."
+           : "Confirm what "+picked.country+" requires as proof of funds and in what form. Living costs on this record: "+
+             ((picked.liveLo && picked.liveHi) ? picked.liveLo+" \u2013 "+picked.liveHi : "not stated")+".");
+      add(addWeeks(fin, 1), "Arrange health insurance", "student", "");
+
       var appt = addWeeks(decision, 1 + L.appointment.max);
       add(appt, "Attend the visa appointment", "student",
-        "Passport, offer, proof of funds, insurance, transcripts, CV, motivation letter, photos"+(t.key==="c"?", APS certificate":"")+". Fee around EUR 75 in Germany.");
+        "Passport, offer, proof of funds, insurance, transcripts, CV, motivation letter, photos"+
+        (t.key === "c" ? ", APS certificate" : "")+". "+
+        (DE ? "Fee around EUR 75." : "Confirm the fee with the "+picked.country+" mission."));
+
       var visaDone = addWeeks(appt, L.visaProcessing.max);
       add(visaDone, "Visa decision expected", "counsellor",
-        "Processing runs "+L.visaProcessing.min+"–"+L.visaProcessing.max+" weeks after the appointment.");
-      add(addWeeks(intake, -2), "Travel and register your address", "student", "");
-      add(addWeeks(intake, 4), "Convert to a residence permit", "student",
+        "Processing runs "+L.visaProcessing.min+"\u2013"+L.visaProcessing.max+" weeks after the appointment.");
+
+      /* travel can never precede the visa being granted */
+      travel = new Date(Math.max(addWeeks(visaDone, 1).getTime(), addWeeks(intake, -2).getTime()));
+      add(travel, "Travel and register your address", "student",
+        "Register with the local authority within two weeks of arriving.");
+      add(addWeeks(travel, 6), "Convert to a residence permit", "student",
         "Before the entry visa expires.");
-      if (visaDone > intake){
-        warnings.push("The visa chain does not fit before the intake. On these lead times the visa decision lands around "+fmtLong(visaDone)+", after a start date of "+fmtLong(intake)+". Either bring the application forward or plan for the following intake.");
+
+      if (visaDone > addWeeks(intake, -1)){
+        warnings.push("On these lead times the visa decision lands around "+fmtLong(visaDone)+
+          ", but the programme starts "+fmtLong(intake)+". The chain does not fit. Either the university must decide faster than "+
+          L.decision.max+" weeks, or "+(name||"the student")+" starts late \u2014 confirm the real decision date with the university before relying on this intake.");
       }
     }
 
