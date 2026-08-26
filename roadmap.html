@@ -36,6 +36,65 @@ const CFG = {
   }
 };
 
+/* ===========================================================================
+   VERIFIED PAIRS  —  destination country x student nationality
+   Only pairs listed here have been checked against source. Everything else
+   falls back to the generic four-track model and is labelled as such on the
+   plan, so nobody mistakes an estimate for a verified route.
+
+   Germany x India verified 25 Aug 2026 against: Anabin evaluation criteria
+   (updated 15 Mar 2026), APS India, TestAS, uni-assist, German missions in
+   India / VFS Global, and Federal Foreign Office financial-proof guidance.
+   ======================================================================== */
+const PAIRS = {
+  "Germany|India": {
+    verified: "25 August 2026",
+
+    /* Checked BEFORE any dates matter — if these fail, the timeline is moot. */
+    gates: [
+      { t: "Class XII must be 70% or above",
+        d: "From Winter Semester 2026/27 the Anabin criteria require at least 70% of the maximum achievable marks in Class XII — the same threshold for CBSE, ICSE and every state board. Below that, the application will not be assessed." },
+      { t: "Indian Class XII alone does not qualify for direct entry",
+        d: "Class XII is not rated equivalent to the German Abitur, so most Indian students cannot enter a German bachelor's directly after school. The usual routes are: a Studienkolleg foundation year ending in the Feststellungsprüfung; a qualifying JEE Advanced rank for direct subject-specific application; or one completed year at a recognised Indian university. Confirm which route this university accepts before building a timeline." },
+      { t: "TestAS is required unless JEE exempts them",
+        d: "Required for Indian undergraduate applicants who do not already hold an Indian bachelor's degree. Students who have cleared JEE Main and JEE Advanced are exempt; JEE Main alone exempts from TestAS at many institutions. TestAS runs on fixed sitting dates — check the calendar early, because it constrains everything after it." }
+    ],
+
+    /* Dated steps. before = weeks before the deadline; after = weeks after the
+       admission decision. Everything else is chained in code. */
+    before: [
+      { w: 36, t: "Sit TestAS (unless JEE-exempt)", who: "student",
+        d: "Fixed sitting dates only, a handful of times a year. Book the sitting first and work the rest of the plan around it." },
+      { w: 32, t: "Apply for the APS certificate", who: "student",
+        d: "Mandatory for every Indian applicant and a prerequisite for the student visa. Fee INR 18,000, and it takes roughly 4 to 12 weeks. Once issued it is valid indefinitely and can be reused for every German application." },
+      { w: 20, t: "Apply to Studienkolleg, if that is the route", who: "counsellor",
+        d: "Studienkolleg has its own separate deadline, usually earlier than the university's. Missing it costs a full year." },
+      { w: 16, t: "Book and sit IELTS or TOEFL", who: "student", d: "" },
+      { w: 12, t: "Submit documents to uni-assist for the VPD", who: "counsellor",
+        d: "Most German universities require the uni-assist preliminary review before they will assess the file. Allow 4 to 6 weeks, longer in peak season." },
+      { w: 4, t: "Complete and review the application", who: "counsellor",
+        d: "Through the university's own portal or uni-assist, depending on the institution." }
+    ],
+
+    after: [
+      { w: 0, t: "Register on the Consular Services Portal", who: "student",
+        d: "Germany's visa application portal. Do this the day the offer arrives — the appointment queue is the real constraint." },
+      { w: 1, t: "Book the VFS visa appointment NOW", who: "counsellor", key: "appointment",
+        d: "The single worst bottleneck. Waits run 4 to 16 weeks in peak months, and slots typically open only 6 to 8 weeks ahead. Missions: the Embassy in New Delhi plus consulates in Mumbai, Chennai, Bengaluru and Kolkata, with VFS Global taking biometrics." },
+      { w: 2, t: "Open the blocked account", who: "student",
+        d: "EUR 11,904 for the year, released at EUR 992 a month. Unchanged for 2026 but revised annually — re-check before relying on it. A parental Verpflichtungserklärung is the main alternative." },
+      { w: 3, t: "Arrange German health insurance", who: "student",
+        d: "Public insurer confirmation (TK, AOK or similar) for enrolled students." }
+    ],
+
+    apptWait:   { min: 4, max: 16 },
+    processing: { min: 4, max: 12 },
+    fee: "EUR 75",
+    apptDocs: "Passport, admission letter, APS certificate, blocked-account confirmation, health insurance, Class XII and any degree transcripts, TestAS or JEE evidence, CV, motivation letter, biometric photos.",
+    startEarly: "Begin the whole process 3 to 5 months before the semester starts."
+  }
+};
+
 /* Visa tracks — the same four verified routes used across the site. */
 const TRACKS = {
   a:{key:"a",name:"EU / EEA / Switzerland",
@@ -144,6 +203,15 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);
 .alert.warn{background:var(--warn-bg);border:1px solid var(--warn-line);color:#7d1a15;}
 .alert.ok{background:var(--ok-bg);border:1px solid #bfe3d3;color:#12543b;}
 .alert b{display:block;margin-bottom:3px;color:inherit;}
+
+.gates{margin-top:20px;border:1px solid var(--line);border-radius:var(--radius-sm);
+  background:var(--muted);padding:18px 20px;}
+.gates h3{font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--warn);margin-bottom:14px;}
+.gate{border-left:3px solid var(--orange);padding-left:14px;margin-bottom:14px;}
+.gate:last-child{margin-bottom:0;}
+.gate b{display:block;color:var(--ink);font-size:15px;margin-bottom:3px;}
+.gate p{font-size:13.5px;margin:0;}
 
 .tl{list-style:none;margin:24px 0 0;padding:0;}
 .tl li{position:relative;padding:0 0 22px 74px;border-left:2px solid var(--line);margin-left:64px;}
@@ -320,7 +388,52 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);
     var L = CFG.LEAD, steps = [], warnings = [];
     function add(date, title, who, note){ steps.push({d:date,t:title,who:who,n:note}); }
 
-    var DE = /germany/i.test(picked.country);   // German-specific facts only apply to Germany
+    var DE = /germany/i.test(picked.country);
+    var pair = PAIRS[picked.country + "|" + nat] || null;
+
+    /* ---- verified destination x nationality path ---- */
+    if (pair){
+      pair.before.forEach(function(st){
+        add(addWeeks(deadline, -st.w), st.t, st.who, st.d);
+      });
+      add(deadline, "APPLICATION DEADLINE", "student", "Everything must be submitted by this date.");
+
+      var dec = addWeeks(deadline, L.decision.max);
+      add(dec, "Admission decision expected", "counsellor",
+        "Nothing in the visa chain can begin without the formal offer.");
+
+      var apptBooked = dec;
+      pair.after.forEach(function(st){
+        var when = addWeeks(dec, st.w);
+        if (st.key === "appointment") apptBooked = when;
+        add(when, st.t, st.who, st.d);
+      });
+
+      var appt = addWeeks(apptBooked, pair.apptWait.max);
+      add(appt, "Attend the visa appointment", "student",
+        pair.apptDocs + " Fee " + pair.fee + ".");
+      var done = addWeeks(appt, pair.processing.max);
+      add(done, "Visa decision expected", "counsellor",
+        "Processing runs " + pair.processing.min + "\u2013" + pair.processing.max +
+        " weeks from submission at the mission. " + pair.startEarly);
+
+      var tr = new Date(Math.max(addWeeks(done, 1).getTime(), addWeeks(intake, -2).getTime()));
+      add(tr, "Travel to Germany", "student", "");
+      add(addWeeks(tr, 2), "Register your address (Anmeldung)", "student",
+        "At the Bürgeramt within two weeks of arriving. Needs a signed accommodation confirmation.");
+      add(addWeeks(tr, 6), "Apply for the residence permit", "student",
+        "At the Ausländerbehörde, before the entry visa expires.");
+
+      if (done > addWeeks(intake, -1)){
+        warnings.push("On these lead times the visa decision lands around " + fmtLong(done) +
+          ", but the programme starts " + fmtLong(intake) + ". The chain does not fit \u2014 bring the application forward, or plan for the next intake.");
+      }
+      steps.sort(function(a,b){ return a.d - b.d; });
+      render(picked, name, nat, t, steps, warnings, deadline, intake, pair);
+      track("roadmap-generated-verified");
+      return;
+    }
+
 
     /* --- before the deadline --- */
     if (t && t.key === "c"){
@@ -429,7 +542,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);
     track("roadmap-generated");
   }
 
-  function render(d, name, nat, t, steps, warnings, deadline, intake){
+  function render(d, name, nat, t, steps, warnings, deadline, intake, pair){
     var who = name ? name : "this student";
     var html = '<div class="plan"><div class="plan-head">'+
       '<div class="who">Application roadmap'+(name ? " · "+esc(name) : "")+'</div>'+
@@ -437,10 +550,25 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);
       '<p>'+esc(d.institution)+' · '+esc(d.city||"")+', '+esc(d.country)+
       (nat ? ' &nbsp;·&nbsp; '+esc(nat)+' passport' : '')+'</p></div><div class="plan-body">';
 
+    if (pair){
+      html += '<div class="alert ok" style="margin-bottom:0;"><b>Verified route</b>'+
+        esc(d.country)+' for an '+esc(nat)+' national — checked against source on '+
+        esc(pair.verified)+'. Dates below use real lead times for this pair, not defaults.</div>';
+      html += '<div class="gates"><h3>Check these before the dates matter</h3>';
+      pair.gates.forEach(function(g){
+        html += '<div class="gate"><b>'+esc(g.t)+'</b><p>'+esc(g.d)+'</p></div>';
+      });
+      html += '</div>';
+    } else if (nat){
+      html += '<div class="alert warn"><b>Estimated route, not verified</b>'+
+        'We have not verified '+esc(d.country)+' for an '+esc(nat)+
+        ' national. These steps come from the general model — confirm each one at source before advising.</div>';
+    }
+
     warnings.forEach(function(w){
       html += '<div class="alert warn"><b>Timing conflict</b>'+esc(w)+'</div>';
     });
-    if (!warnings.length && nat){
+    if (!warnings.length && nat && !pair){
       html += '<div class="alert ok"><b>No timing conflicts found</b>On these lead times, '+esc(who)+
               ' can make the '+esc(fmtLong(deadline))+' deadline and start on time.</div>';
     }

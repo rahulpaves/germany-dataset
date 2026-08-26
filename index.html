@@ -23,7 +23,7 @@
    Change a value here and it updates everywhere on the page.
    ========================================================================= */
 const CONFIG = {
-  PRICE:            "$99",          // full Germany dataset, one-off
+  PRICE:            "$40",          // per month, all countries. Matches search.html + roadmap.html.
   EMAIL:            "rahul@pavetheway.ai",
   MAIL_SUBJECT:     "Country data - early access",
   MAIL_BODY:
@@ -43,8 +43,8 @@ const CONFIG = {
 
   // Whole-library totals across the 31 countries in COUNTRIES below.
   TOTAL_COUNTRIES:  31,
-  TOTAL_INSTS:      389,
-  TOTAL_PROGRAMMES: 977,
+  TOTAL_INSTS:      393,
+  TOTAL_PROGRAMMES: 980,
 
   // country -> [programmes, institutions]. Drives the hero picker.
   COUNTRY_DATA: {
@@ -609,7 +609,7 @@ footer a:hover{color:#fff;}
 <!-- ============================ 1. HERO ============================ -->
 <div class="hero">
   <div class="wrap">
-    <div class="flag"><i></i> 31 countries · Germany verified first · $99 per country</div>
+    <div class="flag"><i></i> 31 countries · 980 programmes · $40 a month</div>
     <h1>Everything your students need to apply abroad — <span class="accent">verified, current, per nationality.</span></h1>
     <p class="sub">
       Verified programme requirements, application deadlines, English-language thresholds,
@@ -627,14 +627,14 @@ footer a:hover{color:#fff;}
       <p class="heropick-out" id="heroOut"></p>
       <p style="font-size:13.5px;margin:14px 0 0;opacity:.8;">Free to search all 980 programmes · $40/month for unlimited roadmaps</p>
     </div>
-    <p class="meta" id="heroMeta">31 countries · 389 institutions · 977 English-taught programmes · built from official sources</p>
+    <p class="meta" id="heroMeta">31 countries · 393 institutions · 980 English-taught programmes · built from official sources</p>
   </div>
 </div>
 
 <div class="stats">
   <div class="stat">
     <div class="n">31</div>
-    <p class="l">countries compiled — <b>977 English-taught programmes</b> across 389 institutions</p>
+    <p class="l">countries compiled — <b>980 English-taught programmes</b> across 393 institutions</p>
   </div>
   <div class="stat">
     <div class="n">9 vs 3</div>
@@ -942,7 +942,7 @@ footer a:hover{color:#fff;}
       <div class="cov-head">
         <div>
           <h3>What's already compiled</h3>
-          <p>31 countries, 389 institutions, 977 English-taught programmes — built from official sources. <strong>Germany has been through verification.</strong> The rest are drafts, and we verify the country you ask for to the standard shown above.</p>
+          <p>31 countries, 393 institutions, 980 English-taught programmes — built from official sources. <strong>Germany has been through verification.</strong> The rest are drafts, and we verify the country you ask for to the standard shown above.</p>
         </div>
       </div>
       <div class="cov-grid">
@@ -1115,7 +1115,7 @@ footer a:hover{color:#fff;}
         <h3>That's one record. Which country do you need?</h3>
         <p>Germany is verified. Thirty more are compiled and waiting — tell us which one matters to your students.</p>
       </div>
-      <a class="btn" href="#requestForm">Request access — $99</a>
+      <a class="btn" href="search.html">Try the finder — free</a>
     </div>
   </div>
 </section>
@@ -1125,16 +1125,16 @@ footer a:hover{color:#fff;}
   <div class="wrap">
     <div class="section-head" style="text-align:center;margin-left:auto;margin-right:auto;">
       <p class="eyebrow">Early access</p>
-      <h2>One country, verified properly</h2>
-      <p style="margin:0 auto;">Germany is done. Every other country is compiled and waiting — we verify the one you need, and we'd rather hear which that is than guess.</p>
+      <h2>One subscription, all 31 countries</h2>
+      <p style="margin:0 auto;">Search all 980 programmes free. Subscribe when you want unlimited student roadmaps.</p>
     </div>
 
     <div class="price-card">
-      <div class="amt" id="priceAmount">$99</div>
-      <p class="terms">Per country, one-off · <strong>paid once your country is verified</strong></p>
+      <div class="amt" id="priceAmount">$40</div>
+      <p class="terms">Per counsellor, per month · <strong>cancel anytime</strong></p>
 
       <ul class="includes">
-        <li id="incUnis">Every covered institution and programme in your country</li>
+        <li id="incUnis">All 980 programmes across 31 countries</li>
         <li>Entry requirements per programme, with the recognition route for each qualification</li>
         <li>Application deadlines and the exact application route per programme</li>
         <li>English thresholds, tuition, semester contributions and living costs</li>
@@ -1142,7 +1142,7 @@ footer a:hover{color:#fff;}
         <li>Delivered as a structured file you can filter per student</li>
       </ul>
 
-      <a class="btn btn-lg" id="buyBtn" href="#requestForm" style="width:100%;">Request access — $99 per country</a>
+      <a class="btn btn-lg" id="buyBtn" href="search.html" style="width:100%;">Try the finder — free</a>
       <p class="fallback">Takes about 30 seconds. Payment details follow once your country is verified.</p>
     </div>
   </div>
@@ -1171,13 +1171,13 @@ footer a:hover{color:#fff;}
       <div class="step3">
         <div class="n">3</div>
         <h4>You decide</h4>
-        <p>If it earns its keep, it's $99 for that country and we'll send payment details. If it doesn't, tell us what's missing — that's genuinely the more useful answer for us.</p>
+        <p>If it earns its keep, it's $40 a month for everything. If it doesn't, tell us what's missing — that's genuinely the more useful answer for us.</p>
       </div>
     </div>
 
     <div style="margin-top:44px;">
       <div class="formwrap" id="requestForm">
-        <h3>Request access — $99 per country</h3>
+        <h3>Request access — $40 a month</h3>
         <p class="sub">One reply from me, usually same day. Nothing is charged on this page — payment details follow once your country is verified and ready.</p>
 
         <!-- FormSubmit delivers straight to rahul@pavetheway.ai. No backend required.
@@ -1257,9 +1257,9 @@ footer a:hover{color:#fff;}
               <select id="f-pay" name="Would pay" required>
                 <option value="">Select…</option>
                 <option>Nothing — I'd only use it if it were free</option>
-                <option>Up to $99 for one country</option>
-                <option>$100–299 for one country</option>
-                <option>$300+, or an annual price for several countries</option>
+                <option>Up to $40 a month</option>
+                <option>$41–99 a month</option>
+                <option>$100+ a month, or an annual plan</option>
                 <option>I'd want to see it before saying</option>
               </select>
             </div>
@@ -1307,7 +1307,7 @@ footer a:hover{color:#fff;}
 
 <!-- sticky CTA, mobile only -->
 <div class="stickycta" id="stickyCta" hidden>
-  <a class="btn" href="#requestForm">Request access — $99 per country</a>
+  <a class="btn" href="search.html">Try the finder — free</a>
 </div>
 
 <!-- =========================== 7. FOOTER =========================== -->
@@ -1428,7 +1428,7 @@ footer a:hover{color:#fff;}
   set("heroMeta",
       CONFIG.TOTAL_COUNTRIES + " countries \u00b7 " + CONFIG.TOTAL_INSTS + " institutions \u00b7 " +
       CONFIG.TOTAL_PROGRAMMES + " English-taught programmes \u00b7 built from official sources");
-  set("incUnis", "Every covered institution and programme in your country");
+  set("incUnis", "All " + CONFIG.TOTAL_PROGRAMMES + " programmes across " + CONFIG.TOTAL_COUNTRIES + " countries");
   set("lockedHeadline",
       "+ " + (CONFIG.UNI_COUNT - 1) + " more German institutions and " +
       (CONFIG.PROGRAMME_COUNT - 1) + " more programmes");
