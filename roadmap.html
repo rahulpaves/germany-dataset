@@ -21,6 +21,8 @@ const CFG = {
   // Free early access. Nothing is sold here and no card is ever collected.
   REQUEST_URL: "/#requestForm",
   GOATCOUNTER: "pave-germany",
+  // bump when data.json changes, so no one is served a stale record
+  DATA_VERSION: "2026-08-26a",
 
   LEAD: {
     aps:            { min: 4,  max: 12, label: "APS certificate" },
@@ -202,6 +204,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);
 
 .alert{margin:22px 0 0;border-radius:var(--radius-sm);padding:15px 18px;font-size:14.5px;}
 .alert.warn{background:var(--warn-bg);border:1px solid var(--warn-line);color:#7d1a15;}
+.alert.half{background:#fff7f0;border:1px solid #f8d9bd;color:#7a4614;}
 .alert.ok{background:var(--ok-bg);border:1px solid #bfe3d3;color:#12543b;}
 .alert b{display:block;margin-bottom:3px;color:inherit;}
 
@@ -561,19 +564,30 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);
       '<p>'+esc(d.institution)+' · '+esc(d.city||"")+', '+esc(d.country)+
       (nat ? ' &nbsp;·&nbsp; '+esc(nat)+' passport' : '')+'</p></div><div class="plan-body">';
 
-    if (pair){
-      html += '<div class="alert ok" style="margin-bottom:0;"><b>Verified route</b>'+
-        esc(d.country)+' for an '+esc(nat)+' national — checked against source on '+
-        esc(pair.verified)+'. Dates below use real lead times for this pair, not defaults.</div>';
+    var progOK = d.verified === true;
+
+    if (pair && progOK){
+      html += '<div class="alert ok" style="margin-bottom:0;"><b>Verified</b>'+
+        'Both halves of this plan were checked against source: the '+esc(d.country)+
+        ' route for an '+esc(nat)+' national, and this programme\'s own details.</div>';
+    } else if (pair){
+      html += '<div class="alert half" style="margin-bottom:0;">'+
+        '<b>Visa route verified \u00b7 programme details are not</b>'+
+        'The '+esc(d.country)+' route for an '+esc(nat)+' national was checked against source on '+
+        esc(pair.verified)+', so the visa half uses real lead times. But <b>'+esc(d.institution)+
+        '</b> has not been verified \u2014 its deadline, fees and application route are compiled and '+
+        'unchecked, and every date below is calculated from that deadline. Confirm the programme '+
+        'details at source before relying on these dates.</div>';
       html += '<div class="gates"><h3>Check these before the dates matter</h3>';
       pair.gates.forEach(function(g){
         html += '<div class="gate"><b>'+esc(g.t)+'</b><p>'+esc(g.d)+'</p></div>';
       });
       html += '</div>';
     } else if (nat){
-      html += '<div class="alert warn"><b>Estimated route, not verified</b>'+
-        'We have not verified '+esc(d.country)+' for an '+esc(nat)+
-        ' national. These steps come from the general model — confirm each one at source before advising.</div>';
+      html += '<div class="alert warn"><b>Nothing here is verified</b>'+
+        'Neither the '+esc(d.country)+' route for an '+esc(nat)+' national nor this programme\'s '+
+        'details have been checked. The steps come from the general model and the dates from an '+
+        'unverified deadline \u2014 confirm every one at source before advising.</div>';
     }
 
     warnings.forEach(function(w){
@@ -598,8 +612,11 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);
     });
     html += '</ol>';
 
-    html += '<div class="src">Every fact in this plan comes from the university\'s own page. '+
-      'Confirm before advising: <a href="'+esc(d.url)+'" target="_blank" rel="noopener">'+esc(d.url)+'</a></div>';
+    html += '<div class="src">'+
+      (progOK ? 'This programme record was checked against the page below.'
+              : '<b>This programme record has not been verified.</b> Open the university page and '+
+                'confirm the deadline and fees before you send this plan to anyone.')+
+      '<br><a href="'+esc(d.url)+'" target="_blank" rel="noopener">'+esc(d.url)+'</a></div>';
 
     html += '<div class="foot-actions">'+
       '<button class="btn" id="shareBtn">Copy link for '+esc(name||"the student")+'</button>'+
@@ -675,7 +692,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);
   });
 
   /* ---------- boot ---------- */
-  fetch("data.json").then(function(r){ return r.json(); }).then(function(rows){
+  fetch("data.json?v=" + CFG.DATA_VERSION).then(function(r){ return r.json(); }).then(function(rows){
     DATA = rows;
     var nsel = document.getElementById("sNat"), seen = {};
     Object.keys(TRACKS).forEach(function(k){

@@ -19,7 +19,9 @@ const CFG = {
   // ever collected. Germany is the only verified country; everything else is
   // compiled but unverified, and labelled as such on every screen.
   REQUEST_URL:  "/#requestForm",
-  GOATCOUNTER:  "pave-germany"
+  GOATCOUNTER:  "pave-germany",
+  // bump when data.json changes, so no one is served a stale record
+  DATA_VERSION: "2026-08-26a"
 };
 
 /* Visa routing by nationality — same four verified tracks as the sample page. */
@@ -527,7 +529,7 @@ dl.spec dt:first-of-type,dl.spec dd:first-of-type{border-top:none;}
   };
 
   /* ---------- boot ---------- */
-  fetch("data.json").then(function(r){ return r.json(); }).then(function(rows){
+  fetch("data.json?v=" + CFG.DATA_VERSION).then(function(r){ return r.json(); }).then(function(rows){
     DATA = rows;
 
     var countries = {};
