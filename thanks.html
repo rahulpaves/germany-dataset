@@ -61,6 +61,10 @@ a.btn:hover{background:#2140c0;}
 .logo img{width:26px;height:26px;}
 .small{font-size:13.5px;color:var(--body);opacity:.8;margin-top:24px;}
 .small a{color:var(--primary);font-weight:600;}
+.emailcopy{font-family:inherit;font-size:inherit;font-weight:700;color:var(--primary);
+  background:var(--primary-tint);border:1px solid rgba(43,79,227,.3);border-radius:var(--pill);
+  padding:4px 12px;cursor:pointer;}
+.emailcopy.done{background:#e4f4ed;border-color:#bfe3d3;color:#166a4a;}
 </style>
 </head>
 <body>
@@ -83,7 +87,8 @@ a.btn:hover{background:#2140c0;}
 
     <p class="small">
       Nothing arrived? Check spam, or email me directly at
-      <a href="mailto:rahul@pavetheway.ai">rahul@pavetheway.ai</a>.
+      <button type="button" class="emailcopy" id="emailCopy" data-email="rahul@pavetheway.ai"
+              title="Click to copy"><span id="emailCopyText">rahul@pavetheway.ai</span></button>
     </p>
   </div>
 
@@ -105,6 +110,19 @@ a.btn:hover{background:#2140c0;}
     window.goatcounter.count({ path: "CONVERSION-" + src, title: "Form submitted", event: true });
   };
   document.head.appendChild(gc);
+})();
+
+/* click-to-copy: mailto: does nothing without a configured mail client */
+(function(){
+  var cp=document.getElementById("emailCopy"); if(!cp) return;
+  cp.addEventListener("click",function(){
+    var a=cp.getAttribute("data-email"), l=document.getElementById("emailCopyText");
+    function done(ok){ l.textContent = ok ? "Copied \u2713  "+a : a;
+      cp.classList.toggle("done",ok);
+      setTimeout(function(){ l.textContent=a; cp.classList.remove("done"); },2500); }
+    if(navigator.clipboard) navigator.clipboard.writeText(a).then(function(){done(true);},function(){done(false);});
+    else done(false);
+  });
 })();
 </script>
 </body>

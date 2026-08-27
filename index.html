@@ -585,6 +585,16 @@ dl.spec dt:first-of-type,dl.spec dd:first-of-type{border-top:none;}
 }
 .fallback{font-size:14px;margin:18px 0 0;}
 .fallback a{color:var(--primary);font-weight:600;}
+/* mailto: silently does nothing when no mail handler is set — which is normal on
+   desktop Chrome and for webmail users. Copying always works. */
+.emailcopy{font-family:inherit;font-size:inherit;font-weight:700;color:var(--primary);
+  background:var(--primary-tint);border:1px solid rgba(43,79,227,.3);border-radius:var(--pill);
+  padding:4px 12px;cursor:pointer;transition:background .15s ease;}
+.emailcopy:hover{background:#e2e8ff;}
+.emailcopy.done{background:#e4f4ed;border-color:#bfe3d3;color:#166a4a;}
+.emailcopy.manual{background:#fff7f0;border-color:#f8d9bd;color:#96551f;}
+.emailcopy::selection,.emailcopy span::selection{background:#2b4fe3;color:#fff;}
+.mailtolink{font-size:13px;opacity:.85;margin-left:6px;}
 @media(max-width:600px){.price-card{padding:30px 22px;}.price-card .amt{font-size:48px;}}
 
 /* ---------- Steps ---------- */
@@ -1143,8 +1153,10 @@ footer a:hover{color:#fff;}
 
           <button type="submit">Get the Germany file — free</button>
           <p class="assure">
-            Free, no card, no obligation. Prefer email? Write to
-            <a id="plainEmail" href="mailto:rahul@pavetheway.ai">rahul@pavetheway.ai</a> instead.
+            Free, no card, no obligation. Prefer email?
+            <button type="button" class="emailcopy" id="emailCopy" data-email="rahul@pavetheway.ai"
+                    title="Click to copy the address"><span id="emailCopyText">rahul@pavetheway.ai</span></button>
+            <a id="plainEmail" class="mailtolink" href="mailto:rahul@pavetheway.ai">open in mail app</a>
           </p>
         </form>
       </div>
@@ -1269,6 +1281,50 @@ footer a:hover{color:#fff;}
                "?subject=" + encodeURIComponent(CONFIG.MAIL_SUBJECT) +
                "&body="    + encodeURIComponent(body);
 
+  /* Click-to-copy. mailto: silently does nothing without a configured mail
+     client, and a failed clipboard write must never be silent either — if the
+     copy is refused we select the address so the user can just press Cmd/Ctrl+C. */
+  (function () {
+    var cp = document.getElementById("emailCopy");
+    if (!cp) return;
+    var label = document.getElementById("emailCopyText");
+    var addr  = cp.getAttribute("data-email");
+    var reset;
+
+    function show(msg, ok) {
+      clearTimeout(reset);
+      label.textContent = msg;
+      cp.classList.toggle("done", !!ok);
+      cp.classList.toggle("manual", ok === false);
+      reset = setTimeout(function () {
+        label.textContent = addr;
+        cp.classList.remove("done", "manual");
+      }, 3500);
+    }
+
+    function selectAddress() {
+      try {
+        var r = document.createRange();
+        r.selectNodeContents(label);
+        var sel = window.getSelection();
+        sel.removeAllRanges(); sel.addRange(r);
+      } catch (e) {}
+    }
+
+    cp.addEventListener("click", function () {
+      track("email-copy-click");
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(addr).then(
+          function () { show("Copied \u2713", true); },
+          function () { selectAddress(); show(addr + "  \u2190 press \u2318C", false); }
+        );
+      } else {
+        selectAddress();
+        show(addr + "  \u2190 press \u2318C", false);
+      }
+    });
+  })();
+
   [["plainEmail", "email-click"], ["plainEmail2", "email-click"]].forEach(function (pair) {
     var el = document.getElementById(pair[0]);
     if (!el) return;
@@ -1305,7 +1361,6 @@ footer a:hover{color:#fff;}
     var el = document.getElementById(id);
     if (el) el.textContent = txt;
   }
-  set("plainEmail",   CONFIG.EMAIL);
   set("plainEmail2",  CONFIG.EMAIL);
   set("priceAmount",  CONFIG.PRICE);
   set("progCountTag", CONFIG.PROGRAMME_COUNT);
