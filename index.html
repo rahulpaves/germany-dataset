@@ -626,12 +626,12 @@ footer a:hover{color:#fff;}
 <!-- ============================ 1. HERO ============================ -->
 <div class="hero">
   <div class="wrap">
-    <div class="flag"><i></i> Germany verified · 30 more countries compiled · free early access</div>
-    <h1>Germany, verified. <span class="accent">Every requirement, deadline and visa step — checked against source, per nationality.</span></h1>
+    <div class="flag"><i></i> One verified Germany record · free early access</div>
+    <h1>What a <span class="accent">properly verified</span> programme record actually looks like.</h1>
     <p class="sub">
-      Germany is fully verified — every requirement, deadline, fee and visa step checked against
-      the university's own pages and official guidance. Thirty more countries are compiled and
-      waiting in the queue. You tell us which one to verify next.
+      Below is one German programme checked field by field against the university's own pages, with
+      the visa route for your student's nationality. It's the standard every record should meet —
+      and the reason we don't pretend the other 979 meet it yet. You tell us which country to verify next.
     </p>
     <div class="heropick">
       <label for="heroCountry">Which country should we verify next?</label>
@@ -644,14 +644,14 @@ footer a:hover{color:#fff;}
       <p class="heropick-out" id="heroOut"></p>
       <p style="font-size:13.5px;margin:14px 0 0;opacity:.8;">Free early access · nothing to pay and no card needed</p>
     </div>
-    <p class="meta" id="heroMeta">Germany: 61 programmes across 29 institutions, verified against source</p>
+    <p class="meta" id="heroMeta">1 record verified against source · 980 compiled across 31 countries, unverified</p>
   </div>
 </div>
 
 <div class="stats">
   <div class="stat">
-    <div class="n">61</div>
-    <p class="l">German programmes across <b>29 institutions</b> — every field verified against source</p>
+    <div class="n">58%</div>
+    <p class="l">of the source links in our own German data were <b>dead when we checked them</b> — which is why nothing ships unverified</p>
   </div>
   <div class="stat">
     <div class="n">9 vs 3</div>
@@ -1157,8 +1157,8 @@ footer a:hover{color:#fff;}
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">How it's checked</p>
-      <h2>Why you can trust a number in this file</h2>
-      <p>Built by Pave, who make software for college counsellors. This started as our own internal data because we couldn't find a version we trusted.</p>
+      <h2>What "verified" has to mean</h2>
+      <p>Built by Pave, who make software for college counsellors. We audited our own German data before showing it to anyone — 26 of 45 source links were dead. That's the gap between compiled and verified, and it's why only one record here carries the badge.</p>
     </div>
     <div class="method">
       <div class="method-item">
@@ -1171,7 +1171,7 @@ footer a:hover{color:#fff;}
       </div>
       <div class="method-item">
         <h3>We tell you what we haven't checked</h3>
-        <p>Germany has been through verification; the other countries are marked draft above, plainly. You'll always know which you're looking at — that's the whole point.</p>
+        <p>Exactly one record on this site is verified. The other 979 are labelled unverified everywhere they appear, and records with a dead source link say so. You will always know which you're looking at.</p>
       </div>
     </div>
   </div>
@@ -1310,8 +1310,8 @@ footer a:hover{color:#fff;}
   set("priceAmount",  CONFIG.PRICE);
   set("progCountTag", CONFIG.PROGRAMME_COUNT);
   set("heroMeta",
-      "Germany: " + CONFIG.PROGRAMME_COUNT + " programmes across " + CONFIG.UNI_COUNT +
-      " institutions, verified against source");
+      "1 record verified against source \u00b7 " + CONFIG.TOTAL_PROGRAMMES +
+      " compiled across " + CONFIG.TOTAL_COUNTRIES + " countries, unverified");
   set("incUnis", "All " + CONFIG.TOTAL_PROGRAMMES + " programmes across " + CONFIG.TOTAL_COUNTRIES + " countries");
   set("lockedHeadline",
       "+ " + (CONFIG.UNI_COUNT - 1) + " more German institutions and " +
@@ -1354,7 +1354,7 @@ footer a:hover{color:#fff;}
       }
 
       var d = CONFIG.COUNTRY_DATA[n];
-      var verified = (n === "Germany");
+      var verified = false;
       out.innerHTML = "<b>" + n + "</b> — " + d[0] + " programmes across " + d[1] +
         (verified
           ? " institutions, <b>verified against source</b>. The sample below is from it."
