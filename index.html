@@ -23,7 +23,7 @@
    Change a value here and it updates everywhere on the page.
    ========================================================================= */
 const CONFIG = {
-  PRICE:            "$40",          // per month, all countries. Matches search.html + roadmap.html.
+  PRICE:            "Free",        // early access. Intended price when verified: $79/counsellor/month.
   EMAIL:            "rahul@pavetheway.ai",
   MAIL_SUBJECT:     "Country data - early access",
   MAIL_BODY:
@@ -504,6 +504,15 @@ dl.spec dt:first-of-type,dl.spec dd:first-of-type{border-top:none;}
 .formwrap .assure a{color:var(--primary);font-weight:600;}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
 
+.choices{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
+@media(max-width:520px){.choices{grid-template-columns:1fr 1fr;}}
+.choice{display:flex;align-items:center;gap:7px;cursor:pointer;
+  border:1px solid var(--line);border-radius:var(--radius-sm);padding:11px 12px;
+  font-size:14px;color:var(--ink);background:#fff;transition:border-color .15s ease,background .15s ease;}
+.choice:hover{border-color:var(--primary);background:var(--primary-tint);}
+.choice input{accent-color:var(--primary);margin:0;flex:none;}
+.choice:has(input:checked){border-color:var(--primary);background:var(--primary-tint);font-weight:600;}
+
 /* ---------- Method / credibility ---------- */
 .method{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px;}
 @media(max-width:760px){.method{grid-template-columns:1fr;}}
@@ -609,32 +618,32 @@ footer a:hover{color:#fff;}
 <!-- ============================ 1. HERO ============================ -->
 <div class="hero">
   <div class="wrap">
-    <div class="flag"><i></i> 31 countries · 980 programmes · $40 a month</div>
-    <h1>Everything your students need to apply abroad — <span class="accent">verified, current, per nationality.</span></h1>
+    <div class="flag"><i></i> Germany verified · 30 more countries compiled · free early access</div>
+    <h1>Germany, verified. <span class="accent">Every requirement, deadline and visa step — checked against source, per nationality.</span></h1>
     <p class="sub">
-      Verified programme requirements, application deadlines, English-language thresholds,
-      tuition, and the visa route for your student's specific nationality. Germany is the first
-      country through verification — tell us which one you need next.
+      Germany is fully verified — every requirement, deadline, fee and visa step checked against
+      the university's own pages and official guidance. Thirty more countries are compiled and
+      waiting in the queue. You tell us which one to verify next.
     </p>
     <div class="heropick">
-      <label for="heroCountry">Which country do your students ask about most?</label>
+      <label for="heroCountry">Which country should we verify next?</label>
       <div class="heropick-row">
         <select id="heroCountry">
           <option value="">Select a country…</option>
         </select>
-        <a class="btn btn-lg" id="heroCta" href="search.html">Try the programme finder — free</a>
+        <a class="btn btn-lg" id="heroCta" href="#requestForm">Get the Germany file — free</a>
       </div>
       <p class="heropick-out" id="heroOut"></p>
-      <p style="font-size:13.5px;margin:14px 0 0;opacity:.8;">Free to search all 980 programmes · $40/month for unlimited roadmaps</p>
+      <p style="font-size:13.5px;margin:14px 0 0;opacity:.8;">Free early access · nothing to pay and no card needed</p>
     </div>
-    <p class="meta" id="heroMeta">31 countries · 393 institutions · 980 English-taught programmes · built from official sources</p>
+    <p class="meta" id="heroMeta">Germany: 61 programmes across 29 institutions, verified against source</p>
   </div>
 </div>
 
 <div class="stats">
   <div class="stat">
-    <div class="n">31</div>
-    <p class="l">countries compiled — <b>980 English-taught programmes</b> across 393 institutions</p>
+    <div class="n">61</div>
+    <p class="l">German programmes across <b>29 institutions</b> — every field verified against source</p>
   </div>
   <div class="stat">
     <div class="n">9 vs 3</div>
@@ -937,24 +946,28 @@ footer a:hover{color:#fff;}
       </div><!-- /sample-body -->
     </div><!-- /sample -->
 
-<!-- =============== COUNTRY COVERAGE =============== -->
+
+  </div>
+</section>
+<!-- ================= 4b. VERIFICATION ROADMAP ================= -->
+<section id="coverage">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">The queue</p>
+      <h2>What we verify next</h2>
+      <p>Germany has been through verification — that's the record above. Thirty more countries are compiled from official sources and waiting their turn. <strong>None of them is verified yet, and we mark them plainly.</strong> What counsellors ask for is what we verify first.</p>
+    </div>
     <div class="coverage">
-      <div class="cov-head">
-        <div>
-          <h3>What's already compiled</h3>
-          <p>31 countries, 393 institutions, 980 English-taught programmes — built from official sources. <strong>Germany has been through verification.</strong> The rest are drafts, and we verify the country you ask for to the standard shown above.</p>
-        </div>
-      </div>
       <div class="cov-grid">
             <div class="cov">
               <div class="cov-name">Hungary</div>
               <div class="cov-n">111 programmes · 20 institutions</div>
-              <span class="cov-tag">Draft</span>
+              <span class="cov-tag">Draft — not yet verified</span>
             </div>
             <div class="cov">
               <div class="cov-name">Netherlands</div>
               <div class="cov-n">105 programmes · 30 institutions</div>
-              <span class="cov-tag">Draft</span>
+              <span class="cov-tag">Draft — not yet verified</span>
             </div>
             <div class="cov live">
               <div class="cov-name">Germany</div>
@@ -964,186 +977,193 @@ footer a:hover{color:#fff;}
             <div class="cov">
               <div class="cov-name">Italy</div>
               <div class="cov-n">61 programmes · 18 institutions</div>
-              <span class="cov-tag">Draft</span>
+              <span class="cov-tag">Draft — not yet verified</span>
             </div>
             <div class="cov">
               <div class="cov-name">Denmark</div>
               <div class="cov-n">55 programmes · 9 institutions</div>
-              <span class="cov-tag">Draft</span>
+              <span class="cov-tag">Draft — not yet verified</span>
             </div>
             <div class="cov">
               <div class="cov-name">UAE</div>
               <div class="cov-n">53 programmes · 28 institutions</div>
-              <span class="cov-tag">Draft</span>
+              <span class="cov-tag">Draft — not yet verified</span>
             </div>
             <div class="cov">
               <div class="cov-name">Ireland</div>
               <div class="cov-n">43 programmes · 12 institutions</div>
-              <span class="cov-tag">Draft</span>
+              <span class="cov-tag">Draft — not yet verified</span>
             </div>
             <div class="cov">
               <div class="cov-name">France</div>
               <div class="cov-n">38 programmes · 25 institutions</div>
-              <span class="cov-tag">Draft</span>
+              <span class="cov-tag">Draft — not yet verified</span>
             </div>
             <div class="cov">
               <div class="cov-name">Finland</div>
               <div class="cov-n">35 programmes · 11 institutions</div>
-              <span class="cov-tag">Draft</span>
+              <span class="cov-tag">Draft — not yet verified</span>
             </div>
             <div class="cov">
               <div class="cov-name">Belgium</div>
               <div class="cov-n">34 programmes · 17 institutions</div>
-              <span class="cov-tag">Draft</span>
+              <span class="cov-tag">Draft — not yet verified</span>
             </div>
             <div class="cov">
               <div class="cov-name">Sweden</div>
               <div class="cov-n">34 programmes · 12 institutions</div>
-              <span class="cov-tag">Draft</span>
+              <span class="cov-tag">Draft — not yet verified</span>
             </div>
             <div class="cov">
               <div class="cov-name">Poland</div>
               <div class="cov-n">33 programmes · 15 institutions</div>
-              <span class="cov-tag">Draft</span>
+              <span class="cov-tag">Draft — not yet verified</span>
             </div>
             <div class="cov">
               <div class="cov-name">Czechia</div>
               <div class="cov-n">29 programmes · 10 institutions</div>
-              <span class="cov-tag">Draft</span>
+              <span class="cov-tag">Draft — not yet verified</span>
             </div>
             <div class="cov">
               <div class="cov-name">India</div>
               <div class="cov-n">28 programmes · 25 institutions</div>
-              <span class="cov-tag">Draft</span>
+              <span class="cov-tag">Draft — not yet verified</span>
             </div>
             <div class="cov">
               <div class="cov-name">Portugal</div>
               <div class="cov-n">26 programmes · 17 institutions</div>
-              <span class="cov-tag">Draft</span>
+              <span class="cov-tag">Draft — not yet verified</span>
             </div>
             <div class="cov">
               <div class="cov-name">Austria</div>
               <div class="cov-n">26 programmes · 12 institutions</div>
-              <span class="cov-tag">Draft</span>
+              <span class="cov-tag">Draft — not yet verified</span>
             </div>
             <div class="cov">
               <div class="cov-name">Switzerland</div>
               <div class="cov-n">21 programmes · 11 institutions</div>
-              <span class="cov-tag">Draft</span>
+              <span class="cov-tag">Draft — not yet verified</span>
             </div>
             <div class="cov">
               <div class="cov-name">Romania</div>
               <div class="cov-n">21 programmes · 9 institutions</div>
-              <span class="cov-tag">Draft</span>
+              <span class="cov-tag">Draft — not yet verified</span>
             </div>
             <div class="cov">
               <div class="cov-name">Norway</div>
               <div class="cov-n">17 programmes · 11 institutions</div>
-              <span class="cov-tag">Draft</span>
+              <span class="cov-tag">Draft — not yet verified</span>
             </div>
             <div class="cov">
               <div class="cov-name">Slovenia</div>
               <div class="cov-n">16 programmes · 5 institutions</div>
-              <span class="cov-tag">Draft</span>
+              <span class="cov-tag">Draft — not yet verified</span>
             </div>
             <div class="cov">
               <div class="cov-name">Bulgaria</div>
               <div class="cov-n">15 programmes · 9 institutions</div>
-              <span class="cov-tag">Draft</span>
+              <span class="cov-tag">Draft — not yet verified</span>
             </div>
             <div class="cov">
               <div class="cov-name">Iceland</div>
               <div class="cov-n">14 programmes · 7 institutions</div>
-              <span class="cov-tag">Draft</span>
+              <span class="cov-tag">Draft — not yet verified</span>
             </div>
             <div class="cov">
               <div class="cov-name">Lithuania</div>
               <div class="cov-n">14 programmes · 7 institutions</div>
-              <span class="cov-tag">Draft</span>
+              <span class="cov-tag">Draft — not yet verified</span>
             </div>
             <div class="cov">
               <div class="cov-name">Estonia</div>
               <div class="cov-n">13 programmes · 5 institutions</div>
-              <span class="cov-tag">Draft</span>
+              <span class="cov-tag">Draft — not yet verified</span>
             </div>
             <div class="cov">
               <div class="cov-name">Greece</div>
               <div class="cov-n">12 programmes · 7 institutions</div>
-              <span class="cov-tag">Draft</span>
+              <span class="cov-tag">Draft — not yet verified</span>
             </div>
             <div class="cov">
               <div class="cov-name">Slovakia</div>
               <div class="cov-n">12 programmes · 6 institutions</div>
-              <span class="cov-tag">Draft</span>
+              <span class="cov-tag">Draft — not yet verified</span>
             </div>
             <div class="cov">
               <div class="cov-name">Latvia</div>
               <div class="cov-n">11 programmes · 6 institutions</div>
-              <span class="cov-tag">Draft</span>
+              <span class="cov-tag">Draft — not yet verified</span>
             </div>
             <div class="cov">
               <div class="cov-name">Croatia</div>
               <div class="cov-n">11 programmes · 4 institutions</div>
-              <span class="cov-tag">Draft</span>
+              <span class="cov-tag">Draft — not yet verified</span>
             </div>
             <div class="cov">
               <div class="cov-name">Cyprus</div>
               <div class="cov-n">11 programmes · 6 institutions</div>
-              <span class="cov-tag">Draft</span>
+              <span class="cov-tag">Draft — not yet verified</span>
             </div>
             <div class="cov">
               <div class="cov-name">Luxembourg</div>
               <div class="cov-n">9 programmes · 3 institutions</div>
-              <span class="cov-tag">Draft</span>
+              <span class="cov-tag">Draft — not yet verified</span>
             </div>
             <div class="cov">
               <div class="cov-name">Malta</div>
               <div class="cov-n">8 programmes · 3 institutions</div>
-              <span class="cov-tag">Draft</span>
+              <span class="cov-tag">Draft — not yet verified</span>
             </div>
       </div>
-      <p class="cov-foot">Don't see the country you need? Tell us anyway — it tells us what to build next.</p>
+      
+      </div>
+      <p class="cov-foot">Don't see the country you need? Ask for it anyway — that's how the queue gets ordered.</p>
     </div>
-
   </div>
 </section>
+
 
 <section style="padding-top:0;">
   <div class="wrap">
     <div class="midcta">
       <div>
-        <h3>That's one record. Which country do you need?</h3>
-        <p>Germany is verified. Thirty more are compiled and waiting — tell us which one matters to your students.</p>
+        <h3>That's the whole Germany record. Want it?</h3>
+        <p>We'll send it today, free. Tell us which country to verify next and it goes to the front of the queue.</p>
       </div>
-      <a class="btn" href="search.html">Try the finder — free</a>
+      <a class="btn" href="#requestForm">Get the Germany file — free</a>
     </div>
   </div>
 </section>
 
-<!-- ============================ 5. PRICING ============================ -->
+<!-- ==================== 5. WHAT IT WILL COST ==================== -->
 <section class="tint" id="pricing">
   <div class="wrap">
     <div class="section-head" style="text-align:center;margin-left:auto;margin-right:auto;">
-      <p class="eyebrow">Early access</p>
-      <h2>One subscription, all 31 countries</h2>
-      <p style="margin:0 auto;">Search all 980 programmes free. Subscribe when you want unlimited student roadmaps.</p>
+      <p class="eyebrow">Straight answer</p>
+      <h2>What this will cost, when it's ready</h2>
+      <p style="margin:0 auto;">You should know the intended price before you spend any time on this, so here it is.</p>
     </div>
 
     <div class="price-card">
-      <div class="amt" id="priceAmount">$40</div>
-      <p class="terms">Per counsellor, per month · <strong>cancel anytime</strong></p>
+      <div class="amt">Free</div>
+      <p class="terms">Early access · <strong>no card, nothing charged</strong></p>
 
       <ul class="includes">
-        <li id="incUnis">All 980 programmes across 31 countries</li>
-        <li>Entry requirements per programme, with the recognition route for each qualification</li>
-        <li>Application deadlines and the exact application route per programme</li>
-        <li>English thresholds, tuition, semester contributions and living costs</li>
-        <li>The full student visa roadmap, branching by student nationality</li>
-        <li>Delivered as a structured file you can filter per student</li>
+        <li>The verified Germany file, sent by email the same day</li>
+        <li>Every requirement, deadline, fee and application route, checked against source</li>
+        <li>The visa route for your student's nationality</li>
+        <li>A source link on every field, so you can confirm anything yourself</li>
+        <li>Your chosen country goes into the verification queue</li>
       </ul>
 
-      <a class="btn btn-lg" id="buyBtn" href="search.html" style="width:100%;">Try the finder — free</a>
-      <p class="fallback">Takes about 30 seconds. Payment details follow once your country is verified.</p>
+      <div style="text-align:left;background:#fff;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:18px 20px;margin-bottom:26px;">
+        <p style="font-size:15px;margin:0 0 8px;"><strong>When your country is verified</strong></p>
+        <p style="font-size:14.5px;margin:0;">The intended price is <strong>$79 per counsellor per month</strong>, with firm pricing for 3 or more seats. We will show you the verified file before anything is ever charged, and you decide then.</p>
+        <p style="font-size:13.5px;margin:10px 0 0;opacity:.85;">Nothing is charged today. We don't collect card details on this site.</p>
+      </div>
+
+      <a class="btn btn-lg" id="buyBtn" href="#requestForm" style="width:100%;">Get the Germany file — free</a>
+      <p class="fallback">Takes about 30 seconds.</p>
     </div>
   </div>
 </section>
@@ -1154,31 +1174,31 @@ footer a:hover{color:#fff;}
     <div class="section-head">
       <p class="eyebrow">How it works</p>
       <h2>How early access works</h2>
-      <p>No checkout, no card, no obligation. You tell us the country, we show you the file.</p>
+      <p>Three steps. No checkout, no card, no obligation at any point.</p>
     </div>
 
     <div class="steps3">
       <div class="step3">
         <div class="n">1</div>
-        <h4>Tell us the country</h4>
-        <p>The button opens your mail app pre-filled — name the country you need most, your firm, and roughly how many students you work with.</p>
+        <h4>Tell us your country</h4>
+        <p>Thirty seconds on the form below. Name the country your students ask about most, and roughly how many students you work with.</p>
       </div>
       <div class="step3">
         <div class="n">2</div>
-        <h4>We send you the file</h4>
-        <p>Germany goes out immediately. For any other country we tell you honestly what's compiled, what still needs verifying, and how long that takes — before you pay anything.</p>
+        <h4>We send the Germany file today</h4>
+        <p>The verified Germany record arrives by email the same day. Free, no card, nothing to cancel. Use it on a real student and judge it.</p>
       </div>
       <div class="step3">
         <div class="n">3</div>
-        <h4>You decide</h4>
-        <p>If it earns its keep, it's $40 a month for everything. If it doesn't, tell us what's missing — that's genuinely the more useful answer for us.</p>
+        <h4>We verify your country next</h4>
+        <p>Your country goes into the queue, ordered by what counsellors ask for. When it's verified we show it to you first — before anything is ever charged.</p>
       </div>
     </div>
 
     <div style="margin-top:44px;">
       <div class="formwrap" id="requestForm">
-        <h3>Request access — $40 a month</h3>
-        <p class="sub">One reply from me, usually same day. Nothing is charged on this page — payment details follow once your country is verified and ready.</p>
+        <h3>Get the Germany file — free</h3>
+        <p class="sub">Sent by email the same day. Nothing is charged, no card is collected, and your chosen country goes into the verification queue.</p>
 
         <!-- FormSubmit delivers straight to rahul@pavetheway.ai. No backend required.
              FIRST-RUN STEP: the very first submission triggers a one-time activation
@@ -1190,6 +1210,11 @@ footer a:hover{color:#fff;}
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_next" id="formNext" value="https://germany.pavetheway.ai/thanks.html">
           <input type="hidden" name="Came from" id="formSrc" value="direct">
+          <input type="hidden" name="utm_source"   id="utmSource"   value="">
+          <input type="hidden" name="utm_medium"   id="utmMedium"   value="">
+          <input type="hidden" name="utm_campaign" id="utmCampaign" value="">
+          <input type="hidden" name="utm_content"  id="utmContent"  value="">
+          <input type="hidden" name="Landing page" id="utmPage"     value="">
 
           <div class="fgrid">
             <div class="field">
@@ -1256,12 +1281,21 @@ footer a:hover{color:#fff;}
               <label for="f-pay">If this covered your country, verified, what would it be worth to you? <span class="req">*</span></label>
               <select id="f-pay" name="Would pay" required>
                 <option value="">Select…</option>
-                <option>Nothing — I'd only use it if it were free</option>
-                <option>Up to $40 a month</option>
-                <option>$41–99 a month</option>
-                <option>$100+ a month, or an annual plan</option>
-                <option>I'd want to see it before saying</option>
+                <option>Nothing — only if free</option>
+                <option>Up to $79 a month</option>
+                <option>$80–149 a month</option>
+                <option>$150+ or an annual plan</option>
+                <option>I'd want to see it first</option>
               </select>
+            </div>
+            <div class="field full">
+              <label>How many counsellors work at your firm? <span class="req">*</span></label>
+              <div class="choices">
+                <label class="choice"><input type="radio" name="Counsellors at firm" value="1" required> <span>1 — just me</span></label>
+                <label class="choice"><input type="radio" name="Counsellors at firm" value="2-5"> <span>2–5</span></label>
+                <label class="choice"><input type="radio" name="Counsellors at firm" value="6-20"> <span>6–20</span></label>
+                <label class="choice"><input type="radio" name="Counsellors at firm" value="20+"> <span>20+</span></label>
+              </div>
             </div>
             <div class="field full">
               <label for="f-msg">Anything else? (optional)</label>
@@ -1269,9 +1303,9 @@ footer a:hover{color:#fff;}
             </div>
           </div>
 
-          <button type="submit">Request early access</button>
+          <button type="submit">Get the Germany file — free</button>
           <p class="assure">
-            Nothing is charged today. Prefer email? Write to
+            Free, no card, no obligation. Prefer email? Write to
             <a id="plainEmail" href="mailto:rahul@pavetheway.ai">rahul@pavetheway.ai</a> instead.
           </p>
         </form>
@@ -1411,6 +1445,18 @@ footer a:hover{color:#fff;}
   // carry the channel through the form and on to the thank-you page
   var fsrc = document.getElementById("formSrc");
   if (fsrc) fsrc.value = src;
+
+  // carry ad attribution through to the submission
+  try {
+    var qs = new URLSearchParams(location.search);
+    [["utm_source","utmSource"],["utm_medium","utmMedium"],
+     ["utm_campaign","utmCampaign"],["utm_content","utmContent"]].forEach(function (pair) {
+      var el = document.getElementById(pair[1]);
+      if (el) el.value = (qs.get(pair[0]) || "").slice(0, 120);
+    });
+    var pg = document.getElementById("utmPage");
+    if (pg) pg.value = location.href.slice(0, 300);
+  } catch (e) {}
   var fnext = document.getElementById("formNext");
   if (fnext) fnext.value = "https://germany.pavetheway.ai/thanks.html?src=" + src;
   var form = document.querySelector("#requestForm form");
@@ -1426,8 +1472,8 @@ footer a:hover{color:#fff;}
   set("priceAmount",  CONFIG.PRICE);
   set("progCountTag", CONFIG.PROGRAMME_COUNT);
   set("heroMeta",
-      CONFIG.TOTAL_COUNTRIES + " countries \u00b7 " + CONFIG.TOTAL_INSTS + " institutions \u00b7 " +
-      CONFIG.TOTAL_PROGRAMMES + " English-taught programmes \u00b7 built from official sources");
+      "Germany: " + CONFIG.PROGRAMME_COUNT + " programmes across " + CONFIG.UNI_COUNT +
+      " institutions, verified against source");
   set("incUnis", "All " + CONFIG.TOTAL_PROGRAMMES + " programmes across " + CONFIG.TOTAL_COUNTRIES + " countries");
   set("lockedHeadline",
       "+ " + (CONFIG.UNI_COUNT - 1) + " more German institutions and " +
@@ -1463,7 +1509,7 @@ footer a:hover{color:#fff;}
       if (n === "__other") {
         out.innerHTML = "Tell us which one — <b>what you ask for is what we build next.</b>";
         out.classList.add("on");
-        if (cta) cta.textContent = "Try the programme finder — free";
+        if (cta) cta.textContent = "Get the Germany file — free";
         if (!picked.__other) { picked.__other = 1; track("country-interest-other"); }
         setFormCountry("Another country — I'll say below");
         return;
@@ -1472,12 +1518,11 @@ footer a:hover{color:#fff;}
       var d = CONFIG.COUNTRY_DATA[n];
       var verified = (n === "Germany");
       out.innerHTML = "<b>" + n + "</b> — " + d[0] + " programmes across " + d[1] +
-        " institutions already compiled. " +
         (verified
-          ? "Germany is the country we've taken through verification, and the sample below is from it."
-          : "Not yet verified — tell us and it goes next in the queue.");
+          ? " institutions, <b>verified against source</b>. The sample below is from it."
+          : " institutions compiled, <b>not yet verified</b>. Ask for it and it goes next in the queue.");
       out.classList.add("on");
-      if (cta) cta.textContent = "Search " + n + " — free";
+      if (cta) cta.textContent = n === "Germany" ? "Get the Germany file — free" : "Get the Germany file, queue " + n;
 
       setFormCountry(n);
 
