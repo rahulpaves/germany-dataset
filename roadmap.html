@@ -145,6 +145,8 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);
 .hnav{display:flex;gap:8px;align-items:center;}
 .hnav a{font-size:14.5px;font-weight:500;color:var(--body);text-decoration:none;}
 .hnav a:hover{color:var(--primary);}
+.hnav a.btn{color:#fff;}                 /* must beat .hnav a */
+.hnav a.btn:hover{color:#fff;}
 @media(max-width:560px){.hnav a.hide{display:none;}}
 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
@@ -156,8 +158,8 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);
 .btn.ghost:hover{background:var(--primary-tint);}
 .btn.sm{font-size:13.5px;padding:9px 16px;}
 
-.shell{max-width:1080px;margin:0 auto;padding:26px 22px 90px;
-  display:grid;grid-template-columns:320px 1fr;gap:26px;align-items:start;}
+.shell{max-width:1120px;margin:0 auto;padding:28px 22px 90px;
+  display:grid;grid-template-columns:330px minmax(0,1fr);gap:28px;align-items:start;}
 @media(max-width:940px){.shell{grid-template-columns:1fr;}}
 
 /* form panel */
@@ -166,14 +168,14 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);
 @media(max-width:940px){.panel{position:static;}}
 .panel h2{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
   color:var(--primary);margin-bottom:16px;}
-.f{margin-bottom:14px;}
-.f label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px;}
+.f{margin-bottom:15px;}
+.f label{display:block;font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:7px;letter-spacing:-.01em;}
 .f input,.f select{width:100%;font-family:inherit;font-size:14.5px;color:var(--ink);
   background:#fff;padding:10px 12px;border:1px solid var(--line);border-radius:var(--radius-sm);}
 .f select{appearance:none;cursor:pointer;padding-right:34px;
   background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath fill='%23444b59' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
   background-repeat:no-repeat;background-position:right 12px center;}
-.f .hint{font-size:11.5px;color:var(--body);opacity:.75;margin:5px 0 0;}
+.f .hint{font-size:12px;color:var(--body);opacity:.8;margin:6px 0 0;line-height:1.45;}
 .picked{background:var(--primary-tint);border:1px solid rgba(43,79,227,.3);
   border-radius:var(--radius-sm);padding:12px 14px;margin-bottom:14px;font-size:13.5px;}
 .picked b{display:block;color:var(--ink);font-size:14.5px;margin-bottom:2px;}
@@ -243,8 +245,14 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);
 .src a{font-weight:600;word-break:break-all;}
 .empty{background:#fff;border:1px dashed var(--line);border-radius:var(--radius);
   padding:60px 30px;text-align:center;}
-.empty h2{font-size:19px;margin-bottom:8px;}
-.empty p{font-size:15px;margin:0 auto;max-width:44ch;}
+.empty h2{font-size:21px;margin-bottom:10px;}
+.empty p{font-size:15.5px;margin:0 auto;max-width:48ch;}
+.egs{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:26px 0 20px;}
+.eg{font-family:inherit;font-size:14px;font-weight:600;color:var(--primary);
+  background:var(--primary-tint);border:1px solid rgba(43,79,227,.28);
+  padding:10px 16px;border-radius:var(--pill);cursor:pointer;transition:background .15s ease;}
+.eg:hover{background:#e2e8ff;}
+.egnote{font-size:13px!important;color:var(--body);opacity:.8;max-width:46ch;}
 .copied{font-size:13px;color:var(--ok);font-weight:600;align-self:center;}
 
 @media print{
@@ -311,8 +319,14 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);
 
   <main id="out">
     <div class="empty">
-      <h2>Pick a programme to start</h2>
-      <p>Search on the left, add the student's nationality and results date, and you'll get a dated plan you can send them.</p>
+      <h2>Build a plan for one student</h2>
+      <p>Search a programme on the left, set the student's nationality and results date, and you'll get a dated step-by-step plan you can send them.</p>
+      <div class="egs">
+        <button class="eg" data-q="aerospace" data-nat="India">Aerospace · Indian student</button>
+        <button class="eg" data-q="computer science" data-nat="United Arab Emirates">Computer Science · UAE student</button>
+        <button class="eg" data-q="dentistry" data-nat="Egypt">Dentistry · Egyptian student</button>
+      </div>
+      <p class="egnote">Germany is verified. Other countries are compiled but not yet verified, and every plan says which it is.</p>
     </div>
   </main>
 </div>
@@ -644,6 +658,21 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);
     showPicked(); track("programme-picked");
   });
   document.getElementById("build").onclick = build;
+
+  // one-click examples from the empty state
+  document.addEventListener("click", function (e) {
+    var eg = e.target.closest(".eg");
+    if (!eg) return;
+    var q = document.getElementById("q");
+    q.value = eg.getAttribute("data-q");
+    q.dispatchEvent(new Event("input"));
+    document.getElementById("sNat").value = eg.getAttribute("data-nat");
+    track("example-used");
+    setTimeout(function () {
+      var first = document.querySelector("#results [data-s]");
+      if (first) { first.click(); document.getElementById("build").click(); }
+    }, 320);
+  });
 
   /* ---------- boot ---------- */
   fetch("data.json").then(function(r){ return r.json(); }).then(function(rows){
