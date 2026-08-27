@@ -513,7 +513,12 @@ dl.spec dt:first-of-type,dl.spec dd:first-of-type{border-top:none;}
   transition:border-color .15s ease,background .15s ease;}
 @media(max-width:420px){.choice{flex:1 1 calc(50% - 5px);justify-content:center;}}
 .choice:hover{border-color:var(--primary);background:var(--primary-tint);}
-.choice input{accent-color:var(--primary);margin:0;flex:none;}
+/* .field input{width:100%} was stretching the radio to 72px and pushing the
+   label out of its pill — this must be more specific than that rule. */
+.field .choice input[type="radio"]{
+  width:17px;height:17px;min-width:17px;flex:0 0 17px;margin:0;
+  accent-color:var(--primary);cursor:pointer;}
+.choice span{white-space:nowrap;}
 .choice:has(input:checked){border-color:var(--primary);background:var(--primary-tint);font-weight:600;}
 
 /* ---------- Method / credibility ---------- */
