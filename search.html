@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Programme Finder — Pave</title>
-<meta name="description" content="Search 980 English-taught programmes across 31 countries by subject, eligibility and student nationality — with the application and visa route for each.">
+<meta name="description" content="Search 980 compiled English-taught programmes across 31 countries. Germany is verified against source; every other country is a draft awaiting verification.">
 <link rel="icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,16 +15,11 @@
    CONFIG — the handful of things you'll want to change.
    ======================================================================== */
 const CFG = {
-  PRICE_LABEL:   "$40/month",
-  FREE_ROADMAPS: 3,          // roadmaps a visitor can open before the paywall
-
-  // Paste a Stripe Payment Link here when you have one. While it's empty,
-  // the subscribe button sends people to the request form instead, so the
-  // page works either way.
-  PAYMENT_LINK:  "",
-  FALLBACK_URL:  "/#requestForm",
-
-  GOATCOUNTER:   "pave-germany"
+  // Free early access. Nothing is sold anywhere on this site, and no card is
+  // ever collected. Germany is the only verified country; everything else is
+  // compiled but unverified, and labelled as such on every screen.
+  REQUEST_URL:  "/#requestForm",
+  GOATCOUNTER:  "pave-germany"
 };
 
 /* Visa routing by nationality — same four verified tracks as the sample page. */
@@ -127,6 +122,8 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);
   background:var(--muted);color:var(--body);border:1px solid var(--line);}
 .tag.hi{background:var(--primary-tint);color:var(--primary);border-color:rgba(43,79,227,.3);}
 .tag.warn{background:#fff7f0;color:#a5551b;border-color:#f8d9bd;}
+.tag.ok{background:#e4f4ed;color:#166a4a;border-color:#bfe3d3;font-weight:700;}
+.tag.draft{background:#f4f5f7;color:#6b7280;border-color:#e0e3e8;}
 .card .foot{display:flex;flex-wrap:wrap;gap:10px;align-items:center;
   border-top:1px solid var(--line);padding-top:13px;}
 .card .foot .src{font-size:12.5px;margin-left:auto;}
@@ -197,7 +194,7 @@ dl.spec dt:first-of-type,dl.spec dd:first-of-type{border-top:none;}
   <div class="hwrap">
     <a class="logo" href="/"><img src="logo.png" alt=""> Pave <span>Programme Finder</span></a>
     <a href="roadmap.html" style="font-size:14.5px;font-weight:500;color:var(--body);text-decoration:none;margin-right:6px;">Student roadmap</a>
-    <button class="btn" id="subTop">Subscribe — $40/mo</button>
+    <a class="btn" id="subTop" href="/#requestForm">Get the Germany file — free</a>
   </div>
 </header>
 
@@ -257,9 +254,9 @@ dl.spec dt:first-of-type,dl.spec dd:first-of-type{border-top:none;}
   </aside>
 
   <main>
-    <div class="counter" id="counter" hidden>
-      <span>You've opened <b id="usedN">0</b> of <b id="freeN">3</b> free roadmaps.</span>
-      <button class="btn" id="subInline">Subscribe — $40/mo</button>
+    <div class="counter" id="counter">
+      <span><b>Germany is verified.</b> Every other country here is compiled from official sources but <b>not yet verified</b> — check each field at its source link before advising.</span>
+      <a class="btn" id="subInline" href="/#requestForm">Get the Germany file — free</a>
     </div>
 
     <div class="rhead">
@@ -308,23 +305,10 @@ dl.spec dt:first-of-type,dl.spec dd:first-of-type{border-top:none;}
     if (window.console && console.debug) console.debug("[track]",name);
   }
 
-  /* ---------- paywall state ---------- */
-  var KEY = "pave_roadmaps_opened";
-  function used(){ try { return parseInt(localStorage.getItem(KEY)||"0",10)||0; } catch(e){ return 0; } }
-  function bump(){ try { localStorage.setItem(KEY,String(used()+1)); } catch(e){} }
-  function locked(){ return used() >= CFG.FREE_ROADMAPS; }
-  function paint(){
-    var c = document.getElementById("counter");
-    document.getElementById("usedN").textContent = Math.min(used(),CFG.FREE_ROADMAPS);
-    document.getElementById("freeN").textContent = CFG.FREE_ROADMAPS;
-    c.hidden = used() === 0;
-  }
-  function subscribe(where){
-    track("subscribe-click-"+where);
-    location.href = CFG.PAYMENT_LINK || CFG.FALLBACK_URL;
-  }
-  document.getElementById("subTop").onclick = function(){ subscribe("header"); };
-  document.getElementById("subInline").onclick = function(){ subscribe("counter"); };
+  /* ---------- request-the-file CTA (nothing is sold here) ---------- */
+  function paint(){}
+  document.getElementById("subTop").onclick    = function(){ track("request-click-header"); };
+  document.getElementById("subInline").onclick = function(){ track("request-click-banner"); };
 
   /* ---------- helpers ---------- */
   function feeNum(s){
@@ -412,6 +396,9 @@ dl.spec dt:first-of-type,dl.spec dd:first-of-type{border-top:none;}
         '<p class="inst"><b>'+esc(d.institution)+'</b> · '+esc(d.city||d.country)+', '+esc(d.country)+'</p>'+
         '</div></div>'+
         '<div class="tags">'+
+          (d.country === "Germany"
+            ? '<span class="tag ok">Verified</span>'
+            : '<span class="tag draft">Draft — not verified</span>')+
           (d.language ? '<span class="tag hi">'+esc(d.language)+'</span>' : '')+
           (d.years ? '<span class="tag">'+esc(d.years)+' years</span>' : '')+
           (d.deadline ? '<span class="tag warn">Deadline '+fmtDate(d.deadline)+'</span>' : '')+
@@ -434,32 +421,23 @@ dl.spec dt:first-of-type,dl.spec dd:first-of-type{border-top:none;}
     var drawer = document.getElementById("drawer");
     var scrim  = document.getElementById("scrim");
 
-    if (locked()){
-      track("paywall-hit");
-      drawer.innerHTML = '<div class="dhead"><button class="dclose" aria-label="Close">×</button>'+
-        '<h2>You\'ve used your free roadmaps</h2><p class="di">Keep going for '+CFG.PRICE_LABEL+'</p></div>'+
-        '<div class="paywall"><div class="lock">🔒</div>'+
-        '<div class="price">'+CFG.PRICE_LABEL.split("/")[0]+'</div>'+
-        '<p class="per">per month · cancel anytime</p>'+
-        '<p>You searched 980 programmes across 31 countries. Unlimited roadmaps unlock the part that saves the hours.</p>'+
-        '<ul>'+
-          '<li>Unlimited full roadmaps</li>'+
-          '<li>Entry requirements per qualification</li>'+
-          '<li>Deadlines and the exact application route</li>'+
-          '<li>Visa steps for your student\'s nationality</li>'+
-          '<li>Source link on every field</li>'+
-        '</ul>'+
-        '<button class="btn" id="subDrawer">Subscribe — '+CFG.PRICE_LABEL+'</button>'+
-        '<p class="trialnote">Not ready? <a href="/#requestForm">Tell us which country you need</a> and we\'ll be in touch.</p>'+
-        '</div>';
-      drawer.querySelector("#subDrawer").onclick = function(){ subscribe("paywall"); };
-    } else {
-      bump(); paint(); track("roadmap-open");
+    {
+      track("roadmap-open");
+
       var t = natTrack;
       drawer.innerHTML = '<div class="dhead"><button class="dclose" aria-label="Close">×</button>'+
         '<h2>'+esc(d.programme)+'</h2>'+
         '<p class="di">'+esc(d.institution)+' · '+esc(d.city||"")+', '+esc(d.country)+'</p></div>'+
         '<div class="dbody">'+
+
+        (d.country === "Germany"
+          ? '<div class="src-note" style="border-left-color:#166a4a;margin-top:18px;">'+
+            '<b>Verified against source.</b> Every field below was checked against the '+
+            'university\'s own pages and official guidance.</div>'
+          : '<div class="src-note" style="border-left-color:#a5551b;background:#fff7f0;border-color:#f8d9bd;margin-top:18px;">'+
+            '<b>Not yet verified.</b> '+esc(d.country)+' is compiled from official sources but has not '+
+            'been through verification. Confirm every field at the source link before advising \u2014 '+
+            'and <a href="/#requestForm">ask us to verify '+esc(d.country)+' next</a>.</div>')+
 
         '<div class="blk"><h4>Programme &amp; cost</h4><dl class="spec">'+
           row("Degree", d.degree)+ row("Language", d.language)+

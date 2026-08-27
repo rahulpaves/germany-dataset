@@ -18,9 +18,8 @@
    Office guidance for the German case; treat as sensible defaults elsewhere.
    ======================================================================== */
 const CFG = {
-  PRICE_LABEL: "$40/month",
-  PAYMENT_LINK: "",
-  FALLBACK_URL: "/#requestForm",
+  // Free early access. Nothing is sold here and no card is ever collected.
+  REQUEST_URL: "/#requestForm",
   GOATCOUNTER: "pave-germany",
 
   LEAD: {
@@ -264,7 +263,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);
     <a class="logo" href="/"><img src="logo.png" alt=""> Pave <span>Student Roadmap</span></a>
     <nav class="hnav">
       <a class="hide" href="search.html">Programme finder</a>
-      <button class="btn sm" id="subTop">Subscribe — $40/mo</button>
+      <a class="btn sm" id="subTop" href="/#requestForm">Get the Germany file — free</a>
     </nav>
   </div>
 </header>
@@ -337,9 +336,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);
       window.goatcounter.count({path:n+"-"+src,title:n,event:true});
     if (window.console && console.debug) console.debug("[track]",n);
   }
-  function subscribe(where){ track("subscribe-click-"+where);
-    location.href = CFG.PAYMENT_LINK || CFG.FALLBACK_URL; }
-  document.getElementById("subTop").onclick = function(){ subscribe("header"); };
+  document.getElementById("subTop").onclick = function(){ track("request-click-header"); };
 
   /* ---------- helpers ---------- */
   function esc(s){ return String(s==null?"":s)
