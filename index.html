@@ -392,6 +392,16 @@ dl.spec dt:first-of-type,dl.spec dd:first-of-type{border-top:none;}
 .track.dim{opacity:.42;}
 .track.active{border-color:var(--primary);box-shadow:0 0 0 3px rgba(43,79,227,.13);}
 
+.moreblock{border-top:1px solid var(--line);padding:6px 0 0;}
+.moreblock summary{cursor:pointer;list-style:none;padding:18px 0 4px;font-size:14.5px;
+  font-weight:600;color:var(--primary);display:flex;align-items:center;gap:9px;}
+.moreblock summary::-webkit-details-marker{display:none;}
+.moreblock summary::before{content:"+";display:inline-flex;align-items:center;justify-content:center;
+  width:21px;height:21px;border-radius:50%;background:var(--primary-tint);
+  font-size:14px;font-weight:700;flex:none;}
+.moreblock[open] summary::before{content:"\2212";}
+.moreblock summary:hover{color:var(--primary-dark);}
+
 /* ---------- Nationality tracks ---------- */
 .tracks{display:grid;gap:14px;}
 .track{border:1px solid var(--line);border-radius:var(--radius-sm);padding:18px 20px;background:#fff;}
@@ -419,6 +429,11 @@ dl.spec dt:first-of-type,dl.spec dd:first-of-type{border-top:none;}
   background-repeat:no-repeat;background-position:right 18px center;
 }
 .heropick select:focus{outline:2px solid var(--primary);outline-offset:1px;}
+#heroOther{font-family:inherit;font-size:16px;color:var(--ink);background:#fff;
+  padding:14px 18px;border:1px solid var(--line);border-radius:var(--pill);
+  min-width:250px;margin-top:12px;box-shadow:var(--shadow-sm);}
+#heroOther:focus{outline:2px solid var(--primary);outline-offset:1px;}
+@media(max-width:700px){#heroOther{width:100%;min-width:0;}}
 .heropick-out{
   display:none;margin:16px 0 0;font-size:15px;color:var(--ink);
   background:#fff;border:1px solid var(--line);border-left:3px solid var(--accent);
@@ -656,6 +671,7 @@ footer a:hover{color:#fff;}
         </select>
         <a class="btn btn-lg" id="heroCta" href="#requestForm">Get the Germany file — free</a>
       </div>
+      <input id="heroOther" type="text" hidden placeholder="Which country?" autocomplete="off">
       <p class="heropick-out" id="heroOut"></p>
       <p style="font-size:13.5px;margin:14px 0 0;opacity:.8;">Free early access · nothing to pay and no card needed</p>
     </div>
@@ -698,6 +714,163 @@ footer a:hover{color:#fff;}
     </p>
   </div>
 </section>
+
+<!-- ====================== 6. HOW BUYING WORKS ====================== -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How it works</p>
+      <h2>Get the verified Germany record</h2>
+      <p>We'll email it today. Three steps, no checkout, no card, no obligation at any point. The full record is below if you'd rather read it first.</p>
+    </div>
+
+    <div class="steps3">
+      <div class="step3">
+        <div class="n">1</div>
+        <h4>Tell us your country</h4>
+        <p>Thirty seconds on the form below. Name the country your students ask about most, and roughly how many students you work with.</p>
+      </div>
+      <div class="step3">
+        <div class="n">2</div>
+        <h4>We send the Germany file today</h4>
+        <p>The verified Germany record arrives by email the same day. Free, no card, nothing to cancel. Use it on a real student and judge it.</p>
+      </div>
+      <div class="step3">
+        <div class="n">3</div>
+        <h4>We verify your country next</h4>
+        <p>Your country goes into the queue, ordered by what counsellors ask for. When it's verified we show it to you first — before anything is ever charged.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:44px;">
+      <div class="formwrap" id="requestForm">
+        <h3>Get the Germany file — free</h3>
+        <p class="sub">Sent by email the same day. Nothing is charged, no card is collected, and your chosen country goes into the verification queue.</p>
+
+        <!-- FormSubmit delivers straight to rahul@pavetheway.ai. No backend required.
+             FIRST-RUN STEP: the very first submission triggers a one-time activation
+             email to that address — click the link in it once and every later
+             submission arrives automatically. -->
+        <form action="https://formsubmit.co/rahul@pavetheway.ai" method="POST">
+          <input type="hidden" name="_subject" value="Country data — early access request">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" id="formNext" value="https://germany.pavetheway.ai/thanks.html">
+          <input type="hidden" name="Came from" id="formSrc" value="direct">
+          <input type="hidden" name="utm_source"   id="utmSource"   value="">
+          <input type="hidden" name="utm_medium"   id="utmMedium"   value="">
+          <input type="hidden" name="utm_campaign" id="utmCampaign" value="">
+          <input type="hidden" name="utm_content"  id="utmContent"  value="">
+          <input type="hidden" name="Landing page" id="utmPage"     value="">
+
+          <div class="fgrid">
+            <div class="field">
+              <label for="f-name">Your name <span class="req">*</span></label>
+              <input id="f-name" name="Name" type="text" required autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="f-email">Email <span class="req">*</span></label>
+              <input id="f-email" name="Email" type="email" required autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="f-firm">Firm or organisation</label>
+              <input id="f-firm" name="Firm" type="text" autocomplete="organization">
+            </div>
+            <div class="field">
+              <label for="f-students">Students you work with</label>
+              <select id="f-students" name="Students per year">
+                <option value="">Select…</option>
+                <option>1–10</option>
+                <option>11–50</option>
+                <option>51–200</option>
+                <option>200+</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="f-country">The country you need most <span class="req">*</span></label>
+              <select id="f-country" name="Country needed" required>
+                <option value="">Select a country…</option>
+                <option>Germany</option>
+                <option>Netherlands</option>
+                <option>Hungary</option>
+                <option>Italy</option>
+                <option>Ireland</option>
+                <option>France</option>
+                <option>Denmark</option>
+                <option>Sweden</option>
+                <option>Finland</option>
+                <option>Belgium</option>
+                <option>Poland</option>
+                <option>Czechia</option>
+                <option>Austria</option>
+                <option>Switzerland</option>
+                <option>Portugal</option>
+                <option>Norway</option>
+                <option>Romania</option>
+                <option>UAE</option>
+                <option>India</option>
+                <option>Slovenia</option>
+                <option>Bulgaria</option>
+                <option>Iceland</option>
+                <option>Lithuania</option>
+                <option>Estonia</option>
+                <option>Greece</option>
+                <option>Slovakia</option>
+                <option>Latvia</option>
+                <option>Croatia</option>
+                <option>Cyprus</option>
+                <option>Luxembourg</option>
+                <option>Malta</option>
+                <option value="Another country">Another country — I'll name it</option>
+              </select>
+              <input id="f-country-other" name="Country (other)" type="text" hidden
+                     placeholder="Which country?" autocomplete="off"
+                     style="margin-top:9px;">
+            </div>
+            <div class="field full">
+              <label for="f-pay">If this covered your country, verified, what would it be worth to you? <span class="req">*</span></label>
+              <select id="f-pay" name="Would pay" required>
+                <option value="">Select…</option>
+                <option>Nothing — only if free</option>
+                <option>Up to $79 a month</option>
+                <option>$80–149 a month</option>
+                <option>$150+ or an annual plan</option>
+                <option>I'd want to see it first</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label>How many counsellors work at your firm? <span class="req">*</span></label>
+              <div class="choices">
+                <label class="choice"><input type="radio" name="Counsellors at firm" value="1" required> <span>Just me</span></label>
+                <label class="choice"><input type="radio" name="Counsellors at firm" value="2-5"> <span>2–5</span></label>
+                <label class="choice"><input type="radio" name="Counsellors at firm" value="6-20"> <span>6–20</span></label>
+                <label class="choice"><input type="radio" name="Counsellors at firm" value="20+"> <span>20+</span></label>
+              </div>
+            </div>
+            <div class="field full">
+              <label for="f-msg">Anything else? (optional)</label>
+              <textarea id="f-msg" name="Notes" placeholder="Which countries your students ask about most, what you use today, what's missing…"></textarea>
+            </div>
+          </div>
+
+          <button type="submit">Get the Germany file — free</button>
+          <p class="assure">
+            Free, no card, no obligation. Prefer email?
+            <button type="button" class="emailcopy" id="emailCopy" data-email="rahul@pavetheway.ai"
+                    title="Click to copy the address"><span id="emailCopyText">rahul@pavetheway.ai</span></button>
+            <span class="mailtolink">— click to copy</span>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
 
 <!-- =========================== 4. LIVE SAMPLE =========================== -->
 <section id="sample">
@@ -852,8 +1025,9 @@ footer a:hover{color:#fff;}
           <a class="btn" href="#requestForm">Get the Germany file</a>
         </div>
 
-        <div class="block">
-          <h4>Same programme — four different paths, by nationality</h4>
+        <details class="moreblock">
+          <summary>Show how the route changes for every other passport</summary>
+          <div class="block" style="border-bottom:none;padding-top:14px;">
           <p style="font-size:14.5px;margin:-4px 0 16px;">The timeline above is the standard non-EU route. Which steps actually apply depends entirely on the passport your student holds.</p>
           <div class="tracks">
 
@@ -886,6 +1060,7 @@ footer a:hover{color:#fff;}
 
           </div>
         </div>
+        </details>
 
       </div><!-- /sample-body -->
     </div><!-- /sample -->
@@ -894,159 +1069,38 @@ footer a:hover{color:#fff;}
   </div>
 </section>
 
-<!-- ====================== 6. HOW BUYING WORKS ====================== -->
+<!-- ===================== 3b. THE OBJECTION ===================== -->
 <section>
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">How it works</p>
-      <h2>That's the whole record. Want it?</h2>
-      <p>We'll email it today. Three steps, no checkout, no card, no obligation at any point.</p>
+      <p class="eyebrow">The obvious question</p>
+      <h2>"Can't I just look this up myself?"</h2>
+      <p>You can — everything in that record is public. Assembling it correctly, and keeping it correct, is the part that costs you.</p>
     </div>
-
-    <div class="steps3">
-      <div class="step3">
-        <div class="n">1</div>
-        <h4>Tell us your country</h4>
-        <p>Thirty seconds on the form below. Name the country your students ask about most, and roughly how many students you work with.</p>
+    <div class="obj">
+      <div class="obj-item">
+        <h3>Public doesn't mean findable</h3>
+        <p>A single answer lives across the programme page, the recognition body, a fee schedule and a foreign ministry site — in two languages, contradicting each other about half the time.</p>
+        <span class="ev">We checked one TUM record against source. <b>Five of its fields were wrong</b>, including a "flagship English-taught" degree that is actually taught in German.</span>
       </div>
-      <div class="step3">
-        <div class="n">2</div>
-        <h4>We send the Germany file today</h4>
-        <p>The verified Germany record arrives by email the same day. Free, no card, nothing to cancel. Use it on a real student and judge it.</p>
+      <div class="obj-item">
+        <h3>It changes underneath you</h3>
+        <p>Requirements move between cycles, and nobody sends you a notice. The notes you built last year keep looking correct long after they stopped being correct.</p>
+        <span class="ev">From Summer Semester 2027, Indian Master's applicants in Engineering, Commerce, Finance, Economics or Business need <b>a dMAT certificate on top of APS</b>. Most counsellors haven't seen this yet.</span>
       </div>
-      <div class="step3">
-        <div class="n">3</div>
-        <h4>We verify your country next</h4>
-        <p>Your country goes into the queue, ordered by what counsellors ask for. When it's verified we show it to you first — before anything is ever charged.</p>
+      <div class="obj-item">
+        <h3>The answer depends on the passport</h3>
+        <p>Programme requirements are only half the advice. The route to actually getting there changes completely with your student's nationality, and that part is scattered across embassy sites.</p>
+        <span class="ev">Same TUM degree: an Indian student faces <b>nine steps including APS</b>, an American five with no embassy appointment, a French student three.</span>
       </div>
-    </div>
-
-    <div style="margin-top:44px;">
-      <div class="formwrap" id="requestForm">
-        <h3>Get the Germany file — free</h3>
-        <p class="sub">Sent by email the same day. Nothing is charged, no card is collected, and your chosen country goes into the verification queue.</p>
-
-        <!-- FormSubmit delivers straight to rahul@pavetheway.ai. No backend required.
-             FIRST-RUN STEP: the very first submission triggers a one-time activation
-             email to that address — click the link in it once and every later
-             submission arrives automatically. -->
-        <form action="https://formsubmit.co/rahul@pavetheway.ai" method="POST">
-          <input type="hidden" name="_subject" value="Country data — early access request">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" id="formNext" value="https://germany.pavetheway.ai/thanks.html">
-          <input type="hidden" name="Came from" id="formSrc" value="direct">
-          <input type="hidden" name="utm_source"   id="utmSource"   value="">
-          <input type="hidden" name="utm_medium"   id="utmMedium"   value="">
-          <input type="hidden" name="utm_campaign" id="utmCampaign" value="">
-          <input type="hidden" name="utm_content"  id="utmContent"  value="">
-          <input type="hidden" name="Landing page" id="utmPage"     value="">
-
-          <div class="fgrid">
-            <div class="field">
-              <label for="f-name">Your name <span class="req">*</span></label>
-              <input id="f-name" name="Name" type="text" required autocomplete="name">
-            </div>
-            <div class="field">
-              <label for="f-email">Email <span class="req">*</span></label>
-              <input id="f-email" name="Email" type="email" required autocomplete="email">
-            </div>
-            <div class="field">
-              <label for="f-firm">Firm or organisation</label>
-              <input id="f-firm" name="Firm" type="text" autocomplete="organization">
-            </div>
-            <div class="field">
-              <label for="f-students">Students you work with</label>
-              <select id="f-students" name="Students per year">
-                <option value="">Select…</option>
-                <option>1–10</option>
-                <option>11–50</option>
-                <option>51–200</option>
-                <option>200+</option>
-              </select>
-            </div>
-            <div class="field full">
-              <label for="f-country">The country you need most <span class="req">*</span></label>
-              <select id="f-country" name="Country needed" required>
-                <option value="">Select a country…</option>
-                <option>Germany</option>
-                <option>Netherlands</option>
-                <option>Hungary</option>
-                <option>Italy</option>
-                <option>Ireland</option>
-                <option>France</option>
-                <option>Denmark</option>
-                <option>Sweden</option>
-                <option>Finland</option>
-                <option>Belgium</option>
-                <option>Poland</option>
-                <option>Czechia</option>
-                <option>Austria</option>
-                <option>Switzerland</option>
-                <option>Portugal</option>
-                <option>Norway</option>
-                <option>Romania</option>
-                <option>UAE</option>
-                <option>India</option>
-                <option>Slovenia</option>
-                <option>Bulgaria</option>
-                <option>Iceland</option>
-                <option>Lithuania</option>
-                <option>Estonia</option>
-                <option>Greece</option>
-                <option>Slovakia</option>
-                <option>Latvia</option>
-                <option>Croatia</option>
-                <option>Cyprus</option>
-                <option>Luxembourg</option>
-                <option>Malta</option>
-                <option>Another country — I'll say below</option>
-              </select>
-            </div>
-            <div class="field full">
-              <label for="f-pay">If this covered your country, verified, what would it be worth to you? <span class="req">*</span></label>
-              <select id="f-pay" name="Would pay" required>
-                <option value="">Select…</option>
-                <option>Nothing — only if free</option>
-                <option>Up to $79 a month</option>
-                <option>$80–149 a month</option>
-                <option>$150+ or an annual plan</option>
-                <option>I'd want to see it first</option>
-              </select>
-            </div>
-            <div class="field full">
-              <label>How many counsellors work at your firm? <span class="req">*</span></label>
-              <div class="choices">
-                <label class="choice"><input type="radio" name="Counsellors at firm" value="1" required> <span>Just me</span></label>
-                <label class="choice"><input type="radio" name="Counsellors at firm" value="2-5"> <span>2–5</span></label>
-                <label class="choice"><input type="radio" name="Counsellors at firm" value="6-20"> <span>6–20</span></label>
-                <label class="choice"><input type="radio" name="Counsellors at firm" value="20+"> <span>20+</span></label>
-              </div>
-            </div>
-            <div class="field full">
-              <label for="f-msg">Anything else? (optional)</label>
-              <textarea id="f-msg" name="Notes" placeholder="Which countries your students ask about most, what you use today, what's missing…"></textarea>
-            </div>
-          </div>
-
-          <button type="submit">Get the Germany file — free</button>
-          <p class="assure">
-            Free, no card, no obligation. Prefer email?
-            <button type="button" class="emailcopy" id="emailCopy" data-email="rahul@pavetheway.ai"
-                    title="Click to copy the address"><span id="emailCopyText">rahul@pavetheway.ai</span></button>
-            <a id="plainEmail" class="mailtolink" href="mailto:rahul@pavetheway.ai">open in mail app</a>
-          </p>
-        </form>
+      <div class="obj-item">
+        <h3>Doing it once isn't the problem</h3>
+        <p>Researching one country for one student is an evening. Doing it for every student, across every country they ask about, and keeping all of it current — that's the part that quietly eats your week.</p>
+        <span class="ev">Which is the entire job this is built to remove — <b>and why it's checked per cycle</b>, not compiled once.</span>
       </div>
     </div>
   </div>
 </section>
-
-
-
-
-
-
 
 <!-- ======================= 3. WHAT'S INSIDE ======================= -->
 <section class="tint" id="inside">
@@ -1095,39 +1149,6 @@ footer a:hover{color:#fff;}
       and the German Federal Foreign Office — not scraped aggregator listings. Every record is
       source-checked before release, and structured per field so you can filter it to a single
       student's profile rather than reading it like a brochure.
-    </div>
-  </div>
-</section>
-
-<!-- ===================== 3b. THE OBJECTION ===================== -->
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">The obvious question</p>
-      <h2>"Can't I just look this up myself?"</h2>
-      <p>You can — everything in that record is public. Assembling it correctly, and keeping it correct, is the part that costs you.</p>
-    </div>
-    <div class="obj">
-      <div class="obj-item">
-        <h3>Public doesn't mean findable</h3>
-        <p>A single answer lives across the programme page, the recognition body, a fee schedule and a foreign ministry site — in two languages, contradicting each other about half the time.</p>
-        <span class="ev">We checked one TUM record against source. <b>Five of its fields were wrong</b>, including a "flagship English-taught" degree that is actually taught in German.</span>
-      </div>
-      <div class="obj-item">
-        <h3>It changes underneath you</h3>
-        <p>Requirements move between cycles, and nobody sends you a notice. The notes you built last year keep looking correct long after they stopped being correct.</p>
-        <span class="ev">From Summer Semester 2027, Indian Master's applicants in Engineering, Commerce, Finance, Economics or Business need <b>a dMAT certificate on top of APS</b>. Most counsellors haven't seen this yet.</span>
-      </div>
-      <div class="obj-item">
-        <h3>The answer depends on the passport</h3>
-        <p>Programme requirements are only half the advice. The route to actually getting there changes completely with your student's nationality, and that part is scattered across embassy sites.</p>
-        <span class="ev">Same TUM degree: an Indian student faces <b>nine steps including APS</b>, an American five with no embassy appointment, a French student three.</span>
-      </div>
-      <div class="obj-item">
-        <h3>Doing it once isn't the problem</h3>
-        <p>Researching one country for one student is an evening. Doing it for every student, across every country they ask about, and keeping all of it current — that's the part that quietly eats your week.</p>
-        <span class="ev">Which is the entire job this is built to remove — <b>and why it's checked per cycle</b>, not compiled once.</span>
-      </div>
     </div>
   </div>
 </section>
@@ -1338,6 +1359,22 @@ footer a:hover{color:#fff;}
   if (cta) cta.addEventListener("click", function () { track("cta-click"); });
 
   // carry the channel through the form and on to the thank-you page
+  // "Another country" reveals a box to name it, and makes it required
+  (function () {
+    var sel = document.getElementById("f-country");
+    var other = document.getElementById("f-country-other");
+    if (!sel || !other) return;
+    function sync() {
+      var on = sel.value === "Another country";
+      other.hidden = !on;
+      other.required = on;
+      if (on) other.focus();
+      else other.value = "";
+    }
+    sel.addEventListener("change", sync);
+    sync();
+  })();
+
   var fsrc = document.getElementById("formSrc");
   if (fsrc) fsrc.value = src;
 
@@ -1401,6 +1438,20 @@ footer a:hover{color:#fff;}
       if (!n) { out.classList.remove("on"); return; }
 
       if (n === "__other") {
+        var box = document.getElementById("heroOther");
+        if (box) {
+          box.hidden = false;
+          box.focus();
+          box.oninput = function () {
+            var f = document.getElementById("f-country");
+            var fo = document.getElementById("f-country-other");
+            if (f && fo) {
+              f.value = "Another country";
+              f.dispatchEvent(new Event("change"));
+              fo.value = box.value;
+            }
+          };
+        }
         out.innerHTML = "Tell us which one — <b>what you ask for is what we build next.</b>";
         out.classList.add("on");
         if (cta) cta.textContent = "Get the Germany file — free";
@@ -1409,6 +1460,8 @@ footer a:hover{color:#fff;}
         return;
       }
 
+      var hb = document.getElementById("heroOther");
+      if (hb) { hb.hidden = true; hb.value = ""; }
       var d = CONFIG.COUNTRY_DATA[n];
       var verified = false;
       out.innerHTML = "<b>" + n + "</b> — " + d[0] + " programmes across " + d[1] +
