@@ -260,8 +260,14 @@ header.site .wrap{
 .flag i{width:17px;height:12px;display:inline-block;border-radius:2px;flex:none;
   background:linear-gradient(to bottom,#000 33%,#dd0000 33%,#dd0000 66%,#ffce00 66%);}
 @media(max-width:700px){
-  .hero{padding:44px 0 60px;}
-  .hero .sub{font-size:17px;}
+  /* Tightened so the country picker, email and button all land inside the
+     first screen on a phone — that is where the paid traffic arrives. */
+  .hero{padding:28px 0 52px;}
+  .hero .sub{font-size:16.5px;margin-bottom:22px;}
+  .hero h1{margin-bottom:14px;}
+  .flag{margin-bottom:14px;}
+  .heropick label{margin-bottom:8px;}
+  .heropick-row{gap:9px;}
   .btn{display:flex;width:100%;}
 }
 
@@ -431,6 +437,11 @@ dl.spec dt:first-of-type,dl.spec dd:first-of-type{border-top:none;}
   background-repeat:no-repeat;background-position:right 18px center;
 }
 .heropick select:focus{outline:2px solid var(--primary);outline-offset:1px;}
+.heropick input[type="email"]{
+  font-family:inherit;font-size:16px;color:var(--ink);background:#fff;
+  padding:15px 20px;border:1px solid var(--line);border-radius:var(--pill);
+  min-width:230px;flex:1 1 230px;box-shadow:var(--shadow-sm);}
+.heropick input[type="email"]:focus{outline:2px solid var(--primary);outline-offset:1px;}
 #heroOther{font-family:inherit;font-size:16px;color:var(--ink);background:#fff;
   padding:14px 18px;border:1px solid var(--line);border-radius:var(--pill);
   min-width:250px;margin-top:12px;box-shadow:var(--shadow-sm);}
@@ -445,6 +456,7 @@ dl.spec dt:first-of-type,dl.spec dd:first-of-type{border-top:none;}
 .heropick-out b{color:var(--primary);}
 @media(max-width:700px){
   .heropick select{width:100%;min-width:0;}
+  .heropick input[type="email"]{width:100%;min-width:0;flex:1 1 auto;}
   .heropick-row .btn{width:100%;}
 }
 
@@ -460,6 +472,11 @@ dl.spec dt:first-of-type,dl.spec dd:first-of-type{border-top:none;}
 @media(max-width:640px){.midcta{padding:22px 20px;}.midcta .btn{width:100%;}}
 
 /* ---------- Sticky mobile CTA ---------- */
+.postsample{background:var(--primary);color:#fff;text-align:center;padding:54px 0;}
+.postsample h2{color:#fff;margin:0 0 10px;}
+.postsample p{color:rgba(255,255,255,.9);margin:0 0 24px;font-size:16.5px;}
+.postsample .btn{background:#fff;color:var(--primary);}
+.postsample .btn:hover{background:#eef2ff;}
 .stickycta{
   position:fixed;left:0;right:0;bottom:0;z-index:60;padding:12px 16px
     calc(12px + env(safe-area-inset-bottom,0px));
@@ -661,24 +678,35 @@ footer a:hover{color:#fff;}
     <div class="flag"><i></i> For counsellors · free early access</div>
     <h1>We checked 45 source links behind our own Germany data. <span class="accent">26 were dead.</span></h1>
     <p class="sub">
-      That is the material counsellors quote deadlines and fees from — and a dead source is how a
-      student's application quietly goes wrong months before anyone notices. Below is one German
-      programme re-checked field by field against the university's own pages, with the visa route for
-      your student's nationality. It's the standard every record has to meet, and the reason we won't
-      pretend the rest meet it yet.
+      That's what counsellors quote deadlines and fees from. Below is one German programme
+      re-checked field by field against the university's own pages, with the visa route for your
+      student's nationality — the standard every record has to meet, and we say plainly which
+      ones don't yet.
     </p>
-    <div class="heropick">
+    <form class="heropick" action="https://formsubmit.co/rahul@pavetheway.ai" method="POST">
+      <input type="hidden" name="_subject" value="Country data — early access request (hero)">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://germany.pavetheway.ai/thanks.html">
+      <input type="hidden" name="Came from" value="direct">
+      <input type="hidden" name="utm_source" value="">
+      <input type="hidden" name="utm_medium" value="">
+      <input type="hidden" name="utm_campaign" value="">
+      <input type="hidden" name="utm_content" value="">
+      <input type="hidden" name="Landing page" value="">
       <label for="heroCountry">Which country should we verify next?</label>
       <div class="heropick-row">
-        <select id="heroCountry">
+        <select id="heroCountry" name="Country needed" required>
           <option value="">Select a country…</option>
         </select>
-        <a class="btn btn-lg" id="heroCta" href="#requestForm">Get the Germany file — free</a>
+        <input id="heroEmail" name="Email" type="email" required
+               placeholder="you@yourfirm.com" autocomplete="email">
+        <button class="btn btn-lg" id="heroCta" type="submit">Get the Germany file — free</button>
       </div>
-      <input id="heroOther" type="text" hidden placeholder="Which country?" autocomplete="off">
+      <input id="heroOther" name="Country (other)" type="text" hidden placeholder="Which country?" autocomplete="off">
       <p class="heropick-out" id="heroOut"></p>
       <p style="font-size:13.5px;margin:14px 0 0;opacity:.8;">Free early access · nothing to pay and no card needed</p>
-    </div>
+    </form>
     <p class="meta" id="heroMeta">1 record verified against source · 980 compiled across 31 countries, unverified</p>
   </div>
 </div>
@@ -769,8 +797,8 @@ footer a:hover{color:#fff;}
 
           <div class="fgrid">
             <div class="field">
-              <label for="f-name">Your name <span class="req">*</span></label>
-              <input id="f-name" name="Name" type="text" required autocomplete="name">
+              <label for="f-name">Your name</label>
+              <input id="f-name" name="Name" type="text" autocomplete="name">
             </div>
             <div class="field">
               <label for="f-email">Email <span class="req">*</span></label>
@@ -1106,6 +1134,16 @@ footer a:hover{color:#fff;}
   </div>
 </section>
 
+<!-- Peak intent is the moment someone finishes reading the record, not the
+     moment they land. Ask here as well as at the top. -->
+<section class="postsample">
+  <div class="wrap">
+    <h2>That's one record. The Germany file has <span id="psCount">58</span>.</h2>
+    <p>Same standard, every field, with the visa route for your student's nationality. Free, by email, within 24 hours.</p>
+    <a class="btn btn-lg" id="postSampleCta" href="#requestForm">Get the Germany file — free</a>
+  </div>
+</section>
+
 <!-- ======================= 3. WHAT'S INSIDE ======================= -->
 <section class="tint" id="inside">
   <div class="wrap">
@@ -1379,33 +1417,42 @@ footer a:hover{color:#fff;}
     sync();
   })();
 
-  var fsrc = document.getElementById("formSrc");
-  if (fsrc) fsrc.value = src;
+  /* There are two forms now — one at the fold, one further down. Hidden fields
+     are addressed by name across every form on the page so neither can silently
+     lose its attribution. Duplicate ids would have broken exactly that. */
+  function setHidden(name, value) {
+    var els = document.querySelectorAll('form input[type="hidden"][name="' + name + '"]');
+    for (var i = 0; i < els.length; i++) els[i].value = value;
+  }
 
-  // carry ad attribution through to the submission
+  setHidden("Came from", src);
+  setHidden("_next", "https://germany.pavetheway.ai/thanks.html?src=" + src);
+
   try {
     var qs = new URLSearchParams(location.search);
-    [["utm_source","utmSource"],["utm_medium","utmMedium"],
-     ["utm_campaign","utmCampaign"],["utm_content","utmContent"]].forEach(function (pair) {
-      var el = document.getElementById(pair[1]);
-      if (el) el.value = (qs.get(pair[0]) || "").slice(0, 120);
+    ["utm_source", "utm_medium", "utm_campaign", "utm_content"].forEach(function (k) {
+      setHidden(k, (qs.get(k) || "").slice(0, 120));
     });
-    var pg = document.getElementById("utmPage");
-    if (pg) pg.value = location.href.slice(0, 300);
+    setHidden("Landing page", location.href.slice(0, 300));
   } catch (e) {}
-  var fnext = document.getElementById("formNext");
-  if (fnext) fnext.value = "https://germany.pavetheway.ai/thanks.html?src=" + src;
-  var form = document.querySelector("#requestForm form");
-  if (form) form.addEventListener("submit", function () { track("form-submit"); });
-  /* form-start separates "reached the form and ignored it" from "started filling
-     it in and gave up" — the two have completely different fixes. */
-  if (form) {
-    var formStarted = false;
-    form.addEventListener("focusin", function () {
-      if (formStarted) return;
-      formStarted = true;
-      track("form-start");
-    });
+
+  /* Which form produced the lead is the whole point of running two: the hero
+     tests "will they convert at the fold", the lower one tests "did the proof
+     do the work". Tagging them separately keeps that answerable. */
+  var forms = document.querySelectorAll("form");
+  for (var fi = 0; fi < forms.length; fi++) {
+    (function (f) {
+      var where = f.classList.contains("heropick") ? "hero" : "form";
+      f.addEventListener("submit", function () { track(where + "-submit"); });
+      /* form-start separates "reached it and ignored it" from "started filling
+         it in and gave up" — the two have completely different fixes. */
+      var started = false;
+      f.addEventListener("focusin", function () {
+        if (started) return;
+        started = true;
+        track(where + "-start");
+      });
+    })(forms[fi]);
   }
 
   /* ---- 5. CONFIG values into the copy ---- */
@@ -1424,6 +1471,7 @@ footer a:hover{color:#fff;}
   set("lockedHeadline",
       "+ " + (CONFIG.UNI_COUNT - 1) + " more German institutions and " +
       (CONFIG.PROGRAMME_COUNT - 1) + " more programmes");
+  set("psCount", CONFIG.PROGRAMME_COUNT);
   set("verifiedDate", CONFIG.LAST_VERIFIED ? "; last checked " + CONFIG.LAST_VERIFIED : "");
 
 
