@@ -658,6 +658,17 @@ dl.spec dt:first-of-type,dl.spec dd:first-of-type{border-top:none;}
 /* ---------- Footer ---------- */
 footer{background:var(--navy);color:#b9d0de;padding:36px 0 30px;font-size:14.5px;}
 footer .verified{border-left:3px solid var(--orange);padding-left:18px;margin-bottom:30px;max-width:74ch;color:#d3e3ec;}
+.voices{background:var(--muted);}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.quotes figure{margin:0;background:var(--white);border:1px solid var(--line);
+  border-radius:14px;padding:24px 24px 20px;display:flex;flex-direction:column;
+  justify-content:space-between;box-shadow:var(--shadow-sm);}
+.quotes blockquote{margin:0 0 16px;font-size:16.5px;line-height:1.55;color:var(--ink);}
+.quotes blockquote::before{content:"\201C";display:block;font-size:40px;line-height:.7;
+  color:var(--primary);opacity:.35;margin-bottom:6px;}
+.quotes figcaption{font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--primary);font-weight:700;}
+@media(max-width:860px){.quotes{grid-template-columns:1fr;gap:16px;}}
 footer .contact{margin-bottom:28px;}
 footer .contact h4{color:#fff;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;
   margin:0 0 12px;font-weight:700;}
@@ -1035,6 +1046,31 @@ footer a:hover{color:#fff;}
     </div><!-- /sample -->
 
 
+  </div>
+</section>
+
+<!-- Counselors who already use Pave. Kept close to what each person actually
+     said: tightened, not rewritten, and no claim added that they did not make. -->
+<section class="voices">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Counselors using Pave</p>
+      <h2>What it changes on a Tuesday afternoon.</h2>
+    </div>
+    <div class="quotes">
+      <figure>
+        <blockquote>Research that took me four hours a student takes four minutes. It is all just in front of me.</blockquote>
+        <figcaption>Angie</figcaption>
+      </figure>
+      <figure>
+        <blockquote>Multiple countries, different programmes. That used to be the hard part. The datasets made it much simpler.</blockquote>
+        <figcaption>Zara</figcaption>
+      </figure>
+      <figure>
+        <blockquote>I give these straight to my students. It has been a game changer.</blockquote>
+        <figcaption>Mark</figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
