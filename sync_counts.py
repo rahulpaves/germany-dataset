@@ -36,9 +36,11 @@ def counts():
         i.add(inst)
 
     de = [k for k in uniq if k[0] == "Germany"]
+    de_verified = [k for k in de if k in verified]
     return {
         "rows_in_file":     len(rows),
         "PROGRAMME_COUNT":  len(de),
+        "GERMANY_VERIFIED": len(de_verified),
         "UNI_COUNT":        len({i for (_c, i, _p) in de}),
         "TOTAL_PROGRAMMES": len(uniq),
         "TOTAL_INSTS":      len({i for (_c, i, _p) in uniq}),
@@ -51,7 +53,8 @@ def counts():
 def current(page):
     out = {}
     for name in ("TOTAL_PROGRAMMES", "TOTAL_INSTS", "TOTAL_COUNTRIES",
-                 "VERIFIED_PROGRAMMES", "UNI_COUNT", "PROGRAMME_COUNT"):
+                 "VERIFIED_PROGRAMMES", "UNI_COUNT", "PROGRAMME_COUNT",
+                 "GERMANY_VERIFIED"):
         m = re.search(r"^\s*%s:\s*(\d+)," % name, page, re.M)
         out[name] = int(m.group(1)) if m else None
     return out
@@ -67,8 +70,8 @@ def main():
           % (c["rows_in_file"], c["TOTAL_PROGRAMMES"], dupes, "" if dupes == 1 else "s"))
 
     drift = False
-    for name in ("UNI_COUNT", "PROGRAMME_COUNT", "TOTAL_PROGRAMMES", "TOTAL_INSTS",
-                 "TOTAL_COUNTRIES", "VERIFIED_PROGRAMMES"):
+    for name in ("UNI_COUNT", "PROGRAMME_COUNT", "GERMANY_VERIFIED", "TOTAL_PROGRAMMES",
+                 "TOTAL_INSTS", "TOTAL_COUNTRIES", "VERIFIED_PROGRAMMES"):
         truth, shown = c[name], have[name]
         if shown != truth:
             drift = True
@@ -91,8 +94,13 @@ def main():
                 print("  DRIFT  COUNTRY_DATA %-14s page says %s/%s  data says %d/%d"
                       % (country, s[0], s[1], n, insts))
 
+    ready = c["GERMANY_VERIFIED"] >= c["PROGRAMME_COUNT"]
+    print("\nLAUNCH: %s (%d of %d German programmes verified)"
+          % ("READY" if ready else "NOT READY — page shows the pre-launch bar",
+             c["GERMANY_VERIFIED"], c["PROGRAMME_COUNT"]))
+
     if not drift:
-        print("\nNo drift. Page matches data.")
+        print("No drift. Page matches data.")
         return
 
     if not apply:
@@ -100,8 +108,13 @@ def main():
         return
 
     for name in ("TOTAL_PROGRAMMES", "TOTAL_INSTS", "TOTAL_COUNTRIES",
-                 "UNI_COUNT", "PROGRAMME_COUNT"):
+                 "UNI_COUNT", "PROGRAMME_COUNT", "GERMANY_VERIFIED"):
         page = re.sub(r"^(\s*%s:\s*)\d+," % name, r"\g<1>%d," % c[name], page, count=1, flags=re.M)
+
+    if have["GERMANY_VERIFIED"] is None:
+        page = re.sub(r"^(\s*PROGRAMME_COUNT:\s*\d+,)",
+                      r"\1\n  GERMANY_VERIFIED: %d," % c["GERMANY_VERIFIED"],
+                      page, count=1, flags=re.M)
 
     if have["VERIFIED_PROGRAMMES"] is None:
         page = re.sub(r"^(\s*TOTAL_PROGRAMMES:\s*\d+,)",

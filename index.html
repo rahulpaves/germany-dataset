@@ -40,6 +40,7 @@ const CONFIG = {
   // Germany, the country taken through verification first.
   UNI_COUNT:        27,
   PROGRAMME_COUNT:  58,
+  GERMANY_VERIFIED: 6,
 
   // Whole-library totals across the 31 countries in COUNTRIES below.
   TOTAL_COUNTRIES:  31,
@@ -693,13 +694,13 @@ footer a:hover{color:#fff;}
 <!-- ============================ 1. HERO ============================ -->
 <div class="hero">
   <div class="wrap">
-    <div class="flag"><i></i> For counsellors · free early access</div>
-    <h1>We checked 45 source links behind our own Germany data. <span class="accent">26 were dead.</span></h1>
+    <div class="flag"><i></i> For counsellors · Germany complete</div>
+    <h1>Every English-taught bachelor's in Germany, <span class="accent">checked against the university's own pages.</span></h1>
     <p class="sub">
-      That's what counsellors quote deadlines and fees from. Below is one German programme
-      re-checked field by field against the university's own pages, with the visa route for your
-      student's nationality — the standard every record has to meet, and we say plainly which
-      ones don't yet.
+      Not aggregated, not scraped — opened and read. Entry requirements mapped to CBSE, ISC, IB
+      and A-Levels instead of "country equivalent". The English threshold that actually applies.
+      The visa chain that changes with your student's passport. Re-checked every cycle, because
+      deadlines move and nobody sends you a note when they do.
     </p>
     <form class="heropick" action="https://formsubmit.co/rahul@pavetheway.ai" method="POST">
       <input type="hidden" name="_subject" value="Country data — early access request (hero)">
@@ -740,7 +741,7 @@ footer a:hover{color:#fff;}
   </div>
   <div class="stat">
     <div class="n">5</div>
-    <p class="l">factual errors we found in <b>a single university record</b> while checking it last week</p>
+    <p class="l">factual errors in <b>a single university record</b> before we checked it — including a "flagship English-taught" degree taught in German</p>
   </div>
 </div>
 
@@ -886,13 +887,13 @@ footer a:hover{color:#fff;}
           <div class="whatyouget">
             <h4>What lands in your inbox</h4>
             <ul>
-              <li>All <b id="wygCount">58</b> English-taught German bachelor's programmes, as a spreadsheet</li>
+              <li>All <b id="wygCount">58</b> English-taught German bachelor's programmes, every one checked against source</li>
               <li>Entry requirements mapped per board — <b>CBSE, ISC, IB and A-Level</b> — not just "country equivalent"</li>
               <li>English thresholds, EU and non-EU fees, living costs, deadlines and how to apply</li>
               <li>The <b>nine-step visa chain</b> above, with the steps that change by your student's nationality</li>
               <li>The TUM record you just read, checked field by field against source</li>
             </ul>
-            <p class="wyg-note">Records we haven't checked against source yet are marked as such in the sheet, so you always know which is which.</p>
+            <p class="wyg-note">Every field carries the source link it came from, so you can confirm any answer in front of a parent without taking our word for it.</p>
           </div>
 
           <button type="submit">Get the Germany file — free</button>
@@ -919,8 +920,8 @@ footer a:hover{color:#fff;}
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Live sample</p>
-      <h2>One record, verified. This is the standard every country gets.</h2>
-      <p>A real record, unedited, checked field by field against TUM's own pages. Germany goes through verification first — the country you ask for gets the same treatment.</p>
+      <h2>Germany, verified. This is the standard every country gets.</h2>
+      <p>A real record, unedited. Open any source link and check it yourself — that is the point. The country you ask for next gets exactly this treatment.</p>
     </div>
 
 <!--
@@ -942,7 +943,7 @@ footer a:hover{color:#fff;}
 -->
     <div class="sample">
       <div class="sample-head">
-        <span class="tag">Verified record · checked <span id="progCountTag">25 August 2026</span></span>
+        <span class="tag">Verified record · 1 of <span id="progCountTag">58</span> · checked <span id="sampleDate">25 August 2026</span></span>
         <h3>Aerospace (B.Sc.)</h3>
         <p class="inst">Technical University of Munich (TUM) · Bavaria</p>
         <div class="chips">
@@ -1175,8 +1176,8 @@ footer a:hover{color:#fff;}
      moment they land. Ask here as well as at the top. -->
 <section class="postsample">
   <div class="wrap">
-    <h2>That's one record. The Germany file has <span id="psCount">58</span>.</h2>
-    <p>Same standard, every field, with the visa route for your student's nationality. Free, by email, within 24 hours.</p>
+    <h2>That's one record. All <span id="psCount">58</span> are held to it.</h2>
+    <p>Every English-taught bachelor's in Germany, to that standard, with the visa route for your student's passport. Free, by email, within 24 hours.</p>
     <a class="btn btn-lg" id="postSampleCta" href="#requestForm">Get the Germany file — free</a>
   </div>
 </section>
@@ -1237,8 +1238,8 @@ footer a:hover{color:#fff;}
   <div class="wrap">
     <div class="section-head" style="text-align:center;margin-left:auto;margin-right:auto;">
       <p class="eyebrow">Straight answer</p>
-      <h2>What this will cost, when it's ready</h2>
-      <p style="margin:0 auto;">You should know the intended price before you spend any time on this, so here it is.</p>
+      <h2>What it costs, and what it replaces</h2>
+      <p style="margin:0 auto;">You should know the price before you spend any time on this, so here it is.</p>
     </div>
 
     <div class="price-card">
@@ -1246,16 +1247,18 @@ footer a:hover{color:#fff;}
       <p class="terms">Early access · <strong>no card, nothing charged</strong></p>
 
       <ul class="includes">
-        <li>The verified Germany file, sent by email within 24 hours</li>
+        <li>The complete verified Germany file, by email within 24 hours</li>
         <li>Every requirement, deadline, fee and application route, checked against source</li>
-        <li>The visa route for your student's nationality</li>
-        <li>A source link on every field, so you can confirm anything yourself</li>
+        <li>Board-by-board entry mapping — CBSE, ISC, IB, A-Level</li>
+        <li>The visa chain for your student's passport, step by step, with realistic timings</li>
+        <li>A source link on every field, so you can confirm anything in front of a parent</li>
         <li>Your chosen country goes into the verification queue</li>
       </ul>
 
       <div style="text-align:left;background:#fff;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:18px 20px;margin-bottom:26px;">
-        <p style="font-size:15px;margin:0 0 8px;"><strong>When your country is verified</strong></p>
-        <p style="font-size:14.5px;margin:0;">The intended price is <strong>$79 per counsellor per month</strong>, with firm pricing for 3 or more seats. We will show you the verified file before anything is ever charged, and you decide then.</p>
+        <p style="font-size:15px;margin:0 0 8px;"><strong>After Germany: $79 per counsellor per month</strong></p>
+        <p style="font-size:14.5px;margin:0 0 10px;">Firm pricing from 3 seats. Researching one country properly, for one student, is an evening's work — and you do it again next cycle when the deadline moves. <strong>If this saves you two hours a month it has already paid for itself</strong>, and most counsellors lose that in a single afternoon of tab-switching.</p>
+        <p style="font-size:14.5px;margin:0;">You see your country verified <strong>before</strong> anything is charged, and you decide then.</p>
         <p style="font-size:13.5px;margin:10px 0 0;opacity:.85;">Nothing is charged today. We don't collect card details on this site.</p>
       </div>
 
@@ -1499,18 +1502,42 @@ footer a:hover{color:#fff;}
   }
   set("plainEmail2",  CONFIG.EMAIL);
   set("priceAmount",  CONFIG.PRICE);
-  set("progCountTag", CONFIG.LAST_VERIFIED);   // the sample's check date, not a count
-  set("heroMeta",
-      "Germany first \u2014 " + CONFIG.PROGRAMME_COUNT + " programmes compiled, " +
-      CONFIG.VERIFIED_PROGRAMMES + " checked against source so far. " +
-      (CONFIG.TOTAL_COUNTRIES - 1) + " more countries queued by what counsellors ask for. " +
-      "Nothing is ever labelled verified until it is.");
+  set("progCountTag", CONFIG.PROGRAMME_COUNT);
+  /* ---- launch interlock -------------------------------------------------
+     The copy on this page claims every German programme has been checked.
+     That is true only when data.json says so. Until then a bar makes it
+     impossible to publish this by accident. Nothing here is cosmetic: the
+     claim and the data are the same switch. */
+  var LAUNCH_READY = CONFIG.GERMANY_VERIFIED >= CONFIG.PROGRAMME_COUNT;
+
+  set("heroMeta", LAUNCH_READY
+    ? CONFIG.PROGRAMME_COUNT + " of " + CONFIG.PROGRAMME_COUNT +
+      " German programmes verified against source \u00b7 last checked " +
+      CONFIG.LAST_VERIFIED + " \u00b7 " + (CONFIG.TOTAL_COUNTRIES - 1) +
+      " more countries queued by what counsellors ask for"
+    : "PRE-LAUNCH \u2014 " + CONFIG.GERMANY_VERIFIED + " of " + CONFIG.PROGRAMME_COUNT +
+      " German programmes verified. This page is not ready to publish.");
+
+  if (!LAUNCH_READY) {
+    var bar = document.createElement("div");
+    bar.setAttribute("role", "alert");
+    bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:9999;" +
+      "background:#b3261e;color:#fff;font:600 14px/1.45 Inter,sans-serif;" +
+      "padding:11px 18px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.25);";
+    bar.textContent =
+      "PRE-LAUNCH — this page claims all " + CONFIG.PROGRAMME_COUNT +
+      " German programmes are verified, but only " + CONFIG.GERMANY_VERIFIED +
+      " are. Do not publish or advertise. Run sync_counts.py after adding verified records.";
+    document.body.appendChild(bar);
+    document.body.style.paddingTop = "44px";
+  }
   set("incUnis", "All " + CONFIG.TOTAL_PROGRAMMES + " programmes across " + CONFIG.TOTAL_COUNTRIES + " countries");
   set("lockedHeadline",
       "+ " + (CONFIG.UNI_COUNT - 1) + " more German institutions and " +
       (CONFIG.PROGRAMME_COUNT - 1) + " more programmes");
   set("psCount", CONFIG.PROGRAMME_COUNT);
   set("wygCount", CONFIG.PROGRAMME_COUNT);
+  set("sampleDate", CONFIG.LAST_VERIFIED);
   set("verifiedDate", CONFIG.LAST_VERIFIED ? "; last checked " + CONFIG.LAST_VERIFIED : "");
 
 
