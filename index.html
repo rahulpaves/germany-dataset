@@ -38,23 +38,25 @@ const CONFIG = {
   // (27 institutions / 54 English-taught programmes). Keep them HONEST --
   // counsellors will check, and an inflated number kills the test.
   // Germany, the country taken through verification first.
-  UNI_COUNT:        29,
-  PROGRAMME_COUNT:  61,
+  UNI_COUNT:        27,
+  PROGRAMME_COUNT:  58,
 
   // Whole-library totals across the 31 countries in COUNTRIES below.
   TOTAL_COUNTRIES:  31,
-  TOTAL_INSTS:      393,
-  TOTAL_PROGRAMMES: 980,
+  TOTAL_INSTS:      391,
+  TOTAL_PROGRAMMES: 977,
+  VERIFIED_PROGRAMMES: 6,
 
   // country -> [programmes, institutions]. Drives the hero picker.
   COUNTRY_DATA: {
-    "Germany":[61,29],"Netherlands":[105,30],"Hungary":[111,20],"Italy":[61,18],
-    "Denmark":[55,9],"UAE":[53,28],"Ireland":[43,12],"France":[38,25],"Finland":[35,11],
-    "Belgium":[34,17],"Sweden":[34,12],"Poland":[33,15],"Czechia":[29,10],"India":[28,25],
-    "Portugal":[26,17],"Austria":[26,12],"Switzerland":[21,11],"Romania":[21,9],
-    "Norway":[17,11],"Slovenia":[16,5],"Bulgaria":[15,9],"Iceland":[14,7],"Lithuania":[14,7],
-    "Estonia":[13,5],"Greece":[12,7],"Slovakia":[12,6],"Latvia":[11,6],"Croatia":[11,4],
-    "Cyprus":[11,6],"Luxembourg":[9,3],"Malta":[8,3]
+    "Hungary":[111,20], "Netherlands":[105,30], "Italy":[61,18], "Germany":[58,27],
+    "Denmark":[55,9], "UAE":[53,28], "Ireland":[43,12], "France":[38,25],
+    "Finland":[35,11], "Belgium":[34,17], "Sweden":[34,12], "Poland":[33,15],
+    "India":[31,28], "Czechia":[29,10], "Portugal":[26,17], "Austria":[25,12],
+    "Romania":[21,9], "Switzerland":[21,11], "Norway":[17,11], "Slovenia":[16,5],
+    "Bulgaria":[15,9], "Iceland":[14,7], "Lithuania":[14,7], "Estonia":[13,5],
+    "Greece":[12,7], "Slovakia":[12,6], "Croatia":[11,4], "Cyprus":[11,6],
+    "Latvia":[11,6], "Luxembourg":[9,3], "Malta":[9,4]
   },
 
   LAST_VERIFIED:    "25 August 2026",             // e.g. "August 2026" -> "; last checked August 2026". Blank hides it.
@@ -656,12 +658,14 @@ footer a:hover{color:#fff;}
 <!-- ============================ 1. HERO ============================ -->
 <div class="hero">
   <div class="wrap">
-    <div class="flag"><i></i> One verified Germany record · free early access</div>
-    <h1>What a <span class="accent">properly verified</span> programme record actually looks like.</h1>
+    <div class="flag"><i></i> For counsellors · free early access</div>
+    <h1>We checked 45 source links behind our own Germany data. <span class="accent">26 were dead.</span></h1>
     <p class="sub">
-      Below is one German programme checked field by field against the university's own pages, with
-      the visa route for your student's nationality. It's the standard every record should meet —
-      and the reason we don't pretend the other 979 meet it yet. You tell us which country to verify next.
+      That is the material counsellors quote deadlines and fees from — and a dead source is how a
+      student's application quietly goes wrong months before anyone notices. Below is one German
+      programme re-checked field by field against the university's own pages, with the visa route for
+      your student's nationality. It's the standard every record has to meet, and the reason we won't
+      pretend the rest meet it yet.
     </p>
     <div class="heropick">
       <label for="heroCountry">Which country should we verify next?</label>
@@ -828,8 +832,8 @@ footer a:hover{color:#fff;}
                      style="margin-top:9px;">
             </div>
             <div class="field full">
-              <label for="f-pay">If this covered your country, verified, what would it be worth to you? <span class="req">*</span></label>
-              <select id="f-pay" name="Would pay" required>
+              <label for="f-pay">If this covered your country, verified, what would it be worth to you?</label>
+              <select id="f-pay" name="Would pay">
                 <option value="">Select…</option>
                 <option>Nothing — only if free</option>
                 <option>Up to $79 a month</option>
@@ -839,9 +843,9 @@ footer a:hover{color:#fff;}
               </select>
             </div>
             <div class="field full">
-              <label>How many counsellors work at your firm? <span class="req">*</span></label>
+              <label>How many counsellors work at your firm?</label>
               <div class="choices">
-                <label class="choice"><input type="radio" name="Counsellors at firm" value="1" required> <span>Just me</span></label>
+                <label class="choice"><input type="radio" name="Counsellors at firm" value="1"> <span>Just me</span></label>
                 <label class="choice"><input type="radio" name="Counsellors at firm" value="2-5"> <span>2–5</span></label>
                 <label class="choice"><input type="radio" name="Counsellors at firm" value="6-20"> <span>6–20</span></label>
                 <label class="choice"><input type="radio" name="Counsellors at firm" value="20+"> <span>20+</span></label>
@@ -1393,6 +1397,16 @@ footer a:hover{color:#fff;}
   if (fnext) fnext.value = "https://germany.pavetheway.ai/thanks.html?src=" + src;
   var form = document.querySelector("#requestForm form");
   if (form) form.addEventListener("submit", function () { track("form-submit"); });
+  /* form-start separates "reached the form and ignored it" from "started filling
+     it in and gave up" — the two have completely different fixes. */
+  if (form) {
+    var formStarted = false;
+    form.addEventListener("focusin", function () {
+      if (formStarted) return;
+      formStarted = true;
+      track("form-start");
+    });
+  }
 
   /* ---- 5. CONFIG values into the copy ---- */
   function set(id, txt) {
@@ -1403,8 +1417,9 @@ footer a:hover{color:#fff;}
   set("priceAmount",  CONFIG.PRICE);
   set("progCountTag", CONFIG.PROGRAMME_COUNT);
   set("heroMeta",
-      "1 record verified against source \u00b7 " + CONFIG.TOTAL_PROGRAMMES +
-      " compiled across " + CONFIG.TOTAL_COUNTRIES + " countries, unverified");
+      CONFIG.VERIFIED_PROGRAMMES + " programmes verified against source \u00b7 " +
+      (CONFIG.TOTAL_PROGRAMMES - CONFIG.VERIFIED_PROGRAMMES) + " compiled across " +
+      CONFIG.TOTAL_COUNTRIES + " countries, not yet checked");
   set("incUnis", "All " + CONFIG.TOTAL_PROGRAMMES + " programmes across " + CONFIG.TOTAL_COUNTRIES + " countries");
   set("lockedHeadline",
       "+ " + (CONFIG.UNI_COUNT - 1) + " more German institutions and " +
