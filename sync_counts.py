@@ -96,7 +96,7 @@ def main():
 
     ready = c["GERMANY_VERIFIED"] >= c["PROGRAMME_COUNT"]
     print("\nLAUNCH: %s (%d of %d German programmes verified)"
-          % ("READY" if ready else "NOT READY — page shows the pre-launch bar",
+          % ("READY" if ready else "NOT READY — do not advertise this page yet",
              c["GERMANY_VERIFIED"], c["PROGRAMME_COUNT"]))
 
     if not drift:

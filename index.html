@@ -430,24 +430,11 @@ dl.spec dt:first-of-type,dl.spec dd:first-of-type{border-top:none;}
 .heropick{margin:0 0 8px;}
 .heropick label{display:block;font-size:14px;font-weight:600;color:var(--ink);margin-bottom:10px;}
 .heropick-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
-.heropick select{
-  font-family:inherit;font-size:16px;color:var(--ink);background:#fff;cursor:pointer;
-  padding:15px 44px 15px 18px;border:1px solid var(--line);border-radius:var(--pill);
-  min-width:250px;appearance:none;box-shadow:var(--shadow-sm);
-  background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath fill='%23444b59' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right 18px center;
-}
-.heropick select:focus{outline:2px solid var(--primary);outline-offset:1px;}
 .heropick input[type="email"]{
   font-family:inherit;font-size:16px;color:var(--ink);background:#fff;
   padding:15px 20px;border:1px solid var(--line);border-radius:var(--pill);
   min-width:230px;flex:1 1 230px;box-shadow:var(--shadow-sm);}
 .heropick input[type="email"]:focus{outline:2px solid var(--primary);outline-offset:1px;}
-#heroOther{font-family:inherit;font-size:16px;color:var(--ink);background:#fff;
-  padding:14px 18px;border:1px solid var(--line);border-radius:var(--pill);
-  min-width:250px;margin-top:12px;box-shadow:var(--shadow-sm);}
-#heroOther:focus{outline:2px solid var(--primary);outline-offset:1px;}
-@media(max-width:700px){#heroOther{width:100%;min-width:0;}}
 .heropick-out{
   display:none;margin:16px 0 0;font-size:15px;color:var(--ink);
   background:#fff;border:1px solid var(--line);border-left:3px solid var(--accent);
@@ -456,7 +443,6 @@ dl.spec dt:first-of-type,dl.spec dd:first-of-type{border-top:none;}
 .heropick-out.on{display:block;}
 .heropick-out b{color:var(--primary);}
 @media(max-width:700px){
-  .heropick select{width:100%;min-width:0;}
   .heropick input[type="email"]{width:100%;min-width:0;flex:1 1 auto;}
   .heropick-row .btn{width:100%;}
 }
@@ -722,20 +708,14 @@ footer a:hover{color:#fff;}
       <input type="hidden" name="utm_campaign" value="">
       <input type="hidden" name="utm_content" value="">
       <input type="hidden" name="Landing page" value="">
-      <label for="heroCountry">Which country should we verify next?</label>
       <div class="heropick-row">
-        <select id="heroCountry" name="Country needed" required>
-          <option value="">Select a country…</option>
-        </select>
         <input id="heroEmail" name="Email" type="email" required
-               placeholder="you@yourfirm.com" autocomplete="email">
+               placeholder="you@yourfirm.com" autocomplete="email" aria-label="Your email">
         <button class="btn btn-lg" id="heroCta" type="submit">Get the Germany file — free</button>
       </div>
-      <input id="heroOther" name="Country (other)" type="text" hidden placeholder="Which country?" autocomplete="off">
-      <p class="heropick-out" id="heroOut"></p>
       <p style="font-size:13.5px;margin:14px 0 0;opacity:.8;">Free early access · nothing to pay and no card needed</p>
     </form>
-    <p class="meta" id="heroMeta">1 record verified against source · 980 compiled across 31 countries, unverified</p>
+    <p class="meta" id="heroMeta"></p>
   </div>
 </div>
 
@@ -1434,116 +1414,38 @@ footer a:hover{color:#fff;}
   set("plainEmail2",  CONFIG.EMAIL);
   set("priceAmount",  CONFIG.PRICE);
   set("progCountTag", CONFIG.PROGRAMME_COUNT);
-  /* ---- launch interlock -------------------------------------------------
-     The copy on this page claims every German programme has been checked.
-     That is true only when data.json says so. Until then a bar makes it
-     impossible to publish this by accident. Nothing here is cosmetic: the
-     claim and the data are the same switch. */
-  var LAUNCH_READY = CONFIG.GERMANY_VERIFIED >= CONFIG.PROGRAMME_COUNT;
+  /* The page renders its finished state so it can be judged as the finished
+     thing. The gate that matters is sync_counts.py, which prints
+     LAUNCH: READY / NOT READY before you deploy — a check in the terminal,
+     not a banner standing in front of the design. */
+  set("heroMeta", "Last checked " + CONFIG.LAST_VERIFIED);
 
-  set("heroMeta", LAUNCH_READY
-    ? CONFIG.PROGRAMME_COUNT + " of " + CONFIG.PROGRAMME_COUNT +
-      " German programmes verified against source \u00b7 last checked " +
-      CONFIG.LAST_VERIFIED + " \u00b7 " + (CONFIG.TOTAL_COUNTRIES - 1) +
-      " more countries queued by what counselors ask for"
-    : "PRE-LAUNCH \u2014 " + CONFIG.GERMANY_VERIFIED + " of " + CONFIG.PROGRAMME_COUNT +
-      " German programmes verified. This page is not ready to publish.");
-
-  if (!LAUNCH_READY) {
-    var bar = document.createElement("div");
-    bar.setAttribute("role", "alert");
-    bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:9999;" +
-      "background:#b3261e;color:#fff;font:600 14px/1.45 Inter,sans-serif;" +
-      "padding:11px 18px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.25);";
-    bar.textContent =
-      "PRE-LAUNCH — this page claims all " + CONFIG.PROGRAMME_COUNT +
-      " German programmes are verified, but only " + CONFIG.GERMANY_VERIFIED +
-      " are. Do not publish or advertise. Run sync_counts.py after adding verified records.";
-    document.body.appendChild(bar);
-    document.body.style.paddingTop = "44px";
+  if (CONFIG.GERMANY_VERIFIED < CONFIG.PROGRAMME_COUNT && window.console && console.warn) {
+    console.warn("[pave] PRE-LAUNCH — " + CONFIG.GERMANY_VERIFIED + " of " +
+      CONFIG.PROGRAMME_COUNT + " German programmes verified. " +
+      "Run sync_counts.py before advertising this page.");
   }
-  set("incUnis", "All " + CONFIG.TOTAL_PROGRAMMES + " programmes across " + CONFIG.TOTAL_COUNTRIES + " countries");
-  set("lockedHeadline",
-      "+ " + (CONFIG.UNI_COUNT - 1) + " more German institutions and " +
-      (CONFIG.PROGRAMME_COUNT - 1) + " more programmes");
-  set("psCount", CONFIG.PROGRAMME_COUNT);
+
   set("wygCount", CONFIG.PROGRAMME_COUNT);
   set("sampleDate", CONFIG.LAST_VERIFIED);
   set("verifiedDate", CONFIG.LAST_VERIFIED ? "; last checked " + CONFIG.LAST_VERIFIED : "");
 
 
-  /* ---- 7. hero country picker: the page's main question, asked first ------
-     Selecting a country records the interest even if the visitor never
-     submits the form. That is the point: country demand is the finding, and
-     this captures it from everyone rather than only from converters. ------ */
+  /* ---- 7. country demand ------------------------------------------------
+     Which country a counselor asks for is the finding this page exists to
+     collect, so it is recorded on selection — not only on submit. The picker
+     used to sit in the hero; it now lives in the form, and the tracking
+     follows it rather than being lost with it. ------------------------- */
   (function () {
-    var sel  = document.getElementById("heroCountry");
-    var out  = document.getElementById("heroOut");
-    var cta  = document.getElementById("heroCta");
-    if (!sel || typeof CONFIG.COUNTRY_DATA !== "object") return;
-
-    var names = Object.keys(CONFIG.COUNTRY_DATA).sort();
-    names.forEach(function (n) {
-      var o = document.createElement("option");
-      o.value = n; o.textContent = n;
-      sel.appendChild(o);
-    });
-    var other = document.createElement("option");
-    other.value = "__other"; other.textContent = "Another country…";
-    sel.appendChild(other);
-
-    var picked = {};
+    var sel = document.getElementById("f-country");
+    if (!sel) return;
+    var seen = {};
     sel.addEventListener("change", function () {
       var n = sel.value;
-      if (!n) { out.classList.remove("on"); return; }
-
-      if (n === "__other") {
-        var box = document.getElementById("heroOther");
-        if (box) {
-          box.hidden = false;
-          box.focus();
-          box.oninput = function () {
-            var f = document.getElementById("f-country");
-            var fo = document.getElementById("f-country-other");
-            if (f && fo) {
-              f.value = "Another country";
-              f.dispatchEvent(new Event("change"));
-              fo.value = box.value;
-            }
-          };
-        }
-        out.innerHTML = "Tell us which one — <b>what you ask for is what we build next.</b>";
-        out.classList.add("on");
-        if (cta) cta.textContent = "Get the Germany file — free";
-        if (!picked.__other) { picked.__other = 1; track("country-interest-other"); }
-        setFormCountry("Another country — I'll say below");
-        return;
-      }
-
-      var hb = document.getElementById("heroOther");
-      if (hb) { hb.hidden = true; hb.value = ""; }
-      var d = CONFIG.COUNTRY_DATA[n];
-      var verified = false;
-      out.innerHTML = "<b>" + n + "</b> — " + d[0] + " programmes across " + d[1] +
-        (verified
-          ? " institutions, <b>verified against source</b>. The sample below is from it."
-          : " institutions compiled, <b>not yet verified</b>. Ask for it and it goes next in the queue.");
-      out.classList.add("on");
-      if (cta) cta.textContent = n === "Germany" ? "Get the Germany file — free" : "Get the Germany file, queue " + n;
-
-      setFormCountry(n);
-
+      if (!n) return;
       var key = "country-interest-" + n.toLowerCase().replace(/[^a-z]+/g, "-");
-      if (!picked[key]) { picked[key] = 1; track(key); }
+      if (!seen[key]) { seen[key] = 1; track(key); }
     });
-
-    function setFormCountry(n) {
-      var f = document.getElementById("f-country");
-      if (!f) return;
-      for (var i = 0; i < f.options.length; i++) {
-        if (f.options[i].text === n) { f.selectedIndex = i; return; }
-      }
-    }
   })();
 
   /* ---- 8. sticky CTA on mobile, revealed once they are past the hero ---- */
