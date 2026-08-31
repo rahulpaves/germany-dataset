@@ -477,6 +477,24 @@ dl.spec dt:first-of-type,dl.spec dd:first-of-type{border-top:none;}
 .postsample p{color:rgba(255,255,255,.9);margin:0 0 24px;font-size:16.5px;}
 .postsample .btn{background:#fff;color:var(--primary);}
 .postsample .btn:hover{background:#eef2ff;}
+.whatyouget{background:var(--muted);border:1px solid var(--line);border-radius:12px;
+  padding:20px 22px;margin:4px 0 22px;}
+.whatyouget h4{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--primary);margin:0 0 12px;font-weight:700;}
+.whatyouget ul{margin:0;padding-left:20px;}
+.whatyouget li{font-size:14.5px;line-height:1.55;margin-bottom:7px;color:var(--body);}
+.whatyouget li:last-child{margin-bottom:0;}
+.whatyouget li b{color:var(--ink);font-weight:600;}
+.wyg-note{font-size:13px;color:var(--body);opacity:.85;margin:12px 0 0;}
+.founder{display:flex;gap:16px;align-items:flex-start;background:var(--white);
+  border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin-top:28px;
+  max-width:70ch;box-shadow:var(--shadow-sm);}
+.founder .fi{flex:none;width:44px;height:44px;border-radius:50%;background:var(--primary);
+  color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px;}
+.founder p{margin:0 0 .8em;font-size:15px;line-height:1.6;}
+.founder p:last-child{margin-bottom:0;}
+.founder .sig{font-size:13.5px;color:var(--body);opacity:.85;}
+@media(max-width:600px){.founder{flex-direction:column;gap:12px;}}
 .stickycta{
   position:fixed;left:0;right:0;bottom:0;z-index:60;padding:12px 16px
     calc(12px + env(safe-area-inset-bottom,0px));
@@ -753,7 +771,7 @@ footer a:hover{color:#fff;}
     <div class="section-head">
       <p class="eyebrow">How it works</p>
       <h2>Get the verified Germany record</h2>
-      <p>We'll email it today. Three steps, no checkout, no card, no obligation at any point. The full record is below if you'd rather read it first.</p>
+      <p>We'll email it within 24 hours. Three steps, no checkout, no card, no obligation at any point. The full record is below if you'd rather read it first.</p>
     </div>
 
     <div class="steps3">
@@ -764,7 +782,7 @@ footer a:hover{color:#fff;}
       </div>
       <div class="step3">
         <div class="n">2</div>
-        <h4>We send the Germany file today</h4>
+        <h4>We send the Germany file</h4>
         <p>The verified Germany record arrives by email within 24 hours. Free, no card, nothing to cancel. Use it on a real student and judge it.</p>
       </div>
       <div class="step3">
@@ -860,29 +878,21 @@ footer a:hover{color:#fff;}
                      style="margin-top:9px;">
             </div>
             <div class="field full">
-              <label for="f-pay">If this covered your country, verified, what would it be worth to you?</label>
-              <select id="f-pay" name="Would pay">
-                <option value="">Select…</option>
-                <option>Nothing — only if free</option>
-                <option>Up to $79 a month</option>
-                <option>$80–149 a month</option>
-                <option>$150+ or an annual plan</option>
-                <option>I'd want to see it first</option>
-              </select>
-            </div>
-            <div class="field full">
-              <label>How many counsellors work at your firm?</label>
-              <div class="choices">
-                <label class="choice"><input type="radio" name="Counsellors at firm" value="1"> <span>Just me</span></label>
-                <label class="choice"><input type="radio" name="Counsellors at firm" value="2-5"> <span>2–5</span></label>
-                <label class="choice"><input type="radio" name="Counsellors at firm" value="6-20"> <span>6–20</span></label>
-                <label class="choice"><input type="radio" name="Counsellors at firm" value="20+"> <span>20+</span></label>
-              </div>
-            </div>
-            <div class="field full">
               <label for="f-msg">Anything else? (optional)</label>
               <textarea id="f-msg" name="Notes" placeholder="Which countries your students ask about most, what you use today, what's missing…"></textarea>
             </div>
+          </div>
+
+          <div class="whatyouget">
+            <h4>What lands in your inbox</h4>
+            <ul>
+              <li>All <b id="wygCount">58</b> English-taught German bachelor's programmes, as a spreadsheet</li>
+              <li>Entry requirements mapped per board — <b>CBSE, ISC, IB and A-Level</b> — not just "country equivalent"</li>
+              <li>English thresholds, EU and non-EU fees, living costs, deadlines and how to apply</li>
+              <li>The <b>nine-step visa chain</b> above, with the steps that change by your student's nationality</li>
+              <li>The TUM record you just read, checked field by field against source</li>
+            </ul>
+            <p class="wyg-note">Records we haven't checked against source yet are marked as such in the sheet, so you always know which is which.</p>
           </div>
 
           <button type="submit">Get the Germany file — free</button>
@@ -909,8 +919,8 @@ footer a:hover{color:#fff;}
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Live sample</p>
-      <h2>Germany, verified. This is the standard every country gets.</h2>
-      <p>A real record, unedited. Germany went through verification first — the country you ask for gets the same treatment.</p>
+      <h2>One record, verified. This is the standard every country gets.</h2>
+      <p>A real record, unedited, checked field by field against TUM's own pages. Germany goes through verification first — the country you ask for gets the same treatment.</p>
     </div>
 
 <!--
@@ -932,7 +942,7 @@ footer a:hover{color:#fff;}
 -->
     <div class="sample">
       <div class="sample-head">
-        <span class="tag">Sample record · 1 of <span id="progCountTag">54</span></span>
+        <span class="tag">Verified record · checked <span id="progCountTag">25 August 2026</span></span>
         <h3>Aerospace (B.Sc.)</h3>
         <p class="inst">Technical University of Munich (TUM) · Bavaria</p>
         <div class="chips">
@@ -1129,6 +1139,33 @@ footer a:hover{color:#fff;}
         <h3>Doing it once isn't the problem</h3>
         <p>Researching one country for one student is an evening. Doing it for every student, across every country they ask about, and keeping all of it current — that's the part that quietly eats your week.</p>
         <span class="ev">Which is the entire job this is built to remove — <b>and why it's checked per cycle</b>, not compiled once.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- A counsellor trusts a person before they trust a dataset, and the reason
+     this exists is a first-hand one. -->
+<section class="tint" id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Why this exists</p>
+      <h2>I built this because I got it wrong myself.</h2>
+    </div>
+    <div class="founder">
+      <div class="fi">R</div>
+      <div>
+        <p>I've put four applications through an agency. Each time a document came back marked
+        "verified" — and each time they still had to go back to the university to argue it through.
+        On the last one they told me an official Class XII result, issued by the school, wasn't
+        acceptable, and asked for the board result instead — for a deadline that fell before the
+        board publishes.</p>
+        <p>Nobody in that chain was lying. They just hadn't checked, and "verified" had come to
+        mean "we have a copy of it". If that happens to me, with time to chase it, it happens to
+        your students while you're carrying the blame for it.</p>
+        <p>So this dataset says checked when it's been checked, and says nothing when it hasn't.
+        That's the only promise here worth making.</p>
+        <p class="sig">— Rahul, founder, Pave</p>
       </div>
     </div>
   </div>
@@ -1462,16 +1499,18 @@ footer a:hover{color:#fff;}
   }
   set("plainEmail2",  CONFIG.EMAIL);
   set("priceAmount",  CONFIG.PRICE);
-  set("progCountTag", CONFIG.PROGRAMME_COUNT);
+  set("progCountTag", CONFIG.LAST_VERIFIED);   // the sample's check date, not a count
   set("heroMeta",
-      CONFIG.VERIFIED_PROGRAMMES + " programmes verified against source \u00b7 " +
-      (CONFIG.TOTAL_PROGRAMMES - CONFIG.VERIFIED_PROGRAMMES) + " compiled across " +
-      CONFIG.TOTAL_COUNTRIES + " countries, not yet checked");
+      "Germany first \u2014 " + CONFIG.PROGRAMME_COUNT + " programmes compiled, " +
+      CONFIG.VERIFIED_PROGRAMMES + " checked against source so far. " +
+      (CONFIG.TOTAL_COUNTRIES - 1) + " more countries queued by what counsellors ask for. " +
+      "Nothing is ever labelled verified until it is.");
   set("incUnis", "All " + CONFIG.TOTAL_PROGRAMMES + " programmes across " + CONFIG.TOTAL_COUNTRIES + " countries");
   set("lockedHeadline",
       "+ " + (CONFIG.UNI_COUNT - 1) + " more German institutions and " +
       (CONFIG.PROGRAMME_COUNT - 1) + " more programmes");
   set("psCount", CONFIG.PROGRAMME_COUNT);
+  set("wygCount", CONFIG.PROGRAMME_COUNT);
   set("verifiedDate", CONFIG.LAST_VERIFIED ? "; last checked " + CONFIG.LAST_VERIFIED : "");
 
 
