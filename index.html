@@ -496,6 +496,16 @@ dl.spec dt:first-of-type,dl.spec dd:first-of-type{border-top:none;}
 .founder p:last-child{margin-bottom:0;}
 .founder .sig{font-size:13.5px;color:var(--body);opacity:.85;}
 @media(max-width:600px){.founder{flex-direction:column;gap:12px;}}
+.split{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:34px;align-items:start;}
+.split-record{min-width:0;}
+.split-form{position:sticky;top:92px;min-width:0;}
+.split-form .formwrap{margin:0;}
+.split-form .fgrid{grid-template-columns:1fr;}
+.split-form h3{font-size:20px;}
+@media(max-width:980px){
+  .split{grid-template-columns:1fr;gap:28px;}
+  .split-form{position:static;}
+}
 .stickycta{
   position:fixed;left:0;right:0;bottom:0;z-index:60;padding:12px 16px
     calc(12px + env(safe-area-inset-bottom,0px));
@@ -766,162 +776,13 @@ footer a:hover{color:#fff;}
   </div>
 </section>
 
-<!-- ====================== 6. HOW BUYING WORKS ====================== -->
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">How it works</p>
-      <h2>Get the verified Germany record</h2>
-      <p>We'll email it within 24 hours. Three steps, no checkout, no card, no obligation at any point. The full record is below if you'd rather read it first.</p>
-    </div>
-
-    <div class="steps3">
-      <div class="step3">
-        <div class="n">1</div>
-        <h4>Tell us your country</h4>
-        <p>Thirty seconds on the form below. Name the country your students ask about most, and roughly how many students you work with.</p>
-      </div>
-      <div class="step3">
-        <div class="n">2</div>
-        <h4>We send the Germany file</h4>
-        <p>The verified Germany record arrives by email within 24 hours. Free, no card, nothing to cancel. Use it on a real student and judge it.</p>
-      </div>
-      <div class="step3">
-        <div class="n">3</div>
-        <h4>We verify your country next</h4>
-        <p>Your country goes into the queue, ordered by what counsellors ask for. When it's verified we show it to you first — before anything is ever charged.</p>
-      </div>
-    </div>
-
-    <div style="margin-top:44px;">
-      <div class="formwrap" id="requestForm">
-        <h3>Get the Germany file — free</h3>
-        <p class="sub">Sent by email within 24 hours. Nothing is charged, no card is collected, and your chosen country goes into the verification queue.</p>
-
-        <!-- FormSubmit delivers straight to rahul@pavetheway.ai. No backend required.
-             FIRST-RUN STEP: the very first submission triggers a one-time activation
-             email to that address — click the link in it once and every later
-             submission arrives automatically. -->
-        <form action="https://formsubmit.co/rahul@pavetheway.ai" method="POST">
-          <input type="hidden" name="_subject" value="Country data — early access request">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" id="formNext" value="https://germany.pavetheway.ai/thanks.html">
-          <input type="hidden" name="Came from" id="formSrc" value="direct">
-          <input type="hidden" name="utm_source"   id="utmSource"   value="">
-          <input type="hidden" name="utm_medium"   id="utmMedium"   value="">
-          <input type="hidden" name="utm_campaign" id="utmCampaign" value="">
-          <input type="hidden" name="utm_content"  id="utmContent"  value="">
-          <input type="hidden" name="Landing page" id="utmPage"     value="">
-
-          <div class="fgrid">
-            <div class="field">
-              <label for="f-name">Your name</label>
-              <input id="f-name" name="Name" type="text" autocomplete="name">
-            </div>
-            <div class="field">
-              <label for="f-email">Email <span class="req">*</span></label>
-              <input id="f-email" name="Email" type="email" required autocomplete="email">
-            </div>
-            <div class="field">
-              <label for="f-firm">Firm or organisation</label>
-              <input id="f-firm" name="Firm" type="text" autocomplete="organization">
-            </div>
-            <div class="field">
-              <label for="f-students">Students you work with</label>
-              <select id="f-students" name="Students per year">
-                <option value="">Select…</option>
-                <option>1–10</option>
-                <option>11–50</option>
-                <option>51–200</option>
-                <option>200+</option>
-              </select>
-            </div>
-            <div class="field full">
-              <label for="f-country">The country you need most <span class="req">*</span></label>
-              <select id="f-country" name="Country needed" required>
-                <option value="">Select a country…</option>
-                <option>Germany</option>
-                <option>Netherlands</option>
-                <option>Hungary</option>
-                <option>Italy</option>
-                <option>Ireland</option>
-                <option>France</option>
-                <option>Denmark</option>
-                <option>Sweden</option>
-                <option>Finland</option>
-                <option>Belgium</option>
-                <option>Poland</option>
-                <option>Czechia</option>
-                <option>Austria</option>
-                <option>Switzerland</option>
-                <option>Portugal</option>
-                <option>Norway</option>
-                <option>Romania</option>
-                <option>UAE</option>
-                <option>India</option>
-                <option>Slovenia</option>
-                <option>Bulgaria</option>
-                <option>Iceland</option>
-                <option>Lithuania</option>
-                <option>Estonia</option>
-                <option>Greece</option>
-                <option>Slovakia</option>
-                <option>Latvia</option>
-                <option>Croatia</option>
-                <option>Cyprus</option>
-                <option>Luxembourg</option>
-                <option>Malta</option>
-                <option value="Another country">Another country — I'll name it</option>
-              </select>
-              <input id="f-country-other" name="Country (other)" type="text" hidden
-                     placeholder="Which country?" autocomplete="off"
-                     style="margin-top:9px;">
-            </div>
-            <div class="field full">
-              <label for="f-msg">Anything else? (optional)</label>
-              <textarea id="f-msg" name="Notes" placeholder="Which countries your students ask about most, what you use today, what's missing…"></textarea>
-            </div>
-          </div>
-
-          <div class="whatyouget">
-            <h4>What lands in your inbox</h4>
-            <ul>
-              <li><b id="wygCount">58</b> English-taught German bachelor's programmes, every one checked against source</li>
-              <li>Entry requirements mapped per board — <b>CBSE, ISC, IB and A-Level</b> — not just "country equivalent"</li>
-              <li>English thresholds, EU and non-EU fees, living costs, deadlines and how to apply</li>
-              <li>The <b>nine-step visa chain</b> above, with the steps that change by your student's nationality</li>
-              <li>The TUM record you just read, checked field by field against source</li>
-            </ul>
-            <p class="wyg-note">Every field carries the source link it came from, so you can confirm any answer in front of a parent without taking our word for it.</p>
-          </div>
-
-          <button type="submit">Get the Germany file — free</button>
-          <p class="assure">
-            Free, no card, no obligation. Prefer email?
-            <button type="button" class="emailcopy" id="emailCopy" data-email="rahul@pavetheway.ai"
-                    title="Click to copy the address"><span id="emailCopyText">rahul@pavetheway.ai</span></button>
-            <span class="mailtolink">— click to copy</span>
-          </p>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-
 <!-- =========================== 4. LIVE SAMPLE =========================== -->
 <section id="sample">
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Live sample</p>
       <h2>This is one record. Every record is this.</h2>
-      <p>A real record, unedited. Open any source link and check it yourself — that is the point. The country you ask for next gets exactly this treatment.</p>
+      <p>A real record, unedited. Open any source link and check it yourself — that is the point. Ask for it on the right, and the country you name gets exactly this treatment next.</p>
     </div>
 
 <!--
@@ -941,6 +802,8 @@ footer a:hover{color:#fff;}
   WINTER SEMESTER 2027/28 -- the 2026/27 window closed on 15 July 2026.
 ================================================================================
 -->
+    <div class="split">
+      <div class="split-record">
     <div class="sample">
       <div class="sample-head">
         <span class="tag">Verified record · 1 of <span id="progCountTag">58</span> · checked <span id="sampleDate">25 August 2026</span></span>
@@ -1106,6 +969,121 @@ footer a:hover{color:#fff;}
         </details>
 
       </div><!-- /sample-body -->
+    </div>
+      </div>
+      <aside class="split-form">
+<div class="formwrap" id="requestForm">
+        <h3>Get the Germany file — free</h3>
+        <p class="sub">Sent by email within 24 hours. Nothing is charged, no card is collected, and your chosen country goes into the verification queue.</p>
+
+        <!-- FormSubmit delivers straight to rahul@pavetheway.ai. No backend required.
+             FIRST-RUN STEP: the very first submission triggers a one-time activation
+             email to that address — click the link in it once and every later
+             submission arrives automatically. -->
+        <form action="https://formsubmit.co/rahul@pavetheway.ai" method="POST">
+          <input type="hidden" name="_subject" value="Country data — early access request">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" id="formNext" value="https://germany.pavetheway.ai/thanks.html">
+          <input type="hidden" name="Came from" id="formSrc" value="direct">
+          <input type="hidden" name="utm_source"   id="utmSource"   value="">
+          <input type="hidden" name="utm_medium"   id="utmMedium"   value="">
+          <input type="hidden" name="utm_campaign" id="utmCampaign" value="">
+          <input type="hidden" name="utm_content"  id="utmContent"  value="">
+          <input type="hidden" name="Landing page" id="utmPage"     value="">
+
+          <div class="fgrid">
+            <div class="field">
+              <label for="f-name">Your name</label>
+              <input id="f-name" name="Name" type="text" autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="f-email">Email <span class="req">*</span></label>
+              <input id="f-email" name="Email" type="email" required autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="f-firm">Firm or organisation</label>
+              <input id="f-firm" name="Firm" type="text" autocomplete="organization">
+            </div>
+            <div class="field">
+              <label for="f-students">Students you work with</label>
+              <select id="f-students" name="Students per year">
+                <option value="">Select…</option>
+                <option>1–10</option>
+                <option>11–50</option>
+                <option>51–200</option>
+                <option>200+</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="f-country">The country you need most <span class="req">*</span></label>
+              <select id="f-country" name="Country needed" required>
+                <option value="">Select a country…</option>
+                <option>Germany</option>
+                <option>Netherlands</option>
+                <option>Hungary</option>
+                <option>Italy</option>
+                <option>Ireland</option>
+                <option>France</option>
+                <option>Denmark</option>
+                <option>Sweden</option>
+                <option>Finland</option>
+                <option>Belgium</option>
+                <option>Poland</option>
+                <option>Czechia</option>
+                <option>Austria</option>
+                <option>Switzerland</option>
+                <option>Portugal</option>
+                <option>Norway</option>
+                <option>Romania</option>
+                <option>UAE</option>
+                <option>India</option>
+                <option>Slovenia</option>
+                <option>Bulgaria</option>
+                <option>Iceland</option>
+                <option>Lithuania</option>
+                <option>Estonia</option>
+                <option>Greece</option>
+                <option>Slovakia</option>
+                <option>Latvia</option>
+                <option>Croatia</option>
+                <option>Cyprus</option>
+                <option>Luxembourg</option>
+                <option>Malta</option>
+                <option value="Another country">Another country — I'll name it</option>
+              </select>
+              <input id="f-country-other" name="Country (other)" type="text" hidden
+                     placeholder="Which country?" autocomplete="off"
+                     style="margin-top:9px;">
+            </div>
+            <div class="field full">
+              <label for="f-msg">Anything else? (optional)</label>
+              <textarea id="f-msg" name="Notes" placeholder="Which countries your students ask about most, what you use today, what's missing…"></textarea>
+            </div>
+          </div>
+
+          <div class="whatyouget">
+            <h4>What lands in your inbox</h4>
+            <ul>
+              <li><b id="wygCount">58</b> English-taught German bachelor's programmes, every one checked against source</li>
+              <li>Entry requirements mapped per board — <b>CBSE, ISC, IB and A-Level</b> — not just "country equivalent"</li>
+              <li>English thresholds, EU and non-EU fees, living costs, deadlines and how to apply</li>
+              <li>The <b>nine-step visa chain</b> above, with the steps that change by your student's nationality</li>
+              <li>The TUM record you just read, checked field by field against source</li>
+            </ul>
+            <p class="wyg-note">Every field carries the source link it came from, so you can confirm any answer in front of a parent without taking our word for it.</p>
+          </div>
+
+          <button type="submit">Get the Germany file — free</button>
+          <p class="assure">
+            Free, no card, no obligation. Prefer email?
+            <button type="button" class="emailcopy" id="emailCopy" data-email="rahul@pavetheway.ai"
+                    title="Click to copy the address"><span id="emailCopyText">rahul@pavetheway.ai</span></button>
+            <span class="mailtolink">— click to copy</span>
+          </p>
+        </form>
+      </div>
+      </aside>
     </div><!-- /sample -->
 
 
@@ -1169,16 +1147,6 @@ footer a:hover{color:#fff;}
         <p class="sig">— Rahul, founder, Pave</p>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- Peak intent is the moment someone finishes reading the record, not the
-     moment they land. Ask here as well as at the top. -->
-<section class="postsample">
-  <div class="wrap">
-    <h2>That's one record. All <span id="psCount">58</span> are held to it.</h2>
-    <p>All 58, to that standard, with the visa route for your student's passport. Free, by email, within 24 hours.</p>
-    <a class="btn btn-lg" id="postSampleCta" href="#requestForm">Get the Germany file — free</a>
   </div>
 </section>
 
