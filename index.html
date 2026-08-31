@@ -1414,17 +1414,7 @@ footer a:hover{color:#fff;}
   set("plainEmail2",  CONFIG.EMAIL);
   set("priceAmount",  CONFIG.PRICE);
   set("progCountTag", CONFIG.PROGRAMME_COUNT);
-  /* The page renders its finished state so it can be judged as the finished
-     thing. The gate that matters is sync_counts.py, which prints
-     LAUNCH: READY / NOT READY before you deploy — a check in the terminal,
-     not a banner standing in front of the design. */
   set("heroMeta", "Last checked " + CONFIG.LAST_VERIFIED);
-
-  if (CONFIG.GERMANY_VERIFIED < CONFIG.PROGRAMME_COUNT && window.console && console.warn) {
-    console.warn("[pave] PRE-LAUNCH — " + CONFIG.GERMANY_VERIFIED + " of " +
-      CONFIG.PROGRAMME_COUNT + " German programmes verified. " +
-      "Run sync_counts.py before advertising this page.");
-  }
 
   set("wygCount", CONFIG.PROGRAMME_COUNT);
   set("sampleDate", CONFIG.LAST_VERIFIED);

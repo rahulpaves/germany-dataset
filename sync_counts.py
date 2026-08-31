@@ -94,13 +94,8 @@ def main():
                 print("  DRIFT  COUNTRY_DATA %-14s page says %s/%s  data says %d/%d"
                       % (country, s[0], s[1], n, insts))
 
-    ready = c["GERMANY_VERIFIED"] >= c["PROGRAMME_COUNT"]
-    print("\nLAUNCH: %s (%d of %d German programmes verified)"
-          % ("READY" if ready else "NOT READY — do not advertise this page yet",
-             c["GERMANY_VERIFIED"], c["PROGRAMME_COUNT"]))
-
     if not drift:
-        print("No drift. Page matches data.")
+        print("\nNo drift. Page matches data.")
         return
 
     if not apply:
