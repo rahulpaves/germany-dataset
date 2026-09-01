@@ -24,9 +24,18 @@ def key(r):
     return (r.get("country"), r.get("institution"), r.get("programme"))
 
 
+def is_note(r):
+    """Some rows carry an annotation in the programme field rather than a
+    programme, e.g. 'NOTE: All BAs require C1 German'. They record a real
+    finding (this university has no English bachelor's) and are worth keeping,
+    but they are not programmes and must never be counted as one."""
+    return str(r.get("programme", "")).startswith("NOTE:")
+
+
 def counts():
     rows = json.loads(DATA.read_text())
-    uniq = {key(r): r for r in rows}                      # last wins; exact dupes collapse
+    uniq = {key(r): r for r in rows if not is_note(r)}    # last wins; exact dupes collapse
+    notes = {key(r): r for r in rows if is_note(r)}
     verified = {k for k, r in uniq.items() if r.get("verified")}
 
     per_country = {}
@@ -39,6 +48,7 @@ def counts():
     de_verified = [k for k in de if k in verified]
     return {
         "rows_in_file":     len(rows),
+        "NOTE_ROWS":        len(notes),
         "PROGRAMME_COUNT":  len(de),
         "GERMANY_VERIFIED": len(de_verified),
         "UNI_COUNT":        len({i for (_c, i, _p) in de}),
@@ -65,9 +75,11 @@ def main():
     page = PAGE.read_text()
     c, have = counts(), current(PAGE.read_text())
 
-    dupes = c["rows_in_file"] - c["TOTAL_PROGRAMMES"]
-    print("data.json: %d rows, %d distinct programmes (%d duplicate row%s)"
-          % (c["rows_in_file"], c["TOTAL_PROGRAMMES"], dupes, "" if dupes == 1 else "s"))
+    dupes = c["rows_in_file"] - c["TOTAL_PROGRAMMES"] - c["NOTE_ROWS"]
+    print("data.json: %d rows, %d distinct programmes "
+          "(%d duplicate row%s, %d annotation row%s excluded)"
+          % (c["rows_in_file"], c["TOTAL_PROGRAMMES"], dupes, "" if dupes == 1 else "s",
+             c["NOTE_ROWS"], "" if c["NOTE_ROWS"] == 1 else "s"))
 
     drift = False
     for name in ("UNI_COUNT", "PROGRAMME_COUNT", "GERMANY_VERIFIED", "TOTAL_PROGRAMMES",
