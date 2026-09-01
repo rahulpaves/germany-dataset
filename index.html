@@ -262,6 +262,29 @@ header.site .wrap{
     var(--white);
   padding:52px 0 26px;
 }
+/* Two columns on wide screens so the card fills space the hero was wasting.
+   Below 1040 it drops under the form, keeping the ask at the fold on a phone. */
+.herogrid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:44px;align-items:start;}
+.heromain{min-width:0;}
+.cover{background:#fff;border:1px solid var(--line);border-radius:16px;
+  padding:24px 24px 22px;box-shadow:var(--shadow-sm);}
+.cover h3{font-size:17px;margin:0 0 10px;}
+.cover-lede{font-size:14.5px;color:var(--body);margin:0 0 16px;}
+.cover-lede b{color:var(--ink);}
+.cover-list{list-style:none;padding:0;margin:0 0 20px;}
+.cover-list li{display:flex;justify-content:space-between;gap:14px;align-items:baseline;
+  font-size:14px;color:var(--body);padding:8px 0;border-bottom:1px solid var(--line);}
+.cover-list li:last-child{border-bottom:none;}
+.cover-list b{color:var(--ink);font-variant-numeric:tabular-nums;}
+.cover h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);
+  margin:0 0 8px;font-weight:700;}
+.cover-fields{font-size:13.5px;line-height:1.6;color:var(--body);margin:0 0 14px;}
+.cover-foot{font-size:13px;color:var(--body);margin:0;padding-top:12px;
+  border-top:1px solid var(--line);opacity:.9;}
+@media(max-width:1040px){
+  .herogrid{grid-template-columns:1fr;gap:26px;}
+  .cover{order:2;}
+}
 .hero h1{
   font-size:clamp(34px,5.1vw,58px);font-weight:800;
   max-width:19ch;margin-bottom:22px;letter-spacing:-.033em;line-height:1.08;
@@ -699,7 +722,8 @@ footer a:hover{color:#fff;}
 
 <!-- ============================ 1. HERO ============================ -->
 <div class="hero">
-  <div class="wrap">
+  <div class="wrap herogrid">
+   <div class="heromain">
     <div class="flag"><i></i> For counselors · Germany complete</div>
     <h1>53 English-taught German undergraduate degrees. <span class="accent">Every answer, in one file.</span></h1>
     <p class="sub">
@@ -726,6 +750,23 @@ footer a:hover{color:#fff;}
       <p style="font-size:13.5px;margin:14px 0 0;opacity:.8;">Free early access · nothing to pay and no card needed</p>
     </form>
     <p class="meta" id="heroMeta"></p>
+   </div>
+
+   <aside class="cover">
+     <h3>What is in the file</h3>
+     <p class="cover-lede"><b id="coverCount">53</b> English-taught undergraduate programmes across <b id="coverUnis">26</b> German institutions.</p>
+     <ul class="cover-list">
+       <li><span>Business, management &amp; economics</span><b>27</b></li>
+       <li><span>Computer science, data &amp; software</span><b>12</b></li>
+       <li><span>Humanities &amp; social sciences</span><b>8</b></li>
+       <li><span>Design &amp; architecture</span><b>4</b></li>
+       <li><span>Engineering</span><b>1</b></li>
+       <li><span>Natural sciences</span><b>1</b></li>
+     </ul>
+     <h4>Collected on every one</h4>
+     <p class="cover-fields">Entry requirements per board (CBSE, ISC, IB, A-Level) · English threshold · deadline and application route · EU and non-EU fees · living costs · scholarships · visa steps by nationality · source link per field</p>
+     <p class="cover-foot">Subject missing? Name it on the form and it goes to the top of the queue.</p>
+   </aside>
   </div>
 </div>
 
@@ -1104,23 +1145,9 @@ footer a:hover{color:#fff;}
 <section class="tint" id="subjects">
   <div class="wrap">
     <div class="section-head">
-      <h2>What the 53 cover</h2>
-      <p>Germany's English-taught bachelor's are concentrated in business and computing, and this file reflects that rather than pretending otherwise. If your students want something not on this list, name it on the form and it goes to the top of the queue.</p>
+      <h2>Five universities in the file with no programme attached</h2>
+      <p>LMU Munich, Heidelberg, FU Berlin, RWTH Aachen and Mannheim were checked and have no English-taught bachelor's at all. That is recorded as a finding rather than left blank, so nobody spends an afternoon discovering it themselves.</p>
     </div>
-    <div class="tw">
-      <table>
-        <thead><tr><th>Subject area</th><th>Programmes</th></tr></thead>
-        <tbody>
-          <tr><td>Business, management and economics</td><td class="num-cell">27</td></tr>
-          <tr><td>Computer science, data and software</td><td class="num-cell">12</td></tr>
-          <tr><td>Humanities and social sciences</td><td class="num-cell">8</td></tr>
-          <tr><td>Design and architecture</td><td class="num-cell">4</td></tr>
-          <tr><td>Engineering</td><td class="num-cell">1</td></tr>
-          <tr><td>Natural sciences</td><td class="num-cell">1</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="note" style="max-width:74ch;"><b>Five more universities are in the file with no programme attached.</b> LMU Munich, Heidelberg, FU Berlin, RWTH Aachen and Mannheim were checked and have no English-taught bachelor's at all. That is recorded as a finding rather than left blank, so nobody spends an afternoon discovering it themselves.</p>
   </div>
 </section>
 
@@ -1465,6 +1492,8 @@ footer a:hover{color:#fff;}
   set("heroMeta", "Last checked " + CONFIG.LAST_VERIFIED);
 
   set("wygCount", CONFIG.PROGRAMME_COUNT);
+  set("coverCount", CONFIG.PROGRAMME_COUNT);
+  set("coverUnis", CONFIG.UNI_COUNT);
   set("sampleDate", CONFIG.LAST_VERIFIED);
   set("verifiedDate", CONFIG.LAST_VERIFIED ? "; last checked " + CONFIG.LAST_VERIFIED : "");
 
