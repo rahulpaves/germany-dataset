@@ -661,7 +661,17 @@ var TIMELINE_HTML = "<ol class=\"timeline fullchain\"><li data-step=\"1\" data-t
 
 function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
 function has(v){return v && String(v).trim() && String(v).trim().toUpperCase().indexOf("NOT PUBLISHED")!==0;}
-function row(label,val){return has(val)?'<div class="spec"><div class="l">'+esc(label)+'</div><div class="d">'+esc(val)+'</div></div>':'';}
+/* The homepage uses three treatments and that is why it reads better:
+   a definition list for short facts, a bulleted list with a bold lead-in for
+   anything prose-shaped, and a highlighted band for the deadline. */
+function dt(label,val){return has(val)?'<dt>'+esc(label)+'</dt><dd>'+esc(val)+'</dd>':'';}
+function req(lead,val){return has(val)?'<li><b>'+esc(lead)+':</b> '+esc(val)+'</li>':'';}
+function spec(rows){var b=rows.join(""); return b?'<dl class="spec">'+b+'</dl>':'';}
+function reqs(items){var b=items.join(""); return b?'<ul class="reqs">'+b+'</ul>':'';}
+function money(lo,hi){
+  if(has(lo)&&has(hi)) return lo===hi?lo:lo+" to "+hi;
+  return has(lo)?lo:(has(hi)?hi:"");
+}
 
 function trackFor(country){
   for(var k in TRACKS){ if(TRACKS[k].countries && TRACKS[k].countries.indexOf(country)>-1) return k; }
@@ -692,23 +702,40 @@ function render(i){
     '</div><div class="sample-body">'+
 
     '<div class="block"><h4>Programme &amp; cost</h4>'+
-      row("Degree awarded",r.degree)+row("Language of instruction",r.language)+row("Duration",r.years)+
-      row("Fees, EU",r.feeEU)+row("Fees, non-EU",r.feeNonEU)+
-      row("Living costs, low",r.liveLo)+row("Living costs, high",r.liveHi)+
-      row("Scholarships",r.scholarships)+
+      spec([
+        dt("Degree awarded", r.degree),
+        dt("Language of instruction", r.language),
+        dt("Duration", r.years),
+        (r.feeEU && r.feeEU===r.feeNonEU ? dt("Fees", r.feeEU)
+          : dt("Fees, EU students", r.feeEU) + dt("Fees, non-EU students", r.feeNonEU)),
+        dt("Living costs", money(r.liveLo, r.liveHi)),
+        dt("Scholarships", r.scholarships)
+      ])+
     '</div>'+
 
     '<div class="block"><h4>Entry requirements</h4>'+
-      row("General",r.entry)+row("CBSE",r.cbse)+row("ISC",r.isc)+row("IB",r.ib)+row("A-Level",r.alevel)+
-      row("Other qualifications",r.other)+row("English",r.english)+row("Selection",r.selection)+
-      ((!has(r.cbse)&&!has(r.isc))?'<div class="spec"><div class="l">Board cutoffs</div><div class="d">This university publishes no board percentage. Equivalence is decided by uni-assist, not by a CBSE or ISC number. Anyone quoting you one is guessing.</div></div>':'')+
+      reqs([
+        req("General", r.entry),
+        req("CBSE", r.cbse), req("ISC", r.isc), req("IB", r.ib), req("A-Level", r.alevel),
+        req("Other qualifications", r.other),
+        req("English", r.english),
+        req("Selection", r.selection),
+        ((!has(r.cbse)&&!has(r.isc)) ? '<li><b>Board cutoffs:</b> this university publishes no board percentage. Equivalence is decided by uni-assist, not by a CBSE or ISC number. Anyone quoting you one is guessing.</li>' : '')
+      ])+
     '</div>'+
 
     '<div class="block"><h4>Deadline &amp; how to apply</h4>'+
-      row("Deadline",r.deadline)+row("How to apply",r.apply)+row("Programme page",r.url)+
+      (has(r.deadline) && String(r.deadline).length <= 70
+        ? '<div class="deadline"><span class="d">'+esc(r.deadline)+'</span><span class="l">Confirm against the programme page before advising</span></div>'
+        : '')+
+      reqs([
+        (has(r.deadline) && String(r.deadline).length > 70 ? req("Deadline", r.deadline) : ''),
+        req("How to apply", r.apply),
+        (has(r.url) ? '<li><b>Programme page:</b> <a href="'+esc(r.url)+'" target="_blank" rel="noopener">open it and check any field yourself</a></li>' : '')
+      ])+
     '</div>'+
 
-    (has(r.notes)?'<div class="block"><h4>Notes</h4><div class="spec"><div class="d">'+esc(r.notes)+'</div></div></div>':'')+
+    (has(r.notes)?'<div class="block"><h4>Notes</h4><p style="font-size:14.5px;margin:0;line-height:1.6;color:var(--ink);">'+esc(r.notes)+'</p></div>':'')+
 
     '<div class="block"><h4>The whole process, end to end</h4>'+
       '<div class="natpick"><label for="nat">Check your student\'s nationality</label>'+
