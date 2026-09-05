@@ -643,6 +643,7 @@ const TRACK_SUMMARY = {
 };
 
 var DATA = [], cur = 0;
+var TIMELINE_HTML = "<ol class=\"timeline\">\n            <li data-tracks=\"c\">\n              <span class=\"n\">1</span>\n              <span class=\"t\">APS certificate</span>\n              <span class=\"w\">4\u20138 weeks</span>\n              <p>Academic Evaluation Centre verification. Required for the visa and commonly for admission too, so it belongs at the very start of the timeline.</p>\n            </li>\n            <li data-tracks=\"a b c d\">\n              <span class=\"n\">2</span>\n              <span class=\"t\">Admission letter (Zulassungsbescheid)</span>\n              <span class=\"w\">after the July deadline</span>\n              <p>Conditional offers are not accepted for the visa file. It has to be the formal admission decision.</p>\n            </li>\n            <li data-tracks=\"b c d\">\n              <span class=\"n\">3</span>\n              <span class=\"t\">Open a blocked account (Sperrkonto)</span>\n              <span class=\"w\">1\u20132 weeks</span>\n              <p>EUR 11,904 for one year, released at EUR 992 per month. Unchanged for 2026, but revised annually, so always re-check. A parental guarantee (Verpflichtungserkl\u00e4rung) is the main alternative.</p>\n            </li>\n            <li data-tracks=\"a b c d\">\n              <span class=\"n\">4</span>\n              <span class=\"t\">Arrange German health insurance</span>\n              <span class=\"w\">3\u20137 days</span>\n              <p>Public insurer confirmation (TK, AOK or similar) for enrolled students, plus travel cover for the arrival gap.</p>\n            </li>\n            <li data-tracks=\"c d\">\n              <span class=\"n\">5</span>\n              <span class=\"t\">Book the visa appointment</span>\n              <span class=\"w\">2\u201312 weeks wait</span>\n              <p>The real bottleneck. Availability at the German mission varies sharply by country and season. Book the moment admission lands, not once documents are complete.</p>\n            </li>\n            <li data-tracks=\"c d\">\n              <span class=\"n\">6</span>\n              <span class=\"t\">Submit the national visa (Type D) application</span>\n              <span class=\"w\">appointment day</span>\n              <p>Passport, admission letter, blocked-account confirmation, insurance, transcripts, CV, motivation letter, biometric photos, and the APS certificate where it applies. Fee EUR 75.</p>\n            </li>\n            <li data-tracks=\"c d\">\n              <span class=\"n\">7</span>\n              <span class=\"t\">Visa processing</span>\n              <span class=\"w\">4\u20138 weeks</span>\n              <p>Counting APS, admission, appointment and processing, the realistic span is three to six months. That's how a July deadline turns into a tight October start.</p>\n            </li>\n            <li data-tracks=\"a b c d\">\n              <span class=\"n\">8</span>\n              <span class=\"t\">Arrive and register (Anmeldung)</span>\n              <span class=\"w\">within 2 weeks of arrival</span>\n              <p>City registration at the B\u00fcrgeramt, requiring a signed accommodation confirmation from the landlord.</p>\n            </li>\n            <li data-tracks=\"b c d\">\n              <span class=\"n\">9</span>\n              <span class=\"t\">Convert to a residence permit</span>\n              <span class=\"w\">before the visa expires</span>\n              <p>Apply at the Ausl\u00e4nderbeh\u00f6rde for the student residence permit (Aufenthaltserlaubnis) before the visa expires, or within 90 days of arrival if your student entered visa-free.</p>\n            </li>\n          </ol>";
 
 function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
 function has(v){return v && String(v).trim() && String(v).trim().toUpperCase().indexOf("NOT PUBLISHED")!==0;}
@@ -699,6 +700,7 @@ function render(i){
       '<div class="natpick"><label for="nat">Check your student\'s nationality</label>'+
       '<select id="nat"><option value="">Show the standard non-EU route</option></select></div>'+
       '<div class="natresult" id="natout"></div>'+
+      TIMELINE_HTML+
     '</div>'+
 
     '</div></div>';
@@ -714,12 +716,21 @@ function buildNat(){
   var all=[];
   for(var k in TRACKS){ (TRACKS[k].countries||[]).forEach(function(c){all.push(c);}); }
   all.sort().forEach(function(c){ var o=document.createElement("option"); o.value=c; o.textContent=c; sel.appendChild(o); });
+  function applyTrack(t){
+    var steps=document.querySelectorAll(".timeline li[data-tracks]"), n=0;
+    for(var i=0;i<steps.length;i++){
+      var li=steps[i];
+      var on = !t || li.getAttribute("data-tracks").split(" ").indexOf(t) > -1;
+      li.hidden = !on;
+      if(on){ n++; var b=li.querySelector(".n"); if(b) b.textContent=n; }
+    }
+    return n;
+  }
   function show(){
-    var c=sel.value;
-    if(!c){ out.innerHTML='<b>Standard non-EU route.</b> '+esc(TRACK_SUMMARY.d||""); return; }
-    var t=trackFor(c);
-    out.innerHTML='<b>'+esc(c)+':</b> '+esc(TRACK_SUMMARY[t]||"")+
-      '<div style="margin-top:8px;font-size:13.5px;opacity:.85">Route type: '+esc(TRACKS[t].name||t)+'</div>';
+    var c=sel.value, t=c?trackFor(c):"d", n=applyTrack(t);
+    out.innerHTML='<b>'+(c?esc(c):"Standard non-EU route")+':</b> '+esc(TRACK_SUMMARY[t]||"")+
+      '<div style="margin-top:8px;font-size:13.5px;opacity:.85">Route type: '+esc(TRACKS[t].name||t)+
+      ' &middot; <b>'+n+' step'+(n===1?'':'s')+'</b></div>';
   }
   sel.addEventListener("change",show); show();
 }
