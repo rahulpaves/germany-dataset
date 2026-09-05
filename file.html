@@ -560,6 +560,18 @@ footer a:hover{color:#fff;}
   font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
   color:var(--body);opacity:.75;background:#fff;padding:0 8px 0 0;}
 .timeline.fullchain li:first-child.stage-start{margin-top:6px;}
+.askus{margin-top:22px;border:1px solid var(--line);border-radius:14px;
+  background:var(--muted);padding:20px 22px;}
+.askus h4{font-size:16px;font-weight:700;color:var(--ink);margin:0 0 6px;}
+.askus p{font-size:14px;color:var(--body);margin:0 0 14px;max-width:66ch;line-height:1.55;}
+.askrow{display:flex;flex-wrap:wrap;gap:10px;}
+.askbtn{display:inline-flex;align-items:center;font-size:14px;font-weight:600;
+  text-decoration:none;color:var(--primary);background:#fff;border:1px solid var(--line);
+  border-radius:999px;padding:9px 16px;}
+.askbtn:hover{border-color:var(--primary);background:var(--primary-tint);}
+.askbtn.wa{background:var(--primary);color:#fff;border-color:var(--primary);}
+.askbtn.wa:hover{background:var(--primary-dark,#2140c0);}
+.askfoot{font-size:13px;color:var(--body);opacity:.85;margin:14px 0 0;}
 .timeline.fullchain .cnote{margin:10px 0 0;padding:10px 13px;font-size:13.5px;line-height:1.5;
   background:var(--primary-tint);border-radius:8px;color:var(--ink);}
 .timeline.fullchain h5{font-size:15.5px;font-weight:700;color:var(--ink);margin:0 0 6px;}
@@ -664,6 +676,15 @@ function has(v){return v && String(v).trim() && String(v).trim().toUpperCase().i
 /* The homepage uses three treatments and that is why it reads better:
    a definition list for short facts, a bulleted list with a bold lead-in for
    anything prose-shaped, and a highlighted band for the deadline. */
+function waLink(r,kind){
+  var who = (r.programme||"") + " at " + (r.institution||"");
+  var msg = {
+    correction: "Hi Rahul, I think something is wrong on the Germany file record for " + who + ". The field is: ",
+    missing:    "Hi Rahul, a programme is missing from the Germany file. It is: ",
+    country:    "Hi Rahul, I need a country you do not cover yet. It is: "
+  }[kind];
+  return "https://wa.me/971568924365?text=" + encodeURIComponent(msg);
+}
 function dt(label,val){return has(val)?'<dt>'+esc(label)+'</dt><dd>'+esc(val)+'</dd>':'';}
 function req(lead,val){return has(val)?'<li><b>'+esc(lead)+':</b> '+esc(val)+'</li>':'';}
 function spec(rows){var b=rows.join(""); return b?'<dl class="spec">'+b+'</dl>':'';}
@@ -744,7 +765,18 @@ function render(i){
       TIMELINE_HTML+
     '</div>'+
 
-    '</div></div>';
+    '</div>'+
+
+    '<div class="askus">'+
+      '<h4>Something wrong, missing, or not here?</h4>'+
+      '<p>We would rather hear it than have you work around it. Every correction gets checked against the university\'s own page and the record is updated with a new date.</p>'+
+      '<div class="askrow">'+
+        '<a class="askbtn wa" href="'+waLink(r,"correction")+'" target="_blank" rel="noopener">Report an error on this record</a>'+
+        '<a class="askbtn" href="'+waLink(r,"missing")+'" target="_blank" rel="noopener">A programme is missing</a>'+
+        '<a class="askbtn" href="'+waLink(r,"country")+'" target="_blank" rel="noopener">I need another country</a>'+
+      '</div>'+
+      '<p class="askfoot">WhatsApp +971 56 892 4365 &middot; rahul@pavetheway.ai &middot; Dubai</p>'+
+    '</div>';
 
   buildNat();
   var items = document.querySelectorAll(".pitem");
