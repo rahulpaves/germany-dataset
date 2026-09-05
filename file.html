@@ -702,6 +702,8 @@ function trackFor(country){
 
 function render(i){
   cur = i;
+  /* the address bar follows the record, so any record can be linked to */
+  if (DATA[i] && history.replaceState) history.replaceState(null, "", "#" + DATA[i].record_id);
   var r = DATA[i]; if(!r) return;
   var ok = r.verified_status === "Confirmed";
   var chips = [r.degree, r.language, r.years, r.instType].filter(has)
@@ -865,7 +867,13 @@ fetch("germany-file.json?v=1").then(function(r){return r.json();}).then(function
     var av=a.verified_status==="Confirmed"?0:1, bv=b.verified_status==="Confirmed"?0:1;
     return av-bv || String(a.institution).localeCompare(String(b.institution));
   });
-  list(); render(0);
+  var want = (location.hash || "").replace("#", "").toUpperCase(), at = 0;
+  if (want) {
+    for (var k = 0; k < DATA.length; k++) {
+      if (String(DATA[k].record_id).toUpperCase() === want) { at = k; break; }
+    }
+  }
+  list(); render(at);
   document.getElementById("q").addEventListener("input", list);
   document.getElementById("filt").addEventListener("change", list);
 }).catch(function(){
