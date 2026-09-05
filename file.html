@@ -560,7 +560,8 @@ footer a:hover{color:#fff;}
   font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
   color:var(--body);opacity:.75;background:#fff;padding:0 8px 0 0;}
 .timeline.fullchain li:first-child.stage-start{margin-top:6px;}
-.askus{margin-top:22px;border:1px solid var(--line);border-radius:14px;
+.vbanner{margin:18px 0 0;}
+.askus{margin-top:14px;border:1px solid var(--line);border-radius:14px;
   background:var(--muted);padding:20px 22px;}
 .askus h4{font-size:16px;font-weight:700;color:var(--ink);margin:0 0 6px;}
 .askus p{font-size:14px;color:var(--body);margin:0 0 14px;max-width:66ch;line-height:1.55;}
@@ -707,14 +708,13 @@ function render(i){
      .map(function(c){return '<span class="chip">'+esc(c)+'</span>';}).join("");
 
   var banner = ok
-    ? '<div class="vbanner ok"><span>&#10003;</span><span><b>Verified against source</b> on '+esc(r.date_checked)+
+    ? '<div class="vbanner ok"><span>&#10003;</span><span><b>Every field above was checked against the university\'s own pages</b> on '+esc(r.date_checked)+
       (has(r.source_url_you_used)?' &middot; <a href="'+esc(r.source_url_you_used)+'" target="_blank" rel="noopener">open the page we checked</a>':'')+
       (has(r.exact_quote)?'<br><span style="opacity:.85">&ldquo;'+esc(r.exact_quote)+'&rdquo;</span>':'')+'</span></div>'
-    : '<div class="vbanner no"><span>&#9679;</span><span><b>Compiled, not yet checked against source.</b> Treat every field here as unconfirmed until it carries the green badge. We never mark a record verified before someone has opened the page and read the sentence.</span></div>';
+    : '<div class="vbanner no"><span>&#9679;</span><span><b>Nothing above has been checked against source yet.</b> Treat every field on this record as unconfirmed until it carries the green badge. We never mark a record verified before someone has opened the page and read the sentence.</span></div>';
 
   document.getElementById("rec").innerHTML =
     '<div class="printbar"><span>Record '+(i+1)+' of '+DATA.length+'</span><span>Pave &middot; germany.pavetheway.ai</span></div>'+
-    banner+
     '<div class="sample"><div class="sample-head">'+
       '<span class="tag">'+(ok?"Verified record":"Compiled record")+'</span>'+
       '<h3>'+esc(r.programme)+'</h3>'+
@@ -766,6 +766,8 @@ function render(i){
     '</div>'+
 
     '</div>'+
+
+    banner+
 
     '<div class="askus">'+
       '<h4>Something wrong, missing, or not here?</h4>'+
