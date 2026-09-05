@@ -730,7 +730,9 @@ function render(i){
         (r.feeEU && r.feeEU===r.feeNonEU ? dt("Fees", r.feeEU)
           : dt("Fees, EU students", r.feeEU) + dt("Fees, non-EU students", r.feeNonEU)),
         dt("Living costs", money(r.liveLo, r.liveHi)),
-        dt("Scholarships", r.scholarships)
+        dt("Fees apply to", r.fee_year),
+        dt("Scholarships", r.scholarships),
+        dt("Accreditation", r.accreditation)
       ])+
     '</div>'+
 
@@ -738,6 +740,7 @@ function render(i){
       reqs([
         req("General", r.entry),
         req("CBSE", r.cbse), req("ISC", r.isc), req("IB", r.ib), req("A-Level", r.alevel),
+        req("US High School Diploma", r.us_diploma_gpa),
         req("Other qualifications", r.other),
         req("English", r.english),
         req("Selection", r.selection),
@@ -751,7 +754,11 @@ function render(i){
         : '')+
       reqs([
         (has(r.deadline) && String(r.deadline).length > 70 ? req("Deadline", r.deadline) : ''),
+        req("Application rounds", r.deadline_rounds),
+        req("Documents required", r.documents_required),
+        req("Progresses to", r.progression_routes),
         req("How to apply", r.apply),
+        req("Admissions contact", r.contact),
         (has(r.url) ? '<li><b>Programme page:</b> <a href="'+esc(r.url)+'" target="_blank" rel="noopener">open it and check any field yourself</a></li>' : '')
       ])+
     '</div>'+
