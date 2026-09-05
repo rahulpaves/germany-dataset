@@ -635,6 +635,13 @@ const TRACKS = {
        "Uganda","Ukraine","United Arab Emirates","Uzbekistan","Other (non-EU)"] }
 };
 
+const TRACK_SUMMARY = {
+  a: "No visa and no residence permit. Enrol, arrange health insurance, and register the address within two weeks of arrival.",
+  b: "No visa needed to enter. Your student travels first, then applies for the residence permit inside Germany within 90 days. This skips the embassy appointment entirely.",
+  c: "Full Type D visa, and an APS certificate must come first, so allow four weeks to three months. Indian Master's applicants from Engineering, Commerce, Finance, Economics or Business also need dMAT from Summer Semester 2027.",
+  d: "Standard Type D student visa. No APS. The variable that matters most is appointment availability at your student's local German mission."
+};
+
 var DATA = [], cur = 0;
 
 function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
@@ -709,9 +716,9 @@ function buildNat(){
   all.sort().forEach(function(c){ var o=document.createElement("option"); o.value=c; o.textContent=c; sel.appendChild(o); });
   function show(){
     var c=sel.value;
-    if(!c){ out.innerHTML='<b>Standard non-EU route.</b> '+esc(TRACKS.d.summary||""); return; }
+    if(!c){ out.innerHTML='<b>Standard non-EU route.</b> '+esc(TRACK_SUMMARY.d||""); return; }
     var t=trackFor(c);
-    out.innerHTML='<b>'+esc(c)+':</b> '+esc(TRACKS[t].summary||"")+
+    out.innerHTML='<b>'+esc(c)+':</b> '+esc(TRACK_SUMMARY[t]||"")+
       '<div style="margin-top:8px;font-size:13.5px;opacity:.85">Route type: '+esc(TRACKS[t].name||t)+'</div>';
   }
   sel.addEventListener("change",show); show();
