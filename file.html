@@ -617,9 +617,58 @@ footer a:hover{color:#fff;}
   margin-bottom:16px;font-size:13.5px;color:var(--body);}
 @media print{.side,.printbar,.filehead p{display:none;}.filegrid{grid-template-columns:1fr;}}
 </style>
+<script>
+/* Each counselor gets their own link, file.html?c=their-slug. Three things
+   follow from that with no backend at all: the page greets them by name, we can
+   see who opened it and how often, and a link that has been passed on shows up
+   as one token opening far more than one person would. */
+(function () {
+  var GC = "pave-germany";
+
+  function param(n) {
+    try { return new URLSearchParams(location.search).get(n) || ""; } catch (e) { return ""; }
+  }
+  function clean(v) { return String(v).replace(/[^a-zA-Z0-9_-]/g, "").slice(0, 40); }
+
+  var who = clean(param("c"));
+  var src = clean(param("src")) || "direct";
+
+  /* Names we know. Anything else is prettified from the slug, so a link works
+     the moment it is sent rather than waiting on an edit here. */
+  var NAMES = {
+    "jehanne-zenith-education": "Jehanne, Zenith Education"
+  };
+  function pretty(slug) {
+    return slug.replace(/[-_]+/g, " ").replace(/\b[a-z]/g, function (m) { return m.toUpperCase(); });
+  }
+  if (who) {
+    var label = NAMES[who] || pretty(who);
+    document.title = "The Germany file for " + label + " | Pave";
+    /* this script sits above the markup it edits, so wait for the DOM */
+    document.addEventListener("DOMContentLoaded", function () {
+      var el = document.getElementById("preparedFor");
+      if (el) el.textContent = "Pave \u00b7 prepared for " + label;
+    });
+  }
+
+  window.__track = function (name) {
+    if (window.goatcounter && window.goatcounter.count) {
+      window.goatcounter.count({ path: name, title: name, event: true });
+    }
+  };
+
+  window.goatcounter = { no_onload: true };
+  var g = document.createElement("script");
+  g.async = true;
+  g.src = "//gc.zgo.at/count.js";
+  g.setAttribute("data-goatcounter", "https://" + GC + ".goatcounter.com/count");
+  g.onload = function () { window.__track("file-open-" + (who || src)); };
+  document.head.appendChild(g);
+})();
+</script>
 <div class="filewrap">
   <div class="filehead">
-    <p class="kicker">Pave &middot; prepared for counselors</p>
+    <p class="kicker" id="preparedFor">Pave &middot; prepared for counselors</p>
     <h1>The Germany file</h1>
     <p>Every English-taught German undergraduate degree we hold, with entry requirements per board, deadlines, fees and the visa chain for your student's passport. Pick a programme on the left. Source links are live: open any of them and check it yourself.</p>
   </div>
@@ -704,6 +753,9 @@ function render(i){
   cur = i;
   /* the address bar follows the record, so any record can be linked to */
   if (DATA[i] && history.replaceState) history.replaceState(null, "", "#" + DATA[i].record_id);
+  /* which records get opened is the closest thing we have to "did they use it
+     on a real student", and it is measured rather than self-reported */
+  if (DATA[i] && window.__track) window.__track("record-" + DATA[i].record_id);
   var r = DATA[i]; if(!r) return;
   var ok = r.verified_status === "Confirmed";
   var chips = [r.degree, r.language, r.years, r.instType].filter(has)
