@@ -41,7 +41,7 @@
   "us_diploma_gpa": "does not enforce a strict minimum high school GPA requirement for general admission",
   "accreditation": "holds dual institutional and programmatic accreditation in both Germany and the United States",
   "fee_year": "",
-  "application_fee": "does not charge"
+  "application_fee": "None"
  },
  {
   "record_id": "DE-002",
@@ -85,7 +85,7 @@
   "us_diploma_gpa": "does not enforce a strict minimum high school GPA requirement for general admission",
   "accreditation": "holds dual institutional and programmatic accreditation in both Germany and the United States",
   "fee_year": "",
-  "application_fee": "does not charge"
+  "application_fee": "None"
  },
  {
   "record_id": "DE-003",
@@ -107,8 +107,8 @@
   "english": "IELTS 6.0 / TOEFL iBT 74",
   "selection": "Portfolio + interview",
   "deadline": "31st august",
-  "feeEU": "4640.0",
-  "feeNonEU": "€4,640 per semester",
+  "feeEU": "EUR 4,640 per semester",
+  "feeNonEU": "EUR 4,640 per semester",
   "liveLo": "EUR 12,000/yr",
   "liveHi": "EUR 15,000/yr",
   "scholarships": "BI scholarships",
@@ -129,7 +129,7 @@
   "us_diploma_gpa": "does not enforce a strict minimum high school GPA requirement for general admission",
   "accreditation": "State-recognised, Berlin (Charlottenburg) (checked 4 Sep 2026)",
   "fee_year": "",
-  "application_fee": "does not charge"
+  "application_fee": "None"
  },
  {
   "record_id": "DE-004",
@@ -173,7 +173,7 @@
   "us_diploma_gpa": "does not enforce a strict minimum high school GPA requirement for general admission",
   "accreditation": "State-recognised, Berlin (Charlottenburg) (checked 4 Sep 2026)",
   "fee_year": "",
-  "application_fee": "does not charge"
+  "application_fee": "None"
  },
  {
   "record_id": "DE-005",
@@ -217,7 +217,7 @@
   "us_diploma_gpa": "does not enforce a strict minimum high school GPA requirement for general admission",
   "accreditation": "State-recognised, Berlin (Charlottenburg) (checked 4 Sep 2026)",
   "fee_year": "",
-  "application_fee": "does not charge"
+  "application_fee": "None"
  },
  {
   "record_id": "DE-006",
@@ -261,7 +261,7 @@
   "us_diploma_gpa": "does not enforce a strict minimum high school GPA requirement for general admission",
   "accreditation": "State-recognised, Berlin (Charlottenburg) (checked 4 Sep 2026)",
   "fee_year": "",
-  "application_fee": "does not charge"
+  "application_fee": "None"
  },
  {
   "record_id": "DE-007",
@@ -305,7 +305,7 @@
   "us_diploma_gpa": "2.25 or above on a US 4.0 scale for standard entry",
   "accreditation": "its degree programmes are validated and awarded by internationally recognized public and private partner universities",
   "fee_year": "",
-  "application_fee": "does not charge"
+  "application_fee": "None"
  },
  {
   "record_id": "DE-008",
@@ -349,7 +349,7 @@
   "us_diploma_gpa": "does not enforce a strict minimum high school GPA requirement for general admission",
   "accreditation": "CODE University of Applied Sciences does not have a U.S. institutional accreditation, as it is a German private, state-recognized university based in Berlin",
   "fee_year": "",
-  "application_fee": "does not charge"
+  "application_fee": "None"
  },
  {
   "record_id": "DE-010",
@@ -393,7 +393,7 @@
   "us_diploma_gpa": "does not enforce a strict minimum high school GPA requirement for general admission",
   "accreditation": "CODE University of Applied Sciences does not have a U.S. institutional accreditation, as it is a German private, state-recognized university based in Berlin",
   "fee_year": "",
-  "application_fee": "does not charge"
+  "application_fee": "None"
  },
  {
   "record_id": "DE-011",
@@ -437,7 +437,7 @@
   "us_diploma_gpa": "Diploma GPA range of 4.00 to 3.33",
   "accreditation": "Granted unlimited state recognition by the City State of Bremen in 2021 after meeting all continuous quality and structural requirements",
   "fee_year": "",
-  "application_fee": "does not charge"
+  "application_fee": "None"
  },
  {
   "record_id": "DE-012",
@@ -481,7 +481,7 @@
   "us_diploma_gpa": "Diploma GPA range of 4.00 to 3.33",
   "accreditation": "Granted unlimited state recognition by the City State of Bremen in 2021 after meeting all continuous quality and structural requirements",
   "fee_year": "",
-  "application_fee": "does not charge"
+  "application_fee": "None"
  },
  {
   "record_id": "DE-013",
@@ -525,7 +525,7 @@
   "us_diploma_gpa": "Diploma GPA range of 4.00 to 3.33",
   "accreditation": "Granted unlimited state recognition by the City State of Bremen in 2021 after meeting all continuous quality and structural requirements",
   "fee_year": "",
-  "application_fee": "does not charge"
+  "application_fee": "None"
  },
  {
   "record_id": "DE-014",
@@ -569,7 +569,7 @@
   "us_diploma_gpa": "Diploma GPA range of 4.00 to 3.33",
   "accreditation": "Granted unlimited state recognition by the City State of Bremen in 2021 after meeting all continuous quality and structural requirements",
   "fee_year": "",
-  "application_fee": "does not charge"
+  "application_fee": "None"
  },
  {
   "record_id": "DE-015",
@@ -613,7 +613,7 @@
   "us_diploma_gpa": "Diploma GPA range of 4.00 to 3.33",
   "accreditation": "Granted unlimited state recognition by the City State of Bremen in 2021 after meeting all continuous quality and structural requirements",
   "fee_year": "",
-  "application_fee": "does not charge"
+  "application_fee": "None"
  },
  {
   "record_id": "DE-016",
@@ -657,7 +657,7 @@
   "us_diploma_gpa": "Diploma GPA range of 4.00 to 3.33",
   "accreditation": "Granted unlimited state recognition by the City State of Bremen in 2021 after meeting all continuous quality and structural requirements",
   "fee_year": "",
-  "application_fee": "does not charge"
+  "application_fee": "None"
  },
  {
   "record_id": "DE-017",
@@ -701,7 +701,7 @@
   "us_diploma_gpa": "minimum US Grade Point Average (GPA) of 3.0 (equivalent to a German grade of 2.4 or a UK 2:1 degree",
   "accreditation": "ranted to EBS Business School, placing it among the top global business schools that meet rigorous international standards for teaching and research",
   "fee_year": "",
-  "application_fee": "120.0"
+  "application_fee": "EUR 120"
  },
  {
   "record_id": "DE-018",
@@ -745,7 +745,7 @@
   "us_diploma_gpa": "minimum US Grade Point Average (GPA) of 3.0 (equivalent to a German grade of 2.4 or a UK 2:1 degree",
   "accreditation": "ranted to EBS Business School, placing it among the top global business schools that meet rigorous international standards for teaching and research",
   "fee_year": "",
-  "application_fee": "120.0"
+  "application_fee": "EUR 120"
  },
  {
   "record_id": "DE-020",
@@ -921,7 +921,7 @@
   "us_diploma_gpa": "U.S. equivalent GPA of 2.5 to 3.0",
   "accreditation": "System-accredited (first achieved in 2016, and renewed in March 2024 until September 30, 2030)",
   "fee_year": "",
-  "application_fee": "75 EUR"
+  "application_fee": "EUR 75"
  },
  {
   "record_id": "DE-024",
@@ -965,7 +965,7 @@
   "us_diploma_gpa": "",
   "accreditation": "Fully state-recognized by the German federal state of Brandenburg, with degree-awarding powers granted to confer Bachelor's, Master's, and MBA degrees",
   "fee_year": "",
-  "application_fee": "no charges"
+  "application_fee": "None"
  },
  {
   "record_id": "DE-026",
@@ -1009,7 +1009,7 @@
   "us_diploma_gpa": "do not enforce a strict competitive GPA cutoff for a U.S. High School Diploma",
   "accreditation": "does not hold direct US institutional or regional accreditation (such as MSCHE or SACSCOC), because it is a German University of Applied Sciences regulated by German educational standards. [1] (https://www.topuniversities.com/universities/hochschule-fresenius), [2] (https://cumulusassociation.org/our-community/our-member-institutions/hochschule-fresenius-university-of-applied-sciences/)",
   "fee_year": "",
-  "application_fee": "no charges"
+  "application_fee": "None"
  },
  {
   "record_id": "DE-028",
@@ -1053,7 +1053,7 @@
   "us_diploma_gpa": "do not enforce a strict competitive GPA cutoff for a U.S. High School Diploma",
   "accreditation": "State-recognised university; Wissenschaftsrat; ZFU (distance learning) (checked 4 Sep 2026)",
   "fee_year": "",
-  "application_fee": "no charges"
+  "application_fee": "None"
  },
  {
   "record_id": "DE-029",
@@ -1097,7 +1097,7 @@
   "us_diploma_gpa": "do not enforce a strict competitive GPA cutoff for a U.S. High School Diploma",
   "accreditation": "State-recognised university; Wissenschaftsrat; ZFU (distance learning) (checked 4 Sep 2026)",
   "fee_year": "",
-  "application_fee": "no charges"
+  "application_fee": "None"
  },
  {
   "record_id": "DE-030",
@@ -1184,7 +1184,7 @@
   "us_diploma_gpa": "does not require a specific minimum grade point average (GPA)",
   "accreditation": "The International School of Management (ISM) in Germany holds prestigious global and national accreditations, including the AACSB accreditation earned in 2024, placing it among the top business schools worldwide",
   "fee_year": "",
-  "application_fee": "$175 US"
+  "application_fee": "USD 175"
  },
  {
   "record_id": "DE-034",
@@ -1228,7 +1228,7 @@
   "us_diploma_gpa": "minimum U.S. High School Diploma GPA of 3.5 for competitive admission.",
   "accreditation": "KIT is system-accredited by the Swiss Agency of Accreditation and Quality Assurance (AAQ",
   "fee_year": "",
-  "application_fee": "€0 (No fees are charged to apply for degree"
+  "application_fee": "None"
  },
  {
   "record_id": "DE-035",
@@ -1250,8 +1250,8 @@
   "english": "IELTS 6.5 / TOEFL iBT 87",
   "selection": "Lancaster admissions assessment",
   "deadline": "2026-08-31",
-  "feeEU": "14800.0",
-  "feeNonEU": "22500.0",
+  "feeEU": "EUR 11,100 per year (2026/27)",
+  "feeNonEU": "EUR 18,500 per year (2026/27)",
   "liveLo": "EUR 11,000/yr",
   "liveHi": "EUR 14,000/yr",
   "scholarships": "Lancaster Leipzig scholarships",
@@ -1272,7 +1272,7 @@
   "us_diploma_gpa": "\"Completed US High School Diploma with at least 3.2 GPA average and 3 AP subjects at grade 4\". For Accounting and Finance, Software Engineering and Computer Science one further criterion is required: Mathematics Grade A in the High School Diploma, or 3 in AP Calculus AB or BC, or 580 in SAT I Mathematics. (checked 4 Sep 2026)",
   "accreditation": "Degrees awarded by Lancaster University (UK); School of Computing and Communications, and Lancaster University Management School (checked 4 Sep 2026)",
   "fee_year": "",
-  "application_fee": "€0 (No fees are charged to apply for degree"
+  "application_fee": "None"
  },
  {
   "record_id": "DE-036",
@@ -1294,8 +1294,8 @@
   "english": "IELTS 6 / TOEFL iBT 78",
   "selection": "Lancaster admissions assessment",
   "deadline": "2026-08-31",
-  "feeEU": "11100.0",
-  "feeNonEU": "18500.0",
+  "feeEU": "EUR 11,100 per year (2026/27)",
+  "feeNonEU": "EUR 18,500 per year (2026/27)",
   "liveLo": "EUR 11,000/yr",
   "liveHi": "EUR 14,000/yr",
   "scholarships": "Lancaster Leipzig scholarships",
@@ -1316,7 +1316,7 @@
   "us_diploma_gpa": "\"Completed US High School Diploma with at least 3.2 GPA average and 3 AP subjects at grade 4\". For Accounting and Finance, Software Engineering and Computer Science one further criterion is required: Mathematics Grade A in the High School Diploma, or 3 in AP Calculus AB or BC, or 580 in SAT I Mathematics. (checked 4 Sep 2026)",
   "accreditation": "Degrees awarded by Lancaster University (UK); School of Computing and Communications, and Lancaster University Management School (checked 4 Sep 2026)",
   "fee_year": "",
-  "application_fee": "€0 (No fees are charged to apply for degree"
+  "application_fee": "None"
  },
  {
   "record_id": "DE-037",
@@ -1338,8 +1338,8 @@
   "english": "IELTS 6 / TOEFL iBT 78",
   "selection": "Lancaster admissions assessment",
   "deadline": "2026-08-31",
-  "feeEU": "11100.0",
-  "feeNonEU": "18500.0",
+  "feeEU": "EUR 11,100 per year (2026/27)",
+  "feeNonEU": "EUR 18,500 per year (2026/27)",
   "liveLo": "EUR 11,000/yr",
   "liveHi": "EUR 14,000/yr",
   "scholarships": "Lancaster Leipzig scholarships",
@@ -1360,7 +1360,7 @@
   "us_diploma_gpa": "\"Completed US High School Diploma with at least 3.2 GPA average and 3 AP subjects at grade 4\". For Accounting and Finance, Software Engineering and Computer Science one further criterion is required: Mathematics Grade A in the High School Diploma, or 3 in AP Calculus AB or BC, or 580 in SAT I Mathematics. (checked 4 Sep 2026)",
   "accreditation": "Degrees awarded by Lancaster University (UK); School of Computing and Communications, and Lancaster University Management School (checked 4 Sep 2026)",
   "fee_year": "",
-  "application_fee": "€0 (No fees are charged to apply for degree"
+  "application_fee": "None"
  },
  {
   "record_id": "DE-039",
@@ -1383,7 +1383,7 @@
   "selection": "MBS application interview",
   "deadline": "2026-07-31",
   "feeEU": "EUR 6,180/sem (~EUR 12,360/yr; total EUR 43,260)",
-  "feeNonEU": "6420.0",
+  "feeNonEU": "EUR 6,420 per semester",
   "liveLo": "EUR 12,000/yr",
   "liveHi": "EUR 15,000/yr",
   "scholarships": "MBS Bavarian, Explorer, BEST scholarships",
@@ -1404,7 +1404,7 @@
   "us_diploma_gpa": "Munich Business School (MBS) typically expects a minimum US GPA equivalent of 3.0 on a 4.0 scale (a 'B' average)",
   "accreditation": "AACSB Accreditation: Munich Business School earned accreditation from the Association to Advance Collegiate Schools of Business (AACSB) in February 2025, placing it among the top 6% of business schools globally",
   "fee_year": "",
-  "application_fee": "60.0"
+  "application_fee": "EUR 60"
  },
  {
   "record_id": "DE-041",
@@ -1448,7 +1448,7 @@
   "us_diploma_gpa": "",
   "accreditation": "The university has held system accreditation since October 1, 2019, bearing the quality seal of the German Accreditation Council",
   "fee_year": "",
-  "application_fee": "€0 (No fees are charged to apply for degree"
+  "application_fee": "None"
  },
  {
   "record_id": "DE-042",
@@ -1492,7 +1492,7 @@
   "us_diploma_gpa": "",
   "accreditation": "The university has held system accreditation since October 1, 2019, bearing the quality seal of the German Accreditation Council",
   "fee_year": "",
-  "application_fee": "€0 (No fees are charged to apply for degree"
+  "application_fee": "None"
  },
  {
   "record_id": "DE-043",
@@ -1536,7 +1536,7 @@
   "us_diploma_gpa": "2.4 to 2.7 GPA on a U.S. 4.0 scale",
   "accreditation": "Officially recognized by the Berlin Senate Department for Science, Health and Care (stating it meets German higher education standards)",
   "fee_year": "",
-  "application_fee": "does not charge"
+  "application_fee": "None"
  },
  {
   "record_id": "DE-045",
@@ -1580,7 +1580,7 @@
   "us_diploma_gpa": "",
   "accreditation": "TUM is system-accredited by the Swiss Center of Accreditation and Quality Assurance in Higher Education (OAQ), confirming that its internal quality management for degree programs meets high international standard",
   "fee_year": "",
-  "application_fee": "75.0"
+  "application_fee": "EUR 75"
  },
  {
   "record_id": "DE-046",
@@ -1624,7 +1624,7 @@
   "us_diploma_gpa": "",
   "accreditation": "TUM is system-accredited by the Swiss Center of Accreditation and Quality Assurance in Higher Education (OAQ), confirming that its internal quality management for degree programs meets high international standard",
   "fee_year": "",
-  "application_fee": "75.0"
+  "application_fee": "EUR 75"
  },
  {
   "record_id": "DE-049",
@@ -1668,7 +1668,7 @@
   "us_diploma_gpa": "",
   "accreditation": "Awarded on September 16, 2016, by the Swiss Agency of Accreditation and Quality Assurance (AAQ",
   "fee_year": "",
-  "application_fee": "no application fees"
+  "application_fee": "None"
  },
  {
   "record_id": "DE-050",
@@ -1712,7 +1712,7 @@
   "us_diploma_gpa": "",
   "accreditation": "The University of Freiburg holds official system accreditation, allowing the institution to internally accredit its own bachelor's and master's degree programs",
   "fee_year": "",
-  "application_fee": "75.0"
+  "application_fee": "EUR 75"
  },
  {
   "record_id": "DE-052",
@@ -1756,7 +1756,7 @@
   "us_diploma_gpa": "",
   "accreditation": "EQUIS, AACSB, FIBAA System Accreditation, BSIS, PRME (checked 4 Sep 2026)",
   "fee_year": "",
-  "application_fee": "100 euros"
+  "application_fee": "EUR 100"
  },
  {
   "record_id": "DE-053",
@@ -1843,7 +1843,7 @@
   "us_diploma_gpa": "",
   "accreditation": "fully recognized public university in Germany with 100% officially accredited degree programmes",
   "fee_year": "",
-  "application_fee": "no application fee"
+  "application_fee": "None"
  },
  {
   "record_id": "DE-055",
@@ -1887,7 +1887,7 @@
   "us_diploma_gpa": "",
   "accreditation": "Bayerisches Staatsministerium für Wissenschaft und Kunst (Bavarian State Ministry of Science and the Arts",
   "fee_year": "",
-  "application_fee": "75.0"
+  "application_fee": "EUR 75"
  },
  {
   "record_id": "DE-056",
@@ -1931,7 +1931,7 @@
   "us_diploma_gpa": "",
   "accreditation": "officially recognized by the Bayerisches Staatsministerium für Wissenschaft und Kunst (Bavarian State Ministry of Science and the arts",
   "fee_year": "",
-  "application_fee": "€100 per application."
+  "application_fee": "EUR 100 per application"
  },
  {
   "record_id": "DE-057",
@@ -1975,7 +1975,7 @@
   "us_diploma_gpa": "",
   "accreditation": "",
   "fee_year": "",
-  "application_fee": "75.0"
+  "application_fee": "EUR 75"
  },
  {
   "record_id": "DE-058",
@@ -2019,7 +2019,7 @@
   "us_diploma_gpa": "",
   "accreditation": "",
   "fee_year": "",
-  "application_fee": "uni-assist will pay a processing fee of €75"
+  "application_fee": "EUR 75, paid to uni-assist"
  },
  {
   "record_id": "DE-059",
@@ -2052,7 +2052,7 @@
   "contact": "applications.asg@ed.tum.de · +49 89 289 22245",
   "documents_required": "School leaving certificate and transcripts, uni-assist VPD, proof of English at B2, proof of German at A2, pre-study internship documentation, passport.",
   "accreditation": "TUM is system-accredited by the Swiss Center of Accreditation and Quality Assurance in Higher Education (OAQ), confirming that its internal quality management for degree programs meets high international standard",
-  "application_fee": "75.0",
+  "application_fee": "EUR 75",
   "us_diploma_gpa": "",
   "notes": "German at A2 is required for admission even though the programme is taught in English. This catches applicants out, because the teaching language and the admission requirement are not the same thing.",
   "verified_status": "Confirmed",
