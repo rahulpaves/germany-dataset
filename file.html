@@ -764,8 +764,16 @@ function render(i){
      opened and answered on the date shown, but no quote is on file yet. */
   var ok = r.verified_status === "Confirmed";
   var checked = r.verified_status === "Source checked";
+  /* the language field carries a full quoted sentence on the checked records,
+     which reads well in the table below but not as a chip */
+  function short(v){
+    v = String(v);
+    if (v.length <= 44) return v;
+    var cut = v.split(/[-\u2013\u2014.(]/)[0].trim();
+    return (cut.length && cut.length <= 44) ? cut : v.slice(0, 41).trim() + "\u2026";
+  }
   var chips = [r.degree, r.language, r.years, r.instType].filter(has)
-     .map(function(c){return '<span class="chip">'+esc(c)+'</span>';}).join("");
+     .map(function(c){return '<span class="chip">'+esc(short(c))+'</span>';}).join("");
 
   var banner = ok
     ? '<div class="vbanner ok"><span>&#10003;</span><span><b>Every field above was checked against the university\'s own pages</b> on '+esc(r.date_checked)+
@@ -793,6 +801,7 @@ function render(i){
         dt("Duration", r.years),
         (r.feeEU && r.feeEU===r.feeNonEU ? dt("Fees", r.feeEU)
           : dt("Fees, EU students", r.feeEU) + dt("Fees, non-EU students", r.feeNonEU)),
+        dt("Application fee", r.application_fee),
         dt("Living costs", money(r.liveLo, r.liveHi)),
         dt("Fees apply to", r.fee_year),
         dt("Scholarships", r.scholarships),
