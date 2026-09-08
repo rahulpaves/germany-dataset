@@ -606,11 +606,13 @@ footer a:hover{color:#fff;}
 .pitem .pv{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
   margin-top:6px;padding:2px 7px;border-radius:4px;background:#e4f4ed;color:#166a4a;}
 .pitem .pv.no{background:var(--muted);color:var(--body);}
+.pitem .pv.mid{background:#fdf5e3;color:#6b4e10;}
 .empty{padding:26px 16px;font-size:14px;color:var(--body);text-align:center;}
 .vbanner{display:flex;gap:12px;align-items:flex-start;padding:13px 16px;border-radius:10px;
   margin-bottom:16px;font-size:14px;line-height:1.5;}
 .vbanner.ok{background:#e4f4ed;border:1px solid #bfe3d3;color:#12563b;}
 .vbanner.no{background:var(--muted);border:1px solid var(--line);color:var(--body);}
+.vbanner.mid{background:#fdf5e3;border:1px solid #ecd9a8;color:#6b4e10;}
 .vbanner b{color:inherit;}
 .vbanner a{color:inherit;font-weight:600;}
 .printbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;
@@ -757,7 +759,11 @@ function render(i){
      on a real student", and it is measured rather than self-reported */
   if (DATA[i] && window.__track) window.__track("record-" + DATA[i].record_id);
   var r = DATA[i]; if(!r) return;
+  /* three states, because two was not honest. Confirmed means somebody opened
+     the page and typed out the sentence. Source checked means the link was
+     opened and answered on the date shown, but no quote is on file yet. */
   var ok = r.verified_status === "Confirmed";
+  var checked = r.verified_status === "Source checked";
   var chips = [r.degree, r.language, r.years, r.instType].filter(has)
      .map(function(c){return '<span class="chip">'+esc(c)+'</span>';}).join("");
 
@@ -765,6 +771,10 @@ function render(i){
     ? '<div class="vbanner ok"><span>&#10003;</span><span><b>Every field above was checked against the university\'s own pages</b> on '+esc(r.date_checked)+
       (has(r.source_url_you_used)?' &middot; <a href="'+esc(r.source_url_you_used)+'" target="_blank" rel="noopener">open the page we checked</a>':'')+
       (has(r.exact_quote)?'<br><span style="opacity:.85">&ldquo;'+esc(r.exact_quote)+'&rdquo;</span>':'')+'</span></div>'
+    : checked
+    ? '<div class="vbanner mid"><span>&#9679;</span><span><b>The source page for this record was open and live on '+esc(r.date_checked)+'</b>, and the programme is listed as taught in English.'+
+      (has(r.source_url_you_used)?' <a href="'+esc(r.source_url_you_used)+'" target="_blank" rel="noopener">Open it and check any field yourself</a>.':'')+
+      ' We have not yet written down the exact sentence behind every field, so this record does not carry the green badge.</span></div>'
     : '<div class="vbanner no"><span>&#9679;</span><span><b>Nothing above has been checked against source yet.</b> Treat every field on this record as unconfirmed until it carries the green badge. We never mark a record verified before someone has opened the page and read the sentence.</span></div>';
 
   document.getElementById("rec").innerHTML =
@@ -897,6 +907,7 @@ function list(){
   var el=document.getElementById("plist"), n=0, out="";
   DATA.forEach(function(r,i){
     var ok=r.verified_status==="Confirmed";
+    var checked=r.verified_status==="Source checked";
     if(f==="v" && !ok) return;
     var hay=(r.programme+" "+r.institution+" "+(r.city||"")).toLowerCase();
     if(q && hay.indexOf(q)<0) return;
@@ -904,7 +915,7 @@ function list(){
     out+='<button class="pitem" data-i="'+i+'" aria-current="'+(i===cur)+'">'+
       '<span class="pp">'+esc(r.programme)+'</span>'+
       '<span class="pi">'+esc(r.institution)+'</span>'+
-      '<span class="pv'+(ok?"":" no")+'">'+(ok?"Verified":"Not yet checked")+'</span>'+
+      '<span class="pv'+(ok?"":(checked?" mid":" no"))+'">'+(ok?"Verified":(checked?"Source checked":"Not yet checked"))+'</span>'+
     '</button>';
   });
   el.innerHTML = out || '<p class="empty">Nothing matches that search.</p>';
@@ -916,7 +927,8 @@ function list(){
 
 fetch("germany-file.json?v=1").then(function(r){return r.json();}).then(function(d){
   DATA = d.sort(function(a,b){
-    var av=a.verified_status==="Confirmed"?0:1, bv=b.verified_status==="Confirmed"?0:1;
+    function rank(x){ return x.verified_status==="Confirmed"?0:(x.verified_status==="Source checked"?1:2); }
+    var av=rank(a), bv=rank(b);
     return av-bv || String(a.institution).localeCompare(String(b.institution));
   });
   var want = (location.hash || "").replace("#", "").toUpperCase(), at = 0;
