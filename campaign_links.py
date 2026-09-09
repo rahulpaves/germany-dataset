@@ -21,6 +21,9 @@ CHANNELS = [
     ("email",         "Cold or warm email outreach"),
     ("referral",      "A counselor passing it to another"),
     ("newsletter",    "Any newsletter or community post"),
+    ("li-ad-uae",     "Paid LinkedIn, counselors in the UAE"),
+    ("li-ad-india",   "Paid LinkedIn, counselors in India"),
+    ("linkedin-b",    "A second organic post, to test one opening against another"),
 ]
 
 PITCH = ("47 English-taught German undergraduate degrees, with entry requirements "
