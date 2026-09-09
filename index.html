@@ -6,6 +6,18 @@
 <title>Verified Undergraduate Application Data | Pave</title>
 <link rel="canonical" href="https://germany.pavetheway.ai/">
 
+<!-- Google Analytics 4. GoatCounter stays: it is the quick read on channel
+     performance, GA4 is the one with funnels and retention. Both get the same
+     events, so the two never tell different stories. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZT943XVGB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2ZT943XVGB');
+</script>
+
+
 <!-- Share preview. Without these a link posted to LinkedIn or WhatsApp renders
      as a bare URL, which is most of the click gone before anyone reads it. -->
 <meta property="og:type" content="website">
@@ -1277,6 +1289,11 @@ footer a:hover{color:#fff;}
         title: label,
         event: isEvent !== false
       });
+    }
+    /* GA4 takes the bare name with the channel as a parameter, so it can be
+       segmented there rather than exploded into one event name per source. */
+    if (typeof window.gtag === "function") {
+      window.gtag("event", name, { channel: src, page_kind: "landing" });
     }
     if (window.console && console.debug) console.debug("[track]", label);
   }

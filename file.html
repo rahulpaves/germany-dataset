@@ -2,6 +2,18 @@
 <title>The Germany File | Pave</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
+
+<!-- Google Analytics 4. GoatCounter stays: it is the quick read on channel
+     performance, GA4 is the one with funnels and retention. Both get the same
+     events, so the two never tell different stories. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZT943XVGB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2ZT943XVGB');
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
@@ -661,6 +673,11 @@ footer a:hover{color:#fff;}
   window.__track = function (name) {
     if (window.goatcounter && window.goatcounter.count) {
       window.goatcounter.count({ path: name, title: name, event: true });
+    }
+    /* who opened it matters more than how many did, so the counselor slug
+       rides along as a parameter */
+    if (typeof window.gtag === "function") {
+      window.gtag("event", name, { counselor: who || src, page_kind: "file" });
     }
   };
 
