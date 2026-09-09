@@ -1444,7 +1444,17 @@ footer a:hover{color:#fff;}
   for (var fi = 0; fi < forms.length; fi++) {
     (function (f) {
       var where = f.classList.contains("heropick") ? "hero" : "form";
-      f.addEventListener("submit", function () { track(where + "-submit"); });
+      f.addEventListener("submit", function () {
+        track(where + "-submit");
+        /* The pricing question on the thank-you page had no email on it, so the
+           most valuable answer we collect arrived anonymous. Carry the address
+           across in sessionStorage rather than the URL, which would put a
+           personal email into browser history and analytics. */
+        try {
+          var em = f.querySelector('input[type="email"]');
+          if (em && em.value) sessionStorage.setItem("pave_email", em.value.trim());
+        } catch (e) {}
+      });
       /* form-start separates "reached it and ignored it" from "started filling
          it in and gave up". The two have completely different fixes. */
       var started = false;

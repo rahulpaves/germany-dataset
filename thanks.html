@@ -105,6 +105,7 @@ a.btn:hover{background:#2140c0;}
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_next" value="https://germany.pavetheway.ai/thanks.html?done=1">
       <input type="hidden" name="Came from" id="qualSrc" value="direct">
+      <input type="hidden" name="Email" id="qualEmail" value="">
       <h2>One last thing, while the file is on its way</h2>
       <p class="lede">It takes ten seconds and it decides which country gets verified after Germany.</p>
 
@@ -183,6 +184,20 @@ a.btn:hover{background:#2140c0;}
     if(navigator.clipboard) navigator.clipboard.writeText(a).then(function(){done(true);},function(){done(false);});
     else done(false);
   });
+})();
+</script>
+
+<script>
+/* Fills in who is answering the pricing question. Without this the most
+   valuable answer we collect arrives anonymous, matchable only by guessing
+   from timestamps. Read from sessionStorage rather than the URL, which would
+   put a personal email into browser history and analytics. */
+(function () {
+  try {
+    var em = sessionStorage.getItem("pave_email");
+    var f  = document.getElementById("qualEmail");
+    if (em && f) f.value = em;
+  } catch (e) {}
 })();
 </script>
 </body>
