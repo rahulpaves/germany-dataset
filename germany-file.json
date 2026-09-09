@@ -9,7 +9,7 @@
   "degree": "Bachelor",
   "url": "https://berlin.bard.edu/academics/economics-politics-and-social-thought/",
   "language": "English",
-  "years": "4",
+  "years": "4 years (8 semesters)",
   "entry": "Upper secondary diploma, Motivation Statement, Graded Writing Sample, Letters of Recommendation, Interview:",
   "ib": "IB accepted",
   "alevel": "A-Levels accepted",
@@ -18,7 +18,7 @@
   "other": "Country-equivalent accepted",
   "english": "IELTS 7.0 / TOEFL iBT 95",
   "selection": "Essays; interview",
-  "deadline": "November 1 Early action , priority deadline January 10",
+  "deadline": "November 1 Early action, priority deadline January 10",
   "feeEU": "EUR 22,000/yr",
   "feeNonEU": "€38,250 on capus fees , €27,500 off campus",
   "liveLo": "EUR 11,000/yr",
@@ -36,12 +36,13 @@
   "checked_by": "Rahul Mehta",
   "contact": "admissions@berlin.bard.edu · +49 30 437 330",
   "documents_required": "Online Application Form, Motivation Statement, Official Transcripts, Graded Writing Sample, Letters of Recommendation, Proof of English Proficiency",
-  "deadline_rounds": "Early Action:Application Due: November 1Decision Notification: December 31Deposit Due: May 1 Regular Decision:Application Due: January 10Decision Notification: Late MarchDeposit Due: May 1",
+  "deadline_rounds": "Early Action: Application Due: November 1 · Decision Notification: December 31 · Deposit Due: May 1 Regular Decision: Application Due: January 10 · Decision Notification: Late March · Deposit Due: May 1",
   "progression_routes": "",
   "us_diploma_gpa": "does not enforce a strict minimum high school GPA requirement for general admission",
   "accreditation": "holds dual institutional and programmatic accreditation in both Germany and the United States",
   "fee_year": "",
-  "application_fee": "None"
+  "application_fee": "None",
+  "deadline_iso": ""
  },
  {
   "record_id": "DE-002",
@@ -53,7 +54,7 @@
   "degree": "Bachelor",
   "url": "https://berlin.bard.edu/academics/humanities-the-arts-and-social-thought/",
   "language": "English",
-  "years": "4",
+  "years": "4 years (8 semesters)",
   "entry": "Upper secondary diploma, Motivation Statement, Graded Writing Sample, Letters of Recommendation, Interview:",
   "ib": "IB accepted",
   "alevel": "A-Levels accepted",
@@ -62,7 +63,7 @@
   "other": "Country-equivalent accepted",
   "english": "IELTS 7.0 / TOEFL iBT 95",
   "selection": "Essays; interview (highly selective)",
-  "deadline": "November 1 Early action , priority deadline January 10",
+  "deadline": "November 1 Early action, priority deadline January 10",
   "feeEU": "EUR 22,000/yr",
   "feeNonEU": "€38,250 on capus fees , €27,500 off campus",
   "liveLo": "EUR 11,000/yr",
@@ -80,12 +81,13 @@
   "checked_by": "Rahul Mehta",
   "contact": "admissions@berlin.bard.edu · +49 30 437 330",
   "documents_required": "Online Application Form, Motivation Statement, Official Transcripts, Graded Writing Sample, Letters of Recommendation, Proof of English Proficiency",
-  "deadline_rounds": "Early Action:Application Due: November 1Decision Notification: December 31Deposit Due: May 1 Regular Decision:Application Due: January 10Decision Notification: Late MarchDeposit Due: May 1",
+  "deadline_rounds": "Early Action: Application Due: November 1 · Decision Notification: December 31 · Deposit Due: May 1 Regular Decision: Application Due: January 10 · Decision Notification: Late March · Deposit Due: May 1",
   "progression_routes": "",
   "us_diploma_gpa": "does not enforce a strict minimum high school GPA requirement for general admission",
   "accreditation": "holds dual institutional and programmatic accreditation in both Germany and the United States",
   "fee_year": "",
-  "application_fee": "None"
+  "application_fee": "None",
+  "deadline_iso": ""
  },
  {
   "record_id": "DE-003",
@@ -97,7 +99,7 @@
   "degree": "Bachelor",
   "url": "https://whitecliffe.de/en/programs/ba-architecture/",
   "language": "English",
-  "years": "4",
+  "years": "4 years (8 semesters)",
   "entry": "Upper secondary diploma; Portfolio in PDF format containing at least 10 pieces of work",
   "ib": "IB accepted, English A or B at HL or SL",
   "alevel": "A-Levels accepted",
@@ -129,7 +131,8 @@
   "us_diploma_gpa": "does not enforce a strict minimum high school GPA requirement for general admission",
   "accreditation": "State-recognised, Berlin (Charlottenburg) (checked 4 Sep 2026)",
   "fee_year": "",
-  "application_fee": "None"
+  "application_fee": "None",
+  "deadline_iso": ""
  },
  {
   "record_id": "DE-004",
@@ -141,7 +144,7 @@
   "degree": "Bachelor",
   "url": "https://whitecliffe.de/en/programs/ba-business-administration-international-management-marketing/?utm_source=google.com&utm_medium=referral&utm_campaign=fallback_referral",
   "language": "English",
-  "years": "3",
+  "years": "3 years (6 semesters)",
   "entry": "Upper secondary diploma",
   "ib": "IB accepted",
   "alevel": "A-Levels accepted",
@@ -173,7 +176,8 @@
   "us_diploma_gpa": "does not enforce a strict minimum high school GPA requirement for general admission",
   "accreditation": "State-recognised, Berlin (Charlottenburg) (checked 4 Sep 2026)",
   "fee_year": "",
-  "application_fee": "None"
+  "application_fee": "None",
+  "deadline_iso": ""
  },
  {
   "record_id": "DE-005",
@@ -185,7 +189,7 @@
   "degree": "Bachelor",
   "url": "https://whitecliffe.de/en/programs/ba-graphic-design-visual-communication/?utm_source=google.com&utm_medium=referral&utm_campaign=fallback_referral",
   "language": "English",
-  "years": "3",
+  "years": "3 years (6 semesters)",
   "entry": "Upper secondary diploma; portfolio",
   "ib": "IB accepted",
   "alevel": "A-Levels accepted",
@@ -217,7 +221,8 @@
   "us_diploma_gpa": "does not enforce a strict minimum high school GPA requirement for general admission",
   "accreditation": "State-recognised, Berlin (Charlottenburg) (checked 4 Sep 2026)",
   "fee_year": "",
-  "application_fee": "None"
+  "application_fee": "None",
+  "deadline_iso": ""
  },
  {
   "record_id": "DE-006",
@@ -229,7 +234,7 @@
   "degree": "Bachelor",
   "url": "https://whitecliffe.de/en/programs/ba-interior-architecture-interior-design/?utm_source=google.com&utm_medium=referral&utm_campaign=fallback_referral",
   "language": "English",
-  "years": "3",
+  "years": "3 years (6 semesters)",
   "entry": "Upper secondary diploma; portfolio",
   "ib": "IB accepted",
   "alevel": "A-Levels accepted",
@@ -261,7 +266,8 @@
   "us_diploma_gpa": "does not enforce a strict minimum high school GPA requirement for general admission",
   "accreditation": "State-recognised, Berlin (Charlottenburg) (checked 4 Sep 2026)",
   "fee_year": "",
-  "application_fee": "None"
+  "application_fee": "None",
+  "deadline_iso": ""
  },
  {
   "record_id": "DE-007",
@@ -273,7 +279,7 @@
   "degree": "Bachelor",
   "url": "https://www.berlinsbi.com/programmes/undergraduate/bsc-hons-international-business-and-management",
   "language": "English",
-  "years": "3",
+  "years": "3 years (6 semesters)",
   "entry": "Upper secondary diploma, Up-to-date CV",
   "ib": "IB accepted",
   "alevel": "A-Levels accepted",
@@ -282,7 +288,7 @@
   "other": "Country-equivalent accepted",
   "english": "6.0 overall, with at least 5.5 in each component; TOEFL iBT 80 (L17, R18, S20, W17)",
   "selection": "None",
-  "deadline": "2026-05-31",
+  "deadline": "31 May 2026",
   "feeEU": "EUR 9,800/yr",
   "feeNonEU": "€10,425 per year.",
   "liveLo": "EUR 11,000/yr",
@@ -305,7 +311,8 @@
   "us_diploma_gpa": "2.25 or above on a US 4.0 scale for standard entry",
   "accreditation": "its degree programmes are validated and awarded by internationally recognized public and private partner universities",
   "fee_year": "",
-  "application_fee": "None"
+  "application_fee": "None",
+  "deadline_iso": "2026-05-31"
  },
  {
   "record_id": "DE-008",
@@ -317,7 +324,7 @@
   "degree": "Bachelor",
   "url": "https://code.berlin/en/study/bachelor/digital-design-innovation/",
   "language": "English",
-  "years": "3",
+  "years": "3 years (6 semesters)",
   "entry": "Upper secondary diploma; portfolio",
   "ib": "IB accepted",
   "alevel": "A-Levels accepted",
@@ -349,7 +356,8 @@
   "us_diploma_gpa": "does not enforce a strict minimum high school GPA requirement for general admission",
   "accreditation": "CODE University of Applied Sciences does not have a U.S. institutional accreditation, as it is a German private, state-recognized university based in Berlin",
   "fee_year": "",
-  "application_fee": "None"
+  "application_fee": "None",
+  "deadline_iso": ""
  },
  {
   "record_id": "DE-010",
@@ -361,7 +369,7 @@
   "degree": "Bachelor",
   "url": "https://code.berlin/en/study/bachelor/software-engineering/",
   "language": "English",
-  "years": "3",
+  "years": "3 years (6 semesters)",
   "entry": "Upper secondary diploma",
   "ib": "IB accepted",
   "alevel": "A-Levels accepted",
@@ -370,7 +378,7 @@
   "other": "Country-equivalent accepted",
   "english": "IELTS 6.0 / TOEFL iBT 79",
   "selection": "CODE assessment day (challenge-based)",
-  "deadline": "2026-06-30",
+  "deadline": "30 June 2026",
   "feeEU": "EUR 6,900/sem (~EUR 13,800/yr)",
   "feeNonEU": "EUR 6,900/sem",
   "liveLo": "EUR 12,000/yr",
@@ -393,7 +401,8 @@
   "us_diploma_gpa": "does not enforce a strict minimum high school GPA requirement for general admission",
   "accreditation": "CODE University of Applied Sciences does not have a U.S. institutional accreditation, as it is a German private, state-recognized university based in Berlin",
   "fee_year": "",
-  "application_fee": "None"
+  "application_fee": "None",
+  "deadline_iso": "2026-06-30"
  },
  {
   "record_id": "DE-011",
@@ -405,7 +414,7 @@
   "degree": "Bachelor",
   "url": "https://constructor.university/programs/undergraduate-education/global-economics-management#overview",
   "language": "English",
-  "years": "3",
+  "years": "3 years (6 semesters)",
   "entry": "Upper secondary diploma",
   "ib": "IB accepted",
   "alevel": "A-Levels accepted",
@@ -414,7 +423,7 @@
   "other": "Country-equivalent accepted",
   "english": "IELTS 6.5 / TOEFL iBT 90 / Duolingo 110",
   "selection": "Interview",
-  "deadline": "2027-08-15",
+  "deadline": "15 August 2027",
   "feeEU": "EUR 20,000/yr",
   "feeNonEU": "EUR 20,000/yr",
   "liveLo": "EUR 9,000/yr",
@@ -437,7 +446,8 @@
   "us_diploma_gpa": "Diploma GPA range of 4.00 to 3.33",
   "accreditation": "Granted unlimited state recognition by the City State of Bremen in 2021 after meeting all continuous quality and structural requirements",
   "fee_year": "",
-  "application_fee": "None"
+  "application_fee": "None",
+  "deadline_iso": "2027-08-15"
  },
  {
   "record_id": "DE-012",
@@ -449,7 +459,7 @@
   "degree": "Bachelor",
   "url": "https://constructor.university/programs/undergraduate-education/biochemistry-cell-biology",
   "language": "English",
-  "years": "3",
+  "years": "3 years (6 semesters)",
   "entry": "Upper secondary diploma; Bio, Chem",
   "ib": "IB HL Bio + Chem",
   "alevel": "A-Levels Bio + Chem",
@@ -458,7 +468,7 @@
   "other": "Country-equivalent accepted",
   "english": "IELTS 6.5 / TOEFL iBT 90 / Duolingo 110",
   "selection": "Interview",
-  "deadline": "2027-08-15",
+  "deadline": "15 August 2027",
   "feeEU": "EUR 20,000/yr",
   "feeNonEU": "EUR 20,000/yr",
   "liveLo": "EUR 9,000/yr",
@@ -481,7 +491,8 @@
   "us_diploma_gpa": "Diploma GPA range of 4.00 to 3.33",
   "accreditation": "Granted unlimited state recognition by the City State of Bremen in 2021 after meeting all continuous quality and structural requirements",
   "fee_year": "",
-  "application_fee": "None"
+  "application_fee": "None",
+  "deadline_iso": "2027-08-15"
  },
  {
   "record_id": "DE-013",
@@ -493,7 +504,7 @@
   "degree": "Bachelor",
   "url": "https://constructor.university/programs/undergraduate-education/computer-science",
   "language": "English",
-  "years": "3",
+  "years": "3 years (6 semesters)",
   "entry": "Upper secondary diploma",
   "ib": "IB accepted",
   "alevel": "A-Levels accepted",
@@ -502,7 +513,7 @@
   "other": "Country-equivalent accepted",
   "english": "IELTS 6.5 / TOEFL iBT 90 / Duolingo 110",
   "selection": "Interview",
-  "deadline": "2027-08-15",
+  "deadline": "15 August 2027",
   "feeEU": "EUR 20,000/yr (all)",
   "feeNonEU": "EUR 20,000/yr",
   "liveLo": "EUR 9,000/yr",
@@ -525,7 +536,8 @@
   "us_diploma_gpa": "Diploma GPA range of 4.00 to 3.33",
   "accreditation": "Granted unlimited state recognition by the City State of Bremen in 2021 after meeting all continuous quality and structural requirements",
   "fee_year": "",
-  "application_fee": "None"
+  "application_fee": "None",
+  "deadline_iso": "2027-08-15"
  },
  {
   "record_id": "DE-014",
@@ -537,7 +549,7 @@
   "degree": "Bachelor",
   "url": "https://constructor.university/programs/undergraduate-education/international-relations-politics-history",
   "language": "English",
-  "years": "3",
+  "years": "3 years (6 semesters)",
   "entry": "Upper secondary diploma",
   "ib": "IB accepted",
   "alevel": "A-Levels accepted",
@@ -546,7 +558,7 @@
   "other": "Country-equivalent accepted",
   "english": "IELTS 6.5 / TOEFL iBT 90 / Duolingo 110",
   "selection": "Interview",
-  "deadline": "2027-08-15",
+  "deadline": "15 August 2027",
   "feeEU": "EUR 20,000/yr",
   "feeNonEU": "EUR 20,000/yr",
   "liveLo": "EUR 9,000/yr",
@@ -569,7 +581,8 @@
   "us_diploma_gpa": "Diploma GPA range of 4.00 to 3.33",
   "accreditation": "Granted unlimited state recognition by the City State of Bremen in 2021 after meeting all continuous quality and structural requirements",
   "fee_year": "",
-  "application_fee": "None"
+  "application_fee": "None",
+  "deadline_iso": "2027-08-15"
  },
  {
   "record_id": "DE-015",
@@ -581,7 +594,7 @@
   "degree": "Bachelor",
   "url": "https://constructor.university/programs/undergraduate-education/robotics-intelligent-systems",
   "language": "English",
-  "years": "3",
+  "years": "3 years (6 semesters)",
   "entry": "Upper secondary diploma; Math, Physics",
   "ib": "IB HL Math",
   "alevel": "A-Levels Math + Physics",
@@ -590,7 +603,7 @@
   "other": "Country-equivalent accepted",
   "english": "IELTS 6.5 / TOEFL iBT 90 / Duolingo 110",
   "selection": "Interview; technical assessment",
-  "deadline": "2027-08-15",
+  "deadline": "15 August 2027",
   "feeEU": "EUR 20,000/yr",
   "feeNonEU": "EUR 20,000/yr",
   "liveLo": "EUR 9,000/yr",
@@ -613,7 +626,8 @@
   "us_diploma_gpa": "Diploma GPA range of 4.00 to 3.33",
   "accreditation": "Granted unlimited state recognition by the City State of Bremen in 2021 after meeting all continuous quality and structural requirements",
   "fee_year": "",
-  "application_fee": "None"
+  "application_fee": "None",
+  "deadline_iso": "2027-08-15"
  },
  {
   "record_id": "DE-016",
@@ -625,7 +639,7 @@
   "degree": "Bachelor",
   "url": "https://constructor.university/programs/undergraduate-education/software-data-and-technology",
   "language": "English",
-  "years": "3",
+  "years": "3 years (6 semesters)",
   "entry": "Upper secondary diploma; Math",
   "ib": "IB HL Math",
   "alevel": "A-Levels with Math",
@@ -634,7 +648,7 @@
   "other": "Country-equivalent accepted",
   "english": "IELTS 6.5 / TOEFL iBT 90 / Duolingo 110",
   "selection": "Interview",
-  "deadline": "2027-08-15",
+  "deadline": "15 August 2027",
   "feeEU": "EUR 20,000/yr",
   "feeNonEU": "EUR 20,000/yr",
   "liveLo": "EUR 9,000/yr",
@@ -657,7 +671,8 @@
   "us_diploma_gpa": "Diploma GPA range of 4.00 to 3.33",
   "accreditation": "Granted unlimited state recognition by the City State of Bremen in 2021 after meeting all continuous quality and structural requirements",
   "fee_year": "",
-  "application_fee": "None"
+  "application_fee": "None",
+  "deadline_iso": "2027-08-15"
  },
  {
   "record_id": "DE-017",
@@ -669,7 +684,7 @@
   "degree": "Bachelor",
   "url": "https://www.ebs.edu/en/ebs-executive-education/open-programmes/general-management-program",
   "language": "English",
-  "years": "3.5",
+  "years": "3.5 years (7 semesters)",
   "entry": "Upper secondary diploma",
   "ib": "IB accepted",
   "alevel": "A-Levels accepted",
@@ -678,7 +693,7 @@
   "other": "Country-equivalent accepted",
   "english": "IELTS 6.5 / TOEFL iBT 90",
   "selection": "EBS admission test; interview",
-  "deadline": "2026-07-15",
+  "deadline": "15 July 2026",
   "feeEU": "EUR 25,000/yr (3.5-yr total ~EUR 87,500)",
   "feeNonEU": "EUR 25,000/yr",
   "liveLo": "EUR 10,000/yr",
@@ -696,12 +711,13 @@
   "checked_by": "Rahul Mehta",
   "contact": "info@ebs.edu · +49 6723 918 60",
   "documents_required": "Curriculum Vitae (CV): A detailed CV structured in a tabular form. Higher Education Entrance Qualification: Proof of your general higher education entrance qualification (such as a German Abitur or an equivalent recognized foreign school-leaving certificate/high school diploma). Current Academic Transcripts: If your final high school graduation certificate or diploma is not yet ready at the time of applying, you can submit your most recent school transcripts and provide the final certificate later. Proof of English Language Proficiency: Official documentation showing sufficient command of English (typically B2 level minimum via tests like TOEFL, IELTS, TOEIC, or Cambridge equivalents). Copy of ID/Passport: A clear copy of your passport (for non-EU students) or national ID card (for EU students). ADDITIONAL: Standardized Tests / Online Assessments: If your secondary school diploma does not match German higher education standards, EBS Universität may require you to take an internal 120-minute online assessment. Alternatively, they recognize standardized test scores like the SAT, ACT, or Gaokao in place of their internal assessment. Admissions Interview: After your initial document check, successful applicants are invited to a short personal online interview as part of their holistic selection process.",
-  "deadline_rounds": "Winter Semester (General): Apply by 30 JuneSummer Semester (General): Apply by 30 NovemberInternational Students Needing a Visa (Winter): Apply by 30 MayInternational Students Needing a Visa (Summer): Apply by 15 October",
+  "deadline_rounds": "Winter Semester (General): Apply by 30 June · Summer Semester (General): Apply by 30 November · International Students Needing a Visa (Winter): Apply by 30 May · International Students Needing a Visa (Summer): Apply by 15 October",
   "progression_routes": "",
   "us_diploma_gpa": "minimum US Grade Point Average (GPA) of 3.0 (equivalent to a German grade of 2.4 or a UK 2:1 degree",
   "accreditation": "ranted to EBS Business School, placing it among the top global business schools that meet rigorous international standards for teaching and research",
   "fee_year": "",
-  "application_fee": "EUR 120"
+  "application_fee": "EUR 120",
+  "deadline_iso": "2026-07-15"
  },
  {
   "record_id": "DE-018",
@@ -713,7 +729,7 @@
   "degree": "Bachelor",
   "url": "https://www.ebs.edu/en/ebs-executive-education/open-programmes/general-management-program",
   "language": "English",
-  "years": "3.5",
+  "years": "3.5 years (7 semesters)",
   "entry": "Upper secondary diploma",
   "ib": "IB accepted",
   "alevel": "A-Levels accepted",
@@ -722,7 +738,7 @@
   "other": "Country-equivalent accepted",
   "english": "IELTS 6.5 / TOEFL iBT 90",
   "selection": "EBS admission test; interview",
-  "deadline": "2026-07-15",
+  "deadline": "15 July 2026",
   "feeEU": "EUR 25,000/yr (3.5-yr total ~EUR 87,500)",
   "feeNonEU": "EUR 25,000/yr",
   "liveLo": "EUR 10,000/yr",
@@ -740,12 +756,13 @@
   "checked_by": "Rahul Mehta",
   "contact": "info@ebs.edu · +49 6723 918 60",
   "documents_required": "Curriculum Vitae (CV): A detailed CV structured in a tabular form. Higher Education Entrance Qualification: Proof of your general higher education entrance qualification (such as a German Abitur or an equivalent recognized foreign school-leaving certificate/high school diploma). Current Academic Transcripts: If your final high school graduation certificate or diploma is not yet ready at the time of applying, you can submit your most recent school transcripts and provide the final certificate later. Proof of English Language Proficiency: Official documentation showing sufficient command of English (typically B2 level minimum via tests like TOEFL, IELTS, TOEIC, or Cambridge equivalents). Copy of ID/Passport: A clear copy of your passport (for non-EU students) or national ID card (for EU students). ADDITIONAL: Standardized Tests / Online Assessments: If your secondary school diploma does not match German higher education standards, EBS Universität may require you to take an internal 120-minute online assessment. Alternatively, they recognize standardized test scores like the SAT, ACT, or Gaokao in place of their internal assessment. Admissions Interview: After your initial document check, successful applicants are invited to a short personal online interview as part of their holistic selection process.",
-  "deadline_rounds": "Winter Semester (General): Apply by 30 JuneSummer Semester (General): Apply by 30 NovemberInternational Students Needing a Visa (Winter): Apply by 30 MayInternational Students Needing a Visa (Summer): Apply by 15 October",
+  "deadline_rounds": "Winter Semester (General): Apply by 30 June · Summer Semester (General): Apply by 30 November · International Students Needing a Visa (Winter): Apply by 30 May · International Students Needing a Visa (Summer): Apply by 15 October",
   "progression_routes": "",
   "us_diploma_gpa": "minimum US Grade Point Average (GPA) of 3.0 (equivalent to a German grade of 2.4 or a UK 2:1 degree",
   "accreditation": "ranted to EBS Business School, placing it among the top global business schools that meet rigorous international standards for teaching and research",
   "fee_year": "",
-  "application_fee": "EUR 120"
+  "application_fee": "EUR 120",
+  "deadline_iso": "2026-07-15"
  },
  {
   "record_id": "DE-020",
@@ -757,7 +774,7 @@
   "degree": "Bachelor",
   "url": "https://www.frankfurt-school.de/en/study/bachelor/bachelor-science/bachelor-in-business-administration",
   "language": "English",
-  "years": "3.5",
+  "years": "3.5 years (7 semesters)",
   "entry": "Upper secondary diploma; mathematics test, a cognitive test, an English test and an interview.",
   "ib": "IB accepted",
   "alevel": "A-Levels accepted",
@@ -766,7 +783,7 @@
   "other": "Country-equivalent accepted",
   "english": "IELTS 6.5 / TOEFL iBT 88",
   "selection": "Interview; assessment",
-  "deadline": "2026-06-30",
+  "deadline": "30 June 2026",
   "feeEU": "EUR 16,400/yr",
   "feeNonEU": "EUR 16,400/yr",
   "liveLo": "EUR 12,000/yr",
@@ -789,7 +806,8 @@
   "us_diploma_gpa": "3.2 to 3.5 on a 4.0 scale",
   "accreditation": "Accredited by the Association to Advance Collegiate Schools of Business, most recently reaccredited in 2024 for five years., Institutional accreditation by the European Foundation for Management Development (EFMD), most recently reaccredited in 2022 for five years.",
   "fee_year": "",
-  "application_fee": "EUR 100"
+  "application_fee": "EUR 100",
+  "deadline_iso": "2026-06-30"
  },
  {
   "record_id": "DE-021",
@@ -801,7 +819,7 @@
   "degree": "Bachelor",
   "url": "https://www.frankfurt-school.de/en/study/bachelor/bachelor-science/bachelor-computational-business-analytics",
   "language": "English",
-  "years": "3.5",
+  "years": "3.5 years (7 semesters)",
   "entry": "Upper secondary diploma; mathematics test, a cognitive test, an English test and an interview.",
   "ib": "IB HL Math",
   "alevel": "A-Levels with Math",
@@ -810,7 +828,7 @@
   "other": "Country-equivalent accepted",
   "english": "IELTS 6.5 / TOEFL iBT 88",
   "selection": "Interview; math assessment",
-  "deadline": "2026-06-30",
+  "deadline": "30 June 2026",
   "feeEU": "EUR 16,400/yr",
   "feeNonEU": "EUR 16,400/yr",
   "liveLo": "EUR 12,000/yr",
@@ -833,7 +851,8 @@
   "us_diploma_gpa": "3.2 to 3.5 on a 4.0 scale",
   "accreditation": "Accredited by the Association to Advance Collegiate Schools of Business, most recently reaccredited in 2024 for five years., Institutional accreditation by the European Foundation for Management Development (EFMD), most recently reaccredited in 2022 for five years.",
   "fee_year": "",
-  "application_fee": "EUR 100"
+  "application_fee": "EUR 100",
+  "deadline_iso": "2026-06-30"
  },
  {
   "record_id": "DE-022",
@@ -845,7 +864,7 @@
   "degree": "Bachelor",
   "url": "https://www.frankfurt-school.de/en/study/bachelor/bachelor-science/bachelor-in-management-philosophy-economics",
   "language": "English",
-  "years": "3.5",
+  "years": "3.5 years (7 semesters)",
   "entry": "Upper secondary diploma; mathematics test, a cognitive test, an English test and an interview.",
   "ib": "IB accepted",
   "alevel": "A-Levels accepted",
@@ -854,7 +873,7 @@
   "other": "Country-equivalent accepted",
   "english": "IELTS 6.5 / TOEFL iBT 88",
   "selection": "Interview",
-  "deadline": "2026-06-30",
+  "deadline": "30 June 2026",
   "feeEU": "EUR 16,400/yr",
   "feeNonEU": "EUR 16,400/yr",
   "liveLo": "EUR 12,000/yr",
@@ -877,7 +896,8 @@
   "us_diploma_gpa": "3.2 to 3.5 on a 4.0 scale",
   "accreditation": "Accredited by the Association to Advance Collegiate Schools of Business, most recently reaccredited in 2024 for five years., Institutional accreditation by the European Foundation for Management Development (EFMD), most recently reaccredited in 2022 for five years.",
   "fee_year": "",
-  "application_fee": "EUR 100"
+  "application_fee": "EUR 100",
+  "deadline_iso": "2026-06-30"
  },
  {
   "record_id": "DE-023",
@@ -889,7 +909,7 @@
   "degree": "Bachelor",
   "url": "https://www.fu-berlin.de/en/studium/studienangebot/grundstaendige/nordamerikastudien_mono/index.html",
   "language": "English - 'The program is taught entirely in English'; applicants are not required to demonstrate proficiency in German",
-  "years": "3",
+  "years": "3 years (6 semesters)",
   "entry": "Abitur or equivalent",
   "ib": "IB accepted",
   "alevel": "A-Levels accepted",
@@ -898,7 +918,7 @@
   "other": "Country-equivalent via uni-assist",
   "english": "IELTS 6.5 / German B2 required",
   "selection": "None",
-  "deadline": "2026-07-15",
+  "deadline": "15 July 2026",
   "feeEU": "EUR 315/sem",
   "feeNonEU": "EUR 315/sem (Berlin is tuition-free)",
   "liveLo": "EUR 10,000/yr",
@@ -916,12 +936,13 @@
   "checked_by": "Rahul Mehta",
   "contact": "info-service@fu-berlin.de · +49 30 838 700 00",
   "documents_required": "Higher Education Entrance Qualification, VPD from uni-assist,Previous University Degrees, Language Proficiency Proof, Valid Passport or ID, Additional Program-Specific Files",
-  "deadline_rounds": "nternational Applicants (Non-EU / Without German Entrance Qualification): June 1 to July 15 via uni-assist for most undergraduate programs.EU Applicants with German Entrance Qualification (\"Neu-Abiturient*innen\"): April 28 to July 15 via hochschulstart.de.Higher Semesters: June 1 to July 15 via the FU application portal or uni-assist. [1] (https://www.fu-berlin.de/en/studium/bewerbung/bewerbungsfristen/index.html)",
+  "deadline_rounds": "International applicants (non-EU, or without a German entrance qualification): 1 June to 1 July",
   "progression_routes": "",
   "us_diploma_gpa": "U.S. equivalent GPA of 2.5 to 3.0",
   "accreditation": "System-accredited (first achieved in 2016, and renewed in March 2024 until September 30, 2030)",
   "fee_year": "",
-  "application_fee": "EUR 75"
+  "application_fee": "EUR 75",
+  "deadline_iso": "2026-07-15"
  },
  {
   "record_id": "DE-024",
@@ -933,7 +954,7 @@
   "degree": "Bachelor",
   "url": "https://www.gisma.com/programmes/undergraduate/bsc-international-business-management",
   "language": "English",
-  "years": "3",
+  "years": "3 years (6 semesters)",
   "entry": "Upper secondary diploma",
   "ib": "IB accepted",
   "alevel": "A-Levels accepted",
@@ -942,7 +963,7 @@
   "other": "Country-equivalent accepted",
   "english": "IELTS 6.0 / TOEFL iBT 79",
   "selection": "None",
-  "deadline": "2026-08-31",
+  "deadline": "31 August 2026",
   "feeEU": "EUR 9,800/yr",
   "feeNonEU": "EUR 9,800/yr",
   "liveLo": "EUR 11,000/yr",
@@ -965,7 +986,8 @@
   "us_diploma_gpa": "",
   "accreditation": "Fully state-recognized by the German federal state of Brandenburg, with degree-awarding powers granted to confer Bachelor's, Master's, and MBA degrees",
   "fee_year": "",
-  "application_fee": "None"
+  "application_fee": "None",
+  "deadline_iso": "2026-08-31"
  },
  {
   "record_id": "DE-026",
@@ -977,7 +999,7 @@
   "degree": "Bachelor",
   "url": "https://www.hs-fresenius.com/study-programs/international-business-management-bachelor/",
   "language": "English - all modules are taught in English",
-  "years": "3.5",
+  "years": "3.5 years (7 semesters)",
   "entry": "Upper secondary diploma",
   "ib": "IB accepted",
   "alevel": "A-Levels accepted",
@@ -986,7 +1008,7 @@
   "other": "Country-equivalent accepted",
   "english": "IELTS 6.0 / TOEFL iBT 80",
   "selection": "Interview",
-  "deadline": "2026-08-31",
+  "deadline": "31 August 2026",
   "feeEU": "EUR 12,000/yr (approx)",
   "feeNonEU": "EUR 12,000/yr",
   "liveLo": "EUR 10,000/yr",
@@ -1009,7 +1031,8 @@
   "us_diploma_gpa": "do not enforce a strict competitive GPA cutoff for a U.S. High School Diploma",
   "accreditation": "does not hold direct US institutional or regional accreditation (such as MSCHE or SACSCOC), because it is a German University of Applied Sciences regulated by German educational standards. [1] (https://www.topuniversities.com/universities/hochschule-fresenius), [2] (https://cumulusassociation.org/our-community/our-member-institutions/hochschule-fresenius-university-of-applied-sciences/)",
   "fee_year": "",
-  "application_fee": "None"
+  "application_fee": "None",
+  "deadline_iso": "2026-08-31"
  },
  {
   "record_id": "DE-028",
@@ -1021,7 +1044,7 @@
   "degree": "Bachelor",
   "url": "https://www.iu.org/bachelors/computer-science-on-campus/",
   "language": "English",
-  "years": "3",
+  "years": "3 years (6 semesters)",
   "entry": "Upper secondary diploma; Math",
   "ib": "IB accepted",
   "alevel": "A-Levels with Math",
@@ -1030,7 +1053,7 @@
   "other": "Country-equivalent accepted",
   "english": "IELTS 6.0 / TOEFL iBT 80",
   "selection": "None",
-  "deadline": "2026-09-01",
+  "deadline": "1 September 2026",
   "feeEU": "EUR 10,300/yr",
   "feeNonEU": "EUR 10,300/yr",
   "liveLo": "EUR 10,000/yr",
@@ -1053,7 +1076,8 @@
   "us_diploma_gpa": "do not enforce a strict competitive GPA cutoff for a U.S. High School Diploma",
   "accreditation": "State-recognised university; Wissenschaftsrat; ZFU (distance learning) (checked 4 Sep 2026)",
   "fee_year": "",
-  "application_fee": "None"
+  "application_fee": "None",
+  "deadline_iso": "2026-09-01"
  },
  {
   "record_id": "DE-029",
@@ -1065,7 +1089,7 @@
   "degree": "Bachelor",
   "url": "https://www.iu.org/bachelors/computer-science-on-campus/data-science-specialisation/",
   "language": "English",
-  "years": "3",
+  "years": "3 years (6 semesters)",
   "entry": "Upper secondary diploma; Math",
   "ib": "IB HL Math",
   "alevel": "A-Levels with Math",
@@ -1074,7 +1098,7 @@
   "other": "Country-equivalent accepted",
   "english": "IELTS 6.0 / TOEFL iBT 80",
   "selection": "None",
-  "deadline": "2026-09-01",
+  "deadline": "1 September 2026",
   "feeEU": "EUR 10,300/yr",
   "feeNonEU": "EUR 10,300/yr",
   "liveLo": "EUR 10,000/yr",
@@ -1097,7 +1121,8 @@
   "us_diploma_gpa": "do not enforce a strict competitive GPA cutoff for a U.S. High School Diploma",
   "accreditation": "State-recognised university; Wissenschaftsrat; ZFU (distance learning) (checked 4 Sep 2026)",
   "fee_year": "",
-  "application_fee": "None"
+  "application_fee": "None",
+  "deadline_iso": "2026-09-01"
  },
  {
   "record_id": "DE-030",
@@ -1109,7 +1134,7 @@
   "degree": "Bachelor",
   "url": "https://www.iu.org/bachelors/business-administration-on-campus/international-management-specialisation/",
   "language": "English",
-  "years": "3",
+  "years": "3 years (6 semesters)",
   "entry": "Upper secondary diploma",
   "ib": "IB accepted",
   "alevel": "A-Levels accepted",
@@ -1118,7 +1143,7 @@
   "other": "Country-equivalent accepted",
   "english": "IELTS 6.0 / TOEFL iBT 80",
   "selection": "Interview",
-  "deadline": "2026-09-01",
+  "deadline": "1 September 2026",
   "feeEU": "EUR 10,300/yr",
   "feeNonEU": "€20,492 yearly",
   "liveLo": "EUR 10,000/yr",
@@ -1140,7 +1165,8 @@
   "progression_routes": "",
   "us_diploma_gpa": "",
   "accreditation": "State-recognised university; Wissenschaftsrat; ZFU (distance learning) (checked 4 Sep 2026)",
-  "fee_year": ""
+  "fee_year": "",
+  "deadline_iso": "2026-09-01"
  },
  {
   "record_id": "DE-031",
@@ -1152,7 +1178,7 @@
   "degree": "Bachelor",
   "url": "https://en.ism.de/full-degree-students/bachelor-programs/bachelor-international-management/overview",
   "language": "English",
-  "years": "3.5",
+  "years": "3.5 years (7 semesters)",
   "entry": "Upper secondary diploma",
   "ib": "IB accepted",
   "alevel": "A-Levels accepted",
@@ -1161,7 +1187,7 @@
   "other": "Country-equivalent accepted",
   "english": "IELTS 6.0 / TOEFL iBT 80",
   "selection": "ISM ability test",
-  "deadline": "2026-07-15",
+  "deadline": "15 July 2026",
   "feeEU": "5,970 Euro per semester",
   "feeNonEU": "5,970 Euro per semester",
   "liveLo": "EUR 11,000/yr",
@@ -1184,7 +1210,8 @@
   "us_diploma_gpa": "does not require a specific minimum grade point average (GPA)",
   "accreditation": "The International School of Management (ISM) in Germany holds prestigious global and national accreditations, including the AACSB accreditation earned in 2024, placing it among the top business schools worldwide",
   "fee_year": "",
-  "application_fee": "USD 175"
+  "application_fee": "USD 175",
+  "deadline_iso": "2026-07-15"
  },
  {
   "record_id": "DE-034",
@@ -1196,7 +1223,7 @@
   "degree": "Bachelor",
   "url": "https://www.carlbenzschool.kit.edu/mechanical-engineering-international.php",
   "language": "English - the working language of the programme is English, no German required",
-  "years": "3",
+  "years": "3 years (6 semesters)",
   "entry": "Upper secondary diploma; Math, Physics + SAT /ACT",
   "ib": "IB HL Math + Physics",
   "alevel": "A-Levels Math + Physics",
@@ -1228,7 +1255,8 @@
   "us_diploma_gpa": "minimum U.S. High School Diploma GPA of 3.5 for competitive admission.",
   "accreditation": "KIT is system-accredited by the Swiss Agency of Accreditation and Quality Assurance (AAQ",
   "fee_year": "",
-  "application_fee": "None"
+  "application_fee": "None",
+  "deadline_iso": ""
  },
  {
   "record_id": "DE-035",
@@ -1240,16 +1268,16 @@
   "degree": "Bachelor",
   "url": "https://www.lancasterleipzig.de/study/undergraduate/courses/business-management/",
   "language": "English",
-  "years": "3",
+  "years": "3 years (6 semesters)",
   "entry": "At least BBB* in 3 Advanced Levels *(or a combination of grades summing up at least 120 UCAS points)",
   "ib": "IB accepted",
   "alevel": "A-Levels accepted",
   "cbse": "CBSE 80%+",
   "isc": "ISC 80%+",
-  "other": "Country-equivalent accepted, personal statement, cv , recommendation letter",
+  "other": "Country-equivalent accepted, personal statement, cv, recommendation letter",
   "english": "IELTS 6.5 / TOEFL iBT 87",
   "selection": "Lancaster admissions assessment",
-  "deadline": "2026-08-31",
+  "deadline": "31 August 2026",
   "feeEU": "EUR 11,100 per year (2026/27)",
   "feeNonEU": "EUR 18,500 per year (2026/27)",
   "liveLo": "EUR 11,000/yr",
@@ -1272,7 +1300,8 @@
   "us_diploma_gpa": "\"Completed US High School Diploma with at least 3.2 GPA average and 3 AP subjects at grade 4\". For Accounting and Finance, Software Engineering and Computer Science one further criterion is required: Mathematics Grade A in the High School Diploma, or 3 in AP Calculus AB or BC, or 580 in SAT I Mathematics. (checked 4 Sep 2026)",
   "accreditation": "Degrees awarded by Lancaster University (UK); School of Computing and Communications, and Lancaster University Management School (checked 4 Sep 2026)",
   "fee_year": "",
-  "application_fee": "None"
+  "application_fee": "None",
+  "deadline_iso": "2026-08-31"
  },
  {
   "record_id": "DE-036",
@@ -1284,7 +1313,7 @@
   "degree": "Bachelor",
   "url": "https://www.lancasterleipzig.de/study/undergraduate/courses/computer-science-bsc/",
   "language": "English",
-  "years": "3",
+  "years": "3 years (6 semesters)",
   "entry": "Upper secondary diploma; Math",
   "ib": "IB HL Math",
   "alevel": "At least BBB* in 3 Advanced Levels with math",
@@ -1293,7 +1322,7 @@
   "other": "At least grade B in GCSE (Ordinary Level) Mathematics",
   "english": "IELTS 6 / TOEFL iBT 78",
   "selection": "Lancaster admissions assessment",
-  "deadline": "2026-08-31",
+  "deadline": "31 August 2026",
   "feeEU": "EUR 11,100 per year (2026/27)",
   "feeNonEU": "EUR 18,500 per year (2026/27)",
   "liveLo": "EUR 11,000/yr",
@@ -1316,7 +1345,8 @@
   "us_diploma_gpa": "\"Completed US High School Diploma with at least 3.2 GPA average and 3 AP subjects at grade 4\". For Accounting and Finance, Software Engineering and Computer Science one further criterion is required: Mathematics Grade A in the High School Diploma, or 3 in AP Calculus AB or BC, or 580 in SAT I Mathematics. (checked 4 Sep 2026)",
   "accreditation": "Degrees awarded by Lancaster University (UK); School of Computing and Communications, and Lancaster University Management School (checked 4 Sep 2026)",
   "fee_year": "",
-  "application_fee": "None"
+  "application_fee": "None",
+  "deadline_iso": "2026-08-31"
  },
  {
   "record_id": "DE-037",
@@ -1328,7 +1358,7 @@
   "degree": "Bachelor",
   "url": "https://www.lancasterleipzig.de/study/undergraduate/courses/software-engineering/",
   "language": "English",
-  "years": "3",
+  "years": "3 years (6 semesters)",
   "entry": "Upper secondary diploma; Math",
   "ib": "IB HL Math",
   "alevel": "At least BBB* in 3 Advanced Levels with math",
@@ -1337,7 +1367,7 @@
   "other": "At least grade B in GCSE (Ordinary Level) Mathematics",
   "english": "IELTS 6 / TOEFL iBT 78",
   "selection": "Lancaster admissions assessment",
-  "deadline": "2026-08-31",
+  "deadline": "31 August 2026",
   "feeEU": "EUR 11,100 per year (2026/27)",
   "feeNonEU": "EUR 18,500 per year (2026/27)",
   "liveLo": "EUR 11,000/yr",
@@ -1360,7 +1390,8 @@
   "us_diploma_gpa": "\"Completed US High School Diploma with at least 3.2 GPA average and 3 AP subjects at grade 4\". For Accounting and Finance, Software Engineering and Computer Science one further criterion is required: Mathematics Grade A in the High School Diploma, or 3 in AP Calculus AB or BC, or 580 in SAT I Mathematics. (checked 4 Sep 2026)",
   "accreditation": "Degrees awarded by Lancaster University (UK); School of Computing and Communications, and Lancaster University Management School (checked 4 Sep 2026)",
   "fee_year": "",
-  "application_fee": "None"
+  "application_fee": "None",
+  "deadline_iso": "2026-08-31"
  },
  {
   "record_id": "DE-039",
@@ -1372,7 +1403,7 @@
   "degree": "Bachelor",
   "url": "https://www.munich-business-school.de/en/bachelor/bachelor-international-business",
   "language": "English",
-  "years": "3.5",
+  "years": "3.5 years (7 semesters)",
   "entry": "Upper secondary diploma",
   "ib": "IB accepted",
   "alevel": "A-Levels accepted",
@@ -1381,7 +1412,7 @@
   "other": "Country-equivalent accepted",
   "english": "IELTS 6.5 / TOEFL iBT 90 (C1)",
   "selection": "MBS application interview",
-  "deadline": "2026-07-31",
+  "deadline": "31 July 2026",
   "feeEU": "EUR 6,180/sem (~EUR 12,360/yr; total EUR 43,260)",
   "feeNonEU": "EUR 6,420 per semester",
   "liveLo": "EUR 12,000/yr",
@@ -1404,7 +1435,8 @@
   "us_diploma_gpa": "Munich Business School (MBS) typically expects a minimum US GPA equivalent of 3.0 on a 4.0 scale (a 'B' average)",
   "accreditation": "AACSB Accreditation: Munich Business School earned accreditation from the Association to Advance Collegiate Schools of Business (AACSB) in February 2025, placing it among the top 6% of business schools globally",
   "fee_year": "",
-  "application_fee": "EUR 60"
+  "application_fee": "EUR 60",
+  "deadline_iso": "2026-07-31"
  },
  {
   "record_id": "DE-041",
@@ -1416,7 +1448,7 @@
   "degree": "Bachelor",
   "url": "https://www.srh-university.de/en/bachelor/computer-science/i/",
   "language": "English",
-  "years": "3.5",
+  "years": "3.5 years (7 semesters)",
   "entry": "Upper secondary diploma; Math",
   "ib": "IB HL Math",
   "alevel": "A-Levels with Math",
@@ -1425,14 +1457,14 @@
   "other": "Country-equivalent accepted",
   "english": "IELTS 6.0 / TOEFL iBT 79",
   "selection": "None",
-  "deadline": "2026-05-31",
+  "deadline": "31 May 2026",
   "feeEU": "Berlin and Heidelberg: €790 per month Leipzig: €690 per month",
   "feeNonEU": "Berlin and Heidelberg: €5,100 per semester Leipzig: €4,770 per semester",
   "liveLo": "EUR 11,000/yr",
   "liveHi": "EUR 14,000/yr",
   "scholarships": "SRH scholarships",
   "visa": "Student visa required for non-EU",
-  "apply": "Apply via apply. https://www.srh-university.de/en/bachelor/computer-science/i/",
+  "apply": "Apply through the SRH application portal: https://www.srh-university.de/en/bachelor/computer-science/",
   "notes": "English CS BSc; Berlin tech scene",
   "verified_status": "Confirmed",
   "corrected_value_if_any": "",
@@ -1443,12 +1475,13 @@
   "checked_by": "Rahul Mehta",
   "contact": "info.hsg@srh.de · +49 30 515 650 200",
   "documents_required": "your higher education entrance qualification, a preliminary documentation (VPD) from uni-assist, and a current CV",
-  "deadline_rounds": "2026-05-31 00:00:00",
+  "deadline_rounds": "",
   "progression_routes": "",
   "us_diploma_gpa": "",
   "accreditation": "The university has held system accreditation since October 1, 2019, bearing the quality seal of the German Accreditation Council",
   "fee_year": "",
-  "application_fee": "None"
+  "application_fee": "None",
+  "deadline_iso": "2026-05-31"
  },
  {
   "record_id": "DE-042",
@@ -1460,7 +1493,7 @@
   "degree": "Bachelor",
   "url": "https://www.srh-university.de/en/bachelor/international-business-administration/b/",
   "language": "English",
-  "years": "3.5",
+  "years": "3.5 years (7 semesters)",
   "entry": "Upper secondary diploma",
   "ib": "IB accepted",
   "alevel": "A-Levels accepted",
@@ -1469,7 +1502,7 @@
   "other": "Country-equivalent accepted",
   "english": "IELTS 6.0 / TOEFL iBT 79",
   "selection": "None",
-  "deadline": "2026-05-31",
+  "deadline": "31 May 2026",
   "feeEU": "Berlin, Heidelberg: 750 € pro Monat Leipzig: 690 € / month",
   "feeNonEU": "Berlin: 5.100€ pro Semester Leipzig: 4,500 € / semester",
   "liveLo": "EUR 11,000/yr",
@@ -1487,12 +1520,13 @@
   "checked_by": "Rahul Mehta",
   "contact": "info.hsg@srh.de · +49 30 515 650 200",
   "documents_required": "your higher education entrance qualification, a preliminary documentation (VPD) from uni-assist, and a current CV",
-  "deadline_rounds": "2026-05-31 00:00:00",
+  "deadline_rounds": "",
   "progression_routes": "",
   "us_diploma_gpa": "",
   "accreditation": "The university has held system accreditation since October 1, 2019, bearing the quality seal of the German Accreditation Council",
   "fee_year": "",
-  "application_fee": "None"
+  "application_fee": "None",
+  "deadline_iso": "2026-05-31"
  },
  {
   "record_id": "DE-043",
@@ -1504,7 +1538,7 @@
   "degree": "Bachelor",
   "url": "https://www.srh-university.de/en/bachelor/international-business-administration-business-psychology/b/",
   "language": "English",
-  "years": "3",
+  "years": "3 years (6 semesters)",
   "entry": "Upper secondary diploma",
   "ib": "IB accepted",
   "alevel": "A-Levels accepted",
@@ -1513,7 +1547,7 @@
   "other": "Country-equivalent accepted",
   "english": "IELTS 6.0 / TOEFL iBT 79",
   "selection": "None",
-  "deadline": "2026-05-31",
+  "deadline": "31 May 2026",
   "feeEU": "EU/EEA nationals, including Switzerland, the Western Balkans and Ukraine: €490 per month",
   "feeNonEU": "Non-EU/EEA nationality: 2,940€ per semester",
   "liveLo": "EUR 11,000/yr",
@@ -1536,7 +1570,8 @@
   "us_diploma_gpa": "2.4 to 2.7 GPA on a U.S. 4.0 scale",
   "accreditation": "Officially recognized by the Berlin Senate Department for Science, Health and Care (stating it meets German higher education standards)",
   "fee_year": "",
-  "application_fee": "None"
+  "application_fee": "None",
+  "deadline_iso": "2026-05-31"
  },
  {
   "record_id": "DE-045",
@@ -1548,7 +1583,7 @@
   "degree": "Bachelor",
   "url": "https://www.tum.de/en/studies/degree-programs/detail/management-and-technology-tum-bwl-bachelor-of-science-bsc",
   "language": "English - 'The language of instruction for this program is English'",
-  "years": "3",
+  "years": "3 years (6 semesters)",
   "entry": "Upper secondary diploma; Math",
   "ib": "IB 30+ (HL Math)",
   "alevel": "A-Levels Math + 2 others",
@@ -1557,7 +1592,7 @@
   "other": "Country-equivalent via uni-assist",
   "english": "IELTS 6.5 / TOEFL iBT 88 / Cambridge C1",
   "selection": "TUM aptitude test (multi-stage); selective",
-  "deadline": "2026-01-15",
+  "deadline": "15 January 2026",
   "feeEU": "EUR 162/sem (~EUR 324/yr)",
   "feeNonEU": "EUR 6,000/yr (EUR 2,000-3,000/sem since WS 2024/25)",
   "liveLo": "EUR 11,000/yr",
@@ -1575,12 +1610,13 @@
   "checked_by": "Rahul Mehta",
   "contact": "+49 89 289 01",
   "documents_required": "a university entrance qualification and proof of German language skills",
-  "deadline_rounds": "2026-07-15 00:00:00",
+  "deadline_rounds": "15 July 2026",
   "progression_routes": "",
   "us_diploma_gpa": "",
   "accreditation": "TUM is system-accredited by the Swiss Center of Accreditation and Quality Assurance in Higher Education (OAQ), confirming that its internal quality management for degree programs meets high international standard",
   "fee_year": "",
-  "application_fee": "EUR 75"
+  "application_fee": "EUR 75",
+  "deadline_iso": "2026-01-15"
  },
  {
   "record_id": "DE-046",
@@ -1592,7 +1628,7 @@
   "degree": "Bachelor",
   "url": "https://www.tum.de/en/studies/degree-programs/detail/sustainable-management-and-technology-bachelor-of-science-bsc?tx_solr%5Bpage%5D=2&tx_solr%5Bq%5D=sustainable+resource+management&graduation=Bachelor#course-507",
   "language": "English",
-  "years": "3",
+  "years": "3 years (6 semesters)",
   "entry": "Upper secondary diploma; Sci",
   "ib": "IB HL Sci",
   "alevel": "A-Levels Sci",
@@ -1601,7 +1637,7 @@
   "other": "Country-equivalent via uni-assist",
   "english": "IELTS 6.5 / TOEFL iBT 88",
   "selection": "TUM aptitude",
-  "deadline": "2026-07-15",
+  "deadline": "15 July 2026",
   "feeEU": "EUR 162/sem",
   "feeNonEU": "EUR 6,000/yr",
   "liveLo": "EUR 10,500/yr",
@@ -1619,12 +1655,13 @@
   "checked_by": "Rahul Mehta",
   "contact": "+49 89 289 01",
   "documents_required": "a university entrance qualification and proof of German language skills",
-  "deadline_rounds": "2026-07-15 00:00:00",
+  "deadline_rounds": "",
   "progression_routes": "",
   "us_diploma_gpa": "",
   "accreditation": "TUM is system-accredited by the Swiss Center of Accreditation and Quality Assurance in Higher Education (OAQ), confirming that its internal quality management for degree programs meets high international standard",
   "fee_year": "",
-  "application_fee": "EUR 75"
+  "application_fee": "EUR 75",
+  "deadline_iso": "2026-07-15"
  },
  {
   "record_id": "DE-049",
@@ -1636,7 +1673,7 @@
   "degree": "Bachelor",
   "url": "https://www.uni-bremen.de/en/studies/orientation-application/offered-study-program/dbs/study/english-speaking-cultures-englisch-bachelor",
   "language": "English - the programme page gives 'Language of delivery: English'",
-  "years": "3",
+  "years": "3 years (6 semesters)",
   "entry": "Upper secondary diploma",
   "ib": "IB accepted",
   "alevel": "A-Levels accepted",
@@ -1645,7 +1682,7 @@
   "other": "Country-equivalent via uni-assist",
   "english": "IELTS 6.5 / Cambridge C1",
   "selection": "None (no NC for subject-specific)",
-  "deadline": "2026-07-15",
+  "deadline": "15 July 2026",
   "feeEU": "EUR 349/sem (no tuition fees)",
   "feeNonEU": "EUR 349/sem (Bremen tuition-free)",
   "liveLo": "EUR 9,500/yr",
@@ -1668,7 +1705,8 @@
   "us_diploma_gpa": "",
   "accreditation": "Awarded on September 16, 2016, by the Swiss Agency of Accreditation and Quality Assurance (AAQ",
   "fee_year": "",
-  "application_fee": "None"
+  "application_fee": "None",
+  "deadline_iso": "2026-07-15"
  },
  {
   "record_id": "DE-050",
@@ -1680,7 +1718,7 @@
   "degree": "Bachelor",
   "url": "https://uni-freiburg.de/ucf/las/",
   "language": "English - 'English-taught, 4-year, 240 ECTS credit study program'",
-  "years": "3",
+  "years": "3 years (6 semesters)",
   "entry": "Upper secondary diploma",
   "ib": "IB 30+",
   "alevel": "A-Levels BBB+",
@@ -1689,7 +1727,7 @@
   "other": "Country-equivalent via uni-assist",
   "english": "IELTS 6.5 / TOEFL iBT 92 / Cambridge C1",
   "selection": "University College Freiburg selection",
-  "deadline": "2026-05-31",
+  "deadline": "31 May 2026",
   "feeEU": "EUR 1,500/sem (~EUR 3,000/yr non-BaWü EU)",
   "feeNonEU": "EUR 1,500/sem (BaWü non-EU fee) ~EUR 3,000/yr",
   "liveLo": "EUR 10,000/yr",
@@ -1707,12 +1745,13 @@
   "checked_by": "Rahul Mehta",
   "contact": "info@verwaltung.uni-freiburg.de · +49 761 2030",
   "documents_required": "standard higher education entrance credentials along with personal and language documents.",
-  "deadline_rounds": "2026-10-08 00:00:00",
+  "deadline_rounds": "8 October 2026",
   "progression_routes": "",
   "us_diploma_gpa": "",
   "accreditation": "The University of Freiburg holds official system accreditation, allowing the institution to internally accredit its own bachelor's and master's degree programs",
   "fee_year": "",
-  "application_fee": "EUR 75"
+  "application_fee": "EUR 75",
+  "deadline_iso": "2026-05-31"
  },
  {
   "record_id": "DE-052",
@@ -1724,7 +1763,7 @@
   "degree": "Bachelor",
   "url": "https://www.whu.edu/en/programs/bachelor-program/bachelor-in-business-psychology/",
   "language": "English - the programme page gives 'Language: English'; no German required for admission",
-  "years": "3",
+  "years": "3 years (6 semesters)",
   "entry": "Upper secondary diploma",
   "ib": "IB accepted",
   "alevel": "A-Levels accepted",
@@ -1733,7 +1772,7 @@
   "other": "Country-equivalent accepted",
   "english": "IELTS 6.5 / TOEFL iBT 90",
   "selection": "WHU admission process",
-  "deadline": "2026-04-30",
+  "deadline": "30 April 2026",
   "feeEU": "EUR 13,800/yr",
   "feeNonEU": "EUR 13,800/yr",
   "liveLo": "EUR 11,000/yr",
@@ -1756,7 +1795,8 @@
   "us_diploma_gpa": "",
   "accreditation": "EQUIS, AACSB, FIBAA System Accreditation, BSIS, PRME (checked 4 Sep 2026)",
   "fee_year": "",
-  "application_fee": "EUR 100"
+  "application_fee": "EUR 100",
+  "deadline_iso": "2026-04-30"
  },
  {
   "record_id": "DE-053",
@@ -1768,7 +1808,7 @@
   "degree": "Bachelor",
   "url": "https://www.whu.edu/en/programs/bachelor-program/bachelor-in-international-business-administration/",
   "language": "English",
-  "years": "3",
+  "years": "3 years (6 semesters)",
   "entry": "Upper secondary diploma; Math",
   "ib": "IB HL Math recommended",
   "alevel": "A-Levels with Math",
@@ -1777,7 +1817,7 @@
   "other": "Country-equivalent accepted",
   "english": "IELTS 6.5 / TOEFL iBT 90",
   "selection": "WHU admission process; interview",
-  "deadline": "2026-04-30",
+  "deadline": "30 April 2026",
   "feeEU": "EUR 13,800/yr",
   "feeNonEU": "EUR 13,800/yr",
   "liveLo": "EUR 11,000/yr",
@@ -1799,7 +1839,8 @@
   "progression_routes": "",
   "us_diploma_gpa": "",
   "accreditation": "EQUIS, AACSB, FIBAA System Accreditation, BSIS, PRME (checked 4 Sep 2026)",
-  "fee_year": ""
+  "fee_year": "",
+  "deadline_iso": "2026-04-30"
  },
  {
   "record_id": "DE-054",
@@ -1843,7 +1884,8 @@
   "us_diploma_gpa": "",
   "accreditation": "fully recognized public university in Germany with 100% officially accredited degree programmes",
   "fee_year": "",
-  "application_fee": "None"
+  "application_fee": "None",
+  "deadline_iso": ""
  },
  {
   "record_id": "DE-055",
@@ -1887,7 +1929,8 @@
   "us_diploma_gpa": "",
   "accreditation": "Bayerisches Staatsministerium für Wissenschaft und Kunst (Bavarian State Ministry of Science and the Arts",
   "fee_year": "",
-  "application_fee": "EUR 75"
+  "application_fee": "EUR 75",
+  "deadline_iso": ""
  },
  {
   "record_id": "DE-056",
@@ -1931,7 +1974,8 @@
   "us_diploma_gpa": "",
   "accreditation": "officially recognized by the Bayerisches Staatsministerium für Wissenschaft und Kunst (Bavarian State Ministry of Science and the arts",
   "fee_year": "",
-  "application_fee": "EUR 100 per application"
+  "application_fee": "EUR 100 per application",
+  "deadline_iso": ""
  },
  {
   "record_id": "DE-057",
@@ -1952,14 +1996,14 @@
   "other": "Standardised tests, essay, motivation letter, recommendation letters and interview: NOT PUBLISHED. The programme is without admission restriction.",
   "english": "English B2 CEFR required. Exact accepted test names, minimum scores and waiver conditions for this programme: NOT PUBLISHED.",
   "selection": "Without admission restriction; applicants must meet the formal higher-education-entry and language requirements.",
-  "deadline": "Winter entry. German-qualification route: AlmaWeb, 2 May–15 September. Foreign university-entrance qualification: uni-assist, beginning of April–1 September. Results date: NOT PUBLISHED.",
+  "deadline": "Winter entry. German-qualification route: Alma · Web, 2 May–15 September. Foreign university-entrance qualification: uni-assist, beginning of April–1 September. Results date: NOT PUBLISHED.",
   "feeEU": "No general tuition. Newly enrolled students pay €342.30, including the one-time €10 UniCard charge; students already holding a UniCard pay €332.30.",
   "feeNonEU": "No general tuition. Newly enrolled students pay €342.30, including the one-time €10 UniCard charge; students already holding a UniCard pay €332.30. Foreign-qualification uni-assist route: €75 first course and €30 each additional course in the semester.",
   "liveLo": "Approximately €1,000/month — Leipzig University’s published planning estimate.",
   "liveHi": "NOT PUBLISHED — no maximum monthly amount is published.",
   "scholarships": "Competitive Deutschlandstipendium: €300/month; all existing and new Leipzig University students may apply under the published conditions.",
   "visa": "EU citizens are exempt from the pre-travel student-visa requirement; other students generally apply to the responsible German mission before travelling, subject to official nationality-specific exceptions.",
-  "apply": "Applicants with a German university entrance qualification apply through AlmaWeb. Applicants whose university entrance qualification was obtained abroad apply through uni-assist.",
+  "apply": "Applicants with a German university entrance qualification apply through Alma · Web. Applicants whose university entrance qualification was obtained abroad apply through uni-assist.",
   "notes": "German A1 is a mandatory entry requirement for students whose native language is not German, but the compulsory academic curriculum is in English. The 2026 programme page was amended on 3 September 2026. Application fee outside uni-assist: NOT PUBLISHED.",
   "verified_status": "Confirmed",
   "corrected_value_if_any": "NOT APPLICABLE — new programme record",
@@ -1975,7 +2019,8 @@
   "us_diploma_gpa": "",
   "accreditation": "",
   "fee_year": "",
-  "application_fee": "EUR 75"
+  "application_fee": "EUR 75",
+  "deadline_iso": ""
  },
  {
   "record_id": "DE-058",
@@ -2019,7 +2064,8 @@
   "us_diploma_gpa": "",
   "accreditation": "",
   "fee_year": "",
-  "application_fee": "EUR 75, paid to uni-assist"
+  "application_fee": "EUR 75, paid to uni-assist",
+  "deadline_iso": ""
  },
  {
   "record_id": "DE-059",
@@ -2063,6 +2109,7 @@
   "link_works": "",
   "checked_by": "Rahul Mehta",
   "progression_routes": "",
-  "fee_year": ""
+  "fee_year": "",
+  "deadline_iso": ""
  }
 ]

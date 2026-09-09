@@ -613,6 +613,11 @@ footer a:hover{color:#fff;}
 .vbanner.ok{background:#e4f4ed;border:1px solid #bfe3d3;color:#12563b;}
 .vbanner.no{background:var(--muted);border:1px solid var(--line);color:var(--body);}
 .vbanner.mid{background:#fdf5e3;border:1px solid #ecd9a8;color:#6b4e10;}
+.reqs ul.subs{margin:7px 0 0 0;padding:0 0 0 16px;list-style:disc;}
+.reqs ul.subs li{margin:0 0 4px 0;padding:0;border:0;font-size:14px;line-height:1.55;}
+.deadline.past{background:#fdeaea;border-color:#f2c2c2;}
+.deadline.past .d{color:#8a2020;}
+.deadline.past .l{color:#8a2020;opacity:.9;}
 .vbanner b{color:inherit;}
 .vbanner a{color:inherit;font-weight:600;}
 .printbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;
@@ -738,7 +743,27 @@ function waLink(r,kind){
   return "https://wa.me/971568924365?text=" + encodeURIComponent(msg);
 }
 function dt(label,val){return has(val)?'<dt>'+esc(label)+'</dt><dd>'+esc(val)+'</dd>':'';}
-function req(lead,val){return has(val)?'<li><b>'+esc(lead)+':</b> '+esc(val)+'</li>':'';}
+/* Several fields carry a bare application URL, some with a tracking token
+   trailing off the end. Escape first, then turn the URL into a link. */
+function linky(v){
+  return esc(v).replace(/https?:\/\/[^\s<]+[^\s<.,;:)]/g, function(u){
+    var label = u.replace(/^https?:\/\/(www\.)?/, "");
+    if (label.length > 46) label = label.slice(0, 44) + "\u2026";
+    return '<a href="' + u + '" target="_blank" rel="noopener">' + label + '</a>';
+  });
+}
+/* Rounds arrive as one flattened run of "Application Due: ... Decision
+   Notification: ..." which nobody can read as a paragraph. Split it. */
+function rounds(v){
+  if (!has(v)) return "";
+  var parts = String(v).split(/\s+·\s+|(?=\b(?:Regular Decision|Early Action|Round \d)\b)/)
+                .map(function(x){return String(x).trim();})
+                .filter(function(x){return x.length > 1;});
+  if (parts.length < 2) return req("Application rounds", v);
+  return '<li><b>Application rounds:</b><ul class="subs">' +
+    parts.map(function(x){return '<li>' + linky(x) + '</li>';}).join("") + '</ul></li>';
+}
+function req(lead,val){return has(val)?'<li><b>'+esc(lead)+':</b> '+linky(val)+'</li>':'';}
 function spec(rows){var b=rows.join(""); return b?'<dl class="spec">'+b+'</dl>':'';}
 function reqs(items){var b=items.join(""); return b?'<ul class="reqs">'+b+'</ul>':'';}
 function money(lo,hi){
@@ -749,6 +774,16 @@ function money(lo,hi){
 function trackFor(country){
   for(var k in TRACKS){ if(TRACKS[k].countries && TRACKS[k].countries.indexOf(country)>-1) return k; }
   return "d";
+}
+
+
+/* A deadline that has gone by still reads as live unless the page says
+   otherwise, and most of these were set for the 2026 intake. */
+function closed(r){
+  var iso = String(r.deadline_iso || "");
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(iso)) return false;
+  var t = new Date(); t.setHours(0,0,0,0);
+  return new Date(iso + "T00:00:00") < t;
 }
 
 function render(i){
@@ -823,11 +858,14 @@ function render(i){
 
     '<div class="block"><h4>Deadline &amp; how to apply</h4>'+
       (has(r.deadline) && String(r.deadline).length <= 70
-        ? '<div class="deadline"><span class="d">'+esc(r.deadline)+'</span><span class="l">Confirm against the programme page before advising</span></div>'
+        ? '<div class="deadline'+(closed(r)?' past':'')+'"><span class="d">'+esc(r.deadline)+'</span><span class="l">'+
+          (closed(r)
+            ? 'That intake has closed. The university has not yet published the next one, so open the programme page before advising.'
+            : 'Confirm against the programme page before advising')+'</span></div>'
         : '')+
       reqs([
         (has(r.deadline) && String(r.deadline).length > 70 ? req("Deadline", r.deadline) : ''),
-        req("Application rounds", r.deadline_rounds),
+        rounds(r.deadline_rounds),
         req("Documents required", r.documents_required),
         req("Progresses to", r.progression_routes),
         req("How to apply", r.apply),

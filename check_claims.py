@@ -9,8 +9,10 @@ markup. Run this before any deploy.
 """
 import json, re, sys, pathlib
 
+# deadline_iso is derived from deadline so the page can tell a passed intake
+# from a live one. It is plumbing, not something a counselor reads.
 META = {"record_id", "verified_status", "corrected_value_if_any", "source_url_you_used",
-        "exact_quote", "date_checked", "link_works", "checked_by"}
+        "exact_quote", "date_checked", "link_works", "checked_by", "deadline_iso"}
 
 d = json.load(open("germany-file.json"))
 html = pathlib.Path("index.html").read_text()
