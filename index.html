@@ -367,6 +367,18 @@ section{padding:44px 0;}
   padding:5px 11px;border-radius:var(--pill);margin-bottom:13px;
 }
 .sample-head .inst{color:#b9d0de;font-size:15px;margin:0;}
+.sampletabs{display:flex;gap:6px;flex-wrap:wrap;padding:14px 30px 0 30px;}
+.sampletabs button{font:inherit;font-size:12.5px;font-weight:650;cursor:pointer;
+  padding:7px 13px;border-radius:999px;border:1px solid rgba(255,255,255,.28);
+  background:transparent;color:rgba(255,255,255,.72);transition:all .15s;}
+.sampletabs button:hover{color:#fff;border-color:rgba(255,255,255,.55);}
+.sampletabs button[aria-selected="true"]{background:#fff;color:#12243a;border-color:#fff;}
+@media(max-width:600px){.sampletabs{padding-left:20px;padding-right:20px;}}
+.reqs ul.subs{margin:7px 0 0 0;padding:0 0 0 16px;list-style:disc;}
+.reqs ul.subs li{margin:0 0 4px 0;padding:0;border:0;font-size:14px;line-height:1.55;}
+.deadline.past{background:#fdeaea;border-color:#f2c2c2;}
+.deadline.past .d{color:#8a2020;}
+.deadline.past .l{color:#8a2020;opacity:.9;}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:17px;}
 .chip{
   background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
@@ -799,67 +811,14 @@ footer a:hover{color:#fff;}
     <div class="split">
       <div class="split-record">
     <div class="sample">
-      <div class="sample-head">
-        <span class="tag">Verified record · 1 of <span id="progCountTag">47</span> · checked <span id="sampleDate">8 September 2026</span></span>
-        <h3>Aerospace (B.Sc.)</h3>
-        <p class="inst">Technical University of Munich (TUM) · Bavaria</p>
-        <div class="chips">
-          <span class="chip">Bachelor of Science</span>
-          <span class="chip">Taught in English</span>
-          <span class="chip">6 semesters · 180 ECTS</span>
-          <span class="chip">Public technical university</span>
-        </div>
+      <div class="sampletabs" id="sampleTabs" role="tablist"></div>
+      <div class="sample-head" id="sampleHead">
+        <span class="tag">Verified record &middot; 1 of <span id="progCountTag">47</span> &middot; checked <span id="sampleDate">8 September 2026</span></span>
+        <h3>Loading a record&hellip;</h3>
       </div>
 
       <div class="sample-body">
-
-        <div class="block">
-          <h4>Programme &amp; cost</h4>
-          <dl class="spec">
-            <dt>Degree awarded</dt>          <dd>B.Sc. Aerospace (180 ECTS)</dd>
-            <dt>Language of instruction</dt> <dd>English, with some electives available in German</dd>
-            <dt>Duration</dt>                <dd>6 semesters (3 years), full time</dd>
-            <dt>Semester fee</dt>            <dd>EUR 97 per semester</dd>
-            <dt>Non-EU tuition</dt>          <dd>EUR 3,000 per semester (EUR 6,000/year), in force since WS 2024/25</dd>
-            <dt>Living costs</dt>            <dd>EUR 11,904/year is the official minimum you must prove for the visa. Munich is one of Germany's most expensive student cities, so budget above this figure.</dd>
-            <dt>Scholarships</dt>            <dd>Deutschlandstipendium; TUM scholarship schemes</dd>
-            <dt>Application fee</dt>          <dd>None for the TUMonline application. uni-assist charges separately for the VPD.</dd>
-          </dl>
-        </div>
-
-        <div class="block">
-          <h4>Entry requirements</h4>
-          <ul class="reqs">
-            <li><b>General:</b> A recognised higher-education entrance qualification (Hochschulzugangsberechtigung).</li>
-            <li><b>Equivalence:</b> Non-German qualifications are assessed by <b>uni-assist</b>, which issues the preliminary review documentation (VPD) TUM requires before it will review the file.</li>
-            <li><b>CBSE, ISC and state boards:</b> TUM publishes <b>no board percentage</b>. We checked, and the earlier cutoff we held for this record turned out to be invented, so it was removed. Equivalence is decided by uni-assist and selection by the aptitude assessment. Anyone quoting you a CBSE cutoff for TUM is guessing. Private universities do set their own bars, and those are recorded per programme.</li>
-            <li><b>Selection:</b> Aptitude Assessment (Eignungsfeststellungsverfahren). Competitive, and the stage most applicants underestimate.</li>
-            <li><b>English:</b> At least B2. Proficiency is normally verified as part of the aptitude assessment rather than by a fixed IELTS or TOEFL score.</li>
-            <li><b>German:</b> A2 is required for admission, even though the degree is taught in English. The teaching language and the admission requirement are not the same thing, and this is the one that catches applicants out.</li>
-            <li><b>Pre-study internship:</b> Minimum eight weeks, ideally documented by 31 October of the first year of study.</li>
-            <li><b>India &amp; China:</b> An <b>APS certificate</b> is required. Allow 4–8 weeks and start it before the application, not after.</li>
-          </ul>
-        </div>
-
-        <div class="block">
-          <h4>Deadline &amp; how to apply</h4>
-          <div class="deadline">
-            <span class="d">15 May – 15 July 2027</span>
-            <span class="l">Winter semester 2027/28 · the 2026/27 window closed on 15 July 2026</span>
-          </div>
-          <ul class="reqs">
-            <li><b>Step 1.</b> Indian and Chinese applicants: begin the <b>APS</b> certificate first (4–8 weeks).</li>
-            <li><b>Step 2.</b> Submit certificates to <b>uni-assist</b> for the VPD. Allow several weeks; this is the step that quietly consumes the application window.</li>
-            <li><b>Step 3.</b> Apply through <b>TUMonline</b> within the 15 May – 15 July window.</li>
-            <li><b>Step 4.</b> Complete the aptitude assessment if shortlisted after the document stage.</li>
-            <li><b>Step 5.</b> Receive the admission decision (Zulassungsbescheid). Nothing in the visa chain can begin without it.</li>
-          </ul>
-          <ul class="reqs" style="margin-top:14px;">
-            <li><b>Application rounds:</b> One a year. Winter semester entry only, so a missed July deadline costs twelve months.</li>
-            <li><b>Documents required:</b> School leaving certificate and transcripts, uni-assist VPD, proof of English at B2, proof of German at A2, pre-study internship documentation, passport.</li>
-            <li><b>Admissions contact:</b> applications.asg@ed.tum.de &middot; +49 89 289 22245</li>
-          </ul>
-        </div>
+        <div id="sampleBody"></div>
 
         <div class="block">
           <h4 id="visaHeading">Student visa process: non-EU applicant</h4>
@@ -1607,5 +1566,113 @@ footer a:hover{color:#fff;}
 })();
 </script>
 
+
+<script>
+/* The sample used to be written by hand, which is how a TUM Aerospace record
+   ended up in the shop window while not being in the file at all. It now comes
+   straight out of germany-file.json, so the two cannot drift apart again. */
+(function () {
+  var SHOW = ["DE-045", "DE-020", "DE-035"];   // names a counselor recognises
+  var LABEL = { "DE-045": "TUM", "DE-020": "Frankfurt School", "DE-035": "Lancaster Leipzig" };
+
+  function esc(v){return String(v==null?"":v).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+  function has(v){return v && String(v).trim() && String(v).trim().toUpperCase().indexOf("NOT PUBLISHED")!==0;}
+  function linky(v){
+    return esc(v).replace(/https?:\/\/[^\s<]+[^\s<.,;:)]/g, function(u){
+      var l = u.replace(/^https?:\/\/(www\.)?/,""); if(l.length>46) l=l.slice(0,44)+"…";
+      return '<a href="'+u+'" target="_blank" rel="noopener">'+l+'</a>';
+    });
+  }
+  function dt(k,v){return has(v)?"<dt>"+esc(k)+"</dt><dd>"+esc(v)+"</dd>":"";}
+  function req(k,v){return has(v)?"<li><b>"+esc(k)+":</b> "+linky(v)+"</li>":"";}
+  function spec(r){var b=r.join("");return b?'<dl class="spec">'+b+"</dl>":"";}
+  function reqs(r){var b=r.join("");return b?'<ul class="reqs">'+b+"</ul>":"";}
+  function money(lo,hi){ if(has(lo)&&has(hi)) return lo===hi?lo:lo+" to "+hi; return has(lo)?lo:(has(hi)?hi:""); }
+  function short(v){ v=String(v); if(v.length<=44) return v;
+    var c=v.split(/[-–—.(]/)[0].trim(); return (c && c.length<=44)?c:v.slice(0,41).trim()+"…"; }
+  function closed(r){ var i=String(r.deadline_iso||"");
+    if(!/^\d{4}-\d{2}-\d{2}$/.test(i)) return false;
+    var t=new Date(); t.setHours(0,0,0,0); return new Date(i+"T00:00:00")<t; }
+  function rounds(v){
+    if(!has(v)) return "";
+    var parts=String(v).split(/\s+·\s+|(?=\b(?:Regular Decision|Early Action|Round \d)\b)/)
+      .map(function(x){return String(x).trim();}).filter(function(x){return x.length>1;});
+    if(parts.length<2) return req("Application rounds", v);
+    return '<li><b>Application rounds:</b><ul class="subs">'+
+      parts.map(function(x){return "<li>"+linky(x)+"</li>";}).join("")+"</ul></li>";
+  }
+
+  function head(r, n, total){
+    var chips=[r.degree,r.language,r.years,r.instType].filter(has)
+      .map(function(c){return '<span class="chip">'+esc(short(c))+"</span>";}).join("");
+    return '<span class="tag">Verified record &middot; '+n+' of '+total+
+      ' &middot; checked '+esc(r.date_checked||"")+"</span>"+
+      "<h3>"+esc(r.programme)+"</h3>"+
+      '<p class="inst">'+esc(r.institution)+(has(r.city)?" &middot; "+esc(r.city):"")+"</p>"+
+      '<div class="chips">'+chips+"</div>";
+  }
+
+  function body(r){
+    return '<div class="block"><h4>Programme &amp; cost</h4>'+
+      spec([dt("Degree awarded",r.degree), dt("Language of instruction",r.language),
+            dt("Duration",r.years),
+            (r.feeEU&&r.feeEU===r.feeNonEU ? dt("Fees",r.feeEU)
+              : dt("Fees, EU students",r.feeEU)+dt("Fees, non-EU students",r.feeNonEU)),
+            dt("Application fee",r.application_fee),
+            dt("Living costs",money(r.liveLo,r.liveHi)),
+            dt("Scholarships",r.scholarships), dt("Accreditation",r.accreditation)])+
+      "</div>"+
+      '<div class="block"><h4>Entry requirements</h4>'+
+      reqs([req("General",r.entry), req("CBSE",r.cbse), req("ISC",r.isc), req("IB",r.ib),
+            req("A-Level",r.alevel), req("US High School Diploma",r.us_diploma_gpa),
+            req("Other qualifications",r.other), req("English",r.english),
+            req("Selection",r.selection)])+
+      "</div>"+
+      '<div class="block"><h4>Deadline &amp; how to apply</h4>'+
+      (has(r.deadline)&&String(r.deadline).length<=70
+        ? '<div class="deadline'+(closed(r)?" past":"")+'"><span class="d">'+esc(r.deadline)+
+          '</span><span class="l">'+(closed(r)
+            ? "That intake has closed. The university has not yet published the next one, so open the programme page before advising."
+            : "Confirm against the programme page before advising")+"</span></div>"
+        : "")+
+      reqs([(has(r.deadline)&&String(r.deadline).length>70?req("Deadline",r.deadline):""),
+            rounds(r.deadline_rounds), req("Documents required",r.documents_required),
+            req("How to apply",r.apply), req("Admissions contact",r.contact),
+            (has(r.url)?'<li><b>Programme page:</b> <a href="'+esc(r.url)+
+              '" target="_blank" rel="noopener">open it and check any field yourself</a></li>':"")])+
+      "</div>";
+  }
+
+  fetch("germany-file.json?v=20260908d").then(function(x){return x.json();}).then(function(all){
+    var picked = SHOW.map(function(id){
+      return all.filter(function(r){return r.record_id===id;})[0];
+    }).filter(Boolean);
+    if(!picked.length) return;
+
+    var tabs=document.getElementById("sampleTabs");
+    var headEl=document.getElementById("sampleHead");
+    var bodyEl=document.getElementById("sampleBody");
+
+    function show(i){
+      var r=picked[i];
+      headEl.innerHTML=head(r, all.indexOf(r)+1, all.length);
+      bodyEl.innerHTML=body(r);
+      Array.prototype.forEach.call(tabs.children,function(b,j){
+        b.setAttribute("aria-selected", j===i?"true":"false");
+      });
+      if(window.__paveTrack) window.__paveTrack("sample-switch-"+r.record_id, true);
+    }
+
+    tabs.innerHTML = picked.map(function(r,i){
+      return '<button type="button" role="tab" aria-selected="'+(i===0)+'">'+
+             esc(LABEL[r.record_id]||r.institution)+"</button>";
+    }).join("");
+    Array.prototype.forEach.call(tabs.children,function(b,i){
+      b.addEventListener("click",function(){show(i);});
+    });
+    show(0);
+  }).catch(function(){ /* the hand-written fallback stays visible */ });
+})();
+</script>
 </body>
 </html>

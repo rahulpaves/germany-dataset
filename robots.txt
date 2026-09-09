@@ -1,0 +1,11 @@
+# The landing page is meant to be found. The file itself is the product and
+# goes out as a per-counselor link, so it must not turn up in search results.
+User-agent: *
+Allow: /$
+Allow: /index.html
+Allow: /thanks.html
+Disallow: /file.html
+Disallow: /germany-file.json
+Disallow: /data.json
+
+Sitemap: https://germany.pavetheway.ai/sitemap.xml
