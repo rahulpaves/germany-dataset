@@ -650,6 +650,7 @@ dl.spec dt:first-of-type,dl.spec dd:first-of-type{border-top:none;}
   max-width:580px;margin:0 auto;background:#fff;border:1px solid var(--line);
   border-radius:var(--radius);padding:40px 38px;box-shadow:var(--shadow-lg);text-align:center;
 }
+.price-card .amt .was{text-decoration:line-through;opacity:.4;font-weight:600;margin-right:10px;}
 .price-card .amt{font-size:60px;font-weight:800;color:var(--ink);line-height:1;letter-spacing:-.04em;}
 .price-card .terms{font-size:14.5px;margin:10px 0 28px;}
 .price-card .terms strong{color:var(--ink);}
@@ -787,8 +788,8 @@ footer a:hover{color:#fff;}
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Live sample</p>
-      <h2>This is one undergraduate record. Every record is this.</h2>
-      <p>A real record, unedited. Open any source link and check it yourself. Ask for it on the right and the country you name gets the same treatment next.</p>
+      <h2>Three records, straight from the file</h2>
+      <p>These come out of the same file you would receive, unedited. Open any source link and check it. Name another country on the form and it gets the same treatment.</p>
     </div>
 
 <!--
@@ -895,14 +896,14 @@ footer a:hover{color:#fff;}
         <details class="moreblock">
           <summary>Show how the route changes for every other passport</summary>
           <div class="block" style="border-bottom:none;padding-top:14px;">
-          <p style="font-size:14.5px;margin:-4px 0 16px;">The timeline above is the standard non-EU route. Which steps actually apply depends entirely on the passport your student holds.</p>
+          <p style="font-size:14.5px;margin:-4px 0 16px;">The timeline above is the standard non-EU route. Which of those steps apply depends on the passport your student holds.</p>
           <div class="tracks">
 
             <div class="track a">
               <span class="badge">No visa, no permit</span>
               <h5>EU / EEA / Switzerland</h5>
               <p class="who">All EU member states, plus Iceland, Liechtenstein, Norway and Switzerland.</p>
-              <p>Freedom of movement applies. No visa, no residence permit, no blocked account. Enrol, then register the address (Anmeldung) within two weeks of arrival. That is the entire process.</p>
+              <p>Freedom of movement applies, so there is no visa, no residence permit and no blocked account. Your student enrols, then registers the address (Anmeldung) within two weeks of arrival.</p>
             </div>
 
             <div class="track b">
@@ -916,7 +917,7 @@ footer a:hover{color:#fff;}
               <span class="badge">Type D visa + APS</span>
               <h5>APS countries</h5>
               <p class="who">India, China, Vietnam and Mongolia.</p>
-              <p>The full Type D chain, preceded by an APS certificate from the Academic Evaluation Centre. Without it there is no student visa. Budget four weeks to three months, and roughly INR 18,000 in India. <strong>New for Summer Semester 2027:</strong> Indian Master's applicants coming from Engineering, Commerce, Accounting, Finance, Economics, Business or Management must also submit a dMAT certificate alongside APS.</p>
+              <p>The full Type D chain, preceded by an APS certificate from the Academic Evaluation Centre, which the mission will not process a student visa without. Budget four weeks to three months, and roughly INR 18,000 in India. <strong>New for Summer Semester 2027:</strong> Indian Master's applicants coming from Engineering, Commerce, Accounting, Finance, Economics, Business or Management must also submit a dMAT certificate alongside APS.</p>
             </div>
 
             <div class="track d">
@@ -1027,10 +1028,10 @@ footer a:hover{color:#fff;}
             <h4>What lands in your inbox</h4>
             <ul>
               <li><b id="wygCount">47</b> English-taught German bachelor's programmes, every one checked against source</li>
-              <li>Entry requirements mapped per board: <b>CBSE, ISC, IB and A-Level</b>, not just "country equivalent"</li>
+              <li>Entry requirements mapped per board: <b>CBSE, ISC, IB and A-Level</b>, with the percentage each one needs</li>
               <li>English thresholds, EU and non-EU fees, living costs, deadlines and how to apply</li>
               <li>The <b>nine-step visa chain</b> above, with the steps that change by your student's nationality</li>
-              <li>The TUM record you just read, checked field by field against source</li>
+              <li>The three records above, and the 44 others, checked field by field against source</li>
             </ul>
             <p class="wyg-note">Every field carries the source link it came from, so you can confirm any answer in front of a parent without taking our word for it.</p>
           </div>
@@ -1085,9 +1086,9 @@ footer a:hover{color:#fff;}
     </div>
     <div class="obj">
       <div class="obj-item">
-        <h3>Public doesn't mean findable</h3>
+        <h3>Finding it is the work</h3>
         <p>A single answer lives across the programme page, the recognition body, a fee schedule and a foreign ministry site. Two languages, and they contradict each other about half the time.</p>
-        <span class="ev">We checked one TUM record against source. <b>Five of its fields were wrong</b>, including a "flagship English-taught" degree that is actually taught in German.</span>
+        <span class="ev">We checked one TUM record against source. <b>Five of its fields were wrong</b>, including a "flagship English-taught" degree whose own page gives the language of instruction as German.</span>
       </div>
       <div class="obj-item">
         <h3>It changes underneath you</h3>
@@ -1096,13 +1097,13 @@ footer a:hover{color:#fff;}
       </div>
       <div class="obj-item">
         <h3>The answer depends on the passport</h3>
-        <p>Programme requirements are only half the advice. The route to actually getting there changes completely with your student's nationality, and that part is scattered across embassy sites.</p>
+        <p>The route changes completely with your student's passport, and that part sits on embassy sites rather than university ones.</p>
         <span class="ev">Same TUM degree: an Indian student faces <b>nine steps including APS</b>, an American five with no embassy appointment, a French student three.</span>
       </div>
       <div class="obj-item">
-        <h3>Doing it once isn't the problem</h3>
-        <p>Researching one country for one student is an evening. Doing it for every student, across every country they ask about, and keeping all of it current. That's what quietly eats your week.</p>
-        <span class="ev">Which is the job this is built to remove, <b>and why it's checked every cycle</b> instead of compiled once.</span>
+        <h3>Once is easy. Every time is not.</h3>
+        <p>Researching one country for one student is an evening. Doing it for every student, across every country they ask about, and keeping it current as requirements move, takes most of a week.</p>
+        <span class="ev">That is the week this is built to give back, <b>and why it is re-checked every cycle</b>.</span>
       </div>
     </div>
   </div>
@@ -1165,12 +1166,12 @@ footer a:hover{color:#fff;}
     <div class="section-head" style="text-align:center;margin-left:auto;margin-right:auto;">
       <p class="eyebrow">Straight answer</p>
       <h2>What it costs, and what it replaces</h2>
-      <p style="margin:0 auto;">You should know the price before you spend any time on this, so here it is.</p>
+      <p style="margin:0 auto;">The price, before you spend any time on this.</p>
     </div>
 
     <div class="price-card">
-      <div class="amt">Free</div>
-      <p class="terms">Early access · <strong>no card, nothing charged</strong></p>
+      <div class="amt"><span class="was">$79</span> Free</div>
+      <p class="terms">Germany, free for early access · <strong>no card, nothing charged</strong></p>
 
       <ul class="includes">
         <li>The complete verified Germany file, by email within 24 hours</li>
@@ -1182,8 +1183,8 @@ footer a:hover{color:#fff;}
       </ul>
 
       <div style="text-align:left;background:#fff;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:18px 20px;margin-bottom:26px;">
-        <p style="font-size:15px;margin:0 0 8px;"><strong>Any other country: $79 per country, per year</strong></p>
-        <p style="font-size:14.5px;margin:0 0 10px;">Germany stays free. Name the country your students actually apply to and we verify it to exactly the standard above. The price covers the re-check each cycle, because a deadline file is worthless the year after nobody looks at it again.</p>
+        <p style="font-size:15px;margin:0 0 8px;"><strong>Every other country is $79 per country, per year.</strong> Germany is the one we give away.</p>
+        <p style="font-size:14.5px;margin:0 0 10px;">Name the country your students apply to and we verify it to the same standard. The price covers the re-check each cycle, because a deadline file is worthless the year after nobody looks at it again.</p>
         <p style="font-size:14.5px;margin:0;">We quote you a delivery date <strong>before</strong> you pay anything. If we cannot commit to a date, we say so and you pay nothing.</p>
         <p style="font-size:13.5px;margin:10px 0 0;opacity:.85;">No card details on this site. Countries are invoiced on delivery.</p>
       </div>
@@ -1200,20 +1201,20 @@ footer a:hover{color:#fff;}
     <div class="section-head">
       <p class="eyebrow">How it's checked</p>
       <h2>What "verified" has to mean</h2>
-      <p>Built by Pave, who make software for college counselors. We audited our own German data before showing it to anyone. 26 of 45 source links were dead. That's the gap between compiled and verified, and it's why only one record here carries the badge.</p>
+      <p>Pave makes software for college counselors. We audited our own German data before showing it to anyone, and 20 of 58 source links were dead. Ten programmes turned out not to be taught in English at all, including one whose own page says the language of instruction is German. Those are gone. What is left is 47 programmes where every link resolves.</p>
     </div>
     <div class="method">
       <div class="method-item">
         <h3>Official sources only</h3>
-        <p>University programme pages, national recognition bodies such as uni-assist and DAAD, and foreign ministry visa guidance. Never aggregator listings, which is where most stale data originates.</p>
+        <p>University programme pages, national recognition bodies such as uni-assist and DAAD, and foreign ministry visa guidance. Never aggregator listings, which is where most stale data starts.</p>
       </div>
       <div class="method-item">
         <h3>Checked field by field</h3>
-        <p>Each record is enumerated against source rather than eyeballed, so contradictions surface instead of being copied forward. That's the process that caught five errors in one record.</p>
+        <p>Every field is checked against the page it came from, so contradictions surface early. That's the process that caught five errors in one record.</p>
       </div>
       <div class="method-item">
         <h3>We tell you what we haven't checked</h3>
-        <p>Exactly one record on this site is verified. The other 979 are labelled unverified everywhere they appear, and records with a dead source link say so. You will always know which you're looking at.</p>
+        <p>Nine records carry the sentence we read from the university page. The other 38 say only what is true of them, that the source page was open and live on the date shown. Where an intake has closed, the record says that too. You will know which you are looking at.</p>
       </div>
     </div>
   </div>
