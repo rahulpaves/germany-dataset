@@ -602,7 +602,8 @@ footer a:hover{color:#fff;}
 @media(max-width:940px){.filegrid{grid-template-columns:1fr;}}
 .side{position:sticky;top:20px;max-height:calc(100vh - 40px);display:flex;flex-direction:column;
   border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden;}
-@media(max-width:940px){.side{position:static;max-height:none;}}
+@media(max-width:940px){.side{position:static;max-height:52vh;}}
+@media(max-width:940px){.filegrid{gap:16px;}}
 .side-top{padding:14px;border-bottom:1px solid var(--line);display:grid;gap:9px;}
 .side-top input,.side-top select{width:100%;font-family:inherit;font-size:14.5px;color:var(--ink);
   background:#fff;padding:11px 13px;border:1px solid var(--line);border-radius:9px;}
@@ -627,6 +628,8 @@ footer a:hover{color:#fff;}
 .vbanner.mid{background:#fdf5e3;border:1px solid #ecd9a8;color:#6b4e10;}
 .reqs ul.subs{margin:7px 0 0 0;padding:0 0 0 16px;list-style:disc;}
 .reqs ul.subs li{margin:0 0 4px 0;padding:0;border:0;font-size:14px;line-height:1.55;}
+.pickhint-m{display:none;}
+@media(max-width:940px){.pickhint{display:none;}.pickhint-m{display:inline;}}
 .qualnote{border:1px solid var(--line);border-radius:8px;margin:0 0 16px;background:#fafbfd;}
 .qualnote summary{cursor:pointer;padding:11px 15px;font-size:13px;font-weight:650;color:var(--primary);
   list-style:none;}
@@ -721,7 +724,7 @@ footer a:hover{color:#fff;}
   <div class="filehead">
     <p class="kicker" id="preparedFor">Pave &middot; prepared for counselors</p>
     <h1>The Germany file</h1>
-    <p>Every English-taught German undergraduate degree we hold, with entry requirements per board, deadlines, fees and the visa chain for your student's passport. Pick a programme on the left. Source links are live: open any of them and check it yourself.</p>
+    <p>Every English-taught German undergraduate degree we hold, with entry requirements per board, deadlines, fees and the visa chain for your student's passport. <span class="pickhint">Pick a programme on the left.</span><span class="pickhint-m">Pick a programme from the list.</span> Source links are live: open any of them and check it yourself.</p>
   </div>
   <div class="filegrid">
     <aside class="side">
@@ -1019,7 +1022,17 @@ function list(){
   el.innerHTML = out || '<p class="empty">Nothing matches that search.</p>';
   document.getElementById("count").textContent = n+" of "+DATA.length+" programmes";
   Array.prototype.forEach.call(el.querySelectorAll(".pitem"), function(b){
-    b.addEventListener("click", function(){ render(Number(b.dataset.i)); window.scrollTo({top:0,behavior:"smooth"}); });
+    b.addEventListener("click", function(){
+      render(Number(b.dataset.i));
+      /* desktop keeps the record in the right column, so top is right. on a
+         phone the record sits under the list, so send them to it instead. */
+      var rec = document.getElementById("rec");
+      if (window.matchMedia("(max-width:940px)").matches && rec) {
+        rec.scrollIntoView({behavior:"smooth", block:"start"});
+      } else {
+        window.scrollTo({top:0, behavior:"smooth"});
+      }
+    });
   });
 }
 
