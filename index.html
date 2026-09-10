@@ -1660,7 +1660,7 @@ footer a:hover{color:#fff;}
       (has(r.deadline)&&String(r.deadline).length<=70
         ? '<div class="deadline'+(closed(r)?" past":"")+'"><span class="d">'+esc(r.deadline)+
           '</span><span class="l">'+(closed(r)
-            ? "That intake has closed. The university has not yet published the next one, so open the programme page before advising."
+            ? "That intake has closed. Re-checked on 10 September 2026: the university has not yet published its 2027 dates. Open the programme page before advising."
             : "Confirm against the programme page before advising")+"</span></div>"
         : "")+
       reqs([(has(r.deadline)&&String(r.deadline).length>70?req("Deadline",r.deadline):""),
