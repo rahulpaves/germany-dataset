@@ -53,6 +53,58 @@ for label, pat, want in checks:
     else:
         print("  ok       %-22s %s" % (label, m.group(1)))
 
+# The subject breakdown on the hero drifts every time programmes are added,
+# and it drifted badly once: the list still said Engineering 1 after five
+# engineering programmes had landed. Derive it from the data instead.
+OVERRIDE = {
+    "Aerospace (BSc)": "Engineering",
+    "Robotics and Intelligent Systems (BSc)": "Engineering",
+    "Bioengineering": "Engineering",
+    "Software Engineering (BSc)": "Computer science, data & software",
+    "Software Engineering (BSc Hons)": "Computer science, data & software",
+    "North American Studies (BA)": "Humanities & social sciences",
+    "Humanities, The Arts and Social Thought (BA)": "Humanities & social sciences",
+    "Liberal Arts and Sciences (BSc - English)": "Humanities & social sciences",
+    "Agribusiness": "Business, management & economics",
+}
+
+def subject_of(programme):
+    if programme in OVERRIDE:
+        return OVERRIDE[programme]
+    t = programme.lower()
+    if re.search(r"engineer|mechatronic|infotronic|mobility and logistics|environment and energy", t):
+        return "Engineering"
+    if re.search(r"computer|informatic|software|data science|artificial intelligence|comput", t):
+        return "Computer science, data & software"
+    if re.search(r"biolog|life science|chemistr|physic|material|agricultur|agribusiness|biomed", t):
+        return "Natural & life sciences"
+    if re.search(r"design|architect|media|advertis|art", t):
+        return "Design, architecture & media"
+    if re.search(r"business|management|economic|finance|account|marketing|taxation|tourism|commerce|logistic", t):
+        return "Business, management & economics"
+    return "Humanities & social sciences"
+
+counts = {}
+for r in d:
+    k = subject_of(r.get("programme", ""))
+    counts[k] = counts.get(k, 0) + 1
+
+print("  -- subject breakdown on the hero --")
+listed = 0
+for subject, want in sorted(counts.items(), key=lambda kv: -kv[1]):
+    pat = r"<li><span>%s</span><b>(\d+)</b></li>" % re.escape(subject.replace("&", "&amp;"))
+    m = re.search(pat, html)
+    if not m:
+        print("  MISSING  %-34s not listed, data says %d" % (subject, want)); bad += 1
+    elif int(m.group(1)) != want:
+        print("  WRONG    %-34s page says %s, data says %d" % (subject, m.group(1), want)); bad += 1
+    else:
+        print("  ok       %-34s %d" % (subject, want)); listed += int(m.group(1))
+
+if listed and listed != truth["programmes"]:
+    print("  WRONG    subject counts total %d, data has %d" % (listed, truth["programmes"])); bad += 1
+print()
+
 stale = re.findall(r"\b27 fields\b", html)
 if stale:
     print("\n  WRONG    an old '27 fields' claim is still in the page"); bad += 1

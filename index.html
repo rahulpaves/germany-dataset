@@ -772,7 +772,7 @@ footer a:hover{color:#fff;}
                placeholder="you@yourfirm.com" autocomplete="email" aria-label="Your email">
         <button class="btn btn-lg" id="heroCta" type="submit">Get the free Germany file</button>
       </div>
-      <p style="font-size:13.5px;margin:14px 0 0;opacity:.8;">Free early access · nothing to pay and no card needed</p>
+      <p style="font-size:13.5px;margin:14px 0 0;opacity:.8;">Free early access &middot; nothing to pay and no card needed<br><span style="opacity:.85">We will email you when the data changes, and occasionally about Pave. One click to stop.</span></p>
     </form>
     <p class="meta" id="heroMeta"></p>
    </div>
@@ -781,12 +781,12 @@ footer a:hover{color:#fff;}
      <h3>What is in the file</h3>
      <p class="cover-lede"><b id="coverCount">66</b> English-taught undergraduate programmes across <b id="coverUnis">30</b> German institutions.</p>
      <ul class="cover-list">
-       <li><span>Business, management &amp; economics</span><b>27</b></li>
-       <li><span>Computer science, data &amp; software</span><b>12</b></li>
-       <li><span>Humanities &amp; social sciences</span><b>8</b></li>
-       <li><span>Design &amp; architecture</span><b>4</b></li>
-       <li><span>Engineering</span><b>1</b></li>
-       <li><span>Natural sciences</span><b>1</b></li>
+       <li><span>Business, management &amp; economics</span><b>26</b></li>
+       <li><span>Computer science, data &amp; software</span><b>13</b></li>
+       <li><span>Engineering</span><b>9</b></li>
+       <li><span>Design, architecture &amp; media</span><b>6</b></li>
+       <li><span>Natural &amp; life sciences</span><b>6</b></li>
+       <li><span>Humanities &amp; social sciences</span><b>6</b></li>
      </ul>
      <h4>Collected on every one</h4>
      <p class="cover-fields">Entry requirements per board (CBSE, ISC, IB, A-Level) · English threshold · deadline and application route · EU and non-EU fees · living costs · scholarships · visa steps by nationality · source link per field</p>
@@ -980,6 +980,16 @@ footer a:hover{color:#fff;}
               <input id="f-firm" name="Firm" type="text" autocomplete="organization">
             </div>
             <div class="field">
+              <label for="f-segment">Where you work <span class="req">*</span></label>
+              <select id="f-segment" name="Where you work" required>
+                <option value="">Select&hellip;</option>
+                <option>School counselling department</option>
+                <option>Agency or consultancy</option>
+                <option>Independent counselor</option>
+                <option>Something else</option>
+              </select>
+            </div>
+            <div class="field">
               <label for="f-students">Students you work with</label>
               <select id="f-students" name="Students per year">
                 <option value="">Select…</option>
@@ -1043,14 +1053,15 @@ footer a:hover{color:#fff;}
               <li>Entry requirements mapped per board: <b>CBSE, ISC, IB and A-Level</b>, with the percentage each one needs</li>
               <li>English thresholds, EU and non-EU fees, living costs, deadlines and how to apply</li>
               <li>The <b>nine-step visa chain</b> above, with the steps that change by your student's nationality</li>
-              <li>The three records above, and the 44 others, checked field by field against source</li>
+              <li>The three records above, and the 63 others, checked field by field against source</li>
             </ul>
             <p class="wyg-note">Every field carries the source link it came from, so you can confirm any answer in front of a parent without taking our word for it.</p>
           </div>
 
           <button type="submit">Get the free Germany file</button>
           <p class="assure">
-            Free, no card, no obligation. Prefer email?
+            Free, no card, no obligation. We will email you when the data changes,
+            and occasionally about Pave. One click to stop. Prefer email?
             <button type="button" class="emailcopy" id="emailCopy" data-email="rahul@pavetheway.ai"
                     title="Click to copy the address"><span id="emailCopyText">rahul@pavetheway.ai</span></button>
             <span class="mailtolink">click to copy</span>
@@ -1426,6 +1437,21 @@ footer a:hover{color:#fff;}
     for (var i = 0; i < els.length; i++) els[i].value = value;
   }
 
+  /* the segment drives the whole follow-up: a school gets a different
+     conversation from an agent, so put it in the subject line rather than
+     leaving it to be read off the email domain by hand later */
+  (function () {
+    var seg = document.getElementById("f-segment");
+    if (!seg) return;
+    var form = seg.form;
+    var subj = form && form.querySelector('input[type="hidden"][name="_subject"]');
+    if (!subj) return;
+    var base = subj.value;
+    seg.addEventListener("change", function () {
+      subj.value = seg.value ? base + " \u2014 " + seg.value : base;
+    });
+  })();
+
   setHidden("Came from", src);
   setHidden("_next", "https://germany.pavetheway.ai/thanks.html?src=" + src);
 
@@ -1671,7 +1697,7 @@ footer a:hover{color:#fff;}
       "</div>";
   }
 
-  fetch("germany-file.json?v=20260911a").then(function(x){return x.json();}).then(function(all){
+  fetch("germany-file.json?v=20260911b").then(function(x){return x.json();}).then(function(all){
     var picked = SHOW.map(function(id){
       return all.filter(function(r){return r.record_id===id;})[0];
     }).filter(Boolean);
