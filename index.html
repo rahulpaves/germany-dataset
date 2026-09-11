@@ -1671,7 +1671,7 @@ footer a:hover{color:#fff;}
       "</div>";
   }
 
-  fetch("germany-file.json?v=20260908d").then(function(x){return x.json();}).then(function(all){
+  fetch("germany-file.json?v=20260911a").then(function(x){return x.json();}).then(function(all){
     var picked = SHOW.map(function(id){
       return all.filter(function(r){return r.record_id===id;})[0];
     }).filter(Boolean);
