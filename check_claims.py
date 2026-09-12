@@ -105,6 +105,29 @@ if listed and listed != truth["programmes"]:
     print("  WRONG    subject counts total %d, data has %d" % (listed, truth["programmes"])); bad += 1
 print()
 
+# Numbers repeat in meta tags, the hero and the body copy. Checking one selector
+# let "29 fields" survive in two og/twitter tags after the visible copy was fixed,
+# which is what a counselor sees when the link is shared. Sweep every occurrence.
+print("  -- every numeric claim in the page --")
+for pat, want, label in [
+    (r"(\d+) English-taught",            truth["programmes"],   "English-taught count"),
+    (r"(\d+) fields on every programme", truth["min fields"],   "field floor"),
+    (r"fields on every programme,? (?:and )?(\d+) on most",
+                                          truth["most fields"],  "field typical"),
+    (r"(\d+) German institutions",       truth["institutions"], "institution count"),
+]:
+    found = [int(m) for m in re.findall(pat, html)]
+    if not found:
+        print("  ok       %-22s not stated" % label)
+    elif any(f != want for f in found):
+        wrong = sorted({f for f in found if f != want})
+        print("  WRONG    %-22s %s occurrence(s) say %s, data says %d"
+              % (label, sum(1 for f in found if f != want), wrong, want))
+        bad += 1
+    else:
+        print("  ok       %-22s %d occurrence(s), all %d" % (label, len(found), want))
+print()
+
 stale = re.findall(r"\b27 fields\b", html)
 if stale:
     print("\n  WRONG    an old '27 fields' claim is still in the page"); bad += 1
