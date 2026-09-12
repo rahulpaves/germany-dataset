@@ -76,7 +76,7 @@ def subject_of(programme):
         return "Engineering"
     if re.search(r"computer|informatic|software|data science|artificial intelligence|comput", t):
         return "Computer science, data & software"
-    if re.search(r"biolog|life science|chemistr|physic|material|agricultur|agribusiness|biomed", t):
+    if re.search(r"biolog|life science|chemistr|physic|material|agricultur|agribusiness|biomed|mathemat", t):
         return "Natural & life sciences"
     if re.search(r"design|architect|media|advertis|art", t):
         return "Design, architecture & media"
