@@ -1728,7 +1728,7 @@ footer a:hover{color:#fff;}
       "</div>";
   }
 
-  fetch("germany-file.json?v=20260914b").then(function(x){return x.json();}).then(function(all){
+  fetch("germany-file.json?v=20260914c").then(function(x){return x.json();}).then(function(all){
     var picked = SHOW.map(function(id){
       return all.filter(function(r){return r.record_id===id;})[0];
     }).filter(Boolean);
@@ -1764,7 +1764,7 @@ footer a:hover{color:#fff;}
 
 <script>
 (function(){
-  fetch("data/index.json?v=20260914b").then(function(r){return r.json();}).then(function(idx){
+  fetch("data/index.json?v=20260914c").then(function(r){return r.json();}).then(function(idx){
     var host=document.getElementById("ccards"); if(!host) return;
     host.innerHTML=idx.map(function(c){
       return '<a class="ccard" href="file.html?country='+c.slug+'">'+

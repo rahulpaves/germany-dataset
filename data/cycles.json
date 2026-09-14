@@ -4,9 +4,21 @@
   "intake": "October (winter) · April (summer)",
   "months": "6 to 9 months from applying to starting",
   "start_early": [
-   ["APS certificate", "4 to 8 weeks", "Required for Indian students and needed before the visa. Start it the moment the shortlist is set, not after the offer."],
-   ["uni-assist VPD", "4 to 6 weeks", "Its deadline is the SAME DAY as the application deadline, so beginning it in June for a 15 July deadline is already too late."],
-   ["Visa appointment", "2 to 12 weeks of waiting", "Book the day admission lands. Availability, not paperwork, is the bottleneck."]
+   [
+    "APS certificate",
+    "4 to 8 weeks",
+    "Required for Indian students and needed before the visa. Start it the moment the shortlist is set, not after the offer."
+   ],
+   [
+    "uni-assist VPD",
+    "4 to 6 weeks",
+    "Its deadline is the SAME DAY as the application deadline, so beginning it in June for a 15 July deadline is already too late."
+   ],
+   [
+    "Visa appointment",
+    "2 to 12 weeks of waiting",
+    "Book the day admission lands. Availability, not paperwork, is the bottleneck."
+   ]
   ],
   "miss_it": "Miss 15 July and the next intake is April, or October a year later."
  },
@@ -15,8 +27,16 @@
   "intake": "September",
   "months": "5 to 8 months from applying to starting",
   "start_early": [
-   ["Decide on fixus programmes by December", "—", "The 15 January wall is the single biggest cause of a lost year. A student who waits for Indian board results in May has already missed it."],
-   ["Money in the university's account", "4 to 8 weeks", "The university will not file your IND application until tuition plus the living-cost guarantee (EUR 13,569 for 2026) has cleared."]
+   [
+    "Decide on fixus programmes by December",
+    "—",
+    "The 15 January wall is the single biggest cause of a lost year. A student who waits for Indian board results in May has already missed it."
+   ],
+   [
+    "Money in the university's account",
+    "4 to 8 weeks",
+    "The university will not file your IND application until tuition plus the living-cost guarantee (EUR 13,569 for 2026) has cleared."
+   ]
   ],
   "miss_it": "Miss 15 January on a fixus programme and you wait a full year. There is no late round."
  },
@@ -25,8 +45,16 @@
   "intake": "August",
   "months": "5 to 10 months from applying to starting",
   "start_early": [
-   ["Nothing structural", "—", "Indian Standard XII is direct entry. No equivalence body, no foundation year."],
-   ["Be ready to upload board results within 3 days", "—", "Both universities deem the application incomplete if the Standard XII slip is not uploaded within 3 days of release. No appeal."]
+   [
+    "Nothing structural",
+    "—",
+    "Indian Standard XII is direct entry. No equivalence body, no foundation year."
+   ],
+   [
+    "Be ready to upload board results within 3 days",
+    "—",
+    "Both universities deem the application incomplete if the Standard XII slip is not uploaded within 3 days of release. No appeal."
+   ]
   ],
   "miss_it": "The Tuition Grant signing window is only days long and falls in mid-September. Miss it and the family pays non-subsidised fees for the whole degree."
  },
@@ -35,8 +63,16 @@
   "intake": "February (main) · July (mid-year)",
   "months": "5 to 7 months from applying to starting",
   "start_early": [
-   ["Funds history", "3 months", "Assessors look for a traceable balance, not a lump sum that appeared last week."],
-   ["Book IELTS in person", "4 to 8 weeks", "Remote-proctored tests including IELTS Online are NOT accepted for the visa, even where the university accepted one."]
+   [
+    "Funds history",
+    "3 months",
+    "Assessors look for a traceable balance, not a lump sum that appeared last week."
+   ],
+   [
+    "Book IELTS in person",
+    "4 to 8 weeks",
+    "Remote-proctored tests including IELTS Online are NOT accepted for the visa, even where the university accepted one."
+   ]
   ],
   "miss_it": "Lodge the visa on or after 15 November: Ministerial Direction 115's priority year resets and processing drops from 9-12 weeks to 1-4."
  },
@@ -45,9 +81,21 @@
   "intake": "September",
   "months": "7 to 8 months from applying to starting",
   "start_early": [
-   ["Class XI subject choice", "2 years", "CBSE Applied Mathematics silently disqualifies a student from business, engineering and science at Toronto, Waterloo and their peers."],
-   ["GIC and funds", "4 to 6 weeks", "CAD 23,448 for a single applicant outside Quebec, and it re-indexes every 1 September, mid-season."],
-   ["Upfront medical", "2 to 3 weeks", "India is a designated country. Skipping it costs 4 to 6 weeks mid-processing."]
+   [
+    "Class XI subject choice",
+    "2 years",
+    "CBSE Applied Mathematics silently disqualifies a student from business, engineering and science at Toronto, Waterloo and their peers."
+   ],
+   [
+    "GIC and funds",
+    "4 to 6 weeks",
+    "CAD 23,448 for a single applicant outside Quebec, and it re-indexes every 1 September, mid-season."
+   ],
+   [
+    "Upfront medical",
+    "2 to 3 weeks",
+    "India is a designated country. Skipping it costs 4 to 6 weeks mid-processing."
+   ]
   ],
   "miss_it": "The PAL only starts after the deposit clears, and the permit needs the PAL. A late deposit compresses everything downstream."
  },
@@ -56,8 +104,16 @@
   "intake": "September / October",
   "months": "6 to 9 months from applying to starting",
   "start_early": [
-   ["HRD attestation, MEA apostille, then CIMEA or a Declaration of Value", "4 to 8 weeks, plus up to 90 days", "This chain must be COMPLETE before the entrance test, not after the result. It is the real constraint in Italy and the reason to start a year out."],
-   ["Watch the quota", "—", "Each university fixes a separate non-EU seat count by 31 December and ranks those applicants separately. Odds are not the headline class size."]
+   [
+    "HRD attestation, MEA apostille, then CIMEA or a Declaration of Value",
+    "4 to 8 weeks, plus up to 90 days",
+    "This chain must be COMPLETE before the entrance test, not after the result. It is the real constraint in Italy and the reason to start a year out."
+   ],
+   [
+    "Watch the quota",
+    "—",
+    "Each university fixes a separate non-EU seat count by 31 December and ranks those applicants separately. Odds are not the headline class size."
+   ]
   ],
   "miss_it": "Pre-enrolment validation is now capped at quota +20% and suspends when a university hits it. Late pre-enrolment can be refused outright."
  },
@@ -66,9 +122,53 @@
   "intake": "September",
   "months": "Private 6 to 8 months · Public 8 to 10 months from applying to starting",
   "start_early": [
-   ["Homologación of Standard XII", "4 to 8 months", "The legal limit is 3 months from a complete file; in practice far longer, with no way to accelerate it. File it by November for a September start."],
-   ["Plan the PCE exam trip", "—", "There is NO PCE exam centre in India. The nearest listed centres include Abu Dhabi and Doha, which suits Gulf-based students and forces a flight for everyone else."]
+   [
+    "Homologación of Standard XII",
+    "4 to 8 months",
+    "The legal limit is 3 months from a complete file; in practice far longer, with no way to accelerate it. File it by November for a September start."
+   ],
+   [
+    "Plan the PCE exam trip",
+    "—",
+    "There is NO PCE exam centre in India. The nearest listed centres include Abu Dhabi and Doha, which suits Gulf-based students and forces a flight for everyone else."
+   ]
   ],
   "miss_it": "In Catalonia a volante is not enough for the June call — you drop to September and are last in place allocation."
+ },
+ "france": {
+  "apply": "Each school runs its own rounds on its own portal. Sciences Po 2027: 4 November 2026, 13 January 2027, 1 March 2027. Polytechnique from 20 October 2026. EDHEC from 3 November 2026. HEC x Bocconi applies through Bocconi.",
+  "intake": "September",
+  "months": "10 to 12 months from applying to starting",
+  "start_early": [
+   [
+    "Apply in an EARLY round, not a late one",
+    "—",
+    "Etudes en France cannot begin until the unconditional acceptance letter exists. EDHEC's Round 5 results land 2 July for a September start, which leaves no room for the visa."
+   ],
+   [
+    "Deposit of EUR 5,000 to 5,500",
+    "due ~2 weeks after admission",
+    "Non-refundable and payable before any visa exists."
+   ]
+  ],
+  "miss_it": "Etudes en France via Campus France is mandatory for Indian students even at the private grandes ecoles. No EEF file, no visa, however good the offer."
+ },
+ "switzerland": {
+  "apply": "HSG applications close 10 January for the February selection sitting. A June sitting exists but lands the visa decision after the semester starts.",
+  "intake": "September (StartWeek, calendar week 37)",
+  "months": "8 to 10 months from applying to starting",
+  "start_early": [
+   [
+    "Check the student is even eligible",
+    "before anything",
+    "Indian Standard XII alone is NOT admissible at HSG. swissuniversities requires a completed university degree of at least 3 years plus the HSG selection procedure. IB and A-Level students qualify; CBSE and ISC school-leavers do not."
+   ],
+   [
+    "Get IELTS or TOEFL anyway",
+    "4 to 8 weeks",
+    "HSG says no language proof is needed to apply. The Swiss Embassy in New Delhi says an English certificate is mandatory for the visa. Both are true."
+   ]
+  ],
+  "miss_it": "Miss 10 January and only the June sitting remains, which puts the cantonal decision after term has started. The canton also requires the procedure to be awaited abroad, so a tourist visa cannot bridge it."
  }
 }

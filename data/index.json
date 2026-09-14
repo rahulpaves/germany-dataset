@@ -10,7 +10,7 @@
   "corrections": 5,
   "fields_min": 34,
   "fields_typical": 38,
-  "visa_steps": 0,
+  "visa_steps": 21,
   "size_kb": 264
  },
  {
@@ -94,7 +94,7 @@
   "corrections": 8,
   "fields_min": 25,
   "fields_typical": 33,
-  "visa_steps": 0,
+  "visa_steps": 23,
   "size_kb": 31
  },
  {
@@ -108,7 +108,7 @@
   "corrections": 3,
   "fields_min": 36,
   "fields_typical": 36,
-  "visa_steps": 0,
+  "visa_steps": 18,
   "size_kb": 18
  }
 ]
