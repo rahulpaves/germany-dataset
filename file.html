@@ -653,8 +653,6 @@ footer a:hover{color:#fff;}
 .askbtn.wa{background:var(--primary);color:#fff;border-color:var(--primary);}
 .askbtn.wa:hover{background:var(--primary-dark,#2140c0);}
 .askfoot{font-size:13px;color:var(--body);opacity:.85;margin:14px 0 0;}
-.timeline.fullchain .cnote{margin:10px 0 0;padding:10px 13px;font-size:13.5px;line-height:1.5;
-  background:var(--primary-tint);border-radius:8px;color:var(--ink);}
 .timeline.fullchain h5{font-size:15.5px;font-weight:700;color:var(--ink);margin:0 0 6px;}
 .timeline.fullchain p{font-size:14px;margin:8px 0 0;line-height:1.55;}
 </style>
@@ -1144,7 +1142,7 @@ function countryBar(){
   }).join("");
 }
 
-var CYCLES = null, CHAIN_HTML = "", CHAIN_TRACKS = null, ROUTES = null;
+var CYCLES = null, CHAIN_HTML = "", ROUTES = null;
 var SEL = {passport:null, board:null, residence:null};
 try{ var _s=JSON.parse(localStorage.getItem("paveSel")||"{}");
      if(_s && typeof _s==="object") SEL=_s; }catch(e){}
@@ -1208,7 +1206,6 @@ function terse(t, budget){
 
 function buildTimeline(steps){
   if (!steps || !steps.length) return "";
-  CHAIN_TRACKS = null;
   var li = steps.map(function(st){
     var ax = st.axes || {};
     var A = function(k){ return (ax[k] || []).join(" "); };
