@@ -137,6 +137,33 @@ for pat, want, label in [
         print("  ok       %-22s %d occurrence(s), all %d" % (label, len(found), want))
 print()
 
+# The chain step counts drift the moment a chain is rebuilt. "122 verified
+# steps" outlived two rebuilds on the landing page before anyone noticed.
+import glob as _glob
+_steps = {}
+for _f in _glob.glob(os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "*-visa.json")):
+    _c = os.path.basename(_f).replace("-visa.json", "")
+    _v = json.load(open(_f))
+    _steps[_c] = len(_v if isinstance(_v, list) else _v.get("steps", _v))
+_total = sum(_steps.values())
+print("  -- application chain steps --")
+print("  data says: %d steps across %d countries (Germany %d)"
+      % (_total, len(_steps), _steps.get("germany", 0)))
+for _pat, _want, _label in [
+    (r"(\d+) verified application and visa steps", _total,               "total steps"),
+    (r"(\d+)-step application chain",              _steps.get("germany"), "Germany chain"),
+]:
+    _found = [int(m) for m in re.findall(_pat, html)]
+    if not _found:
+        print("  ok       %-22s not stated" % _label)
+    elif any(f != _want for f in _found):
+        print("  WRONG    %-22s says %s, data says %d"
+              % (_label, sorted({f for f in _found if f != _want}), _want))
+        bad += 1
+    else:
+        print("  ok       %-22s %d occurrence(s), all %d" % (_label, len(_found), _want))
+print()
+
 stale = re.findall(r"\b27 fields\b", html)
 if stale:
     print("\n  WRONG    an old '27 fields' claim is still in the page"); bad += 1

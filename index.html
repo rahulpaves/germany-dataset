@@ -1,5 +1,5 @@
       Entry requirements mapped to CBSE, ISC, IB and A-Level, real deadlines, real fees, and
-      <strong>122 verified application and visa steps</strong> with the trap named at each one.
+      <strong>184 verified application and visa steps</strong> with the trap named at each one.
       Every field carries a link to the university page it came from.<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -151,23 +151,55 @@ const TRACKS = {
        "Australia","Canada","Israel","Japan","New Zealand","South Korea",
        "United Kingdom","United States"] },
 
-  c: { name: "Type D visa + APS certificate", countries: [
-       "China","India","Mongolia","Vietnam"] },
-
-  d: { name: "Type D visa, no APS", countries: [
-       "Algeria","Argentina","Bahrain","Bangladesh","Brazil","Colombia","Egypt","Ethiopia",
-       "Ghana","Indonesia","Iraq","Jordan","Kazakhstan","Kenya","Kuwait","Lebanon","Malaysia",
-       "Mexico","Morocco","Nepal","Nigeria","Oman","Pakistan","Philippines","Qatar",
-       "Saudi Arabia","South Africa","Sri Lanka","Tanzania","Thailand","Tunisia","Turkey",
-       "Uganda","Ukraine","United Arab Emirates","Uzbekistan","Other (non-EU)"] }
+  c: { name: "National (Type D) student visa", countries: [
+       "Algeria",
+       "Argentina",
+       "Bahrain",
+       "Bangladesh",
+       "Brazil",
+       "China",
+       "Colombia",
+       "Egypt",
+       "Ethiopia",
+       "Ghana",
+       "India",
+       "Indonesia",
+       "Iraq",
+       "Jordan",
+       "Kazakhstan",
+       "Kenya",
+       "Kuwait",
+       "Lebanon",
+       "Malaysia",
+       "Mexico",
+       "Mongolia",
+       "Morocco",
+       "Nepal",
+       "Nigeria",
+       "Oman",
+       "Pakistan",
+       "Philippines",
+       "Qatar",
+       "Saudi Arabia",
+       "South Africa",
+       "Sri Lanka",
+       "Tanzania",
+       "Thailand",
+       "Tunisia",
+       "Turkey",
+       "Uganda",
+       "Ukraine",
+       "United Arab Emirates",
+       "Uzbekistan",
+       "Vietnam",
+       "Other (non-EU)"] }
 };
 
 /* One-line summary shown when a nationality is picked. */
 const TRACK_SUMMARY = {
   a: "No visa and no residence permit. Enrol, arrange health insurance, and register the address within two weeks of arrival.",
   b: "No visa needed to enter. Your student travels first, then applies for the residence permit inside Germany within 90 days. This skips the embassy appointment entirely.",
-  c: "Full Type D visa, and an APS certificate must come first, so allow four weeks to three months. Indian Master's applicants from Engineering, Commerce, Finance, Economics or Business also need dMAT from Summer Semester 2027.",
-  d: "Standard Type D student visa. No APS. The variable that matters most is appointment availability at your student's local German mission."
+  c: "Full Type D student visa before travel. The variable that matters most is appointment availability at your student's local German mission. Whether APS is also needed depends on the curriculum, not this passport \u2014 an Indian board means yes, IB or A-Level means no."
 };
 
 </script>
@@ -491,6 +523,7 @@ dl.spec dt:first-of-type,dl.spec dd:first-of-type{border-top:none;}
 .track.b .badge{background:var(--primary-tint);color:var(--primary);}
 .track.c .badge{background:rgba(242,130,48,.16);color:#a5551b;}
 .track.d .badge{background:#eef1f5;color:#54606f;}
+.track.e .badge{background:rgba(242,130,48,.16);color:#a5551b;}
 
 /* ---------- Hero country picker ---------- */
 .heropick{margin:0 0 8px;}
@@ -874,55 +907,55 @@ footer a:hover{color:#fff;}
             <p class="natresult" id="natResult"></p>
           </div>
           <ol class="timeline">
-            <li data-tracks="c">
+            <li data-tracks="b c">
               <span class="n">1</span>
               <span class="t">APS certificate</span>
               <span class="w">4–8 weeks</span>
-              <p>Academic Evaluation Centre verification. Required for the visa and commonly for admission too, so it belongs at the very start of the timeline.</p>
+              <p><b>Set by the curriculum, not the passport.</b> Academic Evaluation Centre verification. Required for the visa and commonly for admission too, so it belongs at the very start of the timeline.</p>
             </li>
-            <li data-tracks="a b c d">
+            <li data-tracks="a b c">
               <span class="n">2</span>
               <span class="t">Admission letter (Zulassungsbescheid)</span>
               <span class="w">after the July deadline</span>
               <p>Conditional offers are not accepted for the visa file. It has to be the formal admission decision.</p>
             </li>
-            <li data-tracks="b c d">
+            <li data-tracks="b c">
               <span class="n">3</span>
               <span class="t">Open a blocked account (Sperrkonto)</span>
               <span class="w">1–2 weeks</span>
               <p>EUR 11,904 for one year, released at EUR 992 per month. Unchanged for 2026, but revised annually, so always re-check. A parental guarantee (Verpflichtungserklärung) is the main alternative.</p>
             </li>
-            <li data-tracks="a b c d">
+            <li data-tracks="a b c">
               <span class="n">4</span>
               <span class="t">Arrange German health insurance</span>
               <span class="w">3–7 days</span>
               <p>Public insurer confirmation (TK, AOK or similar) for enrolled students, plus travel cover for the arrival gap.</p>
             </li>
-            <li data-tracks="c d">
+            <li data-tracks="c">
               <span class="n">5</span>
               <span class="t">Book the visa appointment</span>
               <span class="w">2–12 weeks wait</span>
               <p>The real bottleneck. Availability at the German mission varies sharply by country and season. Book the moment admission lands, not once documents are complete.</p>
             </li>
-            <li data-tracks="c d">
+            <li data-tracks="c">
               <span class="n">6</span>
               <span class="t">Submit the national visa (Type D) application</span>
               <span class="w">appointment day</span>
               <p>Passport, admission letter, blocked-account confirmation, insurance, transcripts, CV, motivation letter, biometric photos, and the APS certificate where it applies. Fee EUR 75.</p>
             </li>
-            <li data-tracks="c d">
+            <li data-tracks="c">
               <span class="n">7</span>
               <span class="t">Visa processing</span>
               <span class="w">4–8 weeks</span>
               <p>Counting APS, admission, appointment and processing, the realistic span is three to six months. That's how a July deadline turns into a tight October start.</p>
             </li>
-            <li data-tracks="a b c d">
+            <li data-tracks="a b c">
               <span class="n">8</span>
               <span class="t">Arrive and register (Anmeldung)</span>
               <span class="w">within 2 weeks of arrival</span>
               <p>City registration at the Bürgeramt, requiring a signed accommodation confirmation from the landlord.</p>
             </li>
-            <li data-tracks="b c d">
+            <li data-tracks="b c">
               <span class="n">9</span>
               <span class="t">Convert to a residence permit</span>
               <span class="w">before the visa expires</span>
@@ -957,16 +990,16 @@ footer a:hover{color:#fff;}
             </div>
 
             <div class="track c">
-              <span class="badge">Type D visa + APS</span>
-              <h5>APS countries</h5>
-              <p class="who">India, China, Vietnam and Mongolia.</p>
-              <p>The full Type D chain, preceded by an APS certificate from the Academic Evaluation Centre, which the mission will not process a student visa without. Budget four weeks to three months, and roughly INR 18,000 in India. <strong>New for Summer Semester 2027:</strong> Indian Master's applicants coming from Engineering, Commerce, Accounting, Finance, Economics, Business or Management must also submit a dMAT certificate alongside APS.</p>
+              <span class="badge">National (Type D) student visa</span>
+              <h5>Every other passport</h5>
+              <p class="who">All non-EU nationalities outside the eight above.</p>
+              <p>The full Type D chain before travel. The variable that matters most is appointment availability at your student's local German mission, which swings from a fortnight to three months by country and season. Since 2026 the Consular Services Portal comes first and the VFS appointment link only appears at the end of a completed application, so booking early no longer works.</p>
             </div>
-
-            <div class="track d">
-              <span class="badge">Type D visa, no APS</span>
-              <h5>All other non-EU nationalities</h5>
-              <p>The standard nine-step route above, without the APS stage. The variable that matters most is appointment availability at your student's local German mission, which swings from a fortnight to three months by country and season.</p>
+            <div class="track e">
+              <span class="badge">Set by the curriculum, not the passport</span>
+              <h5>APS and dMAT</h5>
+              <p class="who">Any student holding a certificate issued by an Indian board &mdash; CBSE, ISC or a state board &mdash; wherever the school itself is.</p>
+              <p>APS India is keyed on who issued the qualification, not on citizenship: <em>&ldquo;The applicant&rsquo;s nationality is not the decisive factor. What matters is whether the relevant academic documents were issued by Indian educational institutions.&rdquo;</em> So an Indian passport holder with an <b>IB or A-Level</b> diploma does not need APS, while a CBSE student does. Budget four weeks to three months. <strong>New for Summer Semester 2027:</strong> Indian Master's applicants from Engineering, Commerce, Accounting, Finance, Economics, Business or Management must also submit dMAT. <a href="https://aps-india.de/faqs/" target="_blank" rel="noopener">Source</a>.</p>
             </div>
 
           </div>
@@ -1083,7 +1116,7 @@ footer a:hover{color:#fff;}
               <li><b id="wygCount">71</b> English-taught German bachelor's programmes, every one checked against source</li>
               <li>Entry requirements mapped per board: <b>CBSE, ISC, IB and A-Level</b>, with the percentage each one needs</li>
               <li>English thresholds, EU and non-EU fees, living costs, deadlines and how to apply</li>
-              <li>The <b>nine-step visa chain</b> above, with the steps that change by your student's nationality</li>
+              <li>The <b>21-step application chain</b> above, filtered by passport, curriculum and country of residence</li>
               <li>The three records above, and the 68 others, checked field by field against source</li>
             </ul>
             <p class="wyg-note">Every field carries the source link it came from, so you can confirm any answer in front of a parent without taking our word for it.</p>
@@ -1152,7 +1185,7 @@ footer a:hover{color:#fff;}
       <div class="obj-item">
         <h3>The answer depends on the passport</h3>
         <p>The route changes completely with your student's passport, and that part sits on embassy sites rather than university ones.</p>
-        <span class="ev">Same TUM degree: an Indian student faces <b>nine steps including APS</b>, an American five with no embassy appointment, a French student three.</span>
+        <span class="ev">Same German degree: an Indian passport on CBSE runs <b>20 steps including APS</b>. The same student on an IB diploma runs 17 &mdash; APS follows the board, not the passport. A US passport runs 15, a French one 11.</span>
       </div>
       <div class="obj-item">
         <h3>Once is easy. Every time is not.</h3>
@@ -1201,7 +1234,7 @@ footer a:hover{color:#fff;}
       <div class="card">
         <div class="ico">06</div>
         <h3>Full student visa process</h3>
-        <p>The visa route per nationality: who needs a Type D visa, who needs APS, who can skip the embassy. Documents, blocked account, lead times and fees included.</p>
+        <p>The route for the student in front of you: who needs a Type D visa, who can skip the embassy, and who needs APS &mdash; which follows the curriculum, not the passport. Documents, blocked account, lead times and fees included.</p>
       </div>
     </div>
 

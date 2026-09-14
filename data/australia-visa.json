@@ -1,1 +1,404 @@
-[{"step_no":1,"stage":"Eligibility","title":"Confirm the Indian Standard XII board is a recognised qualification and find the university's own conversion","who":["india"],"duration_realistic":"1-2 weeks of research, no external processing","what_happens":"Australian universities admit Indian students on Standard XII directly - there is no separate equivalence body, no foundation year, and no APS-style pre-check. The University of Sydney lists 'All India Senior School Certificate (CBSE)', 'Indian School Certificate (CISCE)' and 'Indian Higher Secondary Certificate (State board exams)' among the qualifications it accepts for undergraduate admission. What differs is the arithmetic: each university converts Standard XII to an ATAR-equivalent selection rank on its own scale, so the same marksheet produces different ranks at different universities.","the_trap":"Assuming one CBSE percentage works everywhere. Melbourne uses the average of the best four final-year subjects and, for state boards, accepts only Tamil Nadu HSC, Maharashtra HSC and Karnataka PUC as direct entry; Sydney sums five graded subjects on its own A1=4 ... D2=0.5 scale. Quoting a student a single 'cutoff' across universities is the most common error in Australia advising, and it also mis-sets which state boards are even eligible.","source_url":"https://www.sydney.edu.au/study/applying/how-to-apply/undergraduate/recognised-qualifications.html","exact_quote":"To be eligible for admission into one of our undergraduate degrees, you need to have completed one of the qualifications listed on this page.","date_checked":"14 September 2026"},{"step_no":2,"stage":"Eligibility","title":"Check the course is CRICOS-registered and check the provider's visa prioritisation status","who":["india","intl"],"duration_realistic":"1 day","what_happens":"Only a course registered on the Commonwealth Register of Institutions and Courses for Overseas Students (CRICOS) can support a subclass 500 visa, and the enrolment must be full time. Separately, since Ministerial Direction 111 (2024) and now MD 115, the provider's position against its New Overseas Student Commencement (NOSC) allocation determines how fast the visa is processed. Check the provider's status on the Department's Visa Prioritisation Status page on the day you lodge.","the_trap":"Counselors treat provider choice as purely academic. Under MD 115 a provider that has passed 80 per cent of its allocation pushes the student to Priority 2, and one that has exceeded it by 15 per cent pushes them to Priority 3 - the difference between the Department starting work in 1-4 weeks and in 9-12 weeks. For a February start that gap alone can lose the intake.","source_url":"https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-processing-times/visa-processing-priorities/student-visa","exact_quote":"The Department will assign Priority 2 to applications associated with providers who have reached 80 per cent of their New Overseas Student Commencement (NOSC) allocation (their prioritisation threshold).","date_checked":"14 September 2026 (page last updated 10 November 2025)"},{"step_no":3,"stage":"Eligibility","title":"Separate the two English bars: the university's admission requirement and the visa's own requirement","who":["india","intl"],"duration_realistic":"Test booking 2-6 weeks ahead; results 3-13 days","what_happens":"These are two different tests of the same score and the university's is almost always the higher one. For the visa, tests sat on or after 7 August 2025 are assessed against a new table: IELTS Academic or IELTS General Training 6.0 overall, falling to 5.5 if the principal course is packaged with at least 10 weeks of ELICOS / a Foundation program / an eligible Pathway program, and 5.0 with at least 20 weeks of ELICOS. PTE Academic 50, TOEFL iBT 64 (on the pre-7-August-2025 table). Universities typically ask 6.5 overall with no band below 6.0 - the University of Melbourne Bachelor of Commerce is exactly that.","the_trap":"Two traps. First, remote-proctored or at-home tests are not accepted at all for the visa, including IELTS Online - students who book the convenient version have to re-sit. Second, the Document Checklist Tool may say no English evidence is needed at lodgement, and counselors read that as an exemption; the Department can still ask for it at any point while the application is open.","source_url":"https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500","exact_quote":"The Department of Home Affairs does not accept evidence from English language tests where an entire test is delivered online (also known as “remote-proctored” or “at-home”).","date_checked":"14 September 2026 (page last updated 1 July 2026)"},{"step_no":4,"stage":"Eligibility","title":"Pick the intake - February (Semester 1) or July (Semester 2) - and work backwards from that university's closing date","who":["india","intl"],"duration_realistic":"Decision made 12-15 months before the start date","what_happens":"The Australian year has two real intakes: Semester 1 starting late February/early March and Semester 2 starting late July/August. Published international closing dates for the February 2027 intake: University of Melbourne 30 November 2026; University of Sydney 1 December 2026; ANU 15 December 2026; UQ 30 November 2026. UNSW runs rolling offer rounds instead (published Term 1 2027 rounds included 14 May, 16 July, 20 August and 24 September 2026). UWA publishes country-banded dates - for 2026 Semester 1 most countries closed 19 January 2026.","the_trap":"Treating the university closing date as the planning deadline. It is the last date to apply, not the date to aim for: an application lodged on the closing date leaves no room for the offer, the deposit, the CoE and a 40-71 day visa decision before a late-February start. The counselor's working deadline for a February intake is September of the preceding year, not November or December.","source_url":"https://study.unimelb.edu.au/find/courses/undergraduate/bachelor-of-commerce/","exact_quote":"Direct international applications close: start-year intake 2027 (Semester 1/February-March) 30 November 2026.","date_checked":"13 September 2026 (verified in the Australia dataset)"},{"step_no":5,"stage":"Application","title":"Apply directly to the universities (or through an authorised agent) - there is no national portal","who":["india","intl"],"duration_realistic":"2-4 weeks to assemble; submit 12-14 months before the start date","what_happens":"Unlike UCAS or Studielink, Australia has no single undergraduate portal for international applicants. Each university runs its own: Melbourne's application portal, apply.uq.edu.au, the UNSW Applicant Portal, ANU direct (AUD 150 per application), Monash direct (AUD 125 applicant fee or a waiver code), Adelaide University via StudyLink. The state TAC systems (VTAC, UAC, QTAC) are only for students completing an Australian Year 12 or, in some states, the IB in Australia - an Indian Standard XII student applies direct or through an authorised agent. Upload Standard XI and XII marksheets, the school-leaving certificate and the English test report.","the_trap":"Applying to one university only. Because the offer -> deposit -> CoE -> visa chain is serial and each link can slip, a single offer is a single point of failure; and unlike the UK there is no clearing mechanism. Also: some universities require applicants from specified countries to apply through an authorised agent, so a direct application from those countries is simply not processed.","source_url":"https://study.unimelb.edu.au/find/courses/undergraduate/bachelor-of-commerce/","exact_quote":"Direct online application via the University of Melbourne application portal for both intakes; applicants from certain countries must apply through an authorised education agent.","date_checked":"13 September 2026 (verified in the Australia dataset)"},{"step_no":6,"stage":"Application","title":"Receive the offer - and read whether it is conditional or unconditional","who":["india","intl"],"duration_realistic":"2-8 weeks after a complete application; UNSW and Monash assess in rounds or year-round","what_happens":"Australian universities issue a Letter of Offer, usually conditional on final Standard XII results, an English test score, or both. The offer letter states the tuition deposit required, the OSHC arrangement and the acceptance deadline. A conditional offer cannot become a CoE - conditions must be cleared first.","the_trap":"Waiting on a conditional offer through the CBSE results window. CBSE Class XII results land in May, which is comfortably in time for a July intake but irrelevant for February - a February applicant is applying with the previous year's completed results, so any condition left open is usually an English score, and that is fixable in weeks if the counselor catches it in the offer letter rather than in December.","source_url":"https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500","exact_quote":"Provide a Confirmation of Enrolment (CoE) in a full time course registered on the Commonwealth Register of Institutions and courses for Overseas Students (CRICOS) for all intended courses.","date_checked":"14 September 2026 (page last updated 1 July 2026)"},{"step_no":7,"stage":"Application","title":"Accept the offer, pay the tuition deposit and arrange OSHC - this is what produces the CoE","who":["india","intl"],"duration_realistic":"1-3 weeks from payment to CoE issue","what_happens":"Acceptance plus a tuition deposit (commonly one semester's fees) plus an OSHC policy triggers the university to issue an electronic Confirmation of Enrolment (eCoE) through PRISMS. The eCoE is the gating document for the whole visa: no CoE, no valid subclass 500 application. The university will normally put the OSHC provider, policy dates and policy number on the CoE itself.","the_trap":"Two failure modes. The CoE must still be valid on the day the Department decides, not just on the day of lodgement - if the student defers or the university cancels enrolment mid-processing, the application dies unless a new CoE is attached in ImmiAccount. And if OSHC is not in the application at all, the Department says outright it will refuse rather than ask.","source_url":"https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500","exact_quote":"Your CoE must be valid at time of lodgement and when we decide your visa application. A CoE is no longer valid if it is cancelled or the course is complete.","date_checked":"14 September 2026 (page last updated 1 July 2026)"},{"step_no":8,"stage":"Money","title":"Build the financial capacity file: AUD 29,710 living costs + 12 months course fees + AUD 2,000 travel","who":["india","intl"],"duration_realistic":"Funds must have a visible 3-6 month history; assembling and documenting takes 4-8 weeks","what_happens":"The 12-month living cost figure for a student is AUD 29,710, plus AUD 10,394 for an accompanying partner and AUD 4,449 per accompanying child. To that add the first 12 months of course fees (total fee divided by course years, less anything already paid and receipted) and travel costs - AUD 2,000 for an applicant outside Australia other than Africa. For a Group of Eight commerce degree at roughly AUD 56,000 a year, the declared requirement lands near AUD 87,700 before any deposit is deducted. Evidence can be bank deposits, a government or bank education loan, or a scholarship.","the_trap":"A single-day bank balance certificate. The Department says explicitly that this does not show how the funds were accumulated - it wants transaction history, salary credits, growth patterns, or for a loan, evidence of disbursement. The second trap is the figure itself: Home Affairs set AUD 29,710 from 10 May 2024, replacing AUD 24,505, which had itself replaced a lower figure months earlier - and agents still quote the older numbers. AUD 29,710 is current on the Home Affairs page as last updated 1 July 2026, but it has moved twice in three years, so re-check it every cycle.","source_url":"https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500","exact_quote":"12-month living costs are for: students - AUD29,710; partners coming with you - AUD10,394; a child coming with you - AUD4,449.","date_checked":"14 September 2026 (page last updated 1 July 2026)"},{"step_no":9,"stage":"Money","title":"Or use the annual income route: AUD 87,856 parental/partner income (AUD 102,500 with family)","who":["india","intl"],"duration_realistic":"Same cycle as the funds route; needs a 12-month-old-or-newer tax assessment","what_happens":"Instead of showing accumulated funds, the applicant can show that a parent or partner (not travelling with them) had a personal annual income of at least AUD 87,856 in the 12 months before applying, or AUD 102,500 if family members are coming too. Both parents' incomes can be combined. The evidence must be official government documentation such as an Indian income tax assessment less than 12 months old.","the_trap":"Submitting bank statements or an employer letter for this route - the Department rejects both by name for the income test. Also note the threshold has been raised: Home Affairs' own archived guidance stated AUD 60,000 (AUD 70,000 with family), and that pair is still quoted in circulating summaries. Building a file to the stale figure means building one that does not meet the test.","source_url":"https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500","exact_quote":"Alternatively, you can give evidence that your parents or your partner had a personal annual income of at least AUD87,856 in the 12 months before you apply. If you bring family members, your parents’ or partner’s income must be at least AUD102,500 in the 12 months before you apply.","date_checked":"14 September 2026 (page last updated 1 July 2026)"},{"step_no":10,"stage":"Money","title":"Buy OSHC for the whole visa period, not the course period","who":["india","intl"],"duration_realistic":"Same day online, or bundled by the university at offer acceptance","what_happens":"Overseas Student Health Cover from an approved Australian insurer (ahm, Allianz Care/Peoplecare, Bupa, CBHS International, Medibank, nib) is compulsory for the entire stay. Proof of a paid policy must be in the application. There is no government-set price - it varies by insurer and policy length - so counselors should price it per insurer rather than quoting a number. Students from Norway, Sweden and Belgium are the only exceptions.","the_trap":"Buying OSHC to the course end date. The visa grant period is longer than the course (see the length-of-stay step), and Home Affairs will only grant to the OSHC expiry date - and the visa end date cannot be changed once granted. The other trap is the start date: if the student flies in before semester, OSHC must start on the arrival date, not the course start date, or they can be refused entry.","source_url":"https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500","exact_quote":"If you don’t provide your OSHC in your application form, we will refuse your visa application.","date_checked":"14 September 2026 (page last updated 1 July 2026)"},{"step_no":11,"stage":"Money","title":"Budget the visa application charge: AUD 2,500 from 1 July 2026","who":["india","intl"],"duration_realistic":"Paid at the moment of lodgement","what_happens":"The Student visa application charge rose from AUD 2,000 to AUD 2,500 on 1 July 2026 for the primary applicant, after rising from AUD 710 to AUD 1,600 on 1 July 2024 and to AUD 2,000 in 2025. Independent ELICOS and non-award applicants are exempt from the increase and stay on the lower charge with annual CPI indexation. There is a separate charge for each accompanying family member. ASEAN, Pacific Island and Timor-Leste passport holders keep the lower concessional charge - Indian passport holders do not, and pay the full AUD 2,500. The charge is non-refundable if the visa is refused.","the_trap":"Quoting the AUD 1,600 figure, which is now two increases out of date, and budgeting on the day of application rather than the day the Department receives it. Home Affairs states that if the price rises between lodging and receipt, the new charge is payable - and an application with an underpaid charge is not valid.","source_url":"https://www.studyaustralia.gov.au/en/tools-and-resources/news/student-visa-application-charge-increase","exact_quote":"The Student VAC increased from AUD $2,000 to AUD $2,500 from 1 July 2026.","date_checked":"14 September 2026 (Study Australia news item dated 3 July 2026)"},{"step_no":12,"stage":"Visa","title":"Create an ImmiAccount and run the Document Checklist Tool for an Indian passport and the chosen provider","who":["india","intl"],"duration_realistic":"1 day","what_happens":"The subclass 500 is lodged online only, through ImmiAccount. Before lodging, run the Document Checklist Tool with the student's country of passport and their specific education provider - the checklist is provider-sensitive, because the required evidence level varies with the provider's and country's assessed risk. Re-run it immediately before submitting; Home Affairs updates it on 31 March and 30 September each year.","the_trap":"Running the checklist once, months early, and lodging against a list that has since changed - or running it with 'I have not decided on a provider yet', which produces a generic and usually heavier list. The checklist output is also read as permission to omit things: it is not, and the Department can request anything at any point.","source_url":"https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500","exact_quote":"Re-check the document checklist based on the country of passport and education provider just before you submit your application to be sure you have used the most current list.","date_checked":"14 September 2026 (page last updated 1 July 2026)"},{"step_no":13,"stage":"Visa","title":"Draft the Genuine Student (GS) answers - four questions, 150 words each, inside the form","who":["india","intl"],"duration_realistic":"2-4 weeks of drafting and evidence-gathering; do not leave it to the week of lodgement","what_happens":"The Genuine Student requirement replaced the Genuine Temporary Entrant (GTE) test for applications lodged on or after 23 March 2024. It is not a personal statement attached as a PDF - it is four questions answered in the online form itself: (1) the applicant's current circumstances, including ties to family, community, employment and economic circumstances; (2) why this course, in Australia, with this particular provider, and what they understand about the course and about living in Australia; (3) how completing the course will benefit them; (4) any other relevant information. There is a fifth question for applicants who have held a student visa before or are applying onshore from a non-student visa. All answers in English, 150 words each, with supporting documents attached separately in ImmiAccount.","the_trap":"Writing a GTE-style 'I will return home' essay. GS explicitly does not penalise a future intention to seek permanent residence - the Department says so in terms - so the old strategy of protesting non-migration intent wastes words. The second trap: Home Affairs states it prefers answers in the form over an attached statement, and that it gives more weight to statements supported by evidence. Unevidenced assertions about family business income, job offers or salary expectations are the commonest weak point in Indian files.","source_url":"https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/genuine-student-requirement","exact_quote":"The GS requirement recognises that genuine students may develop skills Australia needs and may later choose to apply for permanent residence. Future intentions of this kind do not count against an applicant under GS.","date_checked":"14 September 2026 (page last updated 13 January 2026)"},{"step_no":14,"stage":"Visa","title":"Assemble the GS evidence pack: previous study, employment, home-country ties, economic circumstances","who":["india","intl"],"duration_realistic":"3-6 weeks running in parallel with the funds file","what_happens":"Home Affairs names the evidence categories it wants: academic transcripts and certificates of attainment with provider names and study lengths; any previous study in Australia including reasons for changing course or provider and explanations of study gaps longer than 2 months; current employment details with a contactable referee; the nature of family, community and employment ties in India, plus reasons for not studying a similar course at home; and economic circumstances - 12 months of employment or business documents, income tax returns or bank statements, and any post-study employment offers with salary.","the_trap":"Skipping the 'why not study this in India' answer. For an Indian student choosing a commerce or computer science degree that exists at home, this is the single question that most often decides the file, and it is the one most GS drafts leave implicit. Study gaps over two months and any prior visa refusal - to Australia or anywhere - must also be addressed head-on; immigration history is an explicit GS assessment factor.","source_url":"https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/genuine-student-requirement","exact_quote":"the nature of the applicant’s personal ties e.g. family, community and employment. They must give reasons for not studying in their home country if a similar course is available.","date_checked":"14 September 2026 (page last updated 13 January 2026)"},{"step_no":15,"stage":"Visa","title":"Complete health examinations - before lodging if possible","who":["india","intl"],"duration_realistic":"1-3 weeks for appointment and clinic upload; longer if a chest X-ray needs review","what_happens":"Applicants can complete health examinations before lodging (via My Health Declarations, which generates a HAP ID) or wait for the Department to request them after lodgement, in which case the medical referral letter and HAP ID appear in ImmiAccount. Examinations must be done at a panel clinic. Doing them upfront removes one request-and-wait cycle from processing.","the_trap":"Leaving health checks until the Department asks. For a February intake lodged in October or November, a post-lodgement health request plus clinic backlog plus results upload can add three to five weeks at exactly the wrong point. India is also a higher-TB-prevalence country, so a chest X-ray finding that needs specialist review is not rare, and that review has no fixed timeline.","source_url":"https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500","exact_quote":"You might need to have health examinations. You can complete them before you apply.","date_checked":"14 September 2026 (page last updated 1 July 2026)"},{"step_no":16,"stage":"Visa","title":"Time the lodgement date against the provider's prioritisation year - it resets on 15 November","who":["india","intl"],"duration_realistic":"A single scheduling decision, worth weeks of processing time","what_happens":"Ministerial Direction 115 measures a provider against its indicative allocation of New Overseas Student Commencements on a year that runs 15 November to 14 November. Applications lodged from 15 November 2026 to 14 November 2027 are prioritised against the provider's 2027 allocation, which starts fresh. MD 115 also states plainly that the allocation is not a cap on visas granted and not a suspension of processing - it only sets the order in which applications are picked up. Priority 1 is a provider below 80 per cent of allocation, Priority 2 is between 80 and 115 per cent, Priority 3 is above 115 per cent.","the_trap":"Lodging in September or October against an allocation that is already spent, when waiting to 15 November would have reset the provider to Priority 1 for the following year. For a February 2027 start this is the sharpest lever a counselor has: a mid-November lodgement can be picked up in 1-4 weeks where an October one sits 9-12 weeks. The mirror-image trap is misreading the allocation as a cap and telling a student the university is 'full' - it is not; it is a processing queue.","source_url":"https://immi.homeaffairs.gov.au/support-subsite/files/ministerial-direction-115.pdf","exact_quote":"For a provider's prioritisation threshold for the calendar year 2026, offshore student visa applications received on or after 15 November 2025 and up to and including 14 November 2026 will be prioritised with respect to the 2026 calendar year.","date_checked":"14 September 2026 (Ministerial Direction 115, commenced 14 November 2025)"},{"step_no":17,"stage":"Visa","title":"Lodge the subclass 500 in ImmiAccount, complete, and pay AUD 2,500","who":["india","intl"],"duration_realistic":"Lodgement day; aim to lodge 4-5 months before the course start date","what_happens":"Attach everything at lodgement: passport bio page, CoE(s), GS answers and evidence, financial capacity evidence, OSHC proof, English test report (both certificate and report for LANGUAGECERT), identity and name-change documents, and a polio vaccination certificate where the applicant has spent time in an at-risk country. Maximum 60 attachments. Family members must be declared on the application even if they are not travelling. Then pay the charge - an unpaid or underpaid charge makes the application invalid.","the_trap":"Lodging a skeleton application intending to 'add documents later'. The Department states it may finalise the application on what was provided at lodgement - a thin file can be refused without a request for more information, and a refusal then has to be declared in every future visa application anywhere. Specifically, missing financial evidence that the checklist required is grounds for refusal without further contact.","source_url":"https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500","exact_quote":"If you are required to attach evidence of your financial capacity to your ImmiAccount when you submit your application, you must do so. If you don’t give this evidence, we may refuse your application without asking you for more information.","date_checked":"14 September 2026 (page last updated 1 July 2026)"},{"step_no":18,"stage":"Visa","title":"Give biometrics within 14 days of the request","who":["india","intl"],"duration_realistic":"Request usually arrives immediately after submission; appointment within 1-2 weeks","what_happens":"Most applicants are told immediately after submitting whether biometrics are required. The request arrives by letter and appears in ImmiAccount, and the applicant is given 14 days to comply, at an Australian Biometric Collection Centre. Biometrics must be provided before travelling to Australia.","the_trap":"Treating the 14 days as elastic. Appointment availability in Indian metros tightens sharply in the October-December offshore peak, and the student who books in week two can find nothing inside the window. This is a small step that quietly stalls files.","source_url":"https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500","exact_quote":"You will be given 14 days to provide biometrics so it is important to arrange an appointment quickly using the instructions in the request letter.","date_checked":"14 September 2026 (page last updated 1 July 2026)"},{"step_no":19,"stage":"Visa","title":"Processing - understand both the published time and the Ministerial Direction queue","who":["india","intl"],"duration_realistic":"Higher Education sector: 50% within 19 days, 75% within 40 days, 90% within 71 days","what_happens":"Home Affairs publishes global processing times by sector, not by country - there is no India-specific published subclass 500 time. For the Higher Education sector, applications decided in the month ending 31 July 2026 took 10 days at the 25th percentile, 19 days at the 50th, 40 days at the 75th and 71 days at the 90th (figures updated 4 September 2026). Separately, offshore applications lodged on or after 14 November 2025 are queued under Ministerial Direction 115, under which the Department aims to commence processing Priority 1 within 1-4 weeks, Priority 2 within 5-8 weeks and Priority 3 within 9-12 weeks of lodgement.","the_trap":"Planning on the median. The 90th-percentile figure - 71 days for higher education, and 7 months for VET - is the number that decides whether a student makes the intake. Add MD 115's commencement lag on top: a Priority 3 application is not even picked up for 9-12 weeks, so the realistic worst case is a decision four to five months after lodgement. Counselors also need to know the priority level is fixed at lodgement day and never improves, so lodging while a provider is still below its threshold is worth real money.","source_url":"https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-processing-times/global-visa-processing-times","exact_quote":"Higher Education Sector — 25%: 10 Days; 50%: 19 Days; 75%: 40 Days; 90%: 71 Days (Updated 04 September 2026, period ending 31 July 2026).","date_checked":"14 September 2026"},{"step_no":20,"stage":"Visa","title":"Grant: check the visa end date and the conditions attached","who":["india","intl"],"duration_realistic":"Grant notification by email to ImmiAccount","what_happens":"Length of stay follows the course, subject to the OSHC expiry date. A course of 10 months or longer finishing at the end of the Australian academic year (November-December) usually gets a visa to 15 March of the following year; one finishing January-October gets two months beyond the course; a course under 10 months gets one month beyond. Maximum generally 6 years, and generally 5 for tertiary students unless a properly progressive package justifies 6. Conditions include 8105 - work up to 48 hours a fortnight while the course is in session, unlimited when it is not - plus 8501 (maintain OSHC), 8202 (maintain enrolment and course progress) and, for visas applied for after 1 July 2022, 8208.","the_trap":"Assuming the visa can be extended at the end. It cannot be changed once granted - which is why the OSHC purchase decision earlier in the chain is irreversible, and why buying OSHC only to the course end date permanently shortens the visa. Students also routinely misread 8105 as 48 hours a week.","source_url":"https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/length-of-stay","exact_quote":"10 months or longer, finishing at the end of the Australian academic year (November to December) — We will usually grant a visa stay period to 15 March of the following year.","date_checked":"14 September 2026 (page last updated 4 May 2026)"},{"step_no":21,"stage":"Arrival","title":"Travel - not before the OSHC start date, and not on a ticket booked before the grant","who":["india","intl"],"duration_realistic":"Arrive 1-4 weeks before semester starts","what_happens":"Students normally arrive one to four weeks before semester for orientation and housing. The OSHC policy must already have begun on the day of arrival, not on the day the course starts. Home Affairs advises against booking travel before the visa is finalised.","the_trap":"Booking flights on a conditional offer, or landing a week before the OSHC policy begins. Home Affairs warns the student may be refused entry at the border if they cannot show health insurance is in place on arrival - a February-intake student who flew in mid-January on a policy dated from 1 March is the classic case.","source_url":"https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500","exact_quote":"You may be refused entry to Australia if you cannot prove you have health insurance in place when you arrive.","date_checked":"14 September 2026 (page last updated 1 July 2026)"},{"step_no":22,"stage":"Arrival","title":"Enrol, attend orientation, and start meeting condition 8202 from day one","who":["india","intl"],"duration_realistic":"Orientation week, then continuous for the length of the course","what_happens":"There is no municipal registration step in Australia - nothing equivalent to Germany's Anmeldung or a residence-permit conversion. The visa granted offshore is the residence right. What replaces it is ongoing compliance: enrol in and maintain a full-time CRICOS-registered load, meet course progress and attendance requirements (condition 8202), keep OSHC current (8501), and keep the address updated with the provider. Practical first-fortnight admin: Tax File Number, an Australian bank account, a local SIM, and a student transport concession where the state offers one to international students.","the_trap":"Dropping below a full-time load, or deferring after arrival, without realising it breaches 8202 and can lead to visa cancellation. Students also cannot work at all before the course begins - condition 8105 does not switch on until the course starts, and an early part-time job is a breach.","source_url":"https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500","exact_quote":"Student visa holders and their family members cannot work in Australia before the student starts their course.","date_checked":"14 September 2026 (page last updated 1 July 2026)"},{"step_no":23,"stage":"Arrival","title":"Plan the post-study step: Temporary Graduate visa (subclass 485), charge AUD 5,750 from 1 July 2026","who":["india","intl"],"duration_realistic":"Apply after completing the degree, while still onshore and holding a student visa","what_happens":"The subclass 485 is the standard post-study work route after an Australian degree. Its application charge rose from AUD 4,600 to AUD 5,750 on 1 July 2026, in the same round that took the student charge to AUD 2,500. Holders have unlimited work rights. The concession for Pacific Island and Timor-Leste applicants continues; Indian passport holders pay the full charge.","the_trap":"Selling the 485 at the counselling stage as though it were automatic. It has its own age, English, qualification and time-limit criteria that must be checked in the year the student actually graduates, and the charge has now more than doubled in two years - a student budgeting in 2026 for a 2029 graduation should assume it will rise again.","source_url":"https://www.studyaustralia.gov.au/en/tools-and-resources/news/student-visa-application-charge-increase","exact_quote":"The Temporary Graduate Visa application charge increased from AUD $4,600 to AUD $5,750 from 1 July 2026.","date_checked":"14 September 2026 (Study Australia news item dated 3 July 2026)"}]
+[
+ {
+  "step_no": 1,
+  "stage": "Eligibility",
+  "title": "Confirm the Indian Standard XII board is a recognised qualification and find the university's own conversion",
+  "duration_realistic": "1-2 weeks of research, no external processing",
+  "what_happens": "Australian universities admit Indian students on Standard XII directly - there is no separate equivalence body, no foundation year, and no APS-style pre-check. The University of Sydney lists 'All India Senior School Certificate (CBSE)', 'Indian School Certificate (CISCE)' and 'Indian Higher Secondary Certificate (State board exams)' among the qualifications it accepts for undergraduate admission. What differs is the arithmetic: each university converts Standard XII to an ATAR-equivalent selection rank on its own scale, so the same marksheet produces different ranks at different universities.",
+  "the_trap": "Assuming one CBSE percentage works everywhere. Melbourne uses the average of the best four final-year subjects and, for state boards, accepts only Tamil Nadu HSC, Maharashtra HSC and Karnataka PUC as direct entry; Sydney sums five graded subjects on its own A1=4 ... D2=0.5 scale. Quoting a student a single 'cutoff' across universities is the most common error in Australia advising, and it also mis-sets which state boards are even eligible.",
+  "source_url": "https://www.sydney.edu.au/study/applying/how-to-apply/undergraduate/recognised-qualifications.html",
+  "exact_quote": "To be eligible for admission into one of our undergraduate degrees, you need to have completed one of the qualifications listed on this page.",
+  "date_checked": "14 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [
+    "cbse",
+    "isc",
+    "state"
+   ],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 2,
+  "stage": "Eligibility",
+  "title": "Check the course is CRICOS-registered and check the provider's visa prioritisation status",
+  "duration_realistic": "1 day",
+  "what_happens": "Only a course registered on the Commonwealth Register of Institutions and Courses for Overseas Students (CRICOS) can support a subclass 500 visa, and the enrolment must be full time. Separately, since Ministerial Direction 111 (2024) and now MD 115, the provider's position against its New Overseas Student Commencement (NOSC) allocation determines how fast the visa is processed. Check the provider's status on the Department's Visa Prioritisation Status page on the day you lodge.",
+  "the_trap": "Counselors treat provider choice as purely academic. Under MD 115 a provider that has passed 80 per cent of its allocation pushes the student to Priority 2, and one that has exceeded it by 15 per cent pushes them to Priority 3 - the difference between the Department starting work in 1-4 weeks and in 9-12 weeks. For a February start that gap alone can lose the intake.",
+  "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-processing-times/visa-processing-priorities/student-visa",
+  "exact_quote": "The Department will assign Priority 2 to applications associated with providers who have reached 80 per cent of their New Overseas Student Commencement (NOSC) allocation (their prioritisation threshold).",
+  "date_checked": "14 September 2026 (page last updated 10 November 2025)",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 3,
+  "stage": "Eligibility",
+  "title": "Separate the two English bars: the university's admission requirement and the visa's own requirement",
+  "duration_realistic": "Test booking 2-6 weeks ahead; results 3-13 days",
+  "what_happens": "These are two different tests of the same score and the university's is almost always the higher one. For the visa, tests sat on or after 7 August 2025 are assessed against a new table: IELTS Academic or IELTS General Training 6.0 overall, falling to 5.5 if the principal course is packaged with at least 10 weeks of ELICOS / a Foundation program / an eligible Pathway program, and 5.0 with at least 20 weeks of ELICOS. PTE Academic 50, TOEFL iBT 64 (on the pre-7-August-2025 table). Universities typically ask 6.5 overall with no band below 6.0 - the University of Melbourne Bachelor of Commerce is exactly that.",
+  "the_trap": "Two traps. First, remote-proctored or at-home tests are not accepted at all for the visa, including IELTS Online - students who book the convenient version have to re-sit. Second, the Document Checklist Tool may say no English evidence is needed at lodgement, and counselors read that as an exemption; the Department can still ask for it at any point while the application is open.",
+  "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+  "exact_quote": "The Department of Home Affairs does not accept evidence from English language tests where an entire test is delivered online (also known as “remote-proctored” or “at-home”).",
+  "date_checked": "14 September 2026 (page last updated 1 July 2026)",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 4,
+  "stage": "Eligibility",
+  "title": "Pick the intake - February (Semester 1) or July (Semester 2) - and work backwards from that university's closing date",
+  "duration_realistic": "Decision made 12-15 months before the start date",
+  "what_happens": "The Australian year has two real intakes: Semester 1 starting late February/early March and Semester 2 starting late July/August. Published international closing dates for the February 2027 intake: University of Melbourne 30 November 2026; University of Sydney 1 December 2026; ANU 15 December 2026; UQ 30 November 2026. UNSW runs rolling offer rounds instead (published Term 1 2027 rounds included 14 May, 16 July, 20 August and 24 September 2026). UWA publishes country-banded dates - for 2026 Semester 1 most countries closed 19 January 2026.",
+  "the_trap": "Treating the university closing date as the planning deadline. It is the last date to apply, not the date to aim for: an application lodged on the closing date leaves no room for the offer, the deposit, the CoE and a 40-71 day visa decision before a late-February start. The counselor's working deadline for a February intake is September of the preceding year, not November or December.",
+  "source_url": "https://study.unimelb.edu.au/find/courses/undergraduate/bachelor-of-commerce/",
+  "exact_quote": "Direct international applications close: start-year intake 2027 (Semester 1/February-March) 30 November 2026.",
+  "date_checked": "13 September 2026 (verified in the Australia dataset)",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 5,
+  "stage": "Application",
+  "title": "Apply directly to the universities (or through an authorised agent) - there is no national portal",
+  "duration_realistic": "2-4 weeks to assemble; submit 12-14 months before the start date",
+  "what_happens": "Unlike UCAS or Studielink, Australia has no single undergraduate portal for international applicants. Each university runs its own: Melbourne's application portal, apply.uq.edu.au, the UNSW Applicant Portal, ANU direct (AUD 150 per application), Monash direct (AUD 125 applicant fee or a waiver code), Adelaide University via StudyLink. The state TAC systems (VTAC, UAC, QTAC) are only for students completing an Australian Year 12 or, in some states, the IB in Australia - an Indian Standard XII student applies direct or through an authorised agent. Upload Standard XI and XII marksheets, the school-leaving certificate and the English test report.",
+  "the_trap": "Applying to one university only. Because the offer -> deposit -> CoE -> visa chain is serial and each link can slip, a single offer is a single point of failure; and unlike the UK there is no clearing mechanism. Also: some universities require applicants from specified countries to apply through an authorised agent, so a direct application from those countries is simply not processed.",
+  "source_url": "https://study.unimelb.edu.au/find/courses/undergraduate/bachelor-of-commerce/",
+  "exact_quote": "Direct online application via the University of Melbourne application portal for both intakes; applicants from certain countries must apply through an authorised education agent.",
+  "date_checked": "13 September 2026 (verified in the Australia dataset)",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 6,
+  "stage": "Application",
+  "title": "Receive the offer - and read whether it is conditional or unconditional",
+  "duration_realistic": "2-8 weeks after a complete application; UNSW and Monash assess in rounds or year-round",
+  "what_happens": "Australian universities issue a Letter of Offer, usually conditional on final Standard XII results, an English test score, or both. The offer letter states the tuition deposit required, the OSHC arrangement and the acceptance deadline. A conditional offer cannot become a CoE - conditions must be cleared first.",
+  "the_trap": "Waiting on a conditional offer through the CBSE results window. CBSE Class XII results land in May, which is comfortably in time for a July intake but irrelevant for February - a February applicant is applying with the previous year's completed results, so any condition left open is usually an English score, and that is fixable in weeks if the counselor catches it in the offer letter rather than in December.",
+  "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+  "exact_quote": "Provide a Confirmation of Enrolment (CoE) in a full time course registered on the Commonwealth Register of Institutions and courses for Overseas Students (CRICOS) for all intended courses.",
+  "date_checked": "14 September 2026 (page last updated 1 July 2026)",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 7,
+  "stage": "Application",
+  "title": "Accept the offer, pay the tuition deposit and arrange OSHC - this is what produces the CoE",
+  "duration_realistic": "1-3 weeks from payment to CoE issue",
+  "what_happens": "Acceptance plus a tuition deposit (commonly one semester's fees) plus an OSHC policy triggers the university to issue an electronic Confirmation of Enrolment (eCoE) through PRISMS. The eCoE is the gating document for the whole visa: no CoE, no valid subclass 500 application. The university will normally put the OSHC provider, policy dates and policy number on the CoE itself.",
+  "the_trap": "Two failure modes. The CoE must still be valid on the day the Department decides, not just on the day of lodgement - if the student defers or the university cancels enrolment mid-processing, the application dies unless a new CoE is attached in ImmiAccount. And if OSHC is not in the application at all, the Department says outright it will refuse rather than ask.",
+  "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+  "exact_quote": "Your CoE must be valid at time of lodgement and when we decide your visa application. A CoE is no longer valid if it is cancelled or the course is complete.",
+  "date_checked": "14 September 2026 (page last updated 1 July 2026)",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 8,
+  "stage": "Money",
+  "title": "Build the financial capacity file: AUD 29,710 living costs + 12 months course fees + AUD 2,000 travel",
+  "duration_realistic": "Funds must have a visible 3-6 month history; assembling and documenting takes 4-8 weeks",
+  "what_happens": "The 12-month living cost figure for a student is AUD 29,710, plus AUD 10,394 for an accompanying partner and AUD 4,449 per accompanying child. To that add the first 12 months of course fees (total fee divided by course years, less anything already paid and receipted) and travel costs - AUD 2,000 for an applicant outside Australia other than Africa. For a Group of Eight commerce degree at roughly AUD 56,000 a year, the declared requirement lands near AUD 87,700 before any deposit is deducted. Evidence can be bank deposits, a government or bank education loan, or a scholarship.",
+  "the_trap": "A single-day bank balance certificate. The Department says explicitly that this does not show how the funds were accumulated - it wants transaction history, salary credits, growth patterns, or for a loan, evidence of disbursement. The second trap is the figure itself: Home Affairs set AUD 29,710 from 10 May 2024, replacing AUD 24,505, which had itself replaced a lower figure months earlier - and agents still quote the older numbers. AUD 29,710 is current on the Home Affairs page as last updated 1 July 2026, but it has moved twice in three years, so re-check it every cycle.",
+  "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+  "exact_quote": "12-month living costs are for: students - AUD29,710; partners coming with you - AUD10,394; a child coming with you - AUD4,449.",
+  "date_checked": "14 September 2026 (page last updated 1 July 2026)",
+  "axes": {
+   "passport": [
+    "b"
+   ],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 9,
+  "stage": "Money",
+  "title": "Or use the annual income route: AUD 87,856 parental/partner income (AUD 102,500 with family)",
+  "duration_realistic": "Same cycle as the funds route; needs a 12-month-old-or-newer tax assessment",
+  "what_happens": "Instead of showing accumulated funds, the applicant can show that a parent or partner (not travelling with them) had a personal annual income of at least AUD 87,856 in the 12 months before applying, or AUD 102,500 if family members are coming too. Both parents' incomes can be combined. The evidence must be official government documentation such as an Indian income tax assessment less than 12 months old.",
+  "the_trap": "Submitting bank statements or an employer letter for this route - the Department rejects both by name for the income test. Also note the threshold has been raised: Home Affairs' own archived guidance stated AUD 60,000 (AUD 70,000 with family), and that pair is still quoted in circulating summaries. Building a file to the stale figure means building one that does not meet the test.",
+  "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+  "exact_quote": "Alternatively, you can give evidence that your parents or your partner had a personal annual income of at least AUD87,856 in the 12 months before you apply. If you bring family members, your parents’ or partner’s income must be at least AUD102,500 in the 12 months before you apply.",
+  "date_checked": "14 September 2026 (page last updated 1 July 2026)",
+  "axes": {
+   "passport": [
+    "b"
+   ],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 10,
+  "stage": "Money",
+  "title": "Buy OSHC for the whole visa period, not the course period",
+  "duration_realistic": "Same day online, or bundled by the university at offer acceptance",
+  "what_happens": "Overseas Student Health Cover from an approved Australian insurer (ahm, Allianz Care/Peoplecare, Bupa, CBHS International, Medibank, nib) is compulsory for the entire stay. Proof of a paid policy must be in the application. There is no government-set price - it varies by insurer and policy length - so counselors should price it per insurer rather than quoting a number. Students from Norway, Sweden and Belgium are the only exceptions.",
+  "the_trap": "Buying OSHC to the course end date. The visa grant period is longer than the course (see the length-of-stay step), and Home Affairs will only grant to the OSHC expiry date - and the visa end date cannot be changed once granted. The other trap is the start date: if the student flies in before semester, OSHC must start on the arrival date, not the course start date, or they can be refused entry.",
+  "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+  "exact_quote": "If you don’t provide your OSHC in your application form, we will refuse your visa application.",
+  "date_checked": "14 September 2026 (page last updated 1 July 2026)",
+  "axes": {
+   "passport": [
+    "b"
+   ],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 11,
+  "stage": "Money",
+  "title": "Budget the visa application charge: AUD 2,500 from 1 July 2026",
+  "duration_realistic": "Paid at the moment of lodgement",
+  "what_happens": "The Student visa application charge rose from AUD 2,000 to AUD 2,500 on 1 July 2026 for the primary applicant, after rising from AUD 710 to AUD 1,600 on 1 July 2024 and to AUD 2,000 in 2025. Independent ELICOS and non-award applicants are exempt from the increase and stay on the lower charge with annual CPI indexation. There is a separate charge for each accompanying family member. ASEAN, Pacific Island and Timor-Leste passport holders keep the lower concessional charge - Indian passport holders do not, and pay the full AUD 2,500. The charge is non-refundable if the visa is refused.",
+  "the_trap": "Quoting the AUD 1,600 figure, which is now two increases out of date, and budgeting on the day of application rather than the day the Department receives it. Home Affairs states that if the price rises between lodging and receipt, the new charge is payable - and an application with an underpaid charge is not valid.",
+  "source_url": "https://www.studyaustralia.gov.au/en/tools-and-resources/news/student-visa-application-charge-increase",
+  "exact_quote": "The Student VAC increased from AUD $2,000 to AUD $2,500 from 1 July 2026.",
+  "date_checked": "14 September 2026 (Study Australia news item dated 3 July 2026)",
+  "axes": {
+   "passport": [
+    "b"
+   ],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 12,
+  "stage": "Visa",
+  "title": "Create an ImmiAccount and run the Document Checklist Tool for an Indian passport and the chosen provider",
+  "duration_realistic": "1 day",
+  "what_happens": "The subclass 500 is lodged online only, through ImmiAccount. Before lodging, run the Document Checklist Tool with the student's country of passport and their specific education provider - the checklist is provider-sensitive, because the required evidence level varies with the provider's and country's assessed risk. Re-run it immediately before submitting; Home Affairs updates it on 31 March and 30 September each year.",
+  "the_trap": "Running the checklist once, months early, and lodging against a list that has since changed - or running it with 'I have not decided on a provider yet', which produces a generic and usually heavier list. The checklist output is also read as permission to omit things: it is not, and the Department can request anything at any point.",
+  "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+  "exact_quote": "Re-check the document checklist based on the country of passport and education provider just before you submit your application to be sure you have used the most current list.",
+  "date_checked": "14 September 2026 (page last updated 1 July 2026)",
+  "axes": {
+   "passport": [
+    "b"
+   ],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 13,
+  "stage": "Visa",
+  "title": "Draft the Genuine Student (GS) answers - four questions, 150 words each, inside the form",
+  "duration_realistic": "2-4 weeks of drafting and evidence-gathering; do not leave it to the week of lodgement",
+  "what_happens": "The Genuine Student requirement replaced the Genuine Temporary Entrant (GTE) test for applications lodged on or after 23 March 2024. It is not a personal statement attached as a PDF - it is four questions answered in the online form itself: (1) the applicant's current circumstances, including ties to family, community, employment and economic circumstances; (2) why this course, in Australia, with this particular provider, and what they understand about the course and about living in Australia; (3) how completing the course will benefit them; (4) any other relevant information. There is a fifth question for applicants who have held a student visa before or are applying onshore from a non-student visa. All answers in English, 150 words each, with supporting documents attached separately in ImmiAccount.",
+  "the_trap": "Writing a GTE-style 'I will return home' essay. GS explicitly does not penalise a future intention to seek permanent residence - the Department says so in terms - so the old strategy of protesting non-migration intent wastes words. The second trap: Home Affairs states it prefers answers in the form over an attached statement, and that it gives more weight to statements supported by evidence. Unevidenced assertions about family business income, job offers or salary expectations are the commonest weak point in Indian files.",
+  "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/genuine-student-requirement",
+  "exact_quote": "The GS requirement recognises that genuine students may develop skills Australia needs and may later choose to apply for permanent residence. Future intentions of this kind do not count against an applicant under GS.",
+  "date_checked": "14 September 2026 (page last updated 13 January 2026)",
+  "axes": {
+   "passport": [
+    "b"
+   ],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 14,
+  "stage": "Visa",
+  "title": "Assemble the GS evidence pack: previous study, employment, home-country ties, economic circumstances",
+  "duration_realistic": "3-6 weeks running in parallel with the funds file",
+  "what_happens": "Home Affairs names the evidence categories it wants: academic transcripts and certificates of attainment with provider names and study lengths; any previous study in Australia including reasons for changing course or provider and explanations of study gaps longer than 2 months; current employment details with a contactable referee; the nature of family, community and employment ties in India, plus reasons for not studying a similar course at home; and economic circumstances - 12 months of employment or business documents, income tax returns or bank statements, and any post-study employment offers with salary.",
+  "the_trap": "Skipping the 'why not study this in India' answer. For an Indian student choosing a commerce or computer science degree that exists at home, this is the single question that most often decides the file, and it is the one most GS drafts leave implicit. Study gaps over two months and any prior visa refusal - to Australia or anywhere - must also be addressed head-on; immigration history is an explicit GS assessment factor.",
+  "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/genuine-student-requirement",
+  "exact_quote": "the nature of the applicant’s personal ties e.g. family, community and employment. They must give reasons for not studying in their home country if a similar course is available.",
+  "date_checked": "14 September 2026 (page last updated 13 January 2026)",
+  "axes": {
+   "passport": [
+    "b"
+   ],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 15,
+  "stage": "Visa",
+  "title": "Complete health examinations - before lodging if possible",
+  "duration_realistic": "1-3 weeks for appointment and clinic upload; longer if a chest X-ray needs review",
+  "what_happens": "Applicants can complete health examinations before lodging (via My Health Declarations, which generates a HAP ID) or wait for the Department to request them after lodgement, in which case the medical referral letter and HAP ID appear in ImmiAccount. Examinations must be done at a panel clinic. Doing them upfront removes one request-and-wait cycle from processing.",
+  "the_trap": "Leaving health checks until the Department asks. For a February intake lodged in October or November, a post-lodgement health request plus clinic backlog plus results upload can add three to five weeks at exactly the wrong point. India is also a higher-TB-prevalence country, so a chest X-ray finding that needs specialist review is not rare, and that review has no fixed timeline.",
+  "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+  "exact_quote": "You might need to have health examinations. You can complete them before you apply.",
+  "date_checked": "14 September 2026 (page last updated 1 July 2026)",
+  "axes": {
+   "passport": [
+    "b"
+   ],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 16,
+  "stage": "Visa",
+  "title": "Time the lodgement date against the provider's prioritisation year - it resets on 15 November",
+  "duration_realistic": "A single scheduling decision, worth weeks of processing time",
+  "what_happens": "Ministerial Direction 115 measures a provider against its indicative allocation of New Overseas Student Commencements on a year that runs 15 November to 14 November. Applications lodged from 15 November 2026 to 14 November 2027 are prioritised against the provider's 2027 allocation, which starts fresh. MD 115 also states plainly that the allocation is not a cap on visas granted and not a suspension of processing - it only sets the order in which applications are picked up. Priority 1 is a provider below 80 per cent of allocation, Priority 2 is between 80 and 115 per cent, Priority 3 is above 115 per cent.",
+  "the_trap": "Lodging in September or October against an allocation that is already spent, when waiting to 15 November would have reset the provider to Priority 1 for the following year. For a February 2027 start this is the sharpest lever a counselor has: a mid-November lodgement can be picked up in 1-4 weeks where an October one sits 9-12 weeks. The mirror-image trap is misreading the allocation as a cap and telling a student the university is 'full' - it is not; it is a processing queue.",
+  "source_url": "https://immi.homeaffairs.gov.au/support-subsite/files/ministerial-direction-115.pdf",
+  "exact_quote": "For a provider's prioritisation threshold for the calendar year 2026, offshore student visa applications received on or after 15 November 2025 and up to and including 14 November 2026 will be prioritised with respect to the 2026 calendar year.",
+  "date_checked": "14 September 2026 (Ministerial Direction 115, commenced 14 November 2025)",
+  "axes": {
+   "passport": [
+    "b"
+   ],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 17,
+  "stage": "Visa",
+  "title": "Lodge the subclass 500 in ImmiAccount, complete, and pay AUD 2,500",
+  "duration_realistic": "Lodgement day; aim to lodge 4-5 months before the course start date",
+  "what_happens": "Attach everything at lodgement: passport bio page, CoE(s), GS answers and evidence, financial capacity evidence, OSHC proof, English test report (both certificate and report for LANGUAGECERT), identity and name-change documents, and a polio vaccination certificate where the applicant has spent time in an at-risk country. Maximum 60 attachments. Family members must be declared on the application even if they are not travelling. Then pay the charge - an unpaid or underpaid charge makes the application invalid.",
+  "the_trap": "Lodging a skeleton application intending to 'add documents later'. The Department states it may finalise the application on what was provided at lodgement - a thin file can be refused without a request for more information, and a refusal then has to be declared in every future visa application anywhere. Specifically, missing financial evidence that the checklist required is grounds for refusal without further contact.",
+  "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+  "exact_quote": "If you are required to attach evidence of your financial capacity to your ImmiAccount when you submit your application, you must do so. If you don’t give this evidence, we may refuse your application without asking you for more information.",
+  "date_checked": "14 September 2026 (page last updated 1 July 2026)",
+  "axes": {
+   "passport": [
+    "b"
+   ],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 18,
+  "stage": "Visa",
+  "title": "Give biometrics within 14 days of the request",
+  "duration_realistic": "Request usually arrives immediately after submission; appointment within 1-2 weeks",
+  "what_happens": "Most applicants are told immediately after submitting whether biometrics are required. The request arrives by letter and appears in ImmiAccount, and the applicant is given 14 days to comply, at an Australian Biometric Collection Centre. Biometrics must be provided before travelling to Australia.",
+  "the_trap": "Treating the 14 days as elastic. Appointment availability in Indian metros tightens sharply in the October-December offshore peak, and the student who books in week two can find nothing inside the window. This is a small step that quietly stalls files.",
+  "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+  "exact_quote": "You will be given 14 days to provide biometrics so it is important to arrange an appointment quickly using the instructions in the request letter.",
+  "date_checked": "14 September 2026 (page last updated 1 July 2026)",
+  "axes": {
+   "passport": [
+    "b"
+   ],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 19,
+  "stage": "Visa",
+  "title": "Processing - understand both the published time and the Ministerial Direction queue",
+  "duration_realistic": "Higher Education sector: 50% within 19 days, 75% within 40 days, 90% within 71 days",
+  "what_happens": "Home Affairs publishes global processing times by sector, not by country - there is no India-specific published subclass 500 time. For the Higher Education sector, applications decided in the month ending 31 July 2026 took 10 days at the 25th percentile, 19 days at the 50th, 40 days at the 75th and 71 days at the 90th (figures updated 4 September 2026). Separately, offshore applications lodged on or after 14 November 2025 are queued under Ministerial Direction 115, under which the Department aims to commence processing Priority 1 within 1-4 weeks, Priority 2 within 5-8 weeks and Priority 3 within 9-12 weeks of lodgement.",
+  "the_trap": "Planning on the median. The 90th-percentile figure - 71 days for higher education, and 7 months for VET - is the number that decides whether a student makes the intake. Add MD 115's commencement lag on top: a Priority 3 application is not even picked up for 9-12 weeks, so the realistic worst case is a decision four to five months after lodgement. Counselors also need to know the priority level is fixed at lodgement day and never improves, so lodging while a provider is still below its threshold is worth real money.",
+  "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-processing-times/global-visa-processing-times",
+  "exact_quote": "Higher Education Sector — 25%: 10 Days; 50%: 19 Days; 75%: 40 Days; 90%: 71 Days (Updated 04 September 2026, period ending 31 July 2026).",
+  "date_checked": "14 September 2026",
+  "axes": {
+   "passport": [
+    "b"
+   ],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 20,
+  "stage": "Visa",
+  "title": "Grant: check the visa end date and the conditions attached",
+  "duration_realistic": "Grant notification by email to ImmiAccount",
+  "what_happens": "Length of stay follows the course, subject to the OSHC expiry date. A course of 10 months or longer finishing at the end of the Australian academic year (November-December) usually gets a visa to 15 March of the following year; one finishing January-October gets two months beyond the course; a course under 10 months gets one month beyond. Maximum generally 6 years, and generally 5 for tertiary students unless a properly progressive package justifies 6. Conditions include 8105 - work up to 48 hours a fortnight while the course is in session, unlimited when it is not - plus 8501 (maintain OSHC), 8202 (maintain enrolment and course progress) and, for visas applied for after 1 July 2022, 8208.",
+  "the_trap": "Assuming the visa can be extended at the end. It cannot be changed once granted - which is why the OSHC purchase decision earlier in the chain is irreversible, and why buying OSHC only to the course end date permanently shortens the visa. Students also routinely misread 8105 as 48 hours a week.",
+  "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/length-of-stay",
+  "exact_quote": "10 months or longer, finishing at the end of the Australian academic year (November to December) — We will usually grant a visa stay period to 15 March of the following year.",
+  "date_checked": "14 September 2026 (page last updated 4 May 2026)",
+  "axes": {
+   "passport": [
+    "b"
+   ],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 21,
+  "stage": "Arrival",
+  "title": "Travel - not before the OSHC start date, and not on a ticket booked before the grant",
+  "duration_realistic": "Arrive 1-4 weeks before semester starts",
+  "what_happens": "Students normally arrive one to four weeks before semester for orientation and housing. The OSHC policy must already have begun on the day of arrival, not on the day the course starts. Home Affairs advises against booking travel before the visa is finalised.",
+  "the_trap": "Booking flights on a conditional offer, or landing a week before the OSHC policy begins. Home Affairs warns the student may be refused entry at the border if they cannot show health insurance is in place on arrival - a February-intake student who flew in mid-January on a policy dated from 1 March is the classic case.",
+  "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+  "exact_quote": "You may be refused entry to Australia if you cannot prove you have health insurance in place when you arrive.",
+  "date_checked": "14 September 2026 (page last updated 1 July 2026)",
+  "axes": {
+   "passport": [
+    "b"
+   ],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 22,
+  "stage": "Arrival",
+  "title": "Enrol, attend orientation, and start meeting condition 8202 from day one",
+  "duration_realistic": "Orientation week, then continuous for the length of the course",
+  "what_happens": "There is no municipal registration step in Australia - nothing equivalent to Germany's Anmeldung or a residence-permit conversion. The visa granted offshore is the residence right. What replaces it is ongoing compliance: enrol in and maintain a full-time CRICOS-registered load, meet course progress and attendance requirements (condition 8202), keep OSHC current (8501), and keep the address updated with the provider. Practical first-fortnight admin: Tax File Number, an Australian bank account, a local SIM, and a student transport concession where the state offers one to international students.",
+  "the_trap": "Dropping below a full-time load, or deferring after arrival, without realising it breaches 8202 and can lead to visa cancellation. Students also cannot work at all before the course begins - condition 8105 does not switch on until the course starts, and an early part-time job is a breach.",
+  "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+  "exact_quote": "Student visa holders and their family members cannot work in Australia before the student starts their course.",
+  "date_checked": "14 September 2026 (page last updated 1 July 2026)",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 23,
+  "stage": "Arrival",
+  "title": "Plan the post-study step: Temporary Graduate visa (subclass 485), charge AUD 5,750 from 1 July 2026",
+  "duration_realistic": "Apply after completing the degree, while still onshore and holding a student visa",
+  "what_happens": "The subclass 485 is the standard post-study work route after an Australian degree. Its application charge rose from AUD 4,600 to AUD 5,750 on 1 July 2026, in the same round that took the student charge to AUD 2,500. Holders have unlimited work rights. The concession for Pacific Island and Timor-Leste applicants continues; Indian passport holders pay the full charge.",
+  "the_trap": "Selling the 485 at the counselling stage as though it were automatic. It has its own age, English, qualification and time-limit criteria that must be checked in the year the student actually graduates, and the charge has now more than doubled in two years - a student budgeting in 2026 for a 2029 graduation should assume it will rise again.",
+  "source_url": "https://www.studyaustralia.gov.au/en/tools-and-resources/news/student-visa-application-charge-increase",
+  "exact_quote": "The Temporary Graduate Visa application charge increased from AUD $4,600 to AUD $5,750 from 1 July 2026.",
+  "date_checked": "14 September 2026 (Study Australia news item dated 3 July 2026)",
+  "axes": {
+   "passport": [
+    "b"
+   ],
+   "board": [],
+   "residence": []
+  }
+ }
+]

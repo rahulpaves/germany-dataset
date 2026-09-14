@@ -564,6 +564,24 @@ footer .logo{color:#fff;font-size:20px;}
 footer .logo img{width:28px;height:28px;}
 footer a{color:#b9d0de;}
 footer a:hover{color:#fff;}
+
+/* three-axis route picker: passport / curriculum / applying-from */
+.natpick{display:block;}
+.axrow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;}
+@media(max-width:720px){.axrow{grid-template-columns:1fr;}}
+.axf label{display:block;font-size:12.5px;font-weight:600;color:var(--ink);margin-bottom:6px;}
+.axf select{width:100%;max-width:none;}
+.axnote{margin:10px 0 0;padding:10px 13px;font-size:13.5px;line-height:1.55;
+  border-radius:8px;background:#eef2ff;border:1px solid #c9d4ff;color:#1f2a44;}
+.axnote b{color:#1b2f6e;}
+.axnote.warn{background:#fff8e6;border-color:#f0d99b;color:#4a3c10;}
+.axnote.warn b{color:#7a5c00;}
+.axwhy{margin:9px 0 0;font-size:12.5px;line-height:1.5;opacity:.8;}
+.axwhy a{color:#2b4fe3;}
+
+.reqs li.picked{background:#eef2ff;border-left:3px solid var(--primary);
+  padding:7px 11px;margin-left:-14px;border-radius:0 6px 6px 0;}
+.reqs li.picked b{color:#1b2f6e;}
 </style>
 <style>
   .cbar{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 14px;}
@@ -794,38 +812,10 @@ footer a:hover{color:#fff;}
   </div>
 </div>
 <script>
-const TRACKS = {
-  a: { name: "EU / EEA / Switzerland", countries: [
-       "Austria","Belgium","Bulgaria","Croatia","Cyprus","Czechia","Denmark","Estonia",
-       "Finland","France","Germany","Greece","Hungary","Iceland","Ireland","Italy",
-       "Latvia","Liechtenstein","Lithuania","Luxembourg","Malta","Netherlands","Norway",
-       "Poland","Portugal","Romania","Slovakia","Slovenia","Spain","Sweden","Switzerland"] },
 
-  b: { name: "Visa-free entry, permit obtained in Germany", countries: [
-       "Australia","Canada","Israel","Japan","New Zealand","South Korea",
-       "United Kingdom","United States"] },
-
-  c: { name: "Type D visa + APS certificate", countries: [
-       "China","India","Mongolia","Vietnam"] },
-
-  d: { name: "Type D visa, no APS", countries: [
-       "Algeria","Argentina","Bahrain","Bangladesh","Brazil","Colombia","Egypt","Ethiopia",
-       "Ghana","Indonesia","Iraq","Jordan","Kazakhstan","Kenya","Kuwait","Lebanon","Malaysia",
-       "Mexico","Morocco","Nepal","Nigeria","Oman","Pakistan","Philippines","Qatar",
-       "Saudi Arabia","South Africa","Sri Lanka","Tanzania","Thailand","Tunisia","Turkey",
-       "Uganda","Ukraine","United Arab Emirates","Uzbekistan","Other (non-EU)"] }
-};
-
-const TRACK_SUMMARY = {
-  a: "No visa and no residence permit. Enrol, arrange health insurance, and register the address within two weeks of arrival.",
-  b: "No visa needed to enter. Your student travels first, then applies for the residence permit inside Germany within 90 days. This skips the embassy appointment entirely.",
-  c: "Full Type D visa, and an APS certificate must come first, so allow four weeks to three months. Indian Master's applicants from Engineering, Commerce, Finance, Economics or Business also need dMAT from Summer Semester 2027.",
-  d: "Standard Type D student visa. No APS. The variable that matters most is appointment availability at your student's local German mission."
-};
 
 var DATA = [], cur = 0;
-var COUNTRY_NOTES = {"India": {"1": "For an Indian Class XII the Anabin criteria from Winter Semester 2026/27 require at least <b>70% of the maximum achievable marks</b>. Below that, no German university will assess the file.", "2": "A completed year of Indian higher education, or a qualifying <b>JEE Advanced</b> rank, can remove the need for TestAS.", "3": "The APS India office charges roughly <b>INR 18,000</b> and takes four to eight weeks."}};
-var TIMELINE_HTML = "<ol class=\"timeline fullchain\"><li data-step=\"1\" data-tracks=\"a b c d\" data-stage=\"Eligibility\"><span class=\"n\"></span><h5>Check the qualification is recognised</h5><span class=\"w\">before anything else</span><p>Look the student's school-leaving qualification up on <b>Anabin</b>, the German recognition database. If it does not give direct entry, the student is on a <b>Studienkolleg</b> year and a different timeline entirely. This one question decides everything after it.</p></li><li data-step=\"2\" data-tracks=\"b c d\" data-stage=\"Eligibility\"><span class=\"n\"></span><h5>Sit TestAS if the route requires it</h5><span class=\"w\">fixed dates, a few times a year</span><p>Required for most undergraduate applicants whose school-leaving qualification does not give direct entry on its own. Sittings are on fixed dates a few times a year, so book this first and build the rest of the timeline around it.</p></li><li data-step=\"3\" data-tracks=\"c\" data-stage=\"Application\"><span class=\"n\"></span><h5>APS certificate</h5><span class=\"w\">4 to 8 weeks</span><p>Academic Evaluation Centre verification, required of applicants from China, India, Mongolia and Vietnam. Needed for the visa and commonly for admission too, so it belongs at the very start. Issued once and reusable for every later German application.</p></li><li data-step=\"4\" data-tracks=\"a b c d\" data-stage=\"Application\"><span class=\"n\"></span><h5>uni-assist preliminary review (VPD)</h5><span class=\"w\">4 to 6 weeks</span><p>Most universities will not look at a foreign qualification until uni-assist has issued the VPD. <b>Its deadline is the same day as the application deadline</b>, and it takes four to six weeks, so starting it in June for a 15 July deadline is already too late. This is the step that quietly consumes the window.</p></li><li data-step=\"5\" data-tracks=\"a b c d\" data-stage=\"Application\"><span class=\"n\"></span><h5>Language certificate</h5><span class=\"w\">varies</span><p>English B2 for an English-taught degree, or German where the programme requires it. Some universities assess English inside their own aptitude process instead of asking for IELTS or TOEFL. Check which, because sitting an unnecessary test wastes a month.</p></li><li data-step=\"6\" data-tracks=\"a b c d\" data-stage=\"Application\"><span class=\"n\"></span><h5>Apply through the university portal</h5><span class=\"w\">by the deadline</span><p>Either the university's own portal, uni-assist, or hochschulstart for nationally allocated subjects. The record for each programme names which one applies.</p></li><li data-step=\"7\" data-tracks=\"a b c d\" data-stage=\"Application\"><span class=\"n\"></span><h5>Selection stage, where one exists</h5><span class=\"w\">varies</span><p>Aptitude assessment, restricted admission ranking, or none at all. The record says which. This is the stage most applicants underestimate.</p></li><li data-step=\"8\" data-tracks=\"a b c d\" data-stage=\"Application\"><span class=\"n\"></span><h5>Admission decision (Zulassungsbescheid)</h5><span class=\"w\">after the deadline</span><p>The formal admission decision. <b>A conditional offer is not accepted for the visa file</b>, and nothing in the visa chain can begin without this document.</p></li><li data-step=\"9\" data-tracks=\"b c d\" data-stage=\"Money\"><span class=\"n\"></span><h5>Blocked account or a parental guarantee</h5><span class=\"w\">1 to 2 weeks</span><p>EUR 11,904 for one year, released at EUR 992 per month, verified 25 August 2026. <b>Re-check this figure before advising.</b> It is revised annually and official sources currently disagree, with one German government page still showing EUR 10,332. A Verpflichtungserkl\u00e4rung from a sponsor is the main alternative.</p></li><li data-step=\"10\" data-tracks=\"a b c d\" data-stage=\"Money\"><span class=\"n\"></span><h5>Health insurance</h5><span class=\"w\">3 to 7 days</span><p>Confirmation from a public insurer such as TK or AOK for enrolled students, plus travel cover for the gap before enrolment. EU and EEA students can usually rely on an EHIC instead. You cannot enrol without proof of cover.</p></li><li data-step=\"11\" data-tracks=\"c d\" data-stage=\"Visa\"><span class=\"n\"></span><h5>Book the visa appointment</h5><span class=\"w\">2 to 12 weeks wait</span><p>The real bottleneck. Availability at the German mission varies sharply by country and season. <b>Book the moment admission lands</b>, not once the documents are complete.</p></li><li data-step=\"12\" data-tracks=\"c d\" data-stage=\"Visa\"><span class=\"n\"></span><h5>Submit the national visa (Type D) application</h5><span class=\"w\">appointment day</span><p>Passport, admission letter, blocked-account confirmation, insurance, transcripts, CV, motivation letter, biometric photos, and the APS certificate where it applies. Fee EUR 75.</p></li><li data-step=\"13\" data-tracks=\"c d\" data-stage=\"Visa\"><span class=\"n\"></span><h5>Visa processing</h5><span class=\"w\">4 to 8 weeks</span><p>Counting APS, admission, appointment and processing, the realistic span is three to six months. That is how a July deadline turns into a tight October start.</p></li><li data-step=\"14\" data-tracks=\"a b c d\" data-stage=\"Arrival\"><span class=\"n\"></span><h5>Find accommodation</h5><span class=\"w\">start early, expect difficulty</span><p>Rarely treated as a step, and it gates two later ones. Registration requires a signed <b>Wohnungsgeberbest\u00e4tigung</b> from the landlord, and short lets and hostels usually will not provide one. In Munich, Berlin and Frankfurt this is the hardest single part of the move.</p></li><li data-step=\"15\" data-tracks=\"a b c d\" data-stage=\"Arrival\"><span class=\"n\"></span><h5>Register the address (Anmeldung)</h5><span class=\"w\">within 2 weeks of arrival</span><p>At the B\u00fcrgeramt, with the landlord's confirmation. Everything administrative downstream depends on it, including the residence permit and a German bank account.</p></li><li data-step=\"16\" data-tracks=\"a b c d\" data-stage=\"Arrival\"><span class=\"n\"></span><h5>Enrol at the university (Immatrikulation)</h5><span class=\"w\">at the start of the semester</span><p>In person at the Studentensekretariat, with the admission letter, passport and insurance confirmation. <b>The semester contribution, roughly EUR 70 to 430, is paid here.</b> Only once enrolled can a student attend courses or sit exams, and the enrolment certificate is what the foreigners authority asks for.</p></li><li data-step=\"17\" data-tracks=\"b c d\" data-stage=\"Arrival\"><span class=\"n\"></span><h5>Convert to a residence permit</h5><span class=\"w\">within 90 days of arrival</span><p>At the Ausl\u00e4nderbeh\u00f6rde, with the enrolment certificate, before the visa expires. Students who entered visa-free do this instead of a visa, and the 90-day clock starts at entry.</p></li></ol>";
+
 
 function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
 function has(v){return v && String(v).trim() && String(v).trim().toUpperCase().indexOf("NOT PUBLISHED")!==0;}
@@ -862,17 +852,12 @@ function rounds(v){
   return '<li><b>Application rounds:</b><ul class="subs">' +
     parts.map(function(x){return '<li>' + linky(x) + '</li>';}).join("") + '</ul></li>';
 }
-function req(lead,val){return has(val)?'<li><b>'+esc(lead)+':</b> '+linky(val)+'</li>':'';}
+function req(lead,val,board){return has(val)?'<li'+(board?' data-board="'+board+'"':'')+'><b>'+esc(lead)+':</b> '+linky(val)+'</li>':'';}
 function spec(rows){var b=rows.join(""); return b?'<dl class="spec">'+b+'</dl>':'';}
 function reqs(items){var b=items.join(""); return b?'<ul class="reqs">'+b+'</ul>':'';}
 function money(lo,hi){
   if(has(lo)&&has(hi)) return lo===hi?lo:lo+" to "+hi;
   return has(lo)?lo:(has(hi)?hi:"");
-}
-
-function trackFor(country){
-  for(var k in TRACKS){ if(TRACKS[k].countries && TRACKS[k].countries.indexOf(country)>-1) return k; }
-  return "d";
 }
 
 
@@ -953,8 +938,9 @@ function render(i){
         : '')+
       reqs([
         req("General", r.entry),
-        req("CBSE", r.cbse), req("ISC", r.isc), req("IB", r.ib), req("A-Level", r.alevel),
-        req("US High School Diploma", r.us_diploma_gpa),
+        req("CBSE", r.cbse, "cbse"), req("ISC", r.isc, "isc"), req("IB", r.ib, "ib"),
+        req("A-Level", r.alevel, "alevel"),
+        req("US High School Diploma", r.us_diploma_gpa, "us"),
         req("Other qualifications", r.other),
         req("English", r.english),
         req("Selection", r.selection),
@@ -984,10 +970,13 @@ function render(i){
 
     '<div class="block"><h4>The whole process, end to end</h4>'+
       cycleCard()+
-      '<div class="natpick"><label for="nat">Check your student\'s nationality</label>'+
-      '<select id="nat"><option value="">Show the standard non-EU route</option></select></div>'+
+      '<div class="natpick"><div class="axrow">'+
+        '<div class="axf"><label for="nat">Passport</label><select id="nat"></select></div>'+
+        '<div class="axf"><label for="brd">Curriculum</label><select id="brd"></select></div>'+
+        '<div class="axf"><label for="res">Applying from</label><select id="res"></select></div>'+
+      '</div></div>'+
       '<div class="natresult" id="natout"></div>'+
-      (CHAIN_HTML || (COUNTRY === "germany" ? TIMELINE_HTML : ""))+
+      CHAIN_HTML+
     '</div>'+
 
     '</div></div>'+
@@ -1011,68 +1000,98 @@ function render(i){
 }
 
 function buildNat(){
-  var sel=document.getElementById("nat"), out=document.getElementById("natout");
-  if(!sel) return;
-  var SIMPLE = CHAIN_TRACKS && CHAIN_TRACKS.length &&
-               CHAIN_TRACKS.indexOf("a") < 0 && CHAIN_TRACKS.indexOf("b") < 0;
-  if (SIMPLE) {
-    /* chains outside Germany tag steps india / intl rather than by visa route */
-    sel.innerHTML = "";
-    [["india","Indian student (CBSE, ISC or state board)"],
-     ["intl","Other international student"]].forEach(function(p){
-      if (CHAIN_TRACKS.indexOf(p[0]) < 0) return;
-      var o=document.createElement("option"); o.value=p[0]; o.textContent=p[1]; sel.appendChild(o);
-    });
-    var lab=document.querySelector(".natpick label");
-    if(lab) lab.textContent="Who is this student?";
-  } else {
-    var all=[];
-    for(var k in TRACKS){ (TRACKS[k].countries||[]).forEach(function(c){all.push(c);}); }
-    all.sort().forEach(function(c){ var o=document.createElement("option"); o.value=c; o.textContent=c; sel.appendChild(o); });
+  var selN=document.getElementById("nat"), selB=document.getElementById("brd"),
+      selR=document.getElementById("res"), out=document.getElementById("natout");
+  if(!selN || !ROUTES || !ROUTES[COUNTRY]) return;
+  var R = ROUTES[COUNTRY], TIERS = R.passport.tiers;
+
+  /* passport -> tier. Countries are listed under exactly one tier. */
+  var TIER_OF = {};
+  TIERS.forEach(function(t){ (t.countries||[]).forEach(function(c){ TIER_OF[c]=t.id; }); });
+  function tierObj(id){
+    for(var i=0;i<TIERS.length;i++) if(TIERS[i].id===id) return TIERS[i];
+    return null;
   }
-  function applyTrack(t){
-    var steps=document.querySelectorAll(".timeline li[data-tracks]"), n=0, seen={};
-    for(var i=0;i<steps.length;i++){
-      var li=steps[i];
-      var on = !t || li.getAttribute("data-tracks").split(" ").indexOf(t) > -1;
-      li.hidden = !on;
-      li.classList.remove("stage-start");
+  var names = Object.keys(TIER_OF).sort();
+  selN.innerHTML = names.map(function(c){
+    return '<option value="'+esc(c)+'">'+esc(c)+'</option>';
+  }).join("");
+  selN.value = SEL.passport || "India";
+  if(!selN.value) selN.value = names[0];
+
+  selB.innerHTML = (R.boards||[]).map(function(b){
+    return '<option value="'+esc(b.id)+'">'+esc(b.name)+'</option>';
+  }).join("");
+  selB.value = SEL.board || R.board.default || "cbse";
+  if(!selB.value) selB.value = R.board.default || "cbse";
+
+  selR.innerHTML = (R.residence.options||[]).map(function(o){
+    return '<option value="'+esc(o.id)+'">'+esc(o.name)+'</option>';
+  }).join("");
+  selR.value = SEL.residence || R.residence.default || "other";
+  if(!selR.value) selR.value = R.residence.default || "other";
+
+  function resObj(id){
+    var o = R.residence.options||[];
+    for(var i=0;i<o.length;i++) if(o[i].id===id) return o[i];
+    return null;
+  }
+
+  /* A step shows unless an axis names a set it is not in. Empty = everyone. */
+  function applyAxes(tier, board, res){
+    var li=document.querySelectorAll(".timeline li[data-stage]"), n=0, seen={};
+    function ok(el, attr, val){
+      var raw=(el.getAttribute(attr)||"").trim();
+      if(!raw) return true;
+      return raw.split(/\s+/).indexOf(val) > -1;
+    }
+    for(var i=0;i<li.length;i++){
+      var e=li[i];
+      var on = ok(e,"data-passport",tier) && ok(e,"data-board",board) && ok(e,"data-residence",res);
+      e.hidden = !on;
+      e.classList.remove("stage-start");
       if(on){
         n++;
-        var b=li.querySelector(".n"); if(b) b.textContent=n;
-        var st=li.getAttribute("data-stage");
-        if(!seen[st]){ seen[st]=1; li.classList.add("stage-start"); li.setAttribute("data-stagelabel",st); }
+        var b=e.querySelector(".n"); if(b) b.textContent=n;
+        var st=e.getAttribute("data-stage");
+        if(!seen[st]){ seen[st]=1; e.classList.add("stage-start"); e.setAttribute("data-stagelabel",st); }
       }
     }
     return n;
   }
-  function applyNotes(c){
-    var old=document.querySelectorAll(".cnote");
-    for(var i=0;i<old.length;i++) old[i].parentNode.removeChild(old[i]);
-    var map = COUNTRY_NOTES[c]; if(!map) return;
-    for(var k in map){
-      var li=document.querySelector('.timeline li[data-step="'+k+'"]');
-      if(!li || li.hidden) continue;
-      var d=document.createElement("p");
-      d.className="cnote";
-      d.innerHTML='<b>'+esc(c)+':</b> '+map[k];
-      li.appendChild(d);
-    }
-  }
+
   function show(){
-    if (SIMPLE) {
-      var w = sel.value || "india", m = applyTrack(w);
-      out.innerHTML = '<b>' + (w === "india" ? "Indian student" : "International student") +
-        ':</b> <b>' + m + ' step' + (m===1?'':'s') + '</b> apply to this student.';
-      return;
-    }
-    var c=sel.value, t=c?trackFor(c):"d", n=applyTrack(t);
-    applyNotes(c);
-    out.innerHTML='<b>'+(c?esc(c):"Standard non-EU route")+':</b> '+esc(TRACK_SUMMARY[t]||"")+
-      '<div style="margin-top:8px;font-size:13.5px;opacity:.85">Route type: '+esc(TRACKS[t].name||t)+
-      ' &middot; <b>'+n+' step'+(n===1?'':'s')+'</b></div>';
+    var country=selN.value, board=selB.value, res=selR.value;
+    SEL.passport=country; SEL.board=board; SEL.residence=res; saveSel();
+    orderReqs(board);
+    var tid = TIER_OF[country] || R.passport.default;
+    var t = tierObj(tid), r = resObj(res);
+    var total = document.querySelectorAll(".timeline li[data-stage]").length;
+    var n = applyAxes(tid, board, res);
+    var bn = (R.board.notes||{})[board] || "";
+    var bname = "";
+    (R.boards||[]).forEach(function(b){ if(b.id===board) bname=b.name; });
+
+    var html = '<b>'+esc(country)+' passport &middot; '+esc(bname)+
+      (r && r.id!=="other" ? ' &middot; applying from '+esc(r.name) : '')+'</b>'+
+      '<div style="margin-top:8px;font-size:13.5px;opacity:.9">'+
+        esc(t ? t.name : "")+' &mdash; '+esc(t ? t.summary : "")+
+      '</div>'+
+      '<div style="margin-top:8px;font-size:13.5px;"><b>'+n+' of '+total+
+        ' steps</b> apply to this student.</div>';
+    if(bn) html += '<p class="axnote"><b>'+esc(bname)+':</b> '+bn+'</p>';
+    if(r && r.note) html += '<p class="axnote warn"><b>'+esc(r.name)+':</b> '+r.note+'</p>';
+    var src = (t && t.source_url) || (r && r.source_url) || "";
+    if(src) html += '<p class="axwhy">Route rule: <a href="'+esc(src)+
+      '" target="_blank" rel="noopener">official source</a>'+
+      (R.date_checked ? ' &middot; checked '+esc(R.date_checked) : '')+'</p>';
+    out.innerHTML = html;
+    out.classList.add("on");
   }
-  sel.addEventListener("change",show); show();
+  selN.addEventListener("change",show);
+  selB.addEventListener("change",show);
+  selR.addEventListener("change",show);
+  show();
 }
 
 function list(){
@@ -1125,7 +1144,24 @@ function countryBar(){
   }).join("");
 }
 
-var CYCLES = null, CHAIN_HTML = "", CHAIN_TRACKS = null;
+var CYCLES = null, CHAIN_HTML = "", CHAIN_TRACKS = null, ROUTES = null;
+var SEL = {passport:null, board:null, residence:null};
+try{ var _s=JSON.parse(localStorage.getItem("paveSel")||"{}");
+     if(_s && typeof _s==="object") SEL=_s; }catch(e){}
+function saveSel(){ try{ localStorage.setItem("paveSel", JSON.stringify(SEL)); }catch(e){} }
+/* Move the chosen curriculum to the top of Entry requirements and mark it.
+   State boards read the CBSE row, which is what the data actually holds. */
+function orderReqs(board){
+  var ul=document.querySelector(".reqs"); if(!ul) return;
+  var want = board==="state" ? "cbse" : board;
+  var rows=ul.querySelectorAll("li[data-board]");
+  for(var i=0;i<rows.length;i++) rows[i].classList.remove("picked");
+  var hit=ul.querySelector('li[data-board="'+want+'"]');
+  if(!hit) return;
+  hit.classList.add("picked");
+  var first=ul.querySelector("li[data-board]");
+  if(first && first!==hit) ul.insertBefore(hit, first);
+}
 
 function cycleCard(){
   if (!CYCLES || !CYCLES[COUNTRY]) return "";
@@ -1172,18 +1208,18 @@ function terse(t, budget){
 
 function buildTimeline(steps){
   if (!steps || !steps.length) return "";
-  var toks = {};
-  steps.forEach(function(st){
-    String(st.who || "").split(/[\s,]+/).filter(Boolean).forEach(function(t){ toks[t.toLowerCase()] = 1; });
-  });
-  CHAIN_TRACKS = Object.keys(toks);
+  CHAIN_TRACKS = null;
   var li = steps.map(function(st){
-    var who = String(st.who || "").toLowerCase().split(/[\s,]+/).filter(Boolean).join(" ");
+    var ax = st.axes || {};
+    var A = function(k){ return (ax[k] || []).join(" "); };
     var dur = st.duration_realistic || st.duration || "";
     var body = terse(st.what_happens, 215);
     var trap = terse(st.the_trap || st.trap, 150);
     return '<li data-step="' + esc(String(st.step_no || st.step || "")) + '"' +
-      ' data-tracks="' + esc(who) + '" data-stage="' + esc(st.stage || "") + '">' +
+      ' data-passport="' + esc(A("passport")) + '"' +
+      ' data-board="' + esc(A("board")) + '"' +
+      ' data-residence="' + esc(A("residence")) + '"' +
+      ' data-stage="' + esc(st.stage || "") + '">' +
       '<span class="n"></span><h5>' + esc(st.title || "") + "</h5>" +
       (dur ? '<span class="w">' + esc(dur) + "</span>" : "") +
       (body ? "<p>" + linky(esc(body)) + "</p>" : "") +
@@ -1197,9 +1233,12 @@ function buildTimeline(steps){
   return '<ol class="timeline fullchain">' + li + "</ol>";
 }
 
-var V = "20260914a";
+var V = "20260914f";
 fetch("data/cycles.json?v=" + V).then(function(r){ return r.json(); })
   .then(function(cy){ CYCLES = cy; }).catch(function(){})
+  .then(function(){ return fetch("data/routes.json?v=" + V); })
+  .then(function(r){ return r.json(); })
+  .then(function(rt){ ROUTES = rt; }).catch(function(){})
   .then(function(){ return fetch("data/index.json?v=" + V); })
   .then(function(r){ return r.json(); }).then(function(idx){
   CINDEX = idx;

@@ -1,1 +1,462 @@
-[{"step_no":1,"stage":"Eligibility","title":"Confirm the Class XII qualification clears the 12-years-of-schooling bar","who":["india"],"duration_realistic":"1 day (a check, not a process)","what_happens":"Italy admits foreign applicants to a Laurea only on a final secondary qualification obtained after at least 12 years of schooling. CBSE and ISC Standard XII satisfy this on its face (10+2), so an Indian student normally needs no bridging year or foundation course. Where a qualification falls short of 12 years, Allegato 1 of the ministerial Procedures sets out the remedies (extra university years abroad, or a foundation course). Check the number early: it drives whether the student is applying to a degree or to a foundation course, and the visa deadlines differ between the two.","the_trap":"Counselors assume an Indian diploma or a 3-year polytechnic after Class X substitutes for Class XII. It does not - the qualification must be the final secondary-school title giving access to university in India. State-board 'provisional' or 'passing' certificates are also refused at visa stage unless they carry the final mark and ranking criteria.","source_url":"https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf","exact_quote":"titolo finale degli studi secondari conseguito con almeno 12 anni di scolarita', oppure certificato sostitutivo a tutti gli effetti di legge","date_checked":"14 September 2026"},{"step_no":2,"stage":"Eligibility","title":"Start the Indian attestation chain: HRD attestation, then MEA apostille","who":["india"],"duration_realistic":"4-8 weeks, longer for state boards outside the metros","what_happens":"Every academic document used for a Declaration of Value or an Italian study visa must be attested by the competent Higher Education Department of the issuing state and then apostilled by the Ministry of External Affairs, Government of India. This covers the final school certificate or degree AND the transcripts or marksheets. E-Sanad digital attestation is accepted, but the paper originals must still be produced alongside the digital ones. Documents already in English need no Italian translation.","the_trap":"SDM (Sub-Divisional Magistrate) attestation is explicitly not accepted by the Italian consulates in India - agents in India routinely sell it because it is faster and cheaper. Only the state Higher Education Department attestation counts, and a file that arrives with SDM stamps is sent back, costing four to eight weeks.","source_url":"https://consmumbai.esteri.it/wp-content/uploads/2026/06/Checklist_dov_mumbai-for-study-purposes-2026-2027-vers-05-06-2026.pdf","exact_quote":"Please note that attestations by SDM on study documents will not be accepted. Competent Higher Education Department attestation is mandatory.","date_checked":"14 September 2026"},{"step_no":3,"stage":"Eligibility","title":"Choose the recognition route: consular Declaration of Value OR a CIMEA statement","who":["india","intl"],"duration_realistic":"Decision in a day; the artefact takes 15-90 days depending on which route","what_happens":"Italy no longer mandates the Dichiarazione di Valore. The ministerial Procedures let the university accept EITHER a CIMEA (Italian ENIC-NARIC centre) Statement of Comparability plus Statement of Verification, OR a consular Declaration of Value - and the choice is the university's, not the student's. Ask the admissions office in writing which one it wants before spending money. For the visa file the consulate accepts either, but if the DoV does not state that authenticity was verified, it only covers comparability.","the_trap":"Students buy the wrong artefact. A CIMEA Statement of Comparability alone is not enough where the university or consulate also wants authenticity verified - that is a second, separately-priced Statement of Verification. Equally, students queue for a DoV at a consulate that would have accepted a CIMEA statement issued in 15 working days. India is not a Lisbon Convention country, so the free ARDI download that EU-country applicants use is not available here.","source_url":"https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf","exact_quote":"a discrezione della singola istituzione della formazione superiore, il titolo finale puo' essere corredato in alternativa da attestazione rilasciata dal centro ENIC-NARIC italiano (CIMEA) o da eventuale Dichiarazione di valore","date_checked":"14 September 2026"},{"step_no":4,"stage":"Eligibility","title":"Route A - order the CIMEA statements on the Diplome platform","who":["india","intl"],"duration_realistic":"15 working days (comparability) and 30 working days (verification), run in parallel","what_happens":"CIMEA issues the Statement of Comparability for EUR 150 (VAT included) within 15 working days of the file being complete, and the Statement of Verification for EUR 65 (VAT included) within 30 working days. Both are ordered through the CIMEA-Diplome platform and delivered as blockchain-backed digital certificates. Many Italian universities have signed agreements with CIMEA that give their applicants discounted or institution-paid statements - check the target university's page before paying full price.","the_trap":"The clock starts when the file is COMPLETE, not when payment is made. A missing apostille restarts the wait, and the verification statement - the slower of the two at 30 working days - is the one students order last. Order both on the same day.","source_url":"https://www.univpm.it/Entra/Accordo_Univpm_Cimea","exact_quote":"150,00 Euro (IVA inclusa) ... entro 15 giorni lavorativi dalla data di perfezionamento della documentazione richiesta","date_checked":"14 September 2026"},{"step_no":5,"stage":"Eligibility","title":"Route B - apply for the Declaration of Value at the competent Italian consulate","who":["india"],"duration_realistic":"Up to 90 days from submission","what_happens":"The DoV is issued by the Italian mission with jurisdiction over the place where the certificate was ISSUED - which is not necessarily the mission where the student lives. It is submitted in person at a VFS centre or through Uni-Italia. It is free of charge when accompanied by the Italian admission letter and the Universitaly pre-enrolment summary; without those (PhD, research, employment, or no pre-enrolment yet) it becomes a 'Paid DoV' with a consular fee. Consulates state processing of up to 90 days.","the_trap":"Jurisdiction. A Kerala-issued certificate goes to the Mumbai consulate even if the student now lives in Delhi, while the visa application itself goes to the consulate covering the student's residence. Files submitted to the wrong mission are refused outright, and 90 days is long enough that a rejection kills the intake.","source_url":"https://consmumbai.esteri.it/wp-content/uploads/2026/06/Checklist_dov_mumbai-for-study-purposes-2026-2027-vers-05-06-2026.pdf","exact_quote":"Kindly note that the processing of DOV can take up to 90 days from the date of submission to this Consulate","date_checked":"14 September 2026"},{"step_no":6,"stage":"Eligibility","title":"Secure the language certificate the course is taught in - B2, all four skills","who":["india","intl"],"duration_realistic":"4-10 weeks including test booking and result turnaround","what_happens":"For Italian-taught Laurea and single-cycle courses the university runs its own Italian test at a level of at least B2, unless the student holds a recognised B2+ Italian certificate. For English-taught courses the consulate will accept only an internationally recognised certificate at B2 or above, or an equivalent certificate issued by the university itself - and it must attest all four skills. The university uploads the result into the Universitaly pre-enrolment file so the consulate does not have to retest.","the_trap":"Indian students assume an English-medium CBSE or ISC education exempts them. It does not: the Procedures exempt only native speakers and citizens of a listed set of English-official countries (India is not among the list used by, for example, Politecnico di Milano). A two-skill or 'online certificate of English' is rejected at the visa counter, and by then the pre-enrolment window has usually closed.","source_url":"https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf","exact_quote":"certificazioni della lingua estera di erogazione del corso attestante una competenza non inferiore al livello B2 del Quadro Comune Europeo di Riferimento per le Lingue (QCER)","date_checked":"14 September 2026"},{"step_no":7,"stage":"Eligibility","title":"EU/EEA shortcut - what an EU passport removes from this chain","who":["intl"],"duration_realistic":"n/a","what_happens":"EU, EEA, Swiss, San Marino and Vatican citizens, plus non-EU nationals already legally resident in Italy or another EU state under art. 39(5) D.Lgs. 286/1998, skip Universitaly pre-enrolment, the visa, the residence permit AND the non-EU reserved quota entirely. They apply directly to the university and compete on equal terms with Italian applicants. Where the student holds dual nationality and one is EU, the EU one prevails for these Procedures.","the_trap":"An OCI card is not an Indian-to-EU shortcut and confers nothing here. Conversely, a student with an EU passport who is wrongly pre-enrolled on Universitaly ends up competing inside the small non-EU quota instead of the large general pool - a self-inflicted rejection.","source_url":"https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf","exact_quote":"accedono senza necessita' di visto e senza limitazioni di quota ai corsi di studio se in possesso di un titolo di studio corrispondente a quello italiano richiesto","date_checked":"14 September 2026"},{"step_no":8,"stage":"Application","title":"Read the non-EU reserved quota (contingente riservato) for the exact programme","who":["india","intl"],"duration_realistic":"Half a day of research per shortlist; the numbers publish by 31 December for the following year","what_happens":"This is the structural fact that decides the shortlist. A non-EU applicant resident abroad does not compete in the general pool: by art. 46(1) DPR 394/1999 each university must decide, by 31 December each year, how many first-year places it sets aside for foreign students, programme by programme, for the following academic year. Those numbers are published in each programme's bando and loaded onto Universitaly. A ranked list is then drawn separately for that quota. Only students with a scholarship from the Italian MFA or their home government under a cultural/cooperation agreement are admitted above the quota.","the_trap":"Counselors read the headline class size - '200 places in the English-taught programme' - and model the odds off it, when the quota reserved for non-EU applicants resident abroad may be 15 or 30 of those places. The result is a shortlist of nominally 'safe' programmes where the real acceptance rate is brutal, and a student who misses every offer. Always find the quota line in the bando, not the class size.","source_url":"https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf","exact_quote":"entro il 31 dicembre di ogni anno gli Atenei stabiliscono il numero dei posti da destinare alla immatricolazione degli studenti stranieri ai corsi di studio universitari, per l'anno accademico successivo","date_checked":"14 September 2026"},{"step_no":9,"stage":"Application","title":"Apply to the university itself, on the university's own portal and deadline","who":["india","intl"],"duration_realistic":"Windows open November-April; most non-EU deadlines fall between March and July","what_happens":"This is a separate act from Universitaly pre-enrolment and it comes first. Each institution runs its own application portal, its own document list and its own calendar. Universities typically open an early 'pre-evaluation' window for visa-needing applicants: Genoa, for instance, ran pre-evaluation for visa applicants from 26 November 2025 to 20 March 2026 for a.y. 2026/2027, months before the general resident window. Expect to upload the last three years of school reports plus either the final diploma or a letter confirming enrolment in the final year.","the_trap":"Treating Universitaly as 'the application'. It is not an application to a university at all - it is the ministry's visa-facing pre-enrolment record, and a university can only validate it if the student has already won a place through the university's own process. Students who wait for Universitaly to open in April have already missed the visa-applicant pre-evaluation windows at several large universities.","source_url":"https://unige.it/en/internazionale/iscrizioni-internazionali/scadenze","exact_quote":"Pre-evaluation - Visa Applicants (Fall): opens 26 November 2025; closes 20 March 2026","date_checked":"14 September 2026"},{"step_no":10,"stage":"Application","title":"Book the entrance test - fixed sitting dates, and English TOLC no longer exists","who":["india","intl"],"duration_realistic":"Book 4-8 weeks ahead; registration for a CISIA sitting closes about ten working days before it","what_happens":"Most Italian bachelor programmes gate admission on a CISIA test with fixed national sitting dates, taken either at home (TOLC@CASA) or at a university. The Italian-language family is TOLC-I (engineering), TOLC-E (economics), TOLC-F, TOLC-S, TOLC-B at EUR 30. The English-language route has CHANGED: from a.y. 2026/2027 CISIA has retired English TOLC-I, English TOLC-E and English TOLC-F and replaced all three with a single test, CEnT-S, launched 4 November 2025 - five sections (Mathematics, Reasoning on texts and data, Biology, Chemistry, Physics), 55 questions, 110 minutes, booking fee EUR 55. Some universities run their own test instead: Politecnico di Milano's TOL, which also accepts TOLC-I, CEnT-S or SAT as alternatives.","the_trap":"Preparing for, or booking, an 'English TOLC' that has been discontinued - the name is still all over agent sites and old university pages. The second trap is the calendar: test sittings are fixed dates with registration closing roughly ten working days prior, so a student who decides in late July that they need a September sitting may find the seats gone and the university's own application deadline already passed.","source_url":"https://www.cisiaonline.it/en/news/new-cent-s-here","exact_quote":"Starting today, Tuesday, November 4th, the CEnT-S, the new English test that replaces the English TOLC, is officially launched.","date_checked":"14 September 2026"},{"step_no":11,"stage":"Application","title":"Public English-taught Medicine: IMAT, one sitting a year, very late in the cycle","who":["india","intl"],"duration_realistic":"Registration window is about two weeks in late August; one test date in late September","what_happens":"IMAT survives and is still the single national entrance test for the English-taught Medicine and Surgery, Dentistry and Veterinary single-cycle degrees at public universities - it was NOT swallowed by the 2025 semestre aperto reform, which applies to the Italian-taught courses. For a.y. 2026/2027 (Decreto Ministeriale n. 1005 of 6 August 2026) the test was sat on Tuesday 29 September 2026, with registration on Universitaly open from 26 August to 9 September 2026 at 15:00 CEST, at test centres in Italy and abroad. Candidates admitted from the IMAT rankings have their data passed by the ministry to the MFA so visa appointments can be scheduled.","the_trap":"The arithmetic does not work and nobody says so out loud. IMAT is sat at the end of September, rankings and seat assignment run through October, and the consular deadline for study-visa applications for a.y. 2026/2027 was 30 November 2026 - against a stated visa processing time of up to 90 days in India. An IMAT student has roughly six weeks to assemble an apostilled, attested, funded visa file. Every document in steps 2 to 5 must be finished BEFORE the student sits the test, not after the result.","source_url":"https://international.unime.it/study-us/english-taught-programmes/imat-test-info-page","exact_quote":"The IMAT 2026 will take place on Tuesday, 29 September 2026 ... registration on the Universitaly portal between 26 August 2026 and 9 September 2026 (3:00 p.m. CEST).","date_checked":"14 September 2026"},{"step_no":12,"stage":"Application","title":"Italian-taught Medicine: the semestre aperto replaced the entrance test","who":["india","intl"],"duration_realistic":"Enrol by early August; the filter exams run December and January; ranking after that","what_happens":"Legge 14 marzo 2025, n. 26 abolished the entrance test for the Italian-taught Medicine, Dentistry and Veterinary single-cycle degrees and replaced it with an open first semester. For a.y. 2026/2027 students registered on Universitaly by 3 August 2026 (18:00) with a flat EUR 250 contribution, listing at least ten universities in order of preference plus a fallback related course, then sat national exams in Chemistry, Biology and Physics - at Bologna on 10 December 2026 and 11 January 2027 - needing at least 18/30 in each to enter the national merit ranking. Non-EU applicants resident abroad may enter, but must meet the Italian language requirement and produce full foreign-qualification documentation before teaching starts.","the_trap":"For a non-EU student this reform is a timing bomb. The visa must be applied for by 30 November 2026, but the filter exams that decide whether the student gets a place at all are in December and January. A student takes the visa, the flight, the deposit and the residence permit on a place they may not get - and a student who does not pass has a residence permit tied to a course they cannot enter. Treat the Italian-taught route as high-risk for visa-needing students until the ministry publishes the promised separate note on international enrolment.","source_url":"https://www.unibo.it/it/studiare/iscrizioni-tasse-e-altre-procedure/iscrizioni-al-semestre-aperto","exact_quote":"Iscriviti sul sito Universitaly entro il 3 agosto 2026 ore 18:00 ... contributo forfettario di 250,00 EUR","date_checked":"14 September 2026"},{"step_no":13,"stage":"Application","title":"Private medical schools run their OWN tests, six months earlier","who":["india","intl"],"duration_realistic":"Register December-February; sit February-March; results in spring","what_happens":"Humanitas University and Universita Vita-Salute San Raffaele do not use IMAT. Humanitas runs HUMAT - 60 questions in 120 minutes across Scientific Thinking & Academic Literacy, Biology and Chemistry, and Mathematics and Physics - with two 2026 rounds on 5-6 March and 18-20 March 2026 and a EUR 200 test fee; candidates may sit both rounds and keep the higher score. San Raffaele runs its own UniSR admission test for the International MD Program, with 64 places for non-EU candidates resident abroad, registration from 17 December 2025 to 5 February 2026 and home-based sittings on 11 February and 4 March 2026, EUR 200 covering both.","the_trap":"Students discover the privates in July, after the IMAT hype, and find the doors shut since March. The privates are also the timing-safe option precisely because they decide in spring - which leaves a comfortable runway to the 30 November visa deadline. Any medicine shortlist built after February has already lost its safest entries.","source_url":"https://www.hunimed.eu/apply-med-schools/","exact_quote":"I round: 5th - 6th March 2026 ... II round: 18th - 20th March 2026","date_checked":"14 September 2026"},{"step_no":14,"stage":"Application","title":"Submit the Universitaly pre-enrolment - mandatory, free, and separate from applying","who":["india","intl"],"duration_realistic":"Form takes an hour; university validation takes days to weeks","what_happens":"Every non-EU student resident abroad who needs a type D visa must file a 'domanda di preiscrizione' on Universitaly, the only free official ministry portal. The window for a.y. 2026/2027 opened on 9 April 2026; closing dates are set per university and per course (Sapienza 30 June 2026, Turin 15 July 2026, Milan 31 July 2026, Pisa and Genoa into autumn). The student names ONE course. The university then validates the application digitally. The form also auto-generates the student's Italian tax code (codice fiscale). Only a validated pre-enrolment unlocks a visa appointment.","the_trap":"Two traps. First, one course only - there is no portfolio, so the pre-enrolment must point at the offer the student will actually take. Second, students treat a validated pre-enrolment as an entitlement to a visa; the Procedures say explicitly that it is not, and that failure to validate produces automatic refusal of a visa application already filed.","source_url":"https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf","exact_quote":"La domanda di preiscrizione per il rilascio del visto ... dovra' essere presentata esclusivamente per il tramite del portale UNIVERSITALY, unico portale di accesso gratuito e ufficiale del Ministero dell'Universita' e della Ricerca.","date_checked":"14 September 2026"},{"step_no":15,"stage":"Application","title":"NEW for 2026/2027: universities can validate only quota + 20%, then the portal locks","who":["india","intl"],"duration_realistic":"Immediate effect - the cap bites the moment a popular course fills","what_happens":"From a.y. 2026/2027 a university may validate no more pre-enrolment applications than the number of places it reserved for foreign students, plus 20%. Universitaly runs a live 'supporto di monitoraggio' that alerts the institution and SUSPENDS further validations once the ceiling is hit. A slot reopens only when a visa is refused or a candidate withdraws, and the cap can be lifted only by an exceptional, reasoned resolution of the university's academic bodies. Universities must also notify consulates and questure by PEC when a visa-holder fails to enrol, so the visa can be revoked.","the_trap":"This converts pre-enrolment from paperwork into a race. A student who holds an offer but files the Universitaly form late can find the university mathematically unable to validate it - offer in hand, no visa possible. File the pre-enrolment the week the offer lands, not the week before the university's stated deadline.","source_url":"https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf","exact_quote":"le Istituzioni della formazione superiore competenti potranno validare un numero di domande di preiscrizione non superiore al numero dei posti destinati, da ciascun Ateneo, alla immatricolazione degli studenti stranieri, maggiorato di un 20%.","date_checked":"14 September 2026"},{"step_no":16,"stage":"Application","title":"Get the validation unconditional - 'con riserva' only works in two narrow cases","who":["india","intl"],"duration_realistic":"Days to weeks after the university's decision","what_happens":"A pre-enrolment may be validated with a reservation (con riserva) where the student is still in the final school year, or where the university has flagged further steps. A visa can be applied for on a reserved validation in only two situations: the student does not yet physically hold the final qualification (and can produce an official provisional certificate from the competent foreign authority), or the student must sit the language test or admission exam in person. In those two cases the consulate issues a shorter type D valid for a conventional 100 days so the student can sit the exams in Italy and enrol without flying home.","the_trap":"Self-declarations and agency-issued 'provisional letters' are explicitly excluded - the provisional certificate must come from the authority that awards the qualification under Indian rules. And if exams fall before the diploma is issued, the student is pushed onto a short-stay Schengen visa and must return to India before the 365-day national visa can be issued at all.","source_url":"https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf","exact_quote":"Le citate fattispecie di attestazioni/certificazioni provvisorie non comprendono in alcun modo autocertificazioni svolte dal candidato e/o da enti/istituzioni non ufficiali","date_checked":"14 September 2026"},{"step_no":17,"stage":"Money","title":"Build the proof of funds - the figure jumped to EUR 10,179.85 for 2026/2027","who":["india","intl"],"duration_realistic":"Start 6 months before the visa appointment - the bank trail is the long pole","what_happens":"The ministerial Procedures for a.y. 2026/2027 and 2027/2028 set means of subsistence at EUR 10,179.85 per year, expressed by consulates as EUR 783.06 per month over 13 months. Funds must come from lawful and traceable sources, preferably in the student's own name, or from the family (relatives to the fourth degree). Italian consulates in India ask for a stamped and signed six-month bank statement for the student and, where sponsored, for the sponsor, plus proof of the source of income (ITR for the last three years, salary slips, business documents). Education loans count only if the money is actually deposited and visible on the statements. Tuition already paid and the return airfare sit on top of this figure.","the_trap":"THE headline change of this cycle, and the one most likely to sink a file. The 2025/2026 consular checklists in India still say 'no less than EUR 6,947.33 for one year (13 months) or EUR 534.41 for each month' - the new figure is 46% higher. A family that budgeted off last year's checklist is roughly EUR 3,200 short. Note the sources disagree by publication date, not by substance: the 2026-2028 ministerial circular is the governing text, and the older VFS checklist pages are simply stale. A second trap: a lump sum parked in the account three weeks before the appointment reads as unexplained and fails the traceability test even though the balance is right.","source_url":"https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf","exact_quote":"Mezzi economici di sussistenza per il soggiorno previsto. Tali mezzi sono quantificati nell'importo di euro 10.179,85 annuali.","date_checked":"14 September 2026"},{"step_no":18,"stage":"Money","title":"Budget tuition properly - and get an ISEE parificato to cut it","who":["india","intl"],"duration_realistic":"ISEE parificato takes 2-6 weeks at a CAF once the student is in Italy or has the documents","what_happens":"Public Italian universities are cheap by design and means-tested in practice. At Padua, for example, the MAXIMUM total contribution for a.y. 2026/27 is EUR 2,998.00 for humanities-group courses and EUR 3,198.00 for science-group courses, including the regional right-to-study tax of EUR 192.00 and EUR 16.00 stamp duty; the first instalment at matriculation is just those EUR 208.00. What a student actually pays is driven by ISEE. International students whose family lives abroad cannot get an ordinary ISEE - they need an ISEE parificato, issued only by a CAF agency under agreement with the university, using foreign income and property documents. Under a low ISEE the contribution falls towards zero (the 'no tax area', EUR 22,000 nationally, raised to EUR 26,000-32,000 by many universities).","the_trap":"Students pay the maximum fee for their entire first year because nobody told them the ISEE parificato exists, or because they miss the university's fee-reduction application deadline, which is separate from enrolment and usually falls in the autumn. Note also that private universities (Bocconi, Humanitas, San Raffaele, Cattolica) sit outside this system entirely.","source_url":"https://wwwassets.unipd.it/sites/default/files/2026-07/1.Bando%20ContribuzioneEsoneri%202026-27.pdf","exact_quote":"Gruppo A EUR 2.790,00 - EUR 192,00 + EUR 16,00 = EUR 208,00 - EUR 2.998,00 ; Gruppo B EUR 2.990,00 - EUR 208,00 - EUR 3.198,00","date_checked":"14 September 2026"},{"step_no":19,"stage":"Money","title":"Apply for the regional right-to-study grant (DSU) - separate application, summer deadline","who":["india","intl"],"duration_realistic":"Apply July-September; provisional rankings in autumn; first instalment in winter","what_happens":"Italy's best-kept scholarship is not a university scholarship at all: it is the regional right-to-study benefit run by bodies such as DSU Toscana, ER.GO, DiSCo Lazio and EDISU Piemonte, and international students are fully eligible. It bundles a tuition waiver, a cash stipend, free or subsidised accommodation and free meals. DSU Toscana's 2026/2027 competition ran from 20 July 2026 to 13:00 on 7 September 2026 for bachelor's and master's students, with ISEE capped at EUR 27,000 and ISPE at EUR 60,000; a band-1 fuori sede student receives EUR 3,338 in cash plus two free meals a day plus a free hall place. National minimum amounts for 2026/2027 (Decreto Direttoriale MUR n. 175/2026) are EUR 7,171.11 fuori sede, EUR 4,190.71 pendolare and EUR 2,890.16 in sede, and regions may pay more.","the_trap":"Three traps stacked. (1) It is applied for at the regional agency, not the university, on its own deadline that typically falls in late August or early September - before many students have even arrived. (2) A non-EU student must document family income and property with certificates issued in 2026 by the competent Indian authorities, translated into Italian and legalised by the Italian diplomatic mission in India (or apostilled); affidavits, self-declarations and sworn statements are expressly refused. That chain takes months and must be started alongside the visa file. (3) Winning it does not help the visa: the Procedures state that merely being a candidate for, or eligible for, a regional grant cannot be counted towards the EUR 10,179.85.","source_url":"https://www.dsu.toscana.it/documents/d/ardsu/bando-borsa-alloggio-26-27","exact_quote":"dal 20 luglio 2026 alle ore 13.00 (ora italiana) del 7 settembre 2026 ... Tutta la documentazione, prodotta in lingua originale e legalizzata, deve essere tradotta in lingua italiana e legalizzata dalle Autorita' diplomatiche italiane presenti nel paese d'origine","date_checked":"14 September 2026"},{"step_no":20,"stage":"Money","title":"Lock accommodation that the consulate will actually accept","who":["india","intl"],"duration_realistic":"2-6 weeks; start as soon as the offer is confirmed","what_happens":"The visa requires proof of suitable accommodation in Italy. Consulates in India ask for proof covering at least the first 30 days: a hotel booking, a registered rental contract, or a written allocation from the university or hall of residence. The 2026-2028 Procedures tightened this: an application for, or eligibility for, a university hall place is explicitly NOT valid evidence.","the_trap":"Students submit the DSU accommodation application receipt or the university's 'you are eligible for a room' email and are refused. Only an actual allocation, contract or paid booking counts. In Milan, Bologna and Rome the private rental market for September is effectively gone by June, so a student waiting on a hall result is squeezed between an unusable proof and an unaffordable market.","source_url":"https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf","exact_quote":"Un idoneo alloggio nel territorio nazionale. La semplice candidatura o idoneita' a un posto alloggio presso una residenza universitaria non costituisce documento valido ai fini dell'attestazione della disponibilita' di idoneo alloggio.","date_checked":"14 September 2026"},{"step_no":21,"stage":"Visa","title":"Book the visa appointment before the hard national deadline","who":["india","intl"],"duration_realistic":"Appointment slots in Indian peak season disappear 4-8 weeks ahead","what_happens":"Only a student whose pre-enrolment has been validated can request a visa appointment. The Procedures set a single national cut-off per cycle for degree courses: applications must reach the competent Italian mission by 30 November 2026 for a.y. 2026/2027 and by 31 October 2027 for a.y. 2027/2028. Universities may and do impose EARLIER dates on their own portals, tied to when teaching starts. There is no deadline for master's, PhD, Erasmus, single courses or foundation courses, but the visa must still precede the start of teaching. In India applications go through VFS: from 15 April 2024 the Mumbai jurisdiction accepts student applications at Mumbai (Mahalaxmi) and Cochin only.","the_trap":"Confusing the ministry's 30 November backstop with the date that matters. If the university's portal says visas must be presented by, say, 10 September, the student who books for November has lost the seat regardless of what the circular allows. Book the appointment the day the pre-enrolment is validated.","source_url":"https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf","exact_quote":"Per l'anno accademico 2026/2027, le domande di visto dovranno essere presentate presso le Rappresentanze diplomatico-consolari competenti entro e non oltre il 30 novembre 2026. Per l'anno accademico 2027/2028, invece, il termine ultimo per la presentazione delle domande di visto e' fissato al 31 ottobre 2027.","date_checked":"14 September 2026"},{"step_no":22,"stage":"Visa","title":"Submit the type D 'STUDIO - Immatricolazione Universita' application","who":["india","intl"],"duration_realistic":"Up to 90 days processing, and consulates warn it can exceed that","what_happens":"The national type D study visa is issued for 365 days with multiple entries. The Indian file comprises: passport (issued within 10 years, 3 months' validity beyond the course, 2 blank pages), application form and two photos, a one-page statement of purpose, the admission letter and the Universitaly pre-enrolment summary (which must not show 'NON IMMATRICOLATO' in red), proof of tuition payment, HRD-attested and apostilled certificates and transcripts, the DoV or CIMEA statement where the institution requires it, B2 language proof, the financial pack, medical insurance of at least EUR 30,000 valid for the first six months with a repatriation clause, a one-way ticket reservation and accommodation proof. Fingerprints have been compulsory for national visas since 11 January 2025 (D.Lgs. 145/2024), and the Mumbai consulate requires a mandatory video interview.","the_trap":"Planning to a rumoured '2-4 week' turnaround. The consulates state up to 90 days from receipt, and say that if they issue an 'advance notice for refusal' asking for more documents, the total will exceed 90 days. Counted backwards from a late-September course start, the appointment needs to be in June or early July, which means the attestation and CIMEA work in steps 2-5 must be done in the spring.","source_url":"https://consmumbai.esteri.it/en/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/study-in-italy/","exact_quote":"the processing time of long-term visa applications (D type) can take up to 90 days from the day they are received by this Consulate General","date_checked":"14 September 2026"},{"step_no":23,"stage":"Visa","title":"Understand what the visa does and does not guarantee","who":["india","intl"],"duration_realistic":"n/a - a briefing, but it prevents a category of disaster","what_happens":"The Procedures are unusually blunt: university acceptance confers no right to a visa; a visa confers no right to complete enrolment; and acceptance confers no right to enrol even with a visa in hand and the student physically in Italy, because the university must still verify the authenticity of the full academic file. Separately, the consulate must assess migratory risk under D.I. 850/2011 art. 4(2), weighing the family's socio-economic position, the quality of prior study and how coherent the chosen course is with the student's background.","the_trap":"Course-switching for convenience. A student who picks an unrelated programme because it was easier to get into presents an incoherent study path, which is an explicit ground for finding migratory risk - a refusal that no amount of bank balance fixes. Write the statement of purpose to defend the continuity between Class XII streams and the chosen Laurea.","source_url":"https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf","exact_quote":"la preventiva accettazione di un candidato da parte dell'ateneo non conferisce alcun diritto all'ottenimento del visto","date_checked":"14 September 2026"},{"step_no":24,"stage":"Arrival","title":"File the permesso di soggiorno within 8 WORKING days of landing","who":["india","intl"],"duration_realistic":"The filing itself takes one morning; do it in week one, not week two","what_happens":"Within eight working days of entering Italy on a type D study visa the student must lodge a residence-permit application with the Questura of the city where they will live. In practice this is done with the free 'kit postale' - a yellow-striped envelope with two forms and instructions, collected from a Poste Italiane Sportello Amico counter, or from a desk inside the university where one exists. Costs: EUR 30.00 to the postal operator on submission, EUR 30.46 for producing the electronic permit, a EUR 16.00 marca da bollo, plus the statutory contributo, which is EUR 40.00 for a permit of more than three months and up to one year. Patronati and some comuni help fill the kit free of charge.","the_trap":"Eight WORKING days, not eight days - and students spend the first week hunting for a flat. Kits also run out at smaller post offices; the official advice is never to buy one from a third party. Students who miss the window are technically irregular, and the university will only enrol them 'con riserva' until a valid residence title is produced.","source_url":"https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf","exact_quote":"Entro otto giorni lavorativi dall'arrivo in Italia con un visto di tipo D \"nazionale\" per STUDIO (Immatricolazione Universita') i candidati devono inoltrare la richiesta di permesso di soggiorno per STUDIO alla Questura competente","date_checked":"14 September 2026"},{"step_no":25,"stage":"Arrival","title":"Attend the Questura appointment for fingerprints - and expect a long wait for the card","who":["india","intl"],"duration_realistic":"Questura appointment typically weeks out; the physical permit commonly takes several months","what_happens":"On submitting the kit the post office issues a receipt (ricevuta) that is legally equivalent to a Questura receipt and proves lawful presence in Italy, plus a letter giving the date, time and place of the Questura appointment for photo-fingerprinting. The student attends with photographs. If documents are missing, the Immigration Office serves a request under art. 10-bis L. 241/1990 - and it may not demand a Declaration of Value, which has not been mandatory since Consiglio di Stato judgment no. 4613 of 4 September 2007. The card itself is collected from the Questura later.","the_trap":"Students assume the card arrives in weeks and book flights home for Christmas. Where issue is delayed by the fingerprinting backlog the Procedures expressly contemplate the university keeping the enrolment provisional until the permit is shown. The ricevuta plus the visa is enough to stay and to re-enter Italy, but students routinely panic or travel without understanding what the receipt covers. Keep the ricevuta with the passport at all times.","source_url":"https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf","exact_quote":"L'Ufficio postale rilascia la ricevuta di presentazione della richiesta di permesso di soggiorno che equivale alla ricevuta di presentazione delle istanze rilasciata dalla Questura e che, tra l'altro, consente di attestare la regolare presenza in Italia.","date_checked":"14 September 2026"},{"step_no":26,"stage":"Arrival","title":"Finalise the immatricolazione - the university re-verifies everything","who":["india","intl"],"duration_realistic":"Days to weeks; enrolment can sit 'with reserve' until the following June","what_happens":"Enrolment is a separate act from the visa and from pre-enrolment. To complete it the university must satisfy itself both that the foreign qualification gives access to the chosen course and that the documents are genuine - by requesting apostilled and legalised originals, contacting the Indian awarding body directly, or using CIMEA. Where the student lacks a valid residence title or any other prescribed requirement at that moment, enrolment is registered with reserve until June of the following year, and the Questura will confirm to the university whether the permit was issued or refused. The codice fiscale generated at pre-enrolment is used here; the consulates do not issue one.","the_trap":"Arriving with photocopies. A student who cleared the visa on scanned or provisional documents still has to put apostilled originals on the registrar's desk, and a discrepancy between the name on the passport and the name on a marksheet needs an apostilled 'one and the same person' certificate from a Tahsildar or municipal registrar - affidavits are not accepted. Sort name discrepancies in India, months earlier.","source_url":"https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf","exact_quote":"le Istituzioni della formazione superiore ... sono responsabili della verifica della veridicita' dei documenti accademici presentati","date_checked":"14 September 2026"},{"step_no":27,"stage":"Arrival","title":"Plan the first renewal now - it is exam-gated and starts 60 days early","who":["india","intl"],"duration_realistic":"Apply at least 60 days before expiry; allow the same multi-month Questura cycle","what_happens":"The study permit is issued for one year and must be renewed at the Questura of the province of residence at least 60 days before it expires, with the university enrolment certificate and all the conditions that supported the visa still in place. Renewal is granted to students who passed at least one exam in the first year and at least two in later years, measured in credits as each university defines them; with documented serious health or force majeure grounds a single exam can suffice. Permits cannot be granted for more than three years beyond the nominal length of the course. A student may switch to a different degree and still renew, provided the academic authorities approve and the student has not formally withdrawn.","the_trap":"Formal withdrawal (rinuncia agli studi) destroys the residence title - a student who drops out and re-applies to another course cannot reuse the visa or permit from the first enrolment and must start the whole chain again from abroad. And a first-year student who sits no exams before renewal, which is common for students still fighting the language, loses the permit outright.","source_url":"https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf","exact_quote":"agli studenti che nel primo anno di corso abbiano superato una verifica di profitto e negli anni successivi almeno due verifiche","date_checked":"14 September 2026"}]
+[
+ {
+  "step_no": 1,
+  "stage": "Eligibility",
+  "title": "Confirm the Class XII qualification clears the 12-years-of-schooling bar",
+  "duration_realistic": "1 day (a check, not a process)",
+  "what_happens": "Italy admits foreign applicants to a Laurea only on a final secondary qualification obtained after at least 12 years of schooling. CBSE and ISC Standard XII satisfy this on its face (10+2), so an Indian student normally needs no bridging year or foundation course. Where a qualification falls short of 12 years, Allegato 1 of the ministerial Procedures sets out the remedies (extra university years abroad, or a foundation course). Check the number early: it drives whether the student is applying to a degree or to a foundation course, and the visa deadlines differ between the two.",
+  "the_trap": "Counselors assume an Indian diploma or a 3-year polytechnic after Class X substitutes for Class XII. It does not - the qualification must be the final secondary-school title giving access to university in India. State-board 'provisional' or 'passing' certificates are also refused at visa stage unless they carry the final mark and ranking criteria.",
+  "source_url": "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf",
+  "exact_quote": "titolo finale degli studi secondari conseguito con almeno 12 anni di scolarita', oppure certificato sostitutivo a tutti gli effetti di legge",
+  "date_checked": "14 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [
+    "cbse",
+    "isc",
+    "state"
+   ],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 2,
+  "stage": "Eligibility",
+  "title": "Start the Indian attestation chain: HRD attestation, then MEA apostille",
+  "duration_realistic": "4-8 weeks, longer for state boards outside the metros",
+  "what_happens": "Every academic document used for a Declaration of Value or an Italian study visa must be attested by the competent Higher Education Department of the issuing state and then apostilled by the Ministry of External Affairs, Government of India. This covers the final school certificate or degree AND the transcripts or marksheets. E-Sanad digital attestation is accepted, but the paper originals must still be produced alongside the digital ones. Documents already in English need no Italian translation.",
+  "the_trap": "SDM (Sub-Divisional Magistrate) attestation is explicitly not accepted by the Italian consulates in India - agents in India routinely sell it because it is faster and cheaper. Only the state Higher Education Department attestation counts, and a file that arrives with SDM stamps is sent back, costing four to eight weeks.",
+  "source_url": "https://consmumbai.esteri.it/wp-content/uploads/2026/06/Checklist_dov_mumbai-for-study-purposes-2026-2027-vers-05-06-2026.pdf",
+  "exact_quote": "Please note that attestations by SDM on study documents will not be accepted. Competent Higher Education Department attestation is mandatory.",
+  "date_checked": "14 September 2026",
+  "axes": {
+   "passport": [
+    "b"
+   ],
+   "board": [],
+   "residence": [
+    "in"
+   ]
+  }
+ },
+ {
+  "step_no": 3,
+  "stage": "Eligibility",
+  "title": "Choose the recognition route: consular Declaration of Value OR a CIMEA statement",
+  "duration_realistic": "Decision in a day; the artefact takes 15-90 days depending on which route",
+  "what_happens": "Italy no longer mandates the Dichiarazione di Valore. The ministerial Procedures let the university accept EITHER a CIMEA (Italian ENIC-NARIC centre) Statement of Comparability plus Statement of Verification, OR a consular Declaration of Value - and the choice is the university's, not the student's. Ask the admissions office in writing which one it wants before spending money. For the visa file the consulate accepts either, but if the DoV does not state that authenticity was verified, it only covers comparability.",
+  "the_trap": "Students buy the wrong artefact. A CIMEA Statement of Comparability alone is not enough where the university or consulate also wants authenticity verified - that is a second, separately-priced Statement of Verification. Equally, students queue for a DoV at a consulate that would have accepted a CIMEA statement issued in 15 working days. India is not a Lisbon Convention country, so the free ARDI download that EU-country applicants use is not available here.",
+  "source_url": "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf",
+  "exact_quote": "a discrezione della singola istituzione della formazione superiore, il titolo finale puo' essere corredato in alternativa da attestazione rilasciata dal centro ENIC-NARIC italiano (CIMEA) o da eventuale Dichiarazione di valore",
+  "date_checked": "14 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 4,
+  "stage": "Eligibility",
+  "title": "Route A - order the CIMEA statements on the Diplome platform",
+  "duration_realistic": "15 working days (comparability) and 30 working days (verification), run in parallel",
+  "what_happens": "CIMEA issues the Statement of Comparability for EUR 150 (VAT included) within 15 working days of the file being complete, and the Statement of Verification for EUR 65 (VAT included) within 30 working days. Both are ordered through the CIMEA-Diplome platform and delivered as blockchain-backed digital certificates. Many Italian universities have signed agreements with CIMEA that give their applicants discounted or institution-paid statements - check the target university's page before paying full price.",
+  "the_trap": "The clock starts when the file is COMPLETE, not when payment is made. A missing apostille restarts the wait, and the verification statement - the slower of the two at 30 working days - is the one students order last. Order both on the same day.",
+  "source_url": "https://www.univpm.it/Entra/Accordo_Univpm_Cimea",
+  "exact_quote": "150,00 Euro (IVA inclusa) ... entro 15 giorni lavorativi dalla data di perfezionamento della documentazione richiesta",
+  "date_checked": "14 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 5,
+  "stage": "Eligibility",
+  "title": "Route B - apply for the Declaration of Value at the competent Italian consulate",
+  "duration_realistic": "Up to 90 days from submission",
+  "what_happens": "The DoV is issued by the Italian mission with jurisdiction over the place where the certificate was ISSUED - which is not necessarily the mission where the student lives. It is submitted in person at a VFS centre or through Uni-Italia. It is free of charge when accompanied by the Italian admission letter and the Universitaly pre-enrolment summary; without those (PhD, research, employment, or no pre-enrolment yet) it becomes a 'Paid DoV' with a consular fee. Consulates state processing of up to 90 days.",
+  "the_trap": "Jurisdiction. A Kerala-issued certificate goes to the Mumbai consulate even if the student now lives in Delhi, while the visa application itself goes to the consulate covering the student's residence. Files submitted to the wrong mission are refused outright, and 90 days is long enough that a rejection kills the intake.",
+  "source_url": "https://consmumbai.esteri.it/wp-content/uploads/2026/06/Checklist_dov_mumbai-for-study-purposes-2026-2027-vers-05-06-2026.pdf",
+  "exact_quote": "Kindly note that the processing of DOV can take up to 90 days from the date of submission to this Consulate",
+  "date_checked": "14 September 2026",
+  "axes": {
+   "passport": [
+    "b"
+   ],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 6,
+  "stage": "Eligibility",
+  "title": "Secure the language certificate the course is taught in - B2, all four skills",
+  "duration_realistic": "4-10 weeks including test booking and result turnaround",
+  "what_happens": "For Italian-taught Laurea and single-cycle courses the university runs its own Italian test at a level of at least B2, unless the student holds a recognised B2+ Italian certificate. For English-taught courses the consulate will accept only an internationally recognised certificate at B2 or above, or an equivalent certificate issued by the university itself - and it must attest all four skills. The university uploads the result into the Universitaly pre-enrolment file so the consulate does not have to retest.",
+  "the_trap": "Indian students assume an English-medium CBSE or ISC education exempts them. It does not: the Procedures exempt only native speakers and citizens of a listed set of English-official countries (India is not among the list used by, for example, Politecnico di Milano). A two-skill or 'online certificate of English' is rejected at the visa counter, and by then the pre-enrolment window has usually closed.",
+  "source_url": "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf",
+  "exact_quote": "certificazioni della lingua estera di erogazione del corso attestante una competenza non inferiore al livello B2 del Quadro Comune Europeo di Riferimento per le Lingue (QCER)",
+  "date_checked": "14 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 7,
+  "stage": "Eligibility",
+  "title": "EU/EEA shortcut - what an EU passport removes from this chain",
+  "duration_realistic": "n/a",
+  "what_happens": "EU, EEA, Swiss, San Marino and Vatican citizens, plus non-EU nationals already legally resident in Italy or another EU state under art. 39(5) D.Lgs. 286/1998, skip Universitaly pre-enrolment, the visa, the residence permit AND the non-EU reserved quota entirely. They apply directly to the university and compete on equal terms with Italian applicants. Where the student holds dual nationality and one is EU, the EU one prevails for these Procedures.",
+  "the_trap": "An OCI card is not an Indian-to-EU shortcut and confers nothing here. Conversely, a student with an EU passport who is wrongly pre-enrolled on Universitaly ends up competing inside the small non-EU quota instead of the large general pool - a self-inflicted rejection.",
+  "source_url": "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf",
+  "exact_quote": "accedono senza necessita' di visto e senza limitazioni di quota ai corsi di studio se in possesso di un titolo di studio corrispondente a quello italiano richiesto",
+  "date_checked": "14 September 2026",
+  "axes": {
+   "passport": [
+    "a"
+   ],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 8,
+  "stage": "Application",
+  "title": "Read the non-EU reserved quota (contingente riservato) for the exact programme",
+  "duration_realistic": "Half a day of research per shortlist; the numbers publish by 31 December for the following year",
+  "what_happens": "This is the structural fact that decides the shortlist. A non-EU applicant resident abroad does not compete in the general pool: by art. 46(1) DPR 394/1999 each university must decide, by 31 December each year, how many first-year places it sets aside for foreign students, programme by programme, for the following academic year. Those numbers are published in each programme's bando and loaded onto Universitaly. A ranked list is then drawn separately for that quota. Only students with a scholarship from the Italian MFA or their home government under a cultural/cooperation agreement are admitted above the quota.",
+  "the_trap": "Counselors read the headline class size - '200 places in the English-taught programme' - and model the odds off it, when the quota reserved for non-EU applicants resident abroad may be 15 or 30 of those places. The result is a shortlist of nominally 'safe' programmes where the real acceptance rate is brutal, and a student who misses every offer. Always find the quota line in the bando, not the class size.",
+  "source_url": "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf",
+  "exact_quote": "entro il 31 dicembre di ogni anno gli Atenei stabiliscono il numero dei posti da destinare alla immatricolazione degli studenti stranieri ai corsi di studio universitari, per l'anno accademico successivo",
+  "date_checked": "14 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 9,
+  "stage": "Application",
+  "title": "Apply to the university itself, on the university's own portal and deadline",
+  "duration_realistic": "Windows open November-April; most non-EU deadlines fall between March and July",
+  "what_happens": "This is a separate act from Universitaly pre-enrolment and it comes first. Each institution runs its own application portal, its own document list and its own calendar. Universities typically open an early 'pre-evaluation' window for visa-needing applicants: Genoa, for instance, ran pre-evaluation for visa applicants from 26 November 2025 to 20 March 2026 for a.y. 2026/2027, months before the general resident window. Expect to upload the last three years of school reports plus either the final diploma or a letter confirming enrolment in the final year.",
+  "the_trap": "Treating Universitaly as 'the application'. It is not an application to a university at all - it is the ministry's visa-facing pre-enrolment record, and a university can only validate it if the student has already won a place through the university's own process. Students who wait for Universitaly to open in April have already missed the visa-applicant pre-evaluation windows at several large universities.",
+  "source_url": "https://unige.it/en/internazionale/iscrizioni-internazionali/scadenze",
+  "exact_quote": "Pre-evaluation - Visa Applicants (Fall): opens 26 November 2025; closes 20 March 2026",
+  "date_checked": "14 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 10,
+  "stage": "Application",
+  "title": "Book the entrance test - fixed sitting dates, and English TOLC no longer exists",
+  "duration_realistic": "Book 4-8 weeks ahead; registration for a CISIA sitting closes about ten working days before it",
+  "what_happens": "Most Italian bachelor programmes gate admission on a CISIA test with fixed national sitting dates, taken either at home (TOLC@CASA) or at a university. The Italian-language family is TOLC-I (engineering), TOLC-E (economics), TOLC-F, TOLC-S, TOLC-B at EUR 30. The English-language route has CHANGED: from a.y. 2026/2027 CISIA has retired English TOLC-I, English TOLC-E and English TOLC-F and replaced all three with a single test, CEnT-S, launched 4 November 2025 - five sections (Mathematics, Reasoning on texts and data, Biology, Chemistry, Physics), 55 questions, 110 minutes, booking fee EUR 55. Some universities run their own test instead: Politecnico di Milano's TOL, which also accepts TOLC-I, CEnT-S or SAT as alternatives.",
+  "the_trap": "Preparing for, or booking, an 'English TOLC' that has been discontinued - the name is still all over agent sites and old university pages. The second trap is the calendar: test sittings are fixed dates with registration closing roughly ten working days prior, so a student who decides in late July that they need a September sitting may find the seats gone and the university's own application deadline already passed.",
+  "source_url": "https://www.cisiaonline.it/en/news/new-cent-s-here",
+  "exact_quote": "Starting today, Tuesday, November 4th, the CEnT-S, the new English test that replaces the English TOLC, is officially launched.",
+  "date_checked": "14 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 11,
+  "stage": "Application",
+  "title": "Public English-taught Medicine: IMAT, one sitting a year, very late in the cycle",
+  "duration_realistic": "Registration window is about two weeks in late August; one test date in late September",
+  "what_happens": "IMAT survives and is still the single national entrance test for the English-taught Medicine and Surgery, Dentistry and Veterinary single-cycle degrees at public universities - it was NOT swallowed by the 2025 semestre aperto reform, which applies to the Italian-taught courses. For a.y. 2026/2027 (Decreto Ministeriale n. 1005 of 6 August 2026) the test was sat on Tuesday 29 September 2026, with registration on Universitaly open from 26 August to 9 September 2026 at 15:00 CEST, at test centres in Italy and abroad. Candidates admitted from the IMAT rankings have their data passed by the ministry to the MFA so visa appointments can be scheduled.",
+  "the_trap": "The arithmetic does not work and nobody says so out loud. IMAT is sat at the end of September, rankings and seat assignment run through October, and the consular deadline for study-visa applications for a.y. 2026/2027 was 30 November 2026 - against a stated visa processing time of up to 90 days in India. An IMAT student has roughly six weeks to assemble an apostilled, attested, funded visa file. Every document in steps 2 to 5 must be finished BEFORE the student sits the test, not after the result.",
+  "source_url": "https://international.unime.it/study-us/english-taught-programmes/imat-test-info-page",
+  "exact_quote": "The IMAT 2026 will take place on Tuesday, 29 September 2026 ... registration on the Universitaly portal between 26 August 2026 and 9 September 2026 (3:00 p.m. CEST).",
+  "date_checked": "14 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 12,
+  "stage": "Application",
+  "title": "Italian-taught Medicine: the semestre aperto replaced the entrance test",
+  "duration_realistic": "Enrol by early August; the filter exams run December and January; ranking after that",
+  "what_happens": "Legge 14 marzo 2025, n. 26 abolished the entrance test for the Italian-taught Medicine, Dentistry and Veterinary single-cycle degrees and replaced it with an open first semester. For a.y. 2026/2027 students registered on Universitaly by 3 August 2026 (18:00) with a flat EUR 250 contribution, listing at least ten universities in order of preference plus a fallback related course, then sat national exams in Chemistry, Biology and Physics - at Bologna on 10 December 2026 and 11 January 2027 - needing at least 18/30 in each to enter the national merit ranking. Non-EU applicants resident abroad may enter, but must meet the Italian language requirement and produce full foreign-qualification documentation before teaching starts.",
+  "the_trap": "For a non-EU student this reform is a timing bomb. The visa must be applied for by 30 November 2026, but the filter exams that decide whether the student gets a place at all are in December and January. A student takes the visa, the flight, the deposit and the residence permit on a place they may not get - and a student who does not pass has a residence permit tied to a course they cannot enter. Treat the Italian-taught route as high-risk for visa-needing students until the ministry publishes the promised separate note on international enrolment.",
+  "source_url": "https://www.unibo.it/it/studiare/iscrizioni-tasse-e-altre-procedure/iscrizioni-al-semestre-aperto",
+  "exact_quote": "Iscriviti sul sito Universitaly entro il 3 agosto 2026 ore 18:00 ... contributo forfettario di 250,00 EUR",
+  "date_checked": "14 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 13,
+  "stage": "Application",
+  "title": "Private medical schools run their OWN tests, six months earlier",
+  "duration_realistic": "Register December-February; sit February-March; results in spring",
+  "what_happens": "Humanitas University and Universita Vita-Salute San Raffaele do not use IMAT. Humanitas runs HUMAT - 60 questions in 120 minutes across Scientific Thinking & Academic Literacy, Biology and Chemistry, and Mathematics and Physics - with two 2026 rounds on 5-6 March and 18-20 March 2026 and a EUR 200 test fee; candidates may sit both rounds and keep the higher score. San Raffaele runs its own UniSR admission test for the International MD Program, with 64 places for non-EU candidates resident abroad, registration from 17 December 2025 to 5 February 2026 and home-based sittings on 11 February and 4 March 2026, EUR 200 covering both.",
+  "the_trap": "Students discover the privates in July, after the IMAT hype, and find the doors shut since March. The privates are also the timing-safe option precisely because they decide in spring - which leaves a comfortable runway to the 30 November visa deadline. Any medicine shortlist built after February has already lost its safest entries.",
+  "source_url": "https://www.hunimed.eu/apply-med-schools/",
+  "exact_quote": "I round: 5th - 6th March 2026 ... II round: 18th - 20th March 2026",
+  "date_checked": "14 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 14,
+  "stage": "Application",
+  "title": "Submit the Universitaly pre-enrolment - mandatory, free, and separate from applying",
+  "duration_realistic": "Form takes an hour; university validation takes days to weeks",
+  "what_happens": "Every non-EU student resident abroad who needs a type D visa must file a 'domanda di preiscrizione' on Universitaly, the only free official ministry portal. The window for a.y. 2026/2027 opened on 9 April 2026; closing dates are set per university and per course (Sapienza 30 June 2026, Turin 15 July 2026, Milan 31 July 2026, Pisa and Genoa into autumn). The student names ONE course. The university then validates the application digitally. The form also auto-generates the student's Italian tax code (codice fiscale). Only a validated pre-enrolment unlocks a visa appointment.",
+  "the_trap": "Two traps. First, one course only - there is no portfolio, so the pre-enrolment must point at the offer the student will actually take. Second, students treat a validated pre-enrolment as an entitlement to a visa; the Procedures say explicitly that it is not, and that failure to validate produces automatic refusal of a visa application already filed.",
+  "source_url": "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf",
+  "exact_quote": "La domanda di preiscrizione per il rilascio del visto ... dovra' essere presentata esclusivamente per il tramite del portale UNIVERSITALY, unico portale di accesso gratuito e ufficiale del Ministero dell'Universita' e della Ricerca.",
+  "date_checked": "14 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 15,
+  "stage": "Application",
+  "title": "NEW for 2026/2027: universities can validate only quota + 20%, then the portal locks",
+  "duration_realistic": "Immediate effect - the cap bites the moment a popular course fills",
+  "what_happens": "From a.y. 2026/2027 a university may validate no more pre-enrolment applications than the number of places it reserved for foreign students, plus 20%. Universitaly runs a live 'supporto di monitoraggio' that alerts the institution and SUSPENDS further validations once the ceiling is hit. A slot reopens only when a visa is refused or a candidate withdraws, and the cap can be lifted only by an exceptional, reasoned resolution of the university's academic bodies. Universities must also notify consulates and questure by PEC when a visa-holder fails to enrol, so the visa can be revoked.",
+  "the_trap": "This converts pre-enrolment from paperwork into a race. A student who holds an offer but files the Universitaly form late can find the university mathematically unable to validate it - offer in hand, no visa possible. File the pre-enrolment the week the offer lands, not the week before the university's stated deadline.",
+  "source_url": "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf",
+  "exact_quote": "le Istituzioni della formazione superiore competenti potranno validare un numero di domande di preiscrizione non superiore al numero dei posti destinati, da ciascun Ateneo, alla immatricolazione degli studenti stranieri, maggiorato di un 20%.",
+  "date_checked": "14 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 16,
+  "stage": "Application",
+  "title": "Get the validation unconditional - 'con riserva' only works in two narrow cases",
+  "duration_realistic": "Days to weeks after the university's decision",
+  "what_happens": "A pre-enrolment may be validated with a reservation (con riserva) where the student is still in the final school year, or where the university has flagged further steps. A visa can be applied for on a reserved validation in only two situations: the student does not yet physically hold the final qualification (and can produce an official provisional certificate from the competent foreign authority), or the student must sit the language test or admission exam in person. In those two cases the consulate issues a shorter type D valid for a conventional 100 days so the student can sit the exams in Italy and enrol without flying home.",
+  "the_trap": "Self-declarations and agency-issued 'provisional letters' are explicitly excluded - the provisional certificate must come from the authority that awards the qualification under Indian rules. And if exams fall before the diploma is issued, the student is pushed onto a short-stay Schengen visa and must return to India before the 365-day national visa can be issued at all.",
+  "source_url": "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf",
+  "exact_quote": "Le citate fattispecie di attestazioni/certificazioni provvisorie non comprendono in alcun modo autocertificazioni svolte dal candidato e/o da enti/istituzioni non ufficiali",
+  "date_checked": "14 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 17,
+  "stage": "Money",
+  "title": "Build the proof of funds - the figure jumped to EUR 10,179.85 for 2026/2027",
+  "duration_realistic": "Start 6 months before the visa appointment - the bank trail is the long pole",
+  "what_happens": "The ministerial Procedures for a.y. 2026/2027 and 2027/2028 set means of subsistence at EUR 10,179.85 per year, expressed by consulates as EUR 783.06 per month over 13 months. Funds must come from lawful and traceable sources, preferably in the student's own name, or from the family (relatives to the fourth degree). Italian consulates in India ask for a stamped and signed six-month bank statement for the student and, where sponsored, for the sponsor, plus proof of the source of income (ITR for the last three years, salary slips, business documents). Education loans count only if the money is actually deposited and visible on the statements. Tuition already paid and the return airfare sit on top of this figure.",
+  "the_trap": "THE headline change of this cycle, and the one most likely to sink a file. The 2025/2026 consular checklists in India still say 'no less than EUR 6,947.33 for one year (13 months) or EUR 534.41 for each month' - the new figure is 46% higher. A family that budgeted off last year's checklist is roughly EUR 3,200 short. Note the sources disagree by publication date, not by substance: the 2026-2028 ministerial circular is the governing text, and the older VFS checklist pages are simply stale. A second trap: a lump sum parked in the account three weeks before the appointment reads as unexplained and fails the traceability test even though the balance is right.",
+  "source_url": "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf",
+  "exact_quote": "Mezzi economici di sussistenza per il soggiorno previsto. Tali mezzi sono quantificati nell'importo di euro 10.179,85 annuali.",
+  "date_checked": "14 September 2026",
+  "axes": {
+   "passport": [
+    "b"
+   ],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 18,
+  "stage": "Money",
+  "title": "Budget tuition properly - and get an ISEE parificato to cut it",
+  "duration_realistic": "ISEE parificato takes 2-6 weeks at a CAF once the student is in Italy or has the documents",
+  "what_happens": "Public Italian universities are cheap by design and means-tested in practice. At Padua, for example, the MAXIMUM total contribution for a.y. 2026/27 is EUR 2,998.00 for humanities-group courses and EUR 3,198.00 for science-group courses, including the regional right-to-study tax of EUR 192.00 and EUR 16.00 stamp duty; the first instalment at matriculation is just those EUR 208.00. What a student actually pays is driven by ISEE. International students whose family lives abroad cannot get an ordinary ISEE - they need an ISEE parificato, issued only by a CAF agency under agreement with the university, using foreign income and property documents. Under a low ISEE the contribution falls towards zero (the 'no tax area', EUR 22,000 nationally, raised to EUR 26,000-32,000 by many universities).",
+  "the_trap": "Students pay the maximum fee for their entire first year because nobody told them the ISEE parificato exists, or because they miss the university's fee-reduction application deadline, which is separate from enrolment and usually falls in the autumn. Note also that private universities (Bocconi, Humanitas, San Raffaele, Cattolica) sit outside this system entirely.",
+  "source_url": "https://wwwassets.unipd.it/sites/default/files/2026-07/1.Bando%20ContribuzioneEsoneri%202026-27.pdf",
+  "exact_quote": "Gruppo A EUR 2.790,00 - EUR 192,00 + EUR 16,00 = EUR 208,00 - EUR 2.998,00 ; Gruppo B EUR 2.990,00 - EUR 208,00 - EUR 3.198,00",
+  "date_checked": "14 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 19,
+  "stage": "Money",
+  "title": "Apply for the regional right-to-study grant (DSU) - separate application, summer deadline",
+  "duration_realistic": "Apply July-September; provisional rankings in autumn; first instalment in winter",
+  "what_happens": "Italy's best-kept scholarship is not a university scholarship at all: it is the regional right-to-study benefit run by bodies such as DSU Toscana, ER.GO, DiSCo Lazio and EDISU Piemonte, and international students are fully eligible. It bundles a tuition waiver, a cash stipend, free or subsidised accommodation and free meals. DSU Toscana's 2026/2027 competition ran from 20 July 2026 to 13:00 on 7 September 2026 for bachelor's and master's students, with ISEE capped at EUR 27,000 and ISPE at EUR 60,000; a band-1 fuori sede student receives EUR 3,338 in cash plus two free meals a day plus a free hall place. National minimum amounts for 2026/2027 (Decreto Direttoriale MUR n. 175/2026) are EUR 7,171.11 fuori sede, EUR 4,190.71 pendolare and EUR 2,890.16 in sede, and regions may pay more.",
+  "the_trap": "Three traps stacked. (1) It is applied for at the regional agency, not the university, on its own deadline that typically falls in late August or early September - before many students have even arrived. (2) A non-EU student must document family income and property with certificates issued in 2026 by the competent Indian authorities, translated into Italian and legalised by the Italian diplomatic mission in India (or apostilled); affidavits, self-declarations and sworn statements are expressly refused. That chain takes months and must be started alongside the visa file. (3) Winning it does not help the visa: the Procedures state that merely being a candidate for, or eligible for, a regional grant cannot be counted towards the EUR 10,179.85.",
+  "source_url": "https://www.dsu.toscana.it/documents/d/ardsu/bando-borsa-alloggio-26-27",
+  "exact_quote": "dal 20 luglio 2026 alle ore 13.00 (ora italiana) del 7 settembre 2026 ... Tutta la documentazione, prodotta in lingua originale e legalizzata, deve essere tradotta in lingua italiana e legalizzata dalle Autorita' diplomatiche italiane presenti nel paese d'origine",
+  "date_checked": "14 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 20,
+  "stage": "Money",
+  "title": "Lock accommodation that the consulate will actually accept",
+  "duration_realistic": "2-6 weeks; start as soon as the offer is confirmed",
+  "what_happens": "The visa requires proof of suitable accommodation in Italy. Consulates in India ask for proof covering at least the first 30 days: a hotel booking, a registered rental contract, or a written allocation from the university or hall of residence. The 2026-2028 Procedures tightened this: an application for, or eligibility for, a university hall place is explicitly NOT valid evidence.",
+  "the_trap": "Students submit the DSU accommodation application receipt or the university's 'you are eligible for a room' email and are refused. Only an actual allocation, contract or paid booking counts. In Milan, Bologna and Rome the private rental market for September is effectively gone by June, so a student waiting on a hall result is squeezed between an unusable proof and an unaffordable market.",
+  "source_url": "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf",
+  "exact_quote": "Un idoneo alloggio nel territorio nazionale. La semplice candidatura o idoneita' a un posto alloggio presso una residenza universitaria non costituisce documento valido ai fini dell'attestazione della disponibilita' di idoneo alloggio.",
+  "date_checked": "14 September 2026",
+  "axes": {
+   "passport": [
+    "b"
+   ],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 21,
+  "stage": "Visa",
+  "title": "Book the visa appointment before the hard national deadline",
+  "duration_realistic": "Appointment slots in Indian peak season disappear 4-8 weeks ahead",
+  "what_happens": "Only a student whose pre-enrolment has been validated can request a visa appointment. The Procedures set a single national cut-off per cycle for degree courses: applications must reach the competent Italian mission by 30 November 2026 for a.y. 2026/2027 and by 31 October 2027 for a.y. 2027/2028. Universities may and do impose EARLIER dates on their own portals, tied to when teaching starts. There is no deadline for master's, PhD, Erasmus, single courses or foundation courses, but the visa must still precede the start of teaching. In India applications go through VFS: from 15 April 2024 the Mumbai jurisdiction accepts student applications at Mumbai (Mahalaxmi) and Cochin only.",
+  "the_trap": "Confusing the ministry's 30 November backstop with the date that matters. If the university's portal says visas must be presented by, say, 10 September, the student who books for November has lost the seat regardless of what the circular allows. Book the appointment the day the pre-enrolment is validated.",
+  "source_url": "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf",
+  "exact_quote": "Per l'anno accademico 2026/2027, le domande di visto dovranno essere presentate presso le Rappresentanze diplomatico-consolari competenti entro e non oltre il 30 novembre 2026. Per l'anno accademico 2027/2028, invece, il termine ultimo per la presentazione delle domande di visto e' fissato al 31 ottobre 2027.",
+  "date_checked": "14 September 2026",
+  "axes": {
+   "passport": [
+    "b"
+   ],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 22,
+  "stage": "Visa",
+  "title": "Submit the type D 'STUDIO - Immatricolazione Universita' application",
+  "duration_realistic": "Up to 90 days processing, and consulates warn it can exceed that",
+  "what_happens": "The national type D study visa is issued for 365 days with multiple entries. The Indian file comprises: passport (issued within 10 years, 3 months' validity beyond the course, 2 blank pages), application form and two photos, a one-page statement of purpose, the admission letter and the Universitaly pre-enrolment summary (which must not show 'NON IMMATRICOLATO' in red), proof of tuition payment, HRD-attested and apostilled certificates and transcripts, the DoV or CIMEA statement where the institution requires it, B2 language proof, the financial pack, medical insurance of at least EUR 30,000 valid for the first six months with a repatriation clause, a one-way ticket reservation and accommodation proof. Fingerprints have been compulsory for national visas since 11 January 2025 (D.Lgs. 145/2024), and the Mumbai consulate requires a mandatory video interview.",
+  "the_trap": "Planning to a rumoured '2-4 week' turnaround. The consulates state up to 90 days from receipt, and say that if they issue an 'advance notice for refusal' asking for more documents, the total will exceed 90 days. Counted backwards from a late-September course start, the appointment needs to be in June or early July, which means the attestation and CIMEA work in steps 2-5 must be done in the spring.",
+  "source_url": "https://consmumbai.esteri.it/en/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/study-in-italy/",
+  "exact_quote": "the processing time of long-term visa applications (D type) can take up to 90 days from the day they are received by this Consulate General",
+  "date_checked": "14 September 2026",
+  "axes": {
+   "passport": [
+    "b"
+   ],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 23,
+  "stage": "Visa",
+  "title": "Understand what the visa does and does not guarantee",
+  "duration_realistic": "n/a - a briefing, but it prevents a category of disaster",
+  "what_happens": "The Procedures are unusually blunt: university acceptance confers no right to a visa; a visa confers no right to complete enrolment; and acceptance confers no right to enrol even with a visa in hand and the student physically in Italy, because the university must still verify the authenticity of the full academic file. Separately, the consulate must assess migratory risk under D.I. 850/2011 art. 4(2), weighing the family's socio-economic position, the quality of prior study and how coherent the chosen course is with the student's background.",
+  "the_trap": "Course-switching for convenience. A student who picks an unrelated programme because it was easier to get into presents an incoherent study path, which is an explicit ground for finding migratory risk - a refusal that no amount of bank balance fixes. Write the statement of purpose to defend the continuity between Class XII streams and the chosen Laurea.",
+  "source_url": "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf",
+  "exact_quote": "la preventiva accettazione di un candidato da parte dell'ateneo non conferisce alcun diritto all'ottenimento del visto",
+  "date_checked": "14 September 2026",
+  "axes": {
+   "passport": [
+    "b"
+   ],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 24,
+  "stage": "Arrival",
+  "title": "File the permesso di soggiorno within 8 WORKING days of landing",
+  "duration_realistic": "The filing itself takes one morning; do it in week one, not week two",
+  "what_happens": "Within eight working days of entering Italy on a type D study visa the student must lodge a residence-permit application with the Questura of the city where they will live. In practice this is done with the free 'kit postale' - a yellow-striped envelope with two forms and instructions, collected from a Poste Italiane Sportello Amico counter, or from a desk inside the university where one exists. Costs: EUR 30.00 to the postal operator on submission, EUR 30.46 for producing the electronic permit, a EUR 16.00 marca da bollo, plus the statutory contributo, which is EUR 40.00 for a permit of more than three months and up to one year. Patronati and some comuni help fill the kit free of charge.",
+  "the_trap": "Eight WORKING days, not eight days - and students spend the first week hunting for a flat. Kits also run out at smaller post offices; the official advice is never to buy one from a third party. Students who miss the window are technically irregular, and the university will only enrol them 'con riserva' until a valid residence title is produced.",
+  "source_url": "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf",
+  "exact_quote": "Entro otto giorni lavorativi dall'arrivo in Italia con un visto di tipo D \"nazionale\" per STUDIO (Immatricolazione Universita') i candidati devono inoltrare la richiesta di permesso di soggiorno per STUDIO alla Questura competente",
+  "date_checked": "14 September 2026",
+  "axes": {
+   "passport": [
+    "b"
+   ],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 25,
+  "stage": "Arrival",
+  "title": "Attend the Questura appointment for fingerprints - and expect a long wait for the card",
+  "duration_realistic": "Questura appointment typically weeks out; the physical permit commonly takes several months",
+  "what_happens": "On submitting the kit the post office issues a receipt (ricevuta) that is legally equivalent to a Questura receipt and proves lawful presence in Italy, plus a letter giving the date, time and place of the Questura appointment for photo-fingerprinting. The student attends with photographs. If documents are missing, the Immigration Office serves a request under art. 10-bis L. 241/1990 - and it may not demand a Declaration of Value, which has not been mandatory since Consiglio di Stato judgment no. 4613 of 4 September 2007. The card itself is collected from the Questura later.",
+  "the_trap": "Students assume the card arrives in weeks and book flights home for Christmas. Where issue is delayed by the fingerprinting backlog the Procedures expressly contemplate the university keeping the enrolment provisional until the permit is shown. The ricevuta plus the visa is enough to stay and to re-enter Italy, but students routinely panic or travel without understanding what the receipt covers. Keep the ricevuta with the passport at all times.",
+  "source_url": "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf",
+  "exact_quote": "L'Ufficio postale rilascia la ricevuta di presentazione della richiesta di permesso di soggiorno che equivale alla ricevuta di presentazione delle istanze rilasciata dalla Questura e che, tra l'altro, consente di attestare la regolare presenza in Italia.",
+  "date_checked": "14 September 2026",
+  "axes": {
+   "passport": [
+    "b"
+   ],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 26,
+  "stage": "Arrival",
+  "title": "Finalise the immatricolazione - the university re-verifies everything",
+  "duration_realistic": "Days to weeks; enrolment can sit 'with reserve' until the following June",
+  "what_happens": "Enrolment is a separate act from the visa and from pre-enrolment. To complete it the university must satisfy itself both that the foreign qualification gives access to the chosen course and that the documents are genuine - by requesting apostilled and legalised originals, contacting the Indian awarding body directly, or using CIMEA. Where the student lacks a valid residence title or any other prescribed requirement at that moment, enrolment is registered with reserve until June of the following year, and the Questura will confirm to the university whether the permit was issued or refused. The codice fiscale generated at pre-enrolment is used here; the consulates do not issue one.",
+  "the_trap": "Arriving with photocopies. A student who cleared the visa on scanned or provisional documents still has to put apostilled originals on the registrar's desk, and a discrepancy between the name on the passport and the name on a marksheet needs an apostilled 'one and the same person' certificate from a Tahsildar or municipal registrar - affidavits are not accepted. Sort name discrepancies in India, months earlier.",
+  "source_url": "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf",
+  "exact_quote": "le Istituzioni della formazione superiore ... sono responsabili della verifica della veridicita' dei documenti accademici presentati",
+  "date_checked": "14 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 27,
+  "stage": "Arrival",
+  "title": "Plan the first renewal now - it is exam-gated and starts 60 days early",
+  "duration_realistic": "Apply at least 60 days before expiry; allow the same multi-month Questura cycle",
+  "what_happens": "The study permit is issued for one year and must be renewed at the Questura of the province of residence at least 60 days before it expires, with the university enrolment certificate and all the conditions that supported the visa still in place. Renewal is granted to students who passed at least one exam in the first year and at least two in later years, measured in credits as each university defines them; with documented serious health or force majeure grounds a single exam can suffice. Permits cannot be granted for more than three years beyond the nominal length of the course. A student may switch to a different degree and still renew, provided the academic authorities approve and the student has not formally withdrawn.",
+  "the_trap": "Formal withdrawal (rinuncia agli studi) destroys the residence title - a student who drops out and re-applies to another course cannot reuse the visa or permit from the first enrolment and must start the whole chain again from abroad. And a first-year student who sits no exams before renewal, which is common for students still fighting the language, loses the permit outright.",
+  "source_url": "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf",
+  "exact_quote": "agli studenti che nel primo anno di corso abbiano superato una verifica di profitto e negli anni successivi almeno due verifiche",
+  "date_checked": "14 September 2026",
+  "axes": {
+   "passport": [
+    "b"
+   ],
+   "board": [],
+   "residence": []
+  }
+ }
+]
