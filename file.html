@@ -564,7 +564,52 @@ footer .logo{color:#fff;font-size:20px;}
 footer .logo img{width:28px;height:28px;}
 footer a{color:#b9d0de;}
 footer a:hover{color:#fff;}
-</style><style>
+</style>
+<style>
+  .cbar{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 14px;}
+  .cbtn{display:inline-flex;align-items:center;gap:7px;border:1px solid #dfe6ef;
+        background:#fff;color:#24324a;border-radius:999px;padding:7px 13px;font-size:13.5px;
+        font-weight:600;cursor:pointer;text-decoration:none;line-height:1.2;}
+  .cbtn:hover{border-color:#b9c8e8;}
+  .cbtn[aria-current="true"]{background:#0d1b2a;color:#fff;border-color:#0d1b2a;}
+  .cbtn .n{font-weight:500;opacity:.72;font-variant-numeric:tabular-nums;}
+  .cbtn[aria-current="true"] .n{opacity:.8;}
+  .tabs{display:flex;gap:6px;margin:0 0 18px;border-bottom:1px solid #dfe6ef;}
+  .tab{border:0;background:none;padding:9px 2px;margin-right:20px;font-size:14.5px;font-weight:600;
+       color:#5a6b85;cursor:pointer;border-bottom:2px solid transparent;font-family:inherit;}
+  .tab[aria-selected="true"]{color:#0d1b2a;border-bottom-color:#2b4fe3;}
+  .chain{max-width:900px;}
+  .chain .stage{margin:26px 0 10px;font-size:12px;letter-spacing:.13em;text-transform:uppercase;
+        color:#2b4fe3;font-weight:700;}
+  .cstep{border:1px solid #dfe6ef;border-radius:10px;padding:15px 18px;margin:0 0 10px;background:#fff;}
+  .cstep h4{margin:0 0 6px;font-size:15.5px;color:#0d1b2a;}
+  .cstep .meta{font-size:12.5px;color:#5a6b85;margin:0 0 9px;display:flex;flex-wrap:wrap;gap:6px 16px;}
+  .cstep .meta b{color:#24324a;font-weight:600;}
+  .cstep p{margin:0 0 9px;font-size:14px;line-height:1.6;color:#33415c;}
+  .cstep .trap{background:#fff8e6;border-left:3px solid #b58100;border-radius:0 7px 7px 0;
+        padding:9px 13px;font-size:13.5px;color:#5c4600;}
+  .cstep .src{font-size:12px;color:#6b7a93;margin-bottom:0;}
+  .cstep .src a{color:#2b4fe3;}
+  .chain-note{font-size:13.5px;color:#5a6b85;margin:0 0 18px;max-width:70ch;}
+  .nochain{border:1px dashed #dfe6ef;border-radius:10px;padding:22px;color:#5a6b85;font-size:14px;}
+  .cyc{border:1px solid #c3d0f7;background:#f4f7ff;border-radius:11px;padding:18px 20px;margin:0 0 22px;max-width:900px;}
+  .cyc h3{margin:0 0 12px;font-size:16px;color:#0d1b2a;}
+  .cycrow{display:grid;gap:4px 18px;padding:9px 0;border-top:1px solid #dbe4fa;}
+  @media(min-width:700px){.cycrow{grid-template-columns:140px 1fr;}}
+  .cycrow:first-of-type{border-top:0;}
+  .cycrow .k{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#5a6b85;font-weight:700;padding-top:3px;}
+  .cycrow .v{font-size:14.5px;color:#24324a;line-height:1.55;}
+  .cycrow .v b{color:#0d1b2a;}
+  .early{margin:2px 0 0;padding:0;list-style:none;}
+  .early li{padding:9px 0;border-top:1px dashed #dbe4fa;font-size:14px;color:#33415c;line-height:1.55;}
+  .early li:first-child{border-top:0;padding-top:0;}
+  .early .t{font-weight:700;color:#0d1b2a;}
+  .early .lead{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:#8a5a14;background:#fdf6e6;
+        border:1px solid #f0dcab;border-radius:4px;padding:1px 6px;margin-left:7px;white-space:nowrap;}
+  .missit{margin:14px 0 0;padding:10px 14px;background:#fff;border-left:3px solid #b42318;
+        border-radius:0 8px 8px 0;font-size:13.5px;color:#7a2018;}
+</style>
+<style>
 .timeline.fullchain li[hidden]{display:none;}
 .timeline.fullchain li.stage-start{margin-top:26px;}
 .timeline.fullchain li.stage-start::before{
@@ -725,9 +770,15 @@ footer a:hover{color:#fff;}
   <div class="filehead">
     <p class="kicker" id="preparedFor">Pave &middot; prepared for counselors</p>
     <h1>The Germany file</h1>
-    <p>Every English-taught German undergraduate degree we hold, with entry requirements per board, deadlines, fees and the visa chain for your student's passport. <span class="pickhint">Pick a programme on the left.</span><span class="pickhint-m">Pick a programme from the list.</span> Source links are live: open any of them and check it yourself.</p>
+    <p id="fileLede">Every English-taught undergraduate degree we hold, with entry requirements per board, deadlines, fees and the application chain for your student's passport. <span class="pickhint">Pick a programme on the left.</span><span class="pickhint-m">Pick a programme from the list.</span> Source links are live: open any of them and check it yourself.</p>
   </div>
-  <div class="filegrid">
+  <nav class="cbar" id="cbar" aria-label="Country"></nav>
+  <div class="tabs" role="tablist">
+    <button class="tab" id="tabProg" role="tab" aria-selected="true">Programmes</button>
+    <button class="tab" id="tabChain" role="tab" aria-selected="false">Application &amp; visa chain</button>
+  </div>
+  <div id="chainView" class="chain" hidden></div>
+  <div class="filegrid" id="progView">
     <aside class="side">
       <div class="side-top">
         <input id="q" type="search" placeholder="Search programme or university" autocomplete="off">
@@ -1037,7 +1088,111 @@ function list(){
   });
 }
 
-fetch("germany-file.json?v=20260912a").then(function(r){return r.json();}).then(function(d){
+var QS = new URLSearchParams(location.search);
+var COUNTRY = (QS.get("country") || "germany").toLowerCase().replace(/[^a-z]/g, "");
+var CINDEX = [], CMETA = null;
+
+function countryBar(){
+  var bar = document.getElementById("cbar");
+  if (!bar || !CINDEX.length) return;
+  bar.innerHTML = CINDEX.map(function(c){
+    var q = new URLSearchParams(location.search);
+    q.set("country", c.slug);
+    return '<a class="cbtn" href="?' + q.toString() + '"' +
+           (c.slug === COUNTRY ? ' aria-current="true"' : '') + '>' +
+           c.flag + " " + esc(c.name) + ' <span class="n">' + c.programmes + '</span></a>';
+  }).join("");
+}
+
+var CYCLES = null;
+
+function cycleCard(){
+  if (!CYCLES || !CYCLES[COUNTRY]) return "";
+  var c = CYCLES[COUNTRY];
+  var early = (c.start_early||[]).map(function(e){
+    return "<li><span class=\"t\">" + esc(e[0]) + "</span>" +
+           (e[1] && e[1] !== "\u2014" ? '<span class="lead">' + esc(e[1]) + "</span>" : "") +
+           "<br>" + esc(e[2]) + "</li>";
+  }).join("");
+  return '<div class="cyc"><h3>The cycle at a glance</h3>' +
+    '<div class="cycrow"><div class="k">Apply</div><div class="v">' + esc(c.apply) + "</div></div>" +
+    '<div class="cycrow"><div class="k">Intake</div><div class="v"><b>' + esc(c.intake) + "</b></div></div>" +
+    '<div class="cycrow"><div class="k">How long</div><div class="v"><b>' + esc(c.months) + "</b></div></div>" +
+    (early ? '<div class="cycrow"><div class="k">Start early</div><div class="v"><ul class="early">' + early + "</ul></div></div>" : "") +
+    (c.miss_it ? '<p class="missit"><b>Miss it and&hellip;</b> ' + esc(c.miss_it) + "</p>" : "") +
+    "</div>";
+}
+
+function chain(steps){
+  var host = document.getElementById("chainView");
+  if (!steps || !steps.length){
+    host.innerHTML = cycleCard() + '<div class="nochain">The step-by-step application and visa chain for ' +
+      esc(CMETA ? CMETA.name : "this country") +
+      ' is being written. The programme records above carry the deadline, the application route and the visa note for each degree in the meantime.</div>';
+    return;
+  }
+  var out = [cycleCard(), '<p class="chain-note">Every step below was checked against an official source on the date shown. ' +
+             '<b>The trap</b> on each step is the mistake that actually costs students the intake.</p>'];
+  var seen = "";
+  steps.forEach(function(st){
+    var stage = st.stage || "";
+    if (stage && stage !== seen){ out.push('<div class="stage">' + esc(stage) + "</div>"); seen = stage; }
+    var who = st.who ? (Array.isArray(st.who) ? st.who.join(", ") : st.who) : "";
+    var dur = st.duration_realistic || st.duration || "";
+    out.push('<div class="cstep"><h4>' + esc(String(st.step_no || st.step || "")) + ". " +
+      esc(st.title || "") + "</h4>" +
+      '<p class="meta">' + (dur ? "<span><b>Takes</b> " + esc(dur) + "</span>" : "") +
+                          (who ? "<span><b>Applies to</b> " + esc(who) + "</span>" : "") + "</p>" +
+      (st.what_happens ? "<p>" + linky(esc(st.what_happens)) + "</p>" : "") +
+      (st.the_trap || st.trap ? '<p class="trap"><b>The trap.</b> ' + esc(st.the_trap || st.trap) + "</p>" : "") +
+      (st.source_url ? '<p class="src"><a href="' + esc(st.source_url) + '" target="_blank" rel="noopener">source</a>' +
+        (st.date_checked ? " &middot; checked " + esc(st.date_checked) : "") +
+        (st.exact_quote ? '<br><span style="opacity:.85">&ldquo;' + esc(st.exact_quote) + "&rdquo;</span>" : "") +
+        "</p>" : "") +
+      "</div>");
+  });
+  host.innerHTML = out.join("");
+}
+
+function showTab(which){
+  var p = document.getElementById("progView"), c = document.getElementById("chainView");
+  var tp = document.getElementById("tabProg"), tc = document.getElementById("tabChain");
+  var chainOn = which === "chain";
+  p.hidden = chainOn; c.hidden = !chainOn;
+  tp.setAttribute("aria-selected", String(!chainOn));
+  tc.setAttribute("aria-selected", String(chainOn));
+  if (chainOn && window.__track) window.__track("chain-" + COUNTRY + "-" + (who || src));
+}
+document.getElementById("tabProg").addEventListener("click", function(){ showTab("prog"); });
+document.getElementById("tabChain").addEventListener("click", function(){ showTab("chain"); });
+
+var V = "20260914a";
+fetch("data/cycles.json?v=" + V).then(function(r){ return r.json(); })
+  .then(function(cy){ CYCLES = cy; }).catch(function(){})
+  .then(function(){ return fetch("data/index.json?v=" + V); })
+  .then(function(r){ return r.json(); }).then(function(idx){
+  CINDEX = idx;
+  CMETA = idx.filter(function(c){ return c.slug === COUNTRY; })[0] || idx[0];
+  COUNTRY = CMETA.slug;
+  countryBar();
+  var h1 = document.querySelector(".filehead h1");
+  if (h1) h1.textContent = "The " + CMETA.name + " file";
+  var lede = document.getElementById("fileLede");
+  if (lede) lede.firstChild.nodeValue = "Every English-taught " + CMETA.name +
+    " undergraduate degree we hold \u2014 " + CMETA.programmes + " programmes across " +
+    CMETA.institutions + " institutions \u2014 with entry requirements per board, deadlines, fees and " +
+    (CMETA.visa_steps ? "the " + CMETA.visa_steps + "-step application chain. " : "the application route. ");
+  try {
+    var lbl = document.getElementById("preparedFor");
+    var whoTxt = lbl ? (lbl.textContent.split("prepared for ")[1] || "") : "";
+    document.title = "The " + CMETA.name + " file" + (whoTxt ? " for " + whoTxt : "") + " | Pave";
+  } catch (e) {}
+  if (CMETA.visa_steps) {
+    fetch("data/" + COUNTRY + "-visa.json?v=" + V).then(function(r){ return r.json(); })
+      .then(chain).catch(function(){ chain(null); });
+  } else { chain(null); }
+  return fetch("data/" + COUNTRY + ".json?v=" + V);
+}).then(function(r){ return r.json(); }).then(function(d){
   DATA = d.sort(function(a,b){
     function rank(x){ return x.verified_status==="Confirmed"?0:(x.verified_status==="Source checked"?1:2); }
     var av=rank(a), bv=rank(b);

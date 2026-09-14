@@ -1,0 +1,74 @@
+{
+ "germany": {
+  "apply": "Winter semester: 15 July at most universities (some 31 May). Summer semester: 15 January.",
+  "intake": "October (winter) · April (summer)",
+  "months": "6 to 9 months from applying to starting",
+  "start_early": [
+   ["APS certificate", "4 to 8 weeks", "Required for Indian students and needed before the visa. Start it the moment the shortlist is set, not after the offer."],
+   ["uni-assist VPD", "4 to 6 weeks", "Its deadline is the SAME DAY as the application deadline, so beginning it in June for a 15 July deadline is already too late."],
+   ["Visa appointment", "2 to 12 weeks of waiting", "Book the day admission lands. Availability, not paperwork, is the bottleneck."]
+  ],
+  "miss_it": "Miss 15 July and the next intake is April, or October a year later."
+ },
+ "netherlands": {
+  "apply": "Numerus fixus programmes: 15 January, statutory, no extension. Everything else for non-EU: 1 April or 1 May depending on the university.",
+  "intake": "September",
+  "months": "5 to 8 months from applying to starting",
+  "start_early": [
+   ["Decide on fixus programmes by December", "—", "The 15 January wall is the single biggest cause of a lost year. A student who waits for Indian board results in May has already missed it."],
+   ["Money in the university's account", "4 to 8 weeks", "The university will not file your IND application until tuition plus the living-cost guarantee (EUR 13,569 for 2026) has cleared."]
+  ],
+  "miss_it": "Miss 15 January on a fixus programme and you wait a full year. There is no late round."
+ },
+ "singapore": {
+  "apply": "Roughly October to March, per university (NUS and NTU differ by a few weeks).",
+  "intake": "August",
+  "months": "5 to 10 months from applying to starting",
+  "start_early": [
+   ["Nothing structural", "—", "Indian Standard XII is direct entry. No equivalence body, no foundation year."],
+   ["Be ready to upload board results within 3 days", "—", "Both universities deem the application incomplete if the Standard XII slip is not uploaded within 3 days of release. No appeal."]
+  ],
+  "miss_it": "The Tuition Grant signing window is only days long and falls in mid-September. Miss it and the family pays non-subsidised fees for the whole degree."
+ },
+ "australia": {
+  "apply": "February intake: July to September of the previous year. July intake: roughly March to May.",
+  "intake": "February (main) · July (mid-year)",
+  "months": "5 to 7 months from applying to starting",
+  "start_early": [
+   ["Funds history", "3 months", "Assessors look for a traceable balance, not a lump sum that appeared last week."],
+   ["Book IELTS in person", "4 to 8 weeks", "Remote-proctored tests including IELTS Online are NOT accepted for the visa, even where the university accepted one."]
+  ],
+  "miss_it": "Lodge the visa on or after 15 November: Ministerial Direction 115's priority year resets and processing drops from 9-12 weeks to 1-4."
+ },
+ "canada": {
+  "apply": "15 January for most Ontario programmes (a few 1 February or 1 March). Alberta and UBC vary.",
+  "intake": "September",
+  "months": "7 to 8 months from applying to starting",
+  "start_early": [
+   ["Class XI subject choice", "2 years", "CBSE Applied Mathematics silently disqualifies a student from business, engineering and science at Toronto, Waterloo and their peers."],
+   ["GIC and funds", "4 to 6 weeks", "CAD 23,448 for a single applicant outside Quebec, and it re-indexes every 1 September, mid-season."],
+   ["Upfront medical", "2 to 3 weeks", "India is a designated country. Skipping it costs 4 to 6 weeks mid-processing."]
+  ],
+  "miss_it": "The PAL only starts after the deposit clears, and the permit needs the PAL. A late deposit compresses everything downstream."
+ },
+ "italy": {
+  "apply": "Universitaly pre-enrolment opens in spring. Entrance tests have fixed sittings: IMAT in September, CEnT-S and TOLC on published dates.",
+  "intake": "September / October",
+  "months": "6 to 9 months from applying to starting",
+  "start_early": [
+   ["HRD attestation, MEA apostille, then CIMEA or a Declaration of Value", "4 to 8 weeks, plus up to 90 days", "This chain must be COMPLETE before the entrance test, not after the result. It is the real constraint in Italy and the reason to start a year out."],
+   ["Watch the quota", "—", "Each university fixes a separate non-EU seat count by 31 December and ranks those applicants separately. Odds are not the headline class size."]
+  ],
+  "miss_it": "Pre-enrolment validation is now capped at quota +20% and suspends when a university hits it. Late pre-enrolment can be refused outright."
+ },
+ "spain": {
+  "apply": "Private universities: rolling from November. Public universities: UNEDasiss opens 4 February, PCE exams late May, preinscripción June to early July.",
+  "intake": "September",
+  "months": "Private 6 to 8 months · Public 8 to 10 months from applying to starting",
+  "start_early": [
+   ["Homologación of Standard XII", "4 to 8 months", "The legal limit is 3 months from a complete file; in practice far longer, with no way to accelerate it. File it by November for a September start."],
+   ["Plan the PCE exam trip", "—", "There is NO PCE exam centre in India. The nearest listed centres include Abu Dhabi and Doha, which suits Gulf-based students and forces a flight for everyone else."]
+  ],
+  "miss_it": "In Catalonia a volante is not enough for the June call — you drop to September and are last in place allocation."
+ }
+}
