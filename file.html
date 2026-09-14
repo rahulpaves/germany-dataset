@@ -606,6 +606,11 @@ footer a:hover{color:#fff;}
   .early .t{font-weight:700;color:#0d1b2a;}
   .early .lead{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:#8a5a14;background:#fdf6e6;
         border:1px solid #f0dcab;border-radius:4px;padding:1px 6px;margin-left:7px;white-space:nowrap;}
+  .timeline.fullchain .ctrap{margin:9px 0 0;padding:9px 12px;font-size:13.5px;line-height:1.5;
+        background:#fff8e6;border-left:3px solid #b58100;border-radius:0 6px 6px 0;color:#5c4600;}
+  .timeline.fullchain .ctrap b{color:#7a5c00;}
+  .timeline.fullchain .ctrap a{color:#2b4fe3;}
+  .cyc{margin-bottom:18px;}
   .missit{margin:14px 0 0;padding:10px 14px;background:#fff;border-left:3px solid #b42318;
         border-radius:0 8px 8px 0;font-size:13.5px;color:#7a2018;}
 </style>
@@ -773,11 +778,6 @@ footer a:hover{color:#fff;}
     <p id="fileLede">Every English-taught undergraduate degree we hold, with entry requirements per board, deadlines, fees and the application chain for your student's passport. <span class="pickhint">Pick a programme on the left.</span><span class="pickhint-m">Pick a programme from the list.</span> Source links are live: open any of them and check it yourself.</p>
   </div>
   <nav class="cbar" id="cbar" aria-label="Country"></nav>
-  <div class="tabs" role="tablist">
-    <button class="tab" id="tabProg" role="tab" aria-selected="true">Programmes</button>
-    <button class="tab" id="tabChain" role="tab" aria-selected="false">Application &amp; visa chain</button>
-  </div>
-  <div id="chainView" class="chain" hidden></div>
   <div class="filegrid" id="progView">
     <aside class="side">
       <div class="side-top">
@@ -983,10 +983,11 @@ function render(i){
     (has(r.notes)?'<div class="block"><h4>Notes</h4><p style="font-size:14.5px;margin:0;line-height:1.6;color:var(--ink);">'+esc(r.notes)+'</p></div>':'')+
 
     '<div class="block"><h4>The whole process, end to end</h4>'+
+      cycleCard()+
       '<div class="natpick"><label for="nat">Check your student\'s nationality</label>'+
       '<select id="nat"><option value="">Show the standard non-EU route</option></select></div>'+
       '<div class="natresult" id="natout"></div>'+
-      TIMELINE_HTML+
+      (CHAIN_HTML || (COUNTRY === "germany" ? TIMELINE_HTML : ""))+
     '</div>'+
 
     '</div></div>'+
@@ -1012,9 +1013,23 @@ function render(i){
 function buildNat(){
   var sel=document.getElementById("nat"), out=document.getElementById("natout");
   if(!sel) return;
-  var all=[];
-  for(var k in TRACKS){ (TRACKS[k].countries||[]).forEach(function(c){all.push(c);}); }
-  all.sort().forEach(function(c){ var o=document.createElement("option"); o.value=c; o.textContent=c; sel.appendChild(o); });
+  var SIMPLE = CHAIN_TRACKS && CHAIN_TRACKS.length &&
+               CHAIN_TRACKS.indexOf("a") < 0 && CHAIN_TRACKS.indexOf("b") < 0;
+  if (SIMPLE) {
+    /* chains outside Germany tag steps india / intl rather than by visa route */
+    sel.innerHTML = "";
+    [["india","Indian student (CBSE, ISC or state board)"],
+     ["intl","Other international student"]].forEach(function(p){
+      if (CHAIN_TRACKS.indexOf(p[0]) < 0) return;
+      var o=document.createElement("option"); o.value=p[0]; o.textContent=p[1]; sel.appendChild(o);
+    });
+    var lab=document.querySelector(".natpick label");
+    if(lab) lab.textContent="Who is this student?";
+  } else {
+    var all=[];
+    for(var k in TRACKS){ (TRACKS[k].countries||[]).forEach(function(c){all.push(c);}); }
+    all.sort().forEach(function(c){ var o=document.createElement("option"); o.value=c; o.textContent=c; sel.appendChild(o); });
+  }
   function applyTrack(t){
     var steps=document.querySelectorAll(".timeline li[data-tracks]"), n=0, seen={};
     for(var i=0;i<steps.length;i++){
@@ -1045,6 +1060,12 @@ function buildNat(){
     }
   }
   function show(){
+    if (SIMPLE) {
+      var w = sel.value || "india", m = applyTrack(w);
+      out.innerHTML = '<b>' + (w === "india" ? "Indian student" : "International student") +
+        ':</b> <b>' + m + ' step' + (m===1?'':'s') + '</b> apply to this student.';
+      return;
+    }
     var c=sel.value, t=c?trackFor(c):"d", n=applyTrack(t);
     applyNotes(c);
     out.innerHTML='<b>'+(c?esc(c):"Standard non-EU route")+':</b> '+esc(TRACK_SUMMARY[t]||"")+
@@ -1104,7 +1125,7 @@ function countryBar(){
   }).join("");
 }
 
-var CYCLES = null;
+var CYCLES = null, CHAIN_HTML = "", CHAIN_TRACKS = null;
 
 function cycleCard(){
   if (!CYCLES || !CYCLES[COUNTRY]) return "";
@@ -1114,7 +1135,7 @@ function cycleCard(){
            (e[1] && e[1] !== "\u2014" ? '<span class="lead">' + esc(e[1]) + "</span>" : "") +
            "<br>" + esc(e[2]) + "</li>";
   }).join("");
-  return '<div class="cyc"><h3>The cycle at a glance</h3>' +
+  return '<div class="cyc">' +
     '<div class="cycrow"><div class="k">Apply</div><div class="v">' + esc(c.apply) + "</div></div>" +
     '<div class="cycrow"><div class="k">Intake</div><div class="v"><b>' + esc(c.intake) + "</b></div></div>" +
     '<div class="cycrow"><div class="k">How long</div><div class="v"><b>' + esc(c.months) + "</b></div></div>" +
@@ -1123,48 +1144,58 @@ function cycleCard(){
     "</div>";
 }
 
-function chain(steps){
-  var host = document.getElementById("chainView");
-  if (!steps || !steps.length){
-    host.innerHTML = cycleCard() + '<div class="nochain">The step-by-step application and visa chain for ' +
-      esc(CMETA ? CMETA.name : "this country") +
-      ' is being written. The programme records above carry the deadline, the application route and the visa note for each degree in the meantime.</div>';
-    return;
+/* Build the compact inline timeline in the same shape Germany has always used:
+   number, title, duration, one paragraph, and the trap as a short note. The
+   exact quote stays in the JSON for auditing but is not printed - it is what
+   made the separate tab unreadable. */
+/* The chains were written long. Germany's steps run about 60 words and that is
+   the length a counselor actually reads, so show the opening sentences and let
+   the full text live in the JSON. Splits on sentence ends only when a capital
+   follows, so decimals like EUR 1,130.77 survive. */
+function terse(t, budget){
+  t = String(t || "").trim();
+  if (!t) return "";
+  var parts = t.split(/(?<=[.!?])\s+(?=[A-Z"\u201c])/);
+  var out = "";
+  for (var i = 0; i < parts.length; i++){
+    if (out && (out.length + parts[i].length + 1) > budget) break;
+    out = out ? out + " " + parts[i] : parts[i];
+    if (out.length >= budget) break;
   }
-  var out = [cycleCard(), '<p class="chain-note">Every step below was checked against an official source on the date shown. ' +
-             '<b>The trap</b> on each step is the mistake that actually costs students the intake.</p>'];
-  var seen = "";
-  steps.forEach(function(st){
-    var stage = st.stage || "";
-    if (stage && stage !== seen){ out.push('<div class="stage">' + esc(stage) + "</div>"); seen = stage; }
-    var who = st.who ? (Array.isArray(st.who) ? st.who.join(", ") : st.who) : "";
-    var dur = st.duration_realistic || st.duration || "";
-    out.push('<div class="cstep"><h4>' + esc(String(st.step_no || st.step || "")) + ". " +
-      esc(st.title || "") + "</h4>" +
-      '<p class="meta">' + (dur ? "<span><b>Takes</b> " + esc(dur) + "</span>" : "") +
-                          (who ? "<span><b>Applies to</b> " + esc(who) + "</span>" : "") + "</p>" +
-      (st.what_happens ? "<p>" + linky(esc(st.what_happens)) + "</p>" : "") +
-      (st.the_trap || st.trap ? '<p class="trap"><b>The trap.</b> ' + esc(st.the_trap || st.trap) + "</p>" : "") +
-      (st.source_url ? '<p class="src"><a href="' + esc(st.source_url) + '" target="_blank" rel="noopener">source</a>' +
-        (st.date_checked ? " &middot; checked " + esc(st.date_checked) : "") +
-        (st.exact_quote ? '<br><span style="opacity:.85">&ldquo;' + esc(st.exact_quote) + "&rdquo;</span>" : "") +
-        "</p>" : "") +
-      "</div>");
-  });
-  host.innerHTML = out.join("");
+  if (!out) out = parts[0];
+  if (out.length > budget + 90){
+    var cut = out.lastIndexOf(" ", budget + 60);
+    out = out.slice(0, cut > 0 ? cut : budget) + "\u2026";
+  }
+  return out;
 }
 
-function showTab(which){
-  var p = document.getElementById("progView"), c = document.getElementById("chainView");
-  var tp = document.getElementById("tabProg"), tc = document.getElementById("tabChain");
-  var chainOn = which === "chain";
-  p.hidden = chainOn; c.hidden = !chainOn;
-  tp.setAttribute("aria-selected", String(!chainOn));
-  tc.setAttribute("aria-selected", String(chainOn));
-  if (chainOn && window.__track) window.__track("chain-" + COUNTRY + "-" + (who || src));
+function buildTimeline(steps){
+  if (!steps || !steps.length) return "";
+  var toks = {};
+  steps.forEach(function(st){
+    String(st.who || "").split(/[\s,]+/).filter(Boolean).forEach(function(t){ toks[t.toLowerCase()] = 1; });
+  });
+  CHAIN_TRACKS = Object.keys(toks);
+  var li = steps.map(function(st){
+    var who = String(st.who || "").toLowerCase().split(/[\s,]+/).filter(Boolean).join(" ");
+    var dur = st.duration_realistic || st.duration || "";
+    var body = terse(st.what_happens, 215);
+    var trap = terse(st.the_trap || st.trap, 150);
+    return '<li data-step="' + esc(String(st.step_no || st.step || "")) + '"' +
+      ' data-tracks="' + esc(who) + '" data-stage="' + esc(st.stage || "") + '">' +
+      '<span class="n"></span><h5>' + esc(st.title || "") + "</h5>" +
+      (dur ? '<span class="w">' + esc(dur) + "</span>" : "") +
+      (body ? "<p>" + linky(esc(body)) + "</p>" : "") +
+      (trap ? '<p class="ctrap"><b>The trap.</b> ' + esc(trap) +
+              (st.source_url ? ' <a href="' + esc(st.source_url) + '" target="_blank" rel="noopener">source</a>' : "") +
+              "</p>"
+            : (st.source_url ? '<p class="ctrap"><a href="' + esc(st.source_url) +
+                               '" target="_blank" rel="noopener">source</a></p>' : "")) +
+      "</li>";
+  }).join("");
+  return '<ol class="timeline fullchain">' + li + "</ol>";
 }
-document.getElementById("tabProg").addEventListener("click", function(){ showTab("prog"); });
-document.getElementById("tabChain").addEventListener("click", function(){ showTab("chain"); });
 
 var V = "20260914a";
 fetch("data/cycles.json?v=" + V).then(function(r){ return r.json(); })
@@ -1189,8 +1220,9 @@ fetch("data/cycles.json?v=" + V).then(function(r){ return r.json(); })
   } catch (e) {}
   if (CMETA.visa_steps) {
     fetch("data/" + COUNTRY + "-visa.json?v=" + V).then(function(r){ return r.json(); })
-      .then(chain).catch(function(){ chain(null); });
-  } else { chain(null); }
+      .then(function(v){ CHAIN_HTML = buildTimeline(v); if (DATA.length) render(cur); })
+      .catch(function(){});
+  }
   return fetch("data/" + COUNTRY + ".json?v=" + V);
 }).then(function(r){ return r.json(); }).then(function(d){
   DATA = d.sort(function(a,b){
