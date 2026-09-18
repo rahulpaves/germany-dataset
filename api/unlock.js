@@ -78,9 +78,16 @@ module.exports = async (req, res) => {
       return res.end(JSON.stringify({ error: 'stripe rejected the session' }));
     }
 
-    // 'paid' is the only state that unlocks. 'unpaid' and 'no_payment_required'
-    // both mean no money arrived.
-    if (session.payment_status !== 'paid') {
+    /* Two states unlock.
+       'paid' is the ordinary case.
+       'no_payment_required' is what Stripe returns when a 100% discount covers
+       the whole amount. That only happens against a coupon we created, so it
+       cannot be triggered by someone who has not been given one, and it is how
+       a comped counsellor or a full-price test gets in. Rejecting it was the
+       first version's bug: a 100% coupon looked identical to a failed payment.
+       'unpaid' still means no money and no coupon, so it stays shut. */
+    const okStates = ['paid', 'no_payment_required'];
+    if (okStates.indexOf(session.payment_status) === -1) {
       res.statusCode = 402;
       return res.end(JSON.stringify({
         error: 'not paid',

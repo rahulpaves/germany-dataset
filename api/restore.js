@@ -84,6 +84,8 @@ module.exports = async (req, res) => {
     for (const c of customers) {
       const subs = await stripe(
         'subscriptions?limit=10&status=active&customer=' + encodeURIComponent(c.id), key);
+      // An active subscription counts however it is being paid for, including
+      // one running on a 100% discount, which is what a comped counsellor has.
       const active = subs.ok && subs.body && (subs.body.data || []).length > 0;
       if (active) {
         const expiresAt = Date.now() + YEAR_MS;
