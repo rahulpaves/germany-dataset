@@ -141,7 +141,11 @@ print()
 # steps" outlived two rebuilds on the landing page before anyone noticed.
 import glob as _glob
 _steps = {}
-for _f in _glob.glob(os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "*-visa.json")):
+_here = os.path.dirname(os.path.abspath(__file__))
+# Paid countries moved to data-source/ when the gate went in; the chain
+# totals still have to count them or the page claim goes stale silently.
+for _f in (_glob.glob(os.path.join(_here, "data", "*-visa.json"))
+           + _glob.glob(os.path.join(_here, "data-source", "*-visa.json"))):
     _c = os.path.basename(_f).replace("-visa.json", "")
     _v = json.load(open(_f))
     _steps[_c] = len(_v if isinstance(_v, list) else _v.get("steps", _v))

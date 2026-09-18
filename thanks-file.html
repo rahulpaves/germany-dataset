@@ -1,0 +1,52 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>You're in | Pave</title>
+<meta name="robots" content="noindex">
+<style>
+  body{margin:0;background:#f4f6fa;color:#131a2b;font:16px/1.55 ui-sans-serif,-apple-system,Segoe UI,Roboto,sans-serif;
+       display:flex;justify-content:center;padding:60px 20px}
+  .card{max-width:560px;background:#fff;border:1px solid #dfe3ea;border-radius:16px;padding:36px}
+  .eyebrow{font:600 11px/1.4 ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;color:#2B50E8;margin-bottom:14px}
+  h1{font-size:28px;line-height:1.1;letter-spacing:-.02em;margin:0 0 14px}
+  p{color:#42506b;margin:0 0 14px}
+  .row{display:flex;gap:8px;margin:20px 0 6px}
+  input{flex:1;padding:11px 13px;border:1px solid #dfe3ea;border-radius:9px;font-size:15px}
+  button{padding:11px 20px;border:0;border-radius:9px;background:#2B50E8;color:#fff;font-size:15px;font-weight:600;cursor:pointer}
+  .err{color:#a32b3f;font-size:13.5px;min-height:20px;margin-top:8px}
+  .note{font-size:13.5px;color:#6b7891;border-top:1px solid #eef1f5;padding-top:18px;margin-top:24px}
+  a{color:#2B50E8}
+</style>
+<div class="card">
+  <div class="eyebrow">Payment received</div>
+  <h1>Your access code is on its way</h1>
+  <p>Rahul sends it by hand, usually within a couple of hours. It is one code for all eight
+     countries and it does not expire during your subscription.</p>
+  <p>When it arrives, paste it here and the full file opens. You can also add
+     <code>?k=YOUR-CODE</code> to any file link.</p>
+  <div class="row">
+    <input id="code" placeholder="PAVE-XXXX-XXXX" autocomplete="off">
+    <button id="go">Unlock</button>
+  </div>
+  <div class="err" id="err"></div>
+  <div class="note">
+    Nothing arrived, or the code will not take? Reply to your receipt, or mail
+    <a href="mailto:rahul@pavetheway.ai">rahul@pavetheway.ai</a>. A paid file you cannot open is
+    our problem to fix, not yours to chase.
+  </div>
+</div>
+<script>
+document.getElementById("go").onclick = function(){
+  var v = (document.getElementById("code").value || "").trim();
+  if (!v) return;
+  fetch("/api/data?c=italy&k=" + encodeURIComponent(v)).then(function(r){
+    if (r.ok){
+      try { localStorage.setItem("pave-access", v); } catch(e){}
+      location.href = "file.html?c=italy&k=" + encodeURIComponent(v);
+    } else {
+      document.getElementById("err").textContent =
+        "That code did not work yet. If you have just paid, give it an hour, then mail us.";
+    }
+  });
+};
+</script>
