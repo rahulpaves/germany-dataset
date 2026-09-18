@@ -46,7 +46,7 @@ function card(html){ document.getElementById("card").innerHTML = html; }
 
 function unlocked(email){
   var links = COUNTRIES.map(function(c){
-    return '<a href="file.html?c=' + c[0] + '">' + c[1] + '</a>';
+    return '<a href="file.html?country=' + c[0] + '">' + c[1] + '</a>';
   }).join("");
   card(
     '<div class="eyebrow">You\'re in</div>' +
@@ -56,7 +56,7 @@ function unlocked(email){
     (email ? '<p class="muted">Receipt sent to ' + email + '. If that address is wrong, ' +
              'tell us and we will fix it.</p>' : '') +
     '<div class="countries">' + links + '</div>' +
-    '<a class="go" href="file.html?c=italy">Start with Italy</a>' +
+    '<a class="go" href="file.html?country=italy">Start with Italy</a>' +
     '<div class="note">Using a different laptop later? Open this page again from your ' +
     'Stripe receipt link and it unlocks there too. Anything odd, mail ' +
     '<a href="mailto:rahul@pavetheway.ai">rahul@pavetheway.ai</a>.</div>'
