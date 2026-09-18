@@ -1,5 +1,10 @@
 # The paid country files are the product. They must never be uploaded as static
 # assets, or anyone can fetch /data-source/italy.json and the gate is decoration.
-# The serverless function does not read these: it uses lib/paid-data.js, which is
-# generated from them by build_gate.py and bundled into the function.
+# The function does not read these at runtime: build_gate.py inlines them into
+# api/data.js, which is a function and therefore never served as a file.
 data-source/
+
+# Build and check scripts. They hold no data, but there is no reason to serve
+# the machinery either.
+*.py
+__pycache__/
