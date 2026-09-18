@@ -36,6 +36,8 @@
 </div>
 
 <script>
+var BILLING = "https://billing.stripe.com/p/login/00w00ibbO8nwbJ62fl0Fi00";
+
 var COUNTRIES = [
   ["singapore","Singapore"],["italy","Italy"],["australia","Australia"],
   ["spain","Spain"],["netherlands","Netherlands"],["france","France"],
@@ -58,7 +60,11 @@ function unlocked(email){
     '<div class="countries">' + links + '</div>' +
     '<a class="go" href="file.html?country=italy">Start with Italy</a>' +
     '<div class="note">Using a different laptop later? Open this page again from your ' +
-    'receipt address on this page and it opens there too. Anything odd, mail ' +
+    'receipt address on this page and it opens there too.' +
+    '<br><br>Cancel or change your card on your ' +
+    '<a href="' + BILLING + '">billing page</a>. Cancelling stops the renewal, ' +
+    'and the file stays open until the year you paid for runs out.' +
+    '<br><br>Anything odd, mail ' +
     '<a href="mailto:rahul@pavetheway.ai">rahul@pavetheway.ai</a> or <a href="https://wa.me/971568924365">WhatsApp +971 56 892 4365</a>.</div>'
   );
 }

@@ -599,6 +599,8 @@ footer a:hover{color:#fff;}
 .pw-err{color:#a32b3f;font-size:13px;margin-top:9px;min-height:18px}
 .pw-early{font-size:14px;line-height:1.5;color:#1c5a4a;background:#e4f1ec;border:1px solid #c9e2d8;border-radius:10px;padding:11px 14px;margin:0 0 20px}
 .pw-contact{font-size:13px;line-height:1.5;color:#6b7891;margin:14px 0 0}
+.pw-terms{font-size:13px;line-height:1.5;color:#6b7891;margin:-14px 0 24px}
+.pw-terms a{color:#2B50E8}
 .pw-contact a{color:#2B50E8}
 </style>
 <style>
@@ -1259,6 +1261,12 @@ var V = "20260914f";
 window.PAVE_CHECKOUT = "https://buy.stripe.com/cNibJ04Nq6fo28w7zF0Fi0d";
 window.PAVE_PRICE    = "$99 a year";
 
+/* Stripe's hosted billing portal. The buyer enters the email they paid with,
+   Stripe mails them a link, and they cancel or change their card themselves.
+   It is here rather than buried in a receipt because saying plainly how to
+   leave is what makes a stranger willing to start. */
+window.PAVE_BILLING  = "https://billing.stripe.com/p/login/00w00ibbO8nwbJ62fl0Fi00";
+
 /* A half-configured checkout is worse than none: a dead button in front of a
    counsellor costs more trust than an email link does. Until PAVE_CHECKOUT is
    a real Stripe URL the paywall asks them to mail instead. */
@@ -1294,6 +1302,9 @@ function showPaywall(){
           : '<a class="pw-buy" href="mailto:rahul@pavetheway.ai">Ask for the full file</a>') +
         '<a class="pw-free" href="file.html?country=germany">Back to Germany</a>' +
       '</div>' +
+      '<p class="pw-terms">Cancel any time from your ' +
+        '<a href="' + window.PAVE_BILLING + '">billing page</a>. ' +
+        'You keep the file until the end of the year you paid for.</p>' +
       '<div class="pw-code">' +
         '<label for="pwEmail">Bought it already? Put in the email you paid with.</label>' +
         '<div class="pw-row">' +
