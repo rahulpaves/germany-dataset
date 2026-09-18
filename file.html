@@ -1384,8 +1384,8 @@ fetch("data/cycles.json?v=" + V).then(function(r){ return r.json(); })
   if (h1) h1.textContent = "The " + CMETA.name + " file";
   var lede = document.getElementById("fileLede");
   if (lede) lede.firstChild.nodeValue = "Every English-taught " + CMETA.name +
-    " undergraduate degree we hold \u2014 " + CMETA.programmes + " programmes across " +
-    CMETA.institutions + " institutions \u2014 with entry requirements per board, deadlines, fees and " +
+    " undergraduate degree we hold. " + CMETA.programmes + " programmes across " +
+    CMETA.institutions + " institutions, with entry requirements per board, deadlines, fees and " +
     (CMETA.visa_steps ? "the " + CMETA.visa_steps + "-step application chain. " : "the application route. ");
   try {
     var lbl = document.getElementById("preparedFor");
