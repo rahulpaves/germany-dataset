@@ -51,14 +51,54 @@ TEMPLATE = '''/**
 
 const PAID = %s;
 
+const crypto = require('crypto');
+
 const FREE_COUNTRIES = ['germany'];
 
-function valid(code) {
-  if (!code) return false;
+/* Two ways in, and both are checked here.
+
+   A Stripe token, issued by api/unlock.js after a real payment. It carries its
+   own expiry and signature, so this verifies it without a database and without
+   calling Stripe again on every fetch.
+
+   A manual code from ACCESS_CODES, for comps, refunds and anyone given access
+   by hand. Kept because a test needs a way to let someone in without charging
+   them. */
+
+function signingSecret() {
+  return process.env.TOKEN_SECRET || process.env.STRIPE_SECRET_KEY || '';
+}
+
+function fromB64url(s) {
+  return Buffer.from(String(s).replace(/-/g, '+').replace(/_/g, '/'), 'base64');
+}
+
+function validToken(token) {
+  const secret = signingSecret();
+  if (!secret || !token || String(token).indexOf('.') === -1) return false;
+  const parts = String(token).split('.');
+  if (parts.length !== 2) return false;
+  let payload;
+  try { payload = fromB64url(parts[0]).toString('utf8'); } catch (e) { return false; }
+  const want = crypto.createHmac('sha256', secret).update(payload).digest();
+  let got;
+  try { got = fromB64url(parts[1]); } catch (e) { return false; }
+  // Constant time, so a wrong token cannot be narrowed down by timing it.
+  if (want.length !== got.length || !crypto.timingSafeEqual(want, got)) return false;
+  const expiresAt = Number(payload.split('|')[1] || 0);
+  return Number.isFinite(expiresAt) && Date.now() < expiresAt;
+}
+
+function validCode(code) {
   const codes = String(process.env.ACCESS_CODES || '')
     .split(',').map(s => s.trim().toUpperCase()).filter(Boolean);
   if (!codes.length) return false;
   return codes.indexOf(String(code).trim().toUpperCase()) !== -1;
+}
+
+function valid(code) {
+  if (!code) return false;
+  return validToken(code) || validCode(code);
 }
 
 module.exports = (req, res) => {

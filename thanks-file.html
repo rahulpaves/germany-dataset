@@ -1,52 +1,123 @@
 <!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>You're in | Pave</title>
+<title>Opening your file | Pave</title>
 <meta name="robots" content="noindex">
 <style>
-  body{margin:0;background:#f4f6fa;color:#131a2b;font:16px/1.55 ui-sans-serif,-apple-system,Segoe UI,Roboto,sans-serif;
+  body{margin:0;background:#f4f6fa;color:#131a2b;
+       font:16px/1.55 ui-sans-serif,-apple-system,"Segoe UI",Roboto,sans-serif;
        display:flex;justify-content:center;padding:60px 20px}
-  .card{max-width:560px;background:#fff;border:1px solid #dfe3ea;border-radius:16px;padding:36px}
-  .eyebrow{font:600 11px/1.4 ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;color:#2B50E8;margin-bottom:14px}
-  h1{font-size:28px;line-height:1.1;letter-spacing:-.02em;margin:0 0 14px}
+  .card{max-width:580px;width:100%;background:#fff;border:1px solid #dfe3ea;border-radius:16px;padding:36px}
+  .eyebrow{font:600 11px/1.4 ui-monospace,Menlo,monospace;letter-spacing:.12em;
+           text-transform:uppercase;color:#2B50E8;margin-bottom:14px}
+  h1{font-size:27px;line-height:1.12;letter-spacing:-.02em;margin:0 0 14px}
   p{color:#42506b;margin:0 0 14px}
-  .row{display:flex;gap:8px;margin:20px 0 6px}
+  .countries{display:flex;flex-wrap:wrap;gap:7px;margin:22px 0 6px}
+  .countries a{padding:8px 14px;border:1px solid #dfe3ea;border-radius:9px;
+               text-decoration:none;color:#131a2b;font-size:14.5px;background:#fbfcfe}
+  .countries a:hover{border-color:#2B50E8;color:#2B50E8}
+  .go{display:inline-block;margin-top:18px;background:#2B50E8;color:#fff;padding:12px 22px;
+      border-radius:9px;font-weight:600;font-size:15px;text-decoration:none}
+  .muted{font-size:13.5px;color:#6b7891}
+  .note{font-size:13.5px;color:#6b7891;border-top:1px solid #eef1f5;padding-top:18px;margin-top:26px}
+  .err{background:#f8dee3;border:1px solid #edc2cb;color:#8d243a;padding:14px 16px;border-radius:10px}
+  .row{display:flex;gap:8px;margin:18px 0 6px}
   input{flex:1;padding:11px 13px;border:1px solid #dfe3ea;border-radius:9px;font-size:15px}
-  button{padding:11px 20px;border:0;border-radius:9px;background:#2B50E8;color:#fff;font-size:15px;font-weight:600;cursor:pointer}
-  .err{color:#a32b3f;font-size:13.5px;min-height:20px;margin-top:8px}
-  .note{font-size:13.5px;color:#6b7891;border-top:1px solid #eef1f5;padding-top:18px;margin-top:24px}
+  button{padding:11px 20px;border:0;border-radius:9px;background:#131a2b;color:#fff;
+         font-size:15px;font-weight:600;cursor:pointer}
   a{color:#2B50E8}
+  code{background:#eef1f7;padding:2px 6px;border-radius:5px;font-size:13.5px}
 </style>
-<div class="card">
-  <div class="eyebrow">Payment received</div>
-  <h1>Your access code is on its way</h1>
-  <p>Rahul sends it by hand, usually within a couple of hours. It is one code for all eight
-     countries and it does not expire during your subscription.</p>
-  <p>When it arrives, paste it here and the full file opens. You can also add
-     <code>?k=YOUR-CODE</code> to any file link.</p>
-  <div class="row">
-    <input id="code" placeholder="PAVE-XXXX-XXXX" autocomplete="off">
-    <button id="go">Unlock</button>
-  </div>
-  <div class="err" id="err"></div>
-  <div class="note">
-    Nothing arrived, or the code will not take? Reply to your receipt, or mail
-    <a href="mailto:rahul@pavetheway.ai">rahul@pavetheway.ai</a>. A paid file you cannot open is
-    our problem to fix, not yours to chase.
-  </div>
+
+<div class="card" id="card">
+  <div class="eyebrow">Checking your payment</div>
+  <h1>One moment</h1>
+  <p class="muted">Confirming with Stripe and opening the file.</p>
 </div>
+
 <script>
-document.getElementById("go").onclick = function(){
-  var v = (document.getElementById("code").value || "").trim();
-  if (!v) return;
-  fetch("/api/data?c=italy&k=" + encodeURIComponent(v)).then(function(r){
-    if (r.ok){
-      try { localStorage.setItem("pave-access", v); } catch(e){}
-      location.href = "file.html?c=italy&k=" + encodeURIComponent(v);
-    } else {
-      document.getElementById("err").textContent =
-        "That code did not work yet. If you have just paid, give it an hour, then mail us.";
+var COUNTRIES = [
+  ["singapore","Singapore"],["italy","Italy"],["australia","Australia"],
+  ["spain","Spain"],["netherlands","Netherlands"],["france","France"],
+  ["switzerland","Switzerland"],["germany","Germany"]
+];
+
+function card(html){ document.getElementById("card").innerHTML = html; }
+
+function unlocked(email){
+  var links = COUNTRIES.map(function(c){
+    return '<a href="file.html?c=' + c[0] + '">' + c[1] + '</a>';
+  }).join("");
+  card(
+    '<div class="eyebrow">You\'re in</div>' +
+    '<h1>All eight countries are open</h1>' +
+    '<p>This browser is unlocked for a year. Open any country and every field carries its ' +
+    'source link, the sentence it came from and the date it was checked.</p>' +
+    (email ? '<p class="muted">Receipt sent to ' + email + '. If that address is wrong, ' +
+             'tell us and we will fix it.</p>' : '') +
+    '<div class="countries">' + links + '</div>' +
+    '<a class="go" href="file.html?c=italy">Start with Italy</a>' +
+    '<div class="note">Using a different laptop later? Open this page again from your ' +
+    'Stripe receipt link and it unlocks there too. Anything odd, mail ' +
+    '<a href="mailto:rahul@pavetheway.ai">rahul@pavetheway.ai</a>.</div>'
+  );
+}
+
+function manualEntry(message){
+  card(
+    '<div class="eyebrow">Almost there</div>' +
+    '<h1>We could not confirm that automatically</h1>' +
+    '<div class="err">' + message + '</div>' +
+    '<p style="margin-top:16px">If you have an access code, paste it here.</p>' +
+    '<div class="row"><input id="code" placeholder="PAVE-XXXX-XXXX" autocomplete="off">' +
+    '<button id="go">Unlock</button></div>' +
+    '<div class="err" id="err" style="display:none"></div>' +
+    '<div class="note">Your payment is not in question. If this does not open, mail ' +
+    '<a href="mailto:rahul@pavetheway.ai">rahul@pavetheway.ai</a> and it gets opened by hand, ' +
+    'usually the same day.</div>'
+  );
+  document.getElementById("go").onclick = function(){
+    var v = (document.getElementById("code").value || "").trim();
+    if (!v) return;
+    fetch("/api/data?c=italy&k=" + encodeURIComponent(v)).then(function(r){
+      if (r.ok){ try { localStorage.setItem("pave-access", v); } catch(e){} unlocked(null); }
+      else {
+        var e = document.getElementById("err");
+        e.style.display = "block";
+        e.textContent = "That code did not work. Check it against your email, or reply to it.";
+      }
+    });
+  };
+}
+
+(function(){
+  var sid = new URLSearchParams(location.search).get("session_id");
+
+  // Already unlocked on this browser, and no new payment to process.
+  if (!sid) {
+    var have = null;
+    try { have = localStorage.getItem("pave-access"); } catch(e){}
+    if (have) {
+      fetch("/api/data?c=italy&k=" + encodeURIComponent(have))
+        .then(function(r){ r.ok ? unlocked(null) : manualEntry("Your saved access has expired or is not recognised."); });
+      return;
     }
-  });
-};
+    manualEntry("We did not get a payment reference from Stripe. That happens when this page is opened directly rather than from a receipt.");
+    return;
+  }
+
+  fetch("/api/unlock?session_id=" + encodeURIComponent(sid))
+    .then(function(r){ return r.json().then(function(j){ return {ok: r.ok, j: j}; }); })
+    .then(function(out){
+      if (out.ok && out.j.token) {
+        try { localStorage.setItem("pave-access", out.j.token); } catch(e){}
+        unlocked(out.j.email);
+      } else {
+        manualEntry(out.j.message || "Stripe has not confirmed this payment yet.");
+      }
+    })
+    .catch(function(){
+      manualEntry("We could not reach our server. Your payment is fine.");
+    });
+})();
 </script>
