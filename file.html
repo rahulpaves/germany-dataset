@@ -1269,46 +1269,67 @@ var CHECKOUT_READY = /^https:\/\/(buy\.stripe\.com|checkout\.stripe\.com)\//.tes
    check the depth against a country they already trust before spending.      */
 function showPaywall(){
   var host = document.querySelector(".wrap") || document.body;
-  var name = (CMETA && CMETA.name) || "This country";
-  var progs = (CMETA && CMETA.programmes) || "";
+  var name  = (CMETA && CMETA.name) || "This country";
+  var progs = (CMETA && CMETA.programmes) || 0;
   var el = document.createElement("div");
   el.className = "paywall";
   el.innerHTML =
     '<div class="pw-card">' +
-      '<div class="pw-eyebrow">' + name + ' is part of the full file</div>' +
-      '<h2 class="pw-h">Germany is free. The other seven countries are not.</h2>' +
-      '<p class="pw-p">You have the Germany file already, 80 programmes carrying a source link, ' +
-      'the sentence it came from and a check date on every field. The same work across ' +
-      'Singapore, Italy, Australia, Spain, the Netherlands, France and Switzerland ' +
-      'sits behind this' + (progs ? ', ' + progs + ' programmes for ' + name + ' alone' : '') + '. ' +
-      'Countries and programmes get added through the year and your access grows with them.</p>' +
-      '<p class="pw-early">Founding price. It goes up as the file grows. Yours does not, ' +
-      'for as long as you stay subscribed.</p>' +
+      '<div class="pw-eyebrow">' + name + '</div>' +
+      '<h2 class="pw-h">' + name + ' is in the full file</h2>' +
+      '<p class="pw-p">Germany is yours free: 80 programmes, every field carrying the link it ' +
+        'came from, the sentence it came from and the date a person checked it. ' +
+        (progs ? name + ' is ' + progs + ' programmes done the same way' : name + ' is done the same way') +
+        ', and six more countries sit behind it.</p>' +
+      '<p class="pw-p">New countries and programmes land through the year. Your access covers ' +
+        'them as they arrive.</p>' +
+      '<p class="pw-early">This is the founding price. It rises as the file grows. Yours stays ' +
+        'where it is for as long as you keep the subscription.</p>' +
       '<div class="pw-actions">' +
         (CHECKOUT_READY
-        ? '<a class="pw-buy" href="' + window.PAVE_CHECKOUT + '">Get all eight countries \u2014 ' + (window.PAVE_PRICE || "") + '</a>'
-        : '<a class="pw-buy" href="mailto:rahul@pavetheway.ai">Ask for the full file</a>') +
+          ? '<a class="pw-buy" href="' + window.PAVE_CHECKOUT + '">Get all eight countries, ' +
+            (window.PAVE_PRICE || "") + '</a>'
+          : '<a class="pw-buy" href="mailto:rahul@pavetheway.ai">Ask for the full file</a>') +
         '<a class="pw-free" href="file.html?country=germany">Back to Germany</a>' +
       '</div>' +
       '<div class="pw-code">' +
-        '<label>Already bought it? Paste your access code</label>' +
-        '<div class="pw-row"><input id="pwCode" placeholder="PAVE-XXXX-XXXX" autocomplete="off"><button id="pwGo">Unlock</button></div>' +
+        '<label for="pwEmail">Bought it already? Put in the email you paid with.</label>' +
+        '<div class="pw-row">' +
+          '<input id="pwEmail" type="email" placeholder="you@yourpractice.com" autocomplete="email">' +
+          '<button id="pwGo">Open it</button>' +
+        '</div>' +
         '<div id="pwErr" class="pw-err"></div>' +
       '</div>' +
     '</div>';
   host.innerHTML = "";
   host.appendChild(el);
-  document.getElementById("pwGo").onclick = function(){
-    var v = (document.getElementById("pwCode").value || "").trim();
+
+  var go = document.getElementById("pwGo"), err = document.getElementById("pwErr");
+  function restore(){
+    var v = (document.getElementById("pwEmail").value || "").trim();
     if (!v) return;
-    try { localStorage.setItem("pave-access", v); } catch(e){}
-    fetch("/api/data?c=" + encodeURIComponent(COUNTRY) + "&k=" + encodeURIComponent(v))
-      .then(function(r){
-        if (r.ok) { location.reload(); return; }
-        document.getElementById("pwErr").textContent =
-          "That code did not work. Check it against the email, or reply to it and we will sort it out.";
+    go.disabled = true; go.textContent = "Checking";
+    err.textContent = "";
+    fetch("/api/restore?email=" + encodeURIComponent(v))
+      .then(function(r){ return r.json().then(function(j){ return { ok: r.ok, j: j }; }); })
+      .then(function(out){
+        if (out.ok && out.j.token) {
+          try { localStorage.setItem("pave-access", out.j.token); } catch(e){}
+          location.reload();
+          return;
+        }
+        go.disabled = false; go.textContent = "Open it";
+        err.textContent = out.j.message || "We could not find that.";
+      })
+      .catch(function(){
+        go.disabled = false; go.textContent = "Open it";
+        err.textContent = "Something broke at our end, not yours. Mail rahul@pavetheway.ai.";
       });
-  };
+  }
+  go.onclick = restore;
+  document.getElementById("pwEmail").addEventListener("keydown", function(e){
+    if (e.key === "Enter") restore();
+  });
 }
 
 /* ---------- the gate ----------------------------------------------------

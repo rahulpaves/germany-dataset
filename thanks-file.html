@@ -58,7 +58,7 @@ function unlocked(email){
     '<div class="countries">' + links + '</div>' +
     '<a class="go" href="file.html?country=italy">Start with Italy</a>' +
     '<div class="note">Using a different laptop later? Open this page again from your ' +
-    'Stripe receipt link and it unlocks there too. Anything odd, mail ' +
+    'receipt address on this page and it opens there too. Anything odd, mail ' +
     '<a href="mailto:rahul@pavetheway.ai">rahul@pavetheway.ai</a>.</div>'
   );
 }
@@ -68,9 +68,9 @@ function manualEntry(message){
     '<div class="eyebrow">Almost there</div>' +
     '<h1>We could not confirm that automatically</h1>' +
     '<div class="err">' + message + '</div>' +
-    '<p style="margin-top:16px">If you have an access code, paste it here.</p>' +
-    '<div class="row"><input id="code" placeholder="PAVE-XXXX-XXXX" autocomplete="off">' +
-    '<button id="go">Unlock</button></div>' +
+    '<p style="margin-top:16px">Put in the email you paid with and we will find it.</p>' +
+    '<div class="row"><input id="code" type="email" placeholder="you@yourpractice.com" autocomplete="email">' +
+    '<button id="go">Open it</button></div>' +
     '<div class="err" id="err" style="display:none"></div>' +
     '<div class="note">Your payment is not in question. If this does not open, mail ' +
     '<a href="mailto:rahul@pavetheway.ai">rahul@pavetheway.ai</a> and it gets opened by hand, ' +
@@ -79,14 +79,18 @@ function manualEntry(message){
   document.getElementById("go").onclick = function(){
     var v = (document.getElementById("code").value || "").trim();
     if (!v) return;
-    fetch("/api/data?c=italy&k=" + encodeURIComponent(v)).then(function(r){
-      if (r.ok){ try { localStorage.setItem("pave-access", v); } catch(e){} unlocked(null); }
-      else {
+    fetch("/api/restore?email=" + encodeURIComponent(v))
+      .then(function(r){ return r.json().then(function(j){ return { ok: r.ok, j: j }; }); })
+      .then(function(out){
+        if (out.ok && out.j.token){
+          try { localStorage.setItem("pave-access", out.j.token); } catch(e){}
+          unlocked(null);
+          return;
+        }
         var e = document.getElementById("err");
         e.style.display = "block";
-        e.textContent = "That code did not work. Check it against your email, or reply to it.";
-      }
-    });
+        e.textContent = out.j.message || "We could not find a payment against that address.";
+      });
   };
 }
 
