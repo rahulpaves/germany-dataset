@@ -69,8 +69,15 @@ module.exports = async (req, res) => {
   try {
     const found = await stripe('customers?limit=20&email=' + encodeURIComponent(email), key);
     if (!found.ok) {
+      // Surface Stripe's own reason. Without it a restricted key missing
+      // customers:read is indistinguishable from Stripe being down, and the
+      // first version of this reported both as "try again in a minute".
+      const why = (found.body && found.body.error && found.body.error.message) || 'unknown';
       res.statusCode = 502;
-      return res.end(JSON.stringify({ message: 'We could not reach Stripe. Try again in a minute.' }));
+      return res.end(JSON.stringify({
+        message: 'We could not check that with Stripe. Mail rahul@pavetheway.ai and it gets opened by hand.',
+        stripe: why,
+      }));
     }
 
     const customers = (found.body && found.body.data) || [];
