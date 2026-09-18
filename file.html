@@ -598,6 +598,8 @@ footer a:hover{color:#fff;}
 .pw-row button{padding:10px 18px;border:0;border-radius:8px;background:#131a2b;color:#fff;font-size:14px;cursor:pointer}
 .pw-err{color:#a32b3f;font-size:13px;margin-top:9px;min-height:18px}
 .pw-early{font-size:14px;line-height:1.5;color:#1c5a4a;background:#e4f1ec;border:1px solid #c9e2d8;border-radius:10px;padding:11px 14px;margin:0 0 20px}
+.pw-contact{font-size:13px;line-height:1.5;color:#6b7891;margin:14px 0 0}
+.pw-contact a{color:#2B50E8}
 </style>
 <style>
   .cbar{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 14px;}
@@ -1299,6 +1301,10 @@ function showPaywall(){
           '<button id="pwGo">Open it</button>' +
         '</div>' +
         '<div id="pwErr" class="pw-err"></div>' +
+        '<p class="pw-contact">Anything not working, or you want to talk it through first: ' +
+          '<a href="mailto:rahul@pavetheway.ai">rahul@pavetheway.ai</a> or ' +
+          '<a href="https://wa.me/971568924365">WhatsApp +971 56 892 4365</a>. ' +
+          'Rahul answers these himself.</p>' +
       '</div>' +
     '</div>';
   host.innerHTML = "";
