@@ -1256,6 +1256,12 @@ var V = "20260914f";
 window.PAVE_CHECKOUT = "https://buy.stripe.com/REPLACE_ME";
 window.PAVE_PRICE    = "$149 a year";
 
+/* A half-configured checkout is worse than none: a dead button in front of a
+   counsellor costs more trust than an email link does. Until PAVE_CHECKOUT is
+   a real Stripe URL the paywall asks them to mail instead. */
+var CHECKOUT_READY = /^https:\/\/(buy\.stripe\.com|checkout\.stripe\.com)\//.test(
+  String(window.PAVE_CHECKOUT || "")) && String(window.PAVE_CHECKOUT).indexOf("REPLACE_ME") === -1;
+
 /* ---------- the paywall -------------------------------------------------
    Shown when /api/data answers 402. It names what the reader already has for
    nothing, because the free Germany file is the argument for paying: they can
@@ -1275,7 +1281,9 @@ function showPaywall(){
       'Singapore, Italy, Australia, Spain, the Netherlands, France and Switzerland ' +
       'sits behind this, ' + (progs ? progs + ' programmes for ' + name + ' alone' : 'plus every application and visa chain') + '.</p>' +
       '<div class="pw-actions">' +
-        '<a class="pw-buy" href="' + (window.PAVE_CHECKOUT || "#") + '">Get all eight countries \u2014 ' + (window.PAVE_PRICE || "") + '</a>' +
+        (CHECKOUT_READY
+        ? '<a class="pw-buy" href="' + window.PAVE_CHECKOUT + '">Get all eight countries \u2014 ' + (window.PAVE_PRICE || "") + '</a>'
+        : '<a class="pw-buy" href="mailto:rahul@pavetheway.ai?subject=" + encodeURIComponent("The full Pave file") + '">Ask for the full file</a>') +
         '<a class="pw-free" href="file.html?c=germany">Back to Germany</a>' +
       '</div>' +
       '<div class="pw-code">' +
