@@ -115,14 +115,14 @@
   "slug": "uae",
   "name": "UAE",
   "flag": "🇦🇪",
-  "programmes": 1792,
-  "institutions": 119,
+  "programmes": 1638,
+  "institutions": 99,
   "confirmed": 1244,
-  "quoted": 1792,
+  "quoted": 1638,
   "fields_min": 17,
   "fields_typical": 17,
   "visa_steps": 0,
-  "size_kb": 2766,
+  "size_kb": 2502,
   "depth": "register"
  }
 ]
