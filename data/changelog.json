@@ -1,0 +1,47 @@
+[
+ {
+  "date": "2026-09-21",
+  "title": "UAE register added: 1,638 accredited undergraduate programmes",
+  "body": "The whole CAA National Register, 99 institutions across all seven emirates, each row linking to its own register entry. This file is register depth rather than programme depth: it answers whether an institution is accredited, in teach-out, or no longer licensed, and it deliberately carries no fees or deadlines because the register does not publish them. 20 institutions whose licences have been revoked are excluded from the file."
+ },
+ {
+  "date": "2026-09-21",
+  "title": "Netherlands update merged",
+  "body": "The 18 September re-check landed in the live file: accreditation status, admissions contacts and US diploma guidance added to twelve records across TU Delft, TU Eindhoven, UvA and VU Amsterdam, with fees and deadlines re-confirmed against each university's own pages."
+ },
+ {
+  "date": "2026-09-18",
+  "title": "Germany grows to 80 programmes, and paid access opens",
+  "body": "Nine programmes added, including product design, because a counsellor asked for it. Germany stays free. The other countries opened at $99 a year, a founding rate held for the first 20 counsellors."
+ },
+ {
+  "date": "2026-09-18",
+  "title": "Netherlands re-checked, 12 of 27 records",
+  "body": "Every TU Delft, TU Eindhoven, UvA and VU record re-verified against the university's own page. The numerus fixus deadlines, 15 January not spring, were confirmed again. This matters most for Aerospace at Delft and Psychology at UvA and VU."
+ },
+ {
+  "date": "2026-09-14",
+  "title": "All eight countries live, with full application chains",
+  "body": "Singapore (78), Italy (50), Australia (45), Spain (32), the Netherlands (27), France (8) and Switzerland (3) joined Germany on one site. 184 application and visa steps across the eight, written as step-by-step chains for the student's passport and curriculum, with the trap named at each stage."
+ },
+ {
+  "date": "2026-09-13",
+  "title": "Australia added: 45 programmes across the Group of Eight",
+  "body": "All eight Go8 universities, checked 13 September. Where a university publishes no cutoff for a board, the record says so instead of inventing one."
+ },
+ {
+  "date": "2026-09-12",
+  "title": "Germany grows to 71 programmes, 33 institutions",
+  "body": "Five records added and every count on the page re-checked against the data."
+ },
+ {
+  "date": "2026-09-10",
+  "title": "Germany grows to 66 programmes",
+  "body": "19 records added. Engineering coverage went from 4 programmes to 12. Deadlines that had closed for the 2026 intake were re-checked and marked with the next cycle's dates rather than deleted."
+ },
+ {
+  "date": "2026-08-25",
+  "title": "The Germany file launches: 47 programmes",
+  "body": "Built by auditing an existing 58-row compilation against every university's own page. 20 of 58 source links were dead and ten programmes turned out not to be taught in English at all, so they are not in the file. What shipped is only what survived checking."
+ }
+]

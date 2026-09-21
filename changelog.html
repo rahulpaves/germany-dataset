@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What changed | Pave country data</title>
+<link rel="canonical" href="https://germany.pavetheway.ai/changelog.html">
+<meta name="description" content="Every change to the Pave country data, dated. What was added, what was re-checked, and when.">
+<style>
+  :root{--ink:#0d1b2a;--body:#33415c;--soft:#5a6b85;--line:#dfe6ef;--primary:#2b4fe3;--bg:#f4f6fa;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--body);font:16px/1.6 Inter,ui-sans-serif,-apple-system,"Segoe UI",Roboto,sans-serif;}
+  .wrap{max-width:760px;margin:0 auto;padding:52px 24px 80px;}
+  .crumb{font-size:13.5px;margin-bottom:26px;}
+  .crumb a{color:var(--primary);text-decoration:none;}
+  h1{font-size:32px;line-height:1.15;letter-spacing:-.02em;color:var(--ink);margin:0 0 10px;}
+  .lede{font-size:16px;color:var(--soft);max-width:58ch;margin:0 0 12px;}
+  .promise{font-size:14px;color:var(--soft);background:#fff;border:1px solid var(--line);
+           border-radius:10px;padding:13px 16px;margin:22px 0 38px;max-width:62ch;}
+  .promise b{color:var(--ink);}
+  .entry{position:relative;padding:0 0 34px 28px;border-left:2px solid var(--line);}
+  .entry::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;
+                 border-radius:50%;background:#fff;border:3px solid var(--primary);}
+  .entry:last-child{border-left-color:transparent;}
+  .entry time{display:block;font-size:12.5px;font-weight:700;letter-spacing:.08em;
+              text-transform:uppercase;color:var(--primary);margin-bottom:5px;}
+  .entry h2{font-size:18.5px;color:var(--ink);margin:0 0 7px;line-height:1.3;}
+  .entry p{font-size:15px;max-width:62ch;}
+  .foot{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:14px;color:var(--soft);}
+  .foot a{color:var(--primary);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="crumb"><a href="file.html">&larr; Back to the file</a></p>
+  <h1>What changed, and when</h1>
+  <p class="lede">Every addition and every re-check, dated. This page exists so "the data stays
+     current" is something you can see rather than something we say.</p>
+  <p class="promise"><b>The standing promise:</b> paid access covers everything on this page as it
+     lands. New countries, new programmes and every re-check are included, and the price you
+     joined at does not change while you keep the subscription.</p>
+
+  <div id="log"><p style="color:var(--soft)">Loading&hellip;</p></div>
+
+  <p class="foot">Something here looks wrong, or a country you need is missing?
+     Mail <a href="mailto:rahul@pavetheway.ai">rahul@pavetheway.ai</a> or
+     <a href="https://wa.me/971568924365">WhatsApp +971 56 892 4365</a>. Corrections are
+     re-checked against the university's own page and land here with a date.</p>
+</div>
+
+<script>
+(function(){
+  function esc(s){var d=document.createElement("i");d.textContent=s;return d.innerHTML;}
+  var MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
+  function nice(iso){
+    var p=iso.split("-");
+    return Number(p[2])+" "+MONTHS[Number(p[1])-1]+" "+p[0];
+  }
+  fetch("data/changelog.json?v="+Date.now()).then(function(r){return r.json();}).then(function(log){
+    document.getElementById("log").innerHTML = log.map(function(e){
+      return '<div class="entry"><time datetime="'+esc(e.date)+'">'+nice(e.date)+'</time>'+
+             '<h2>'+esc(e.title)+'</h2><p>'+esc(e.body)+'</p></div>';
+    }).join("");
+  }).catch(function(){
+    document.getElementById("log").innerHTML =
+      '<p>Could not load the log. Refresh, or mail rahul@pavetheway.ai.</p>';
+  });
+})();
+</script>
+</body>
+</html>

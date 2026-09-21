@@ -193,6 +193,43 @@ links = sum(1 for r in d for f in ("url", "source_url_you_used")
 if links:
     print("\n  WRONG    %d url/source values are not URLs" % links); bad += 1
 
+# -- the change log ----------------------------------------------------------
+# The subscription's renewal case is "the data stays current", and the change
+# log is the evidence. A log that stops moving while the data keeps changing
+# unsells that quietly, so the newest entry may not be older than the newest
+# date_checked anywhere in the data.
+_here = os.path.dirname(os.path.abspath(__file__))
+try:
+    _log = _j.load(open(os.path.join(_here, "data", "changelog.json")))
+    _entry_dates = sorted(e["date"] for e in _log)
+    _MON = {m: i + 1 for i, m in enumerate(
+        ["January","February","March","April","May","June",
+         "July","August","September","October","November","December"])}
+    def _iso(text):
+        m = re.match(r"(\d{1,2}) (\w+) (\d{4})", str(text).strip())
+        if not m or m.group(2) not in _MON: return None
+        return "%s-%02d-%02d" % (m.group(3), _MON[m.group(2)], int(m.group(1)))
+    _checked = []
+    import glob as _g
+    for _p in _g.glob(os.path.join(_here, "data", "*.json")) + \
+              _g.glob(os.path.join(_here, "data-source", "*.json")):
+        if "changelog" in _p or "revoked" in _p: continue
+        try: _rows = _j.load(open(_p))
+        except Exception: continue
+        if not isinstance(_rows, list): continue
+        for _r in _rows:
+            if isinstance(_r, dict):
+                _d = _iso(_r.get("date_checked", ""))
+                if _d: _checked.append(_d)
+    if _checked and _entry_dates and max(_checked) > _entry_dates[-1]:
+        print("  WRONG    data was checked on %s but the change log ends at %s"
+              % (max(_checked), _entry_dates[-1])); bad += 1
+    else:
+        print("  ok       change log            newest entry %s covers newest check %s"
+              % (_entry_dates[-1] if _entry_dates else "-", max(_checked) if _checked else "-"))
+except FileNotFoundError:
+    print("  WRONG    data/changelog.json is missing"); bad += 1
+
 print()
 if bad:
     print("RESULT: %d problem(s). Do not deploy." % bad); sys.exit(1)
