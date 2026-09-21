@@ -1,11 +1,13 @@
+# The paid country files are the product. They must never be uploaded as static
+# assets, or anyone can fetch /data-source/italy.json and the gate is decoration.
+# The function does not read these at runtime: build_gate.py inlines them into
+# api/data.js, which is a function and therefore never served as a file.
+data-source/
 
 # Build and check scripts. They hold no data, but there is no reason to serve
-# The function does not read these at runtime: build_gate.py inlines them into
-# The paid country files are the product. They must never be uploaded as static
-# api/data.js, which is a function and therefore never served as a file.
-# assets, or anyone can fetch /data-source/italy.json and the gate is decoration.
 # the machinery either.
 *.py
 __pycache__/
-data-source/
+
+# Review workbooks for Kareena. Working files, not part of the site.
 review/
