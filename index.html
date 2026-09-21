@@ -54,7 +54,7 @@
    Change a value here and it updates everywhere on the page.
    ========================================================================= */
 const CONFIG = {
-  PRICE:            "Free",        // Germany is free. Other countries: $79 per country per year.
+  PRICE:            "Free",        // Germany is free. The other seven together: $99 a year.
   EMAIL:            "rahul@pavetheway.ai",
   MAIL_SUBJECT:     "Country data - early access",
   MAIL_BODY:
@@ -779,7 +779,10 @@ footer a:hover{color:#fff;}
   .ccard .ch{display:inline-block;margin-top:9px;font-size:11.5px;font-weight:600;color:#1d6b52;
         background:#e6f3ed;border:1px solid #b3ddc9;border-radius:999px;padding:2px 8px;}
   .ccard .ch.no{color:#7b8496;background:#f4f6f9;border-color:#e2e6ef;}
-  .cwrap{margin:42px 0 0;}
+  /* .wrap centres with margin:0 auto. This rule comes later, so writing
+     the sides as 0 rather than auto silently un-centred the whole
+     countries section against every other block on the page. */
+  .cwrap{margin:42px auto 0;}
   .cwrap h3{font-size:19px;color:#0d1b2a;margin:0 0 5px;}
   .cwrap p.sub{font-size:14.5px;color:#5a6b85;margin:0;max-width:68ch;}
   .ctot{display:flex;flex-wrap:wrap;gap:8px 26px;margin:14px 0 0;font-size:13.5px;color:#33415c;}
@@ -1185,7 +1188,7 @@ footer a:hover{color:#fff;}
       <div class="obj-item">
         <h3>The answer depends on the passport</h3>
         <p>The route changes completely with your student's passport, and that part sits on embassy sites rather than university ones.</p>
-        <span class="ev">Same German degree: an Indian passport on CBSE runs <b>20 steps including APS</b>. The same student on an IB diploma runs 17 &mdash; APS follows the board, not the passport. A US passport runs 15, a French one 11.</span>
+        <span class="ev">Same German degree: an Indian passport on CBSE runs <b>20 steps including APS</b>. The same student on an IB diploma runs 17, because APS follows the board, not the passport. A US passport runs 15, a French one 11.</span>
       </div>
       <div class="obj-item">
         <h3>Once is easy. Every time is not.</h3>
@@ -1234,7 +1237,7 @@ footer a:hover{color:#fff;}
       <div class="card">
         <div class="ico">06</div>
         <h3>Full student visa process</h3>
-        <p>The route for the student in front of you: who needs a Type D visa, who can skip the embassy, and who needs APS &mdash; which follows the curriculum, not the passport. Documents, blocked account, lead times and fees included.</p>
+        <p>The route for the student in front of you: who needs a Type D visa, who can skip the embassy, and who needs APS, which follows the curriculum, not the passport. Documents, blocked account, lead times and fees included.</p>
       </div>
     </div>
 
@@ -1253,31 +1256,30 @@ footer a:hover{color:#fff;}
     <div class="section-head" style="text-align:center;margin-left:auto;margin-right:auto;">
       <p class="eyebrow">Straight answer</p>
       <h2>What it costs, and what it replaces</h2>
-      <p style="margin:0 auto;">The price, before you spend any time on this.</p>
+      <p style="margin:0 auto;">Both prices, before you spend any time on this.</p>
     </div>
 
     <div class="price-card">
-      <div class="amt"><span class="was">$79</span> Free</div>
-      <p class="terms">Germany, free for early access · <strong>no card, nothing charged</strong></p>
+      <div class="amt">Free</div>
+      <p class="terms">Germany, all 80 programmes · <strong>no signup, no card, open it now</strong></p>
 
       <ul class="includes">
-        <li>The complete verified Germany file, by email within 24 hours</li>
+        <li>Opens in the browser. Nothing to download and nobody to email.</li>
         <li>Every requirement, deadline, fee and application route, checked against source</li>
         <li>Board-by-board entry mapping: CBSE, ISC, IB, A-Level</li>
         <li>The visa chain for your student's passport, step by step, with realistic timings</li>
         <li>A source link on every field, so you can confirm anything in front of a parent</li>
-        <li>Tell us which country you need next and we quote you a date for it</li>
       </ul>
 
       <div style="text-align:left;background:#fff;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:18px 20px;margin-bottom:26px;">
-        <p style="font-size:15px;margin:0 0 8px;"><strong>Every other country is $79 per country, per year.</strong> Germany is the one we give away.</p>
-        <p style="font-size:14.5px;margin:0 0 10px;">Name the country your students apply to and we verify it to the same standard. The price covers the re-check each cycle, because a deadline file is worthless the year after nobody looks at it again.</p>
-        <p style="font-size:14.5px;margin:0;">We quote you a delivery date <strong>before</strong> you pay anything. If we cannot commit to a date, we say so and you pay nothing.</p>
-        <p style="font-size:13.5px;margin:10px 0 0;opacity:.85;">No card details on this site. Countries are invoiced on delivery.</p>
+        <p style="font-size:15px;margin:0 0 8px;"><strong>The other seven countries are $99 a year. All of them, not each.</strong></p>
+        <p style="font-size:14.5px;margin:0 0 10px;">Singapore, Italy, Australia, Spain, the Netherlands, France and Switzerland. 243 more programmes to the same standard, and new countries land through the year with your access covering them as they arrive.</p>
+        <p style="font-size:14.5px;margin:0 0 10px;">That is a founding rate for the first 20 counsellors and it rises after that. Anyone in at $99 stays at $99 for as long as they keep it.</p>
+        <p style="font-size:13.5px;margin:0;opacity:.85;">Card handled by Stripe and access opens the moment it clears. Cancel any time from your Stripe billing page, and you keep the file until the end of the year you paid for.</p>
       </div>
 
-      <a class="btn btn-lg" id="buyBtn" href="#requestForm" style="width:100%;">Get the free Germany file</a>
-      <p class="fallback">Takes about 30 seconds.</p>
+      <a class="btn btn-lg" id="buyBtn" href="file.html" style="width:100%;">Open the free Germany file</a>
+      <p class="fallback">Opens straight away. Switch country at the top to see the rest.</p>
     </div>
   </div>
 </section>
@@ -1288,7 +1290,7 @@ footer a:hover{color:#fff;}
     <div class="section-head">
       <p class="eyebrow">How it's checked</p>
       <h2>What "verified" has to mean</h2>
-      <p>Pave makes software for college counselors. We audited our own German data before showing it to anyone, and 20 of 58 source links were dead. Ten programmes turned out not to be taught in English at all, including one whose own page says the language of instruction is German. Those are gone. What is left is 47 programmes where every link resolves.</p>
+      <p>Pave makes software for college counselors. We audited our own German data before showing it to anyone, and 20 of 58 source links were dead. Ten programmes turned out not to be taught in English at all, including one whose own page says the language of instruction is German. Those are gone. Germany now stands at 80 programmes where every link resolves.</p>
     </div>
     <div class="method">
       <div class="method-item">
@@ -1472,7 +1474,9 @@ footer a:hover{color:#fff;}
     el.addEventListener("click", function () { track(pair[1]); });
   });
 
-  // the in-page CTA scrolls to the form rather than opening a mail client
+  // The CTA opens the file itself now. Germany needs no signup, so sending a
+  // reader to a form before showing them anything was asking for something
+  // we do not need in order to hand it over.
   var cta = document.getElementById("buyBtn");
   if (cta) cta.addEventListener("click", function () { track("cta-click"); });
 
