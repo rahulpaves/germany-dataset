@@ -11,7 +11,7 @@
   "fields_min": 34,
   "fields_typical": 38,
   "visa_steps": 21,
-  "size_kb": 264
+  "size_kb": 298
  },
  {
   "slug": "singapore",
@@ -22,8 +22,8 @@
   "confirmed": 71,
   "quoted": 78,
   "corrections": 78,
-  "fields_min": 31,
-  "fields_typical": 36,
+  "fields_min": 32,
+  "fields_typical": 37,
   "visa_steps": 20,
   "size_kb": 398
  },
@@ -36,8 +36,8 @@
   "confirmed": 45,
   "quoted": 50,
   "corrections": 50,
-  "fields_min": 26,
-  "fields_typical": 30,
+  "fields_min": 27,
+  "fields_typical": 31,
   "visa_steps": 27,
   "size_kb": 184
  },
@@ -64,7 +64,7 @@
   "confirmed": 31,
   "quoted": 32,
   "corrections": 26,
-  "fields_min": 32,
+  "fields_min": 33,
   "fields_typical": 36,
   "visa_steps": 26,
   "size_kb": 124
@@ -78,10 +78,10 @@
   "confirmed": 27,
   "quoted": 27,
   "corrections": 27,
-  "fields_min": 35,
-  "fields_typical": 36,
+  "fields_min": 36,
+  "fields_typical": 37,
   "visa_steps": 26,
-  "size_kb": 114
+  "size_kb": 118
  },
  {
   "slug": "france",
@@ -93,7 +93,7 @@
   "quoted": 8,
   "corrections": 8,
   "fields_min": 25,
-  "fields_typical": 33,
+  "fields_typical": 34,
   "visa_steps": 23,
   "size_kb": 31
  },
@@ -106,8 +106,8 @@
   "confirmed": 3,
   "quoted": 3,
   "corrections": 3,
-  "fields_min": 36,
-  "fields_typical": 36,
+  "fields_min": 37,
+  "fields_typical": 37,
   "visa_steps": 18,
   "size_kb": 18
  }
