@@ -291,7 +291,7 @@ dl.spec dt:first-of-type,dl.spec dd:first-of-type{border-top:none;}
 }
 .natpick select:focus{outline:2px solid var(--primary);outline-offset:1px;}
 .natresult{
-  font-size:14px;margin:12px 0 0;color:var(--ink);display:none;
+  font-size:14px;margin:12px 0 6px;color:var(--ink);display:none;
   padding-left:13px;border-left:3px solid var(--primary);
 }
 .natresult.on{display:block;}
@@ -612,6 +612,12 @@ footer a:hover{color:#fff;}
   .cbtn[aria-current="true"]{background:#0d1b2a;color:#fff;border-color:#0d1b2a;}
   .cbtn .n{font-weight:500;opacity:.72;font-variant-numeric:tabular-nums;}
   .cbtn[aria-current="true"] .n{opacity:.8;}
+  /* Reading Germany and wanting the rest is the best moment we get. Until now
+     the only way to buy was to click a locked country and meet the paywall,
+     which asks someone to hit a wall before it will take their money. */
+  .cbtn.buy{background:#2b4fe3;color:#fff;border-color:#2b4fe3;}
+  .cbtn.buy:hover{background:#1f3ecb;border-color:#1f3ecb;}
+  .cbtn.buy .n{opacity:.85;font-weight:600;}
   .tabs{display:flex;gap:6px;margin:0 0 18px;border-bottom:1px solid #dfe6ef;}
   .tab{border:0;background:none;padding:9px 2px;margin-right:20px;font-size:14.5px;font-weight:600;
        color:#5a6b85;cursor:pointer;border-bottom:2px solid transparent;font-family:inherit;}
@@ -659,7 +665,7 @@ footer a:hover{color:#fff;}
   content:attr(data-stagelabel);position:absolute;left:-13px;top:-24px;
   font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
   color:var(--body);opacity:.75;background:#fff;padding:0 8px 0 0;}
-.timeline.fullchain li:first-child.stage-start{margin-top:6px;}
+.timeline.fullchain li:first-child.stage-start{margin-top:30px;}
 .vbanner{margin:18px 0 0;}
 .askus{margin-top:14px;border:1px solid var(--line);border-radius:14px;
   background:var(--muted);padding:20px 22px;}
@@ -1159,7 +1165,20 @@ function countryBar(){
     return '<a class="cbtn" href="?' + q.toString() + '"' +
            (c.slug === COUNTRY ? ' aria-current="true"' : '') + '>' +
            c.flag + " " + esc(c.name) + ' <span class="n">' + c.programmes + '</span></a>';
-  }).join("");
+  }).join("") + buyPill();
+}
+
+/* Shown to a reader who has not bought yet, and only when checkout is really
+   wired. Someone who already paid should never be sold to again, so the
+   presence of an access token hides it. */
+function buyPill(){
+  if (accessCode()) return "";
+  if (typeof CHECKOUT_READY === "undefined" || !CHECKOUT_READY) return "";
+  var locked = CINDEX.filter(function(c){ return FREE.indexOf(c.slug) === -1; }).length;
+  if (!locked) return "";
+  return '<a class="cbtn buy" href="' + window.PAVE_CHECKOUT + '">' +
+         'Unlock ' + locked + ' more countries' +
+         ' <span class="n">' + esc(window.PAVE_PRICE || "") + '</span></a>';
 }
 
 var CYCLES = null, CHAIN_HTML = "", ROUTES = null;
