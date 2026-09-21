@@ -110,5 +110,19 @@
   "fields_typical": 37,
   "visa_steps": 18,
   "size_kb": 18
+ },
+ {
+  "slug": "uae",
+  "name": "UAE",
+  "flag": "🇦🇪",
+  "programmes": 1792,
+  "institutions": 119,
+  "confirmed": 1244,
+  "quoted": 1792,
+  "fields_min": 17,
+  "fields_typical": 17,
+  "visa_steps": 0,
+  "size_kb": 2766,
+  "depth": "register"
  }
 ]
