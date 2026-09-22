@@ -38,10 +38,25 @@
 <script>
 var BILLING = "https://billing.stripe.com/p/login/00w00ibbO8nwbJ62fl0Fi00";
 
+/* GoatCounter, so a completed purchase is a visible event rather than a
+   thing only Stripe knows. Loaded the same way file.html loads it. */
+window.goatcounter = { no_onload: true };
+(function(){
+  var g=document.createElement("script"); g.async=true;
+  g.src="https://gc.zgo.at/count.js";
+  g.setAttribute("data-goatcounter","https://pave-germany.goatcounter.com/count");
+  document.head.appendChild(g);
+})();
+function track(name){
+  var t=function(){ if(window.goatcounter&&window.goatcounter.count)
+    window.goatcounter.count({path:name,title:name,event:true}); };
+  if (window.goatcounter && window.goatcounter.count) t(); else setTimeout(t, 1500);
+}
+
 var COUNTRIES = [
   ["singapore","Singapore"],["italy","Italy"],["australia","Australia"],
   ["spain","Spain"],["netherlands","Netherlands"],["france","France"],
-  ["switzerland","Switzerland"],["germany","Germany"]
+  ["switzerland","Switzerland"],["uae","UAE"],["germany","Germany"]
 ];
 
 function card(html){ document.getElementById("card").innerHTML = html; }
@@ -52,7 +67,7 @@ function unlocked(email){
   }).join("");
   card(
     '<div class="eyebrow">You\'re in</div>' +
-    '<h1>All eight countries are open</h1>' +
+    '<h1>All ' + COUNTRIES.length + ' countries are open</h1>' +
     '<p>This browser is unlocked for a year. Open any country and every field carries its ' +
     'source link, the sentence it came from and the date it was checked.</p>' +
     (email ? '<p class="muted">Receipt sent to ' + email + '. If that address is wrong, ' +
@@ -89,6 +104,7 @@ function manualEntry(message){
       .then(function(r){ return r.json().then(function(j){ return { ok: r.ok, j: j }; }); })
       .then(function(out){
         if (out.ok && out.j.token){
+          track("restore-ok-thanks");
           try { localStorage.setItem("pave-access", out.j.token); } catch(e){}
           unlocked(null);
           return;
@@ -120,9 +136,11 @@ function manualEntry(message){
     .then(function(r){ return r.json().then(function(j){ return {ok: r.ok, j: j}; }); })
     .then(function(out){
       if (out.ok && out.j.token) {
+        track("purchase-complete");
         try { localStorage.setItem("pave-access", out.j.token); } catch(e){}
         unlocked(out.j.email);
       } else {
+        track("purchase-stuck");
         manualEntry(out.j.message || "Stripe has not confirmed this payment yet.");
       }
     })

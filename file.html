@@ -1176,7 +1176,8 @@ function buyPill(){
   if (typeof CHECKOUT_READY === "undefined" || !CHECKOUT_READY) return "";
   var locked = CINDEX.filter(function(c){ return FREE.indexOf(c.slug) === -1; }).length;
   if (!locked) return "";
-  return '<a class="cbtn buy" href="' + window.PAVE_CHECKOUT + '">' +
+  return '<a class="cbtn buy" href="' + window.PAVE_CHECKOUT + '" ' +
+         'onclick="if(window.__track)window.__track(\'buy-click-pill\')">' +
          'Unlock ' + locked + ' more countries' +
          ' <span class="n">' + esc(window.PAVE_PRICE || "") + '</span></a>';
 }
@@ -1300,30 +1301,37 @@ function showPaywall(){
   var host = document.querySelector(".wrap") || document.body;
   var name  = (CMETA && CMETA.name) || "This country";
   var progs = (CMETA && CMETA.programmes) || 0;
+  /* Counted from the index rather than typed, because "six more countries"
+     sat in this string for a week after the UAE made it seven. */
+  var others = Math.max(0, CINDEX.filter(function(c){ return FREE.indexOf(c.slug) === -1; }).length - 1);
+
+  /* The funnel was invisible up to here: file opens were counted, then
+     nothing. These three events are the difference between "no one is
+     buying" and knowing WHERE they stop. */
+  if (window.__track) window.__track("paywall-" + COUNTRY);
+
   var el = document.createElement("div");
   el.className = "paywall";
   el.innerHTML =
     '<div class="pw-card">' +
       '<div class="pw-eyebrow">' + name + '</div>' +
       '<h2 class="pw-h">' + name + ' is in the full file</h2>' +
-      '<p class="pw-p">Germany is yours free: 80 programmes, every field carrying the link it ' +
-        'came from, the sentence it came from and the date a person checked it. ' +
+      '<p class="pw-p">You have seen the Germany file: every field carrying its source link, ' +
+        'the sentence it came from and the date a person checked it. ' +
         (progs ? name + ' is ' + progs + ' programmes done the same way' : name + ' is done the same way') +
-        ', and six more countries sit behind it.</p>' +
-      '<p class="pw-p">New countries and programmes land through the year. Your access covers ' +
-        'them as they arrive.</p>' +
-      '<p class="pw-early">This is the founding price. It rises as the file grows. Yours stays ' +
-        'where it is for as long as you keep the subscription.</p>' +
+        (others ? ', and ' + others + ' more countries sit beside it.' : '.') + '</p>' +
       '<div class="pw-actions">' +
         (CHECKOUT_READY
-          ? '<a class="pw-buy" href="' + window.PAVE_CHECKOUT + '">Get all eight countries, ' +
+          ? '<a class="pw-buy" id="pwBuy" href="' + window.PAVE_CHECKOUT + '">Unlock everything, ' +
             (window.PAVE_PRICE || "") + '</a>'
-          : '<a class="pw-buy" href="mailto:rahul@pavetheway.ai">Ask for the full file</a>') +
+          : '<a class="pw-buy" id="pwBuy" href="mailto:rahul@pavetheway.ai">Ask for the full file</a>') +
         '<a class="pw-free" href="file.html?country=germany">Back to Germany</a>' +
       '</div>' +
-      '<p class="pw-terms">Cancel any time from your ' +
-        '<a href="' + window.PAVE_BILLING + '">billing page</a>. ' +
-        'You keep the file until the end of the year you paid for.</p>' +
+      '<p class="pw-terms">One payment covers every country, including the ones added later. ' +
+        'Cancel any time from your <a href="' + window.PAVE_BILLING + '">billing page</a> and ' +
+        'keep the file until the end of the year you paid for.</p>' +
+      '<p class="pw-early">Founding price, held for the first 20 counsellors. It rises as the ' +
+        'file grows; yours stays where it is for as long as you keep the subscription.</p>' +
       '<div class="pw-code">' +
         '<label for="pwEmail">Bought it already? Put in the email you paid with.</label>' +
         '<div class="pw-row">' +
@@ -1340,6 +1348,11 @@ function showPaywall(){
   host.innerHTML = "";
   host.appendChild(el);
 
+  var buy = document.getElementById("pwBuy");
+  if (buy) buy.addEventListener("click", function(){
+    if (window.__track) window.__track("buy-click-" + COUNTRY);
+  });
+
   var go = document.getElementById("pwGo"), err = document.getElementById("pwErr");
   function restore(){
     var v = (document.getElementById("pwEmail").value || "").trim();
@@ -1350,10 +1363,12 @@ function showPaywall(){
       .then(function(r){ return r.json().then(function(j){ return { ok: r.ok, j: j }; }); })
       .then(function(out){
         if (out.ok && out.j.token) {
+          if (window.__track) window.__track("restore-ok");
           try { localStorage.setItem("pave-access", out.j.token); } catch(e){}
           location.reload();
           return;
         }
+        if (window.__track) window.__track("restore-fail");
         go.disabled = false; go.textContent = "Open it";
         err.textContent = out.j.message || "We could not find that.";
       })
