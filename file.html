@@ -906,6 +906,9 @@ function render(i){
      the page and typed out the sentence. Source checked means the link was
      opened and answered on the date shown, but no quote is on file yet. */
   var ok = r.verified_status === "Confirmed";
+  /* A third state. Compiled rows were not read page by page, so they may not
+     wear the green badge, and saying nothing would let them borrow it. */
+  var compiled = /^Compiled/i.test(r.verified_status || "");
   var checked = r.verified_status === "Source checked";
   /* the language field carries a full quoted sentence on the checked records,
      which reads well in the table below but not as a chip */
@@ -918,7 +921,14 @@ function render(i){
   var chips = [r.degree, r.language, r.years, r.instType].filter(has)
      .map(function(c){return '<span class="chip">'+esc(short(c))+'</span>';}).join("");
 
-  var banner = ok
+  var banner = compiled
+    ? '<div class="vbanner mid"><span>&#9679;</span><span><b>This record was compiled, not read page by page.</b> '+
+      'It carries no quote and no checker\'s name. The numbers below come from course listings and are '+
+      'right often enough to shortlist with, and not right often enough to advise on without opening the '+
+      'course page first'+
+      (has(r.url)?': <a href="'+esc(r.url)+'" target="_blank" rel="noopener">open the course page</a>':'')+
+      '.</span></div>'
+    : ok
     ? '<div class="vbanner ok"><span>&#10003;</span><span><b>Every field above was checked against the university\'s own pages</b> on '+esc(r.date_checked)+
       (has(r.source_url_you_used)?' &middot; <a href="'+esc(r.source_url_you_used)+'" target="_blank" rel="noopener">open the page we checked</a>':'')+
       (has(r.exact_quote)?'<br><span style="opacity:.85">&ldquo;'+esc(r.exact_quote)+'&rdquo;</span>':'')+'</span></div>'

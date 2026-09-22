@@ -1,6 +1,11 @@
 [
  {
   "date": "2026-09-22",
+  "title": "United Kingdom added: 1,287 courses and a 22 step visa chain",
+  "body": "150 universities with the UCAS code, the IB, A Level and US requirements, the deadline and the international fee on each. This file is compiled from course listings rather than read page by page, so it carries no quote and every record says so and links to the course page. Four defects in the source were fixed rather than shipped: 560 duplicate rows merged, 301 courses where the source gave two different IB requirements now say so, 25 medicine rows that put a whole course total in a per year column are corrected, and 27 non-medical courses that wrongly cited the UCAT medicine test have it removed. The 22 step chain is held to the verified standard: every step sourced to gov.uk or UCAS and quoted. It covers the 15 October Oxbridge and medicine deadline, admissions test registration closing before UCAS, the 28 day maintenance funds rule, the 776 pounds a year health surcharge, ATAS for integrated masters courses, and the TB test rule that follows where a student has lived rather than which passport they hold."
+ },
+ {
+  "date": "2026-09-22",
   "title": "India added: 44 programmes across 12 universities, with the AIU chain",
   "body": "Ashoka, Krea, FLAME, O.P. Jindal, Shiv Nadar, Plaksha, BITS Pilani, Manipal (MAHE), Symbiosis, NMIMS, Christ and Azim Premji, every record checked against the university's own pages. The axis that matters in India is not language, it is how each university treats IB and A-Level students: who accepts predicted grades, who demands the AIU equivalence certificate, and which routes are exam-gated (BITSAT, MET, SET, NPAT) versus application-based. An 18-step application chain covers the AIU equivalence, the predicted-grades gap against July IB results, the Foreign/NRI seat category and its fee lock, and the student visa and FRRO route for foreign passports."
  },

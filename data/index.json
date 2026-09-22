@@ -125,6 +125,20 @@
   "size_kb": 245
  },
  {
+  "slug": "uk",
+  "name": "United Kingdom",
+  "flag": "🇬🇧",
+  "programmes": 1287,
+  "institutions": 150,
+  "confirmed": 0,
+  "quoted": 0,
+  "fields_min": 25,
+  "fields_typical": 27,
+  "visa_steps": 22,
+  "size_kb": 2421,
+  "depth": "compiled"
+ },
+ {
   "slug": "uae",
   "name": "UAE",
   "flag": "🇦🇪",

@@ -40,17 +40,20 @@ _idx = _j.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "da
 # publish language of instruction, so not one of those 1,792 rows has been
 # confirmed English-taught. Adding them to the headline would turn a true
 # sentence into a false one, which is the single thing this file exists to stop.
-VERIFIED = [x for x in _idx if x.get("depth") != "register"]
+VERIFIED = [x for x in _idx if not x.get("depth")]
 REGISTER = [x for x in _idx if x.get("depth") == "register"]
+COMPILED = [x for x in _idx if x.get("depth") == "compiled"]
 TOTAL_PROGRAMMES  = sum(x["programmes"] for x in VERIFIED)
 REGISTER_PROGRAMMES = sum(x["programmes"] for x in REGISTER)
-print("multi-country: %d English-taught across %d countries, plus %d register rows across %d\n"
-      % (TOTAL_PROGRAMMES, len(VERIFIED), REGISTER_PROGRAMMES, len(REGISTER)))
+COMPILED_PROGRAMMES = sum(x["programmes"] for x in COMPILED)
+print("multi-country: %d verified across %d countries, plus %d register rows and %d compiled rows\n"
+      % (TOTAL_PROGRAMMES, len(VERIFIED), REGISTER_PROGRAMMES, COMPILED_PROGRAMMES))
 
 
 checks = [
     ("hero headline",        r"<h1>(\d+) English-taught",                 TOTAL_PROGRAMMES),
     ("UAE register count",   r"(\d+) accredited UAE",                     REGISTER_PROGRAMMES),
+    ("UK compiled count",    r"(\d+) UK undergraduate courses",           COMPILED_PROGRAMMES),
     ("PROGRAMME_COUNT",      r"PROGRAMME_COUNT:\s*(\d+)",                 truth["programmes"]),
     ("UNI_COUNT",            r"UNI_COUNT:\s*(\d+)",                       truth["institutions"]),
     ("Germany picker progs", r'"Germany":\[(\d+),\d+\]',                  truth["programmes"]),

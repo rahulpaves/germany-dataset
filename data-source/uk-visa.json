@@ -1,0 +1,396 @@
+[
+  {
+    "step_no": 1,
+    "stage": "Eligibility",
+    "title": "Confirm the university is a licensed student sponsor and the student can meet entry and English requirements",
+    "duration_realistic": "1 to 2 weeks of checking, done in Year 12",
+    "what_happens": "A UK institution can only support a Student visa if it holds a sponsor licence, so the shortlist has to be checked against that before anything else. Separately the student must meet the course entry requirements in their own board's grades and hold English at CEFR level B2 for degree level study. Universities publish their own IB, A Level, CBSE and ISC equivalences, and these differ from one another for the same course. Nothing in the visa chain starts until an offer from a licensed sponsor exists.",
+    "the_trap": "Counsellors assume that any institution advertising a UK degree can sponsor a visa, which is not true of some private and pathway providers. They also assume that English-medium schooling in India or the Gulf automatically satisfies the English requirement, when the decision sits with the university or with a Secure English Language Test.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "exact_quote": "You can apply for a Student visa to study in the UK if you're 16 or over and you: have been offered a place on a course by a licensed student sponsor",
+    "date_checked": "22 September 2026",
+    "axes": {
+      "passport": [
+        "foreign"
+      ],
+      "board": [],
+      "residence": []
+    }
+  },
+  {
+    "step_no": 2,
+    "stage": "Application",
+    "title": "Build the five-choice list inside the Oxbridge and medicine restrictions",
+    "duration_realistic": "2 to 3 months of shortlisting, spring of Year 12 into autumn of Year 13",
+    "what_happens": "One UCAS application carries up to five course choices in total, across any number of universities. A student may apply to Oxford or to Cambridge but not to both in the same cycle. In medicine, dentistry, veterinary medicine and veterinary science the cap is four courses, so the fifth slot has to go to a different subject.",
+    "the_trap": "Families arrive with a list of eight or nine universities and only discover the hard limit of five once the application is open, which forces rushed cuts in October. The medicine cap is worse, because the compulsory fifth non-medicine choice is treated as a throwaway and then becomes the only live offer when the four medicine choices reject.",
+    "source_url": "https://www.ucas.com/applying/applying-university/filling-your-ucas-undergraduate-application",
+    "exact_quote": "Usually you can only apply to one course at either the University of Oxford or the University of Cambridge,",
+    "date_checked": "22 September 2026",
+    "axes": {
+      "passport": [],
+      "board": [],
+      "residence": []
+    }
+  },
+  {
+    "step_no": 3,
+    "stage": "Application",
+    "title": "Register for admissions tests, which close before the UCAS deadline",
+    "duration_realistic": "Registration window in September, tests sat between October and January depending on the test",
+    "what_happens": "UCAT is used by medical and dental schools, LNAT by a named group of law schools including Oxford, Cambridge, LSE, UCL, Durham and Bristol, and TMUA and ESAT by Cambridge, Imperial, LSE, Warwick, Durham and UCL for mathematics, economics, computer science and engineering. Registration for each test is run by the test provider, not by UCAS, and each has its own account, fee and closing date. STEP is not listed on the UCAS admissions tests page, so for mathematics the individual department page governs whether it is required.",
+    "the_trap": "Counsellors plan backwards from the UCAS deadline and miss that test registration closes weeks earlier, which removes a medicine or Cambridge application entirely with no appeal. The second trap is assuming a test is universal for a subject, when in law and mathematics it is required by some universities and not others, so the requirement has to be checked course by course.",
+    "source_url": "https://www.ucas.com/applying/before-you-apply/what-and-where-to-study/entry-requirements/admissions-tests",
+    "exact_quote": "Some have a registration deadline before you need to submit your UCAS application.",
+    "date_checked": "22 September 2026",
+    "axes": {
+      "passport": [],
+      "board": [],
+      "residence": []
+    }
+  },
+  {
+    "step_no": 4,
+    "stage": "Application",
+    "title": "Write the personal statement as three structured questions, not one essay",
+    "duration_realistic": "6 to 8 weeks of drafting and redrafting",
+    "what_happens": "For 2026 entry onwards UCAS replaced the single free-form statement with three mandatory questions: why the student wants to study the course, how their qualifications and studies have prepared them, and what else they have done outside education and why it is useful. The 4,000 character limit including spaces still applies across all three answers together, with a minimum of 350 characters per answer. Students can weight the characters unevenly between the questions.",
+    "the_trap": "Counsellors hand students last year's template or a US-style personal essay, and the narrative opening that used to work now eats the character budget of question one without answering it. The second question is the one most students underuse, because it asks for evidence from the syllabus itself, such as an IB extended essay, an internal assessment or an A Level coursework topic, rather than general enthusiasm.",
+    "source_url": "https://www.ucas.com/applying/applying-to-university/writing-your-personal-statement/how-to-write-your-personal-statement-for-2026-entry-onwards",
+    "exact_quote": "Why do you want to study this course or subject?",
+    "date_checked": "22 September 2026",
+    "axes": {
+      "passport": [],
+      "board": [],
+      "residence": []
+    }
+  },
+  {
+    "step_no": 5,
+    "stage": "Application",
+    "title": "Secure the reference and the predicted grades",
+    "duration_realistic": "2 to 4 weeks before the submission deadline",
+    "what_happens": "Every application needs a reference, and it cannot be written by a family member, friend, partner or ex-partner. Where the referee is a teacher at the student's school, they also enter predicted grades for every qualification still pending. The reference is written inside the application itself, so the application cannot be sent to UCAS until the referee has finished their part.",
+    "the_trap": "Schools inflate predicted grades to win offers, and the bill arrives twice, first when the conditional offer is missed in August and again because a missed condition means no confirmed place, no CAS and no visa. The other trap is the gap year or externally schooled student who has left the school roll and cannot find a non-family referee in time, which stalls submission entirely.",
+    "source_url": "https://www.ucas.com/applying/applying-university/how-get-ucas-reference",
+    "exact_quote": "If your referee is one of your teachers, they can add your predicted grades for any pending qualifications you're studying now.",
+    "date_checked": "22 September 2026",
+    "axes": {
+      "passport": [],
+      "board": [
+        "ib",
+        "alevel",
+        "cbse",
+        "isc"
+      ],
+      "residence": []
+    }
+  },
+  {
+    "step_no": 6,
+    "stage": "Application",
+    "title": "Pay the UCAS application fee and send the application",
+    "duration_realistic": "Minutes, once the reference is complete",
+    "what_happens": "One fee covers the whole application regardless of how many of the five choices are used. For the 2027 cycle the undergraduate fee is set at a single flat amount. Payment is made inside the application, and until it clears the application has not been sent to UCAS even though it looks finished on screen.",
+    "the_trap": "Applications sit unsent because the student completed every section but never paid, and the school's adviser portal shows the application as ready rather than submitted. Indian and Gulf-issued cards are also a common point of failure, because international online transactions are blocked by default on many cards and the payment fails silently the night before a deadline.",
+    "source_url": "https://www.ucas.com/faqs/what-is-the-application-fee-for-the-2027-cycle",
+    "exact_quote": "For the 2027 cycle, the undergraduate and conservatoires application fee is £34.50.",
+    "date_checked": "22 September 2026",
+    "axes": {
+      "passport": [],
+      "board": [],
+      "residence": []
+    }
+  },
+  {
+    "step_no": 7,
+    "stage": "Application",
+    "title": "Meet the 15 October deadline for Oxford, Cambridge, medicine, dentistry and veterinary science",
+    "duration_realistic": "Fixed deadline at 18:00 UK time on 15 October",
+    "what_happens": "Applications to Oxford or Cambridge, and to most courses in medicine, dentistry and veterinary medicine or veterinary science, must reach UCAS by 18:00 UK time on 15 October to get equal consideration. The whole application, including the reference and payment, has to be complete by then. Choices with the later deadline can be added to the same application afterwards.",
+    "the_trap": "Students believe they can submit in January and add Oxford later, which is not possible, and the choice is simply lost for the cycle. Counsellors also miss that 18:00 is UK time, which is 22:30 in India and 21:00 in the Gulf, so a local evening finish is already past the cut-off.",
+    "source_url": "https://www.ucas.com/applying/applying-to-university/dates-and-deadlines-for-uni-applications",
+    "exact_quote": "Equal consideration date for applications to the universities of Oxford and Cambridge, and for most courses in medicine, dentistry, and veterinary medicine/science",
+    "date_checked": "22 September 2026",
+    "axes": {
+      "passport": [],
+      "board": [],
+      "residence": []
+    }
+  },
+  {
+    "step_no": 8,
+    "stage": "Application",
+    "title": "Meet the January equal consideration deadline for everything else",
+    "duration_realistic": "Fixed deadline at 18:00 UK time, 13 January 2027 for 2027 entry",
+    "what_happens": "All other undergraduate courses share a single equal consideration deadline in mid-January, set at 18:00 UK time on 13 January 2027 for 2027 entry. Applications arriving by that moment must be considered equally by every course provider. Applications arriving later can still be looked at, but only at the provider's discretion and only if places remain.",
+    "the_trap": "Equal consideration is read as rolling admission, so families relax and submit in the final week, which leaves no room for a portal fault or a referee delay. For students applying from India and the Gulf the cost of a late offer is compounded later, because every week lost in January is a week removed from the CAS, funds and visa sequence in the summer.",
+    "source_url": "https://www.ucas.com/events/2027-entry-deadline-for-all-undergraduate-courses-except-those-with-a-15-october-deadline-475546",
+    "exact_quote": "course providers must consider all applications received by this time equally",
+    "date_checked": "22 September 2026",
+    "axes": {
+      "passport": [],
+      "board": [],
+      "residence": []
+    }
+  },
+  {
+    "step_no": 9,
+    "stage": "Application",
+    "title": "Handle offers, then set the firm and insurance choices",
+    "duration_realistic": "Decisions arrive November to May, replies due on the date UCAS sets",
+    "what_happens": "Offers come back as conditional, which sets out grades or other conditions still to be met, or unconditional, where the requirements are already satisfied. Once every decision is in, the student replies with one firm choice and, where the firm is conditional, one insurance choice as a backup. Extra is available between late February and early July for a student who used all five choices and holds no offer they want to accept.",
+    "the_trap": "The insurance choice is set at the same or nearly the same grades as the firm, which means it fails on exactly the day the firm fails and provides no cover at all. Counsellors also forget that an insurance choice only functions behind a conditional firm, so a student who firms an unconditional offer has no second place to fall to.",
+    "source_url": "https://www.ucas.com/applying/after-you-apply/types-undergraduate-offers",
+    "exact_quote": "These show the conditions you have to meet to get your place confirmed.",
+    "date_checked": "22 September 2026",
+    "axes": {
+      "passport": [],
+      "board": [],
+      "residence": []
+    }
+  },
+  {
+    "step_no": 10,
+    "stage": "Application",
+    "title": "Results day, confirmation and Clearing",
+    "duration_realistic": "IB results in early July, A Level results in August, Clearing open from early July to mid-October",
+    "what_happens": "On results day the student checks their UCAS Hub to see whether the firm place has been confirmed, whether the insurance has taken over, or whether neither has. Clearing is the mechanism universities use to fill places that remain, and a student can take a Clearing place after being rejected by their firm and insurance, after declining a place, or by applying late. The student must get permission from the university before adding a Clearing choice to their application.",
+    "the_trap": "International students treat Clearing as a safe net, but a place taken in late August leaves only a few weeks to get a CAS, hold maintenance funds for 28 days and clear a visa before term, which is usually impossible. IB students receive results in early July, well before A Level results day, which is an advantage counsellors rarely use to start the visa chain earlier.",
+    "source_url": "https://www.ucas.com/applying/after-you-apply/clearing-and-results-day/what-clearing",
+    "exact_quote": "Clearing is how unis and colleges fill any places they still have on their courses.",
+    "date_checked": "22 September 2026",
+    "axes": {
+      "passport": [],
+      "board": [
+        "ib",
+        "alevel"
+      ],
+      "residence": []
+    }
+  },
+  {
+    "step_no": 11,
+    "stage": "Money",
+    "title": "Budget international tuition and the deposit",
+    "duration_realistic": "Deposit normally due within weeks of firming the offer",
+    "what_happens": "International tuition is set by each university and each course, not centrally, so the only reliable figure is the one on the specific course page. UCAS publishes an average for international students with living costs quoted separately. Most universities require a tuition deposit before they will issue a CAS, and that deposit amount then appears on the CAS and reduces the fees the student must evidence for the visa.",
+    "the_trap": "Counsellors quote a single average and families plan against it, then find that laboratory, engineering and clinical courses sit far above it and that fees can rise in each year of the course. The deposit is also misread as optional, when in practice it is the gate that releases the CAS, so a delayed deposit delays the visa by the same number of weeks.",
+    "source_url": "https://www.ucas.com/international/international-students/faqs-for-international-students",
+    "exact_quote": "The average cost per year of study in the UK for international students is around £11,000 per year in tuition fees plus living expenses, which can be £8,000 to £11,000 a year.",
+    "date_checked": "22 September 2026",
+    "axes": {
+      "passport": [
+        "foreign"
+      ],
+      "board": [],
+      "residence": []
+    }
+  },
+  {
+    "step_no": 12,
+    "stage": "Money",
+    "title": "Hold the maintenance funds for 28 consecutive days",
+    "duration_realistic": "28 unbroken days of held funds, so start at least two months before applying",
+    "what_happens": "On top of the first year of course fees, the applicant must show living costs of £1,529 per month for up to 9 months if studying in London, or £1,171 per month for up to 9 months outside London. The money must sit in an eligible account for 28 days in a row without the balance dropping below the required total on any single day. The end of that 28-day window must fall within 31 days of the visa application date.",
+    "the_trap": "Parents transfer the money three weeks before the application and the clock has not run, so the application is refused on the finance ground alone. The second failure is a balance that dips below the required figure for one day, for example when a fee instalment leaves the account, which resets the 28 days from zero and pushes the whole visa past the course start date.",
+    "source_url": "https://www.gov.uk/student-visa/money",
+    "exact_quote": "You must have this money for at least 28 days in a row. The end date of the 28-day period must be within 31 days of the date you apply for your visa.",
+    "date_checked": "22 September 2026",
+    "axes": {
+      "passport": [
+        "foreign"
+      ],
+      "board": [],
+      "residence": [
+        "abroad"
+      ]
+    }
+  },
+  {
+    "step_no": 13,
+    "stage": "Money",
+    "title": "Budget the visa fee and the Immigration Health Surcharge together",
+    "duration_realistic": "Both paid at the point of online application",
+    "what_happens": "The Student visa application costs £558 from outside the UK. On top of that, the Immigration Health Surcharge is charged at the student rate of £776 per year and is paid in full at the time of application, not annually. The surcharge is calculated on the length of the permission granted, which is normally longer than the taught course itself.",
+    "the_trap": "Families budget the £558 fee and treat the health surcharge as a small extra, when for a three year degree plus the additional months of permission it is several times the visa fee and is demanded as one upfront payment. Counsellors who quote only the visa fee create a last-minute funding gap at the exact moment the family is also paying tuition deposits and flights.",
+    "source_url": "https://www.gov.uk/healthcare-immigration-application/how-much-pay",
+    "exact_quote": "£776 per year for students, their dependants, and those on a Youth Mobility Scheme visa",
+    "date_checked": "22 September 2026",
+    "axes": {
+      "passport": [
+        "foreign"
+      ],
+      "board": [],
+      "residence": []
+    }
+  },
+  {
+    "step_no": 14,
+    "stage": "Visa",
+    "title": "Get the CAS from the university",
+    "duration_realistic": "Issued weeks after the place is unconditionally confirmed, commonly late July into August",
+    "what_happens": "The Confirmation of Acceptance for Studies is a reference number issued by the licensed sponsor once conditions are met, the deposit is paid and identity and qualification checks are complete. It is not a letter and not the offer, it is a database record that the visa application quotes. The visa application must be made within 6 months of the CAS being issued.",
+    "the_trap": "Students and parents treat the unconditional offer letter as the visa document and only discover the CAS exists when they open the visa form in August. The 6-month validity also catches deferred entrants, because a CAS issued too early for a deferred place expires before the course starts and the university has to assign a new one.",
+    "source_url": "https://www.gov.uk/student-visa/course",
+    "exact_quote": "You must apply for your visa within 6 months of receiving your CAS.",
+    "date_checked": "22 September 2026",
+    "axes": {
+      "passport": [
+        "foreign"
+      ],
+      "board": [],
+      "residence": []
+    }
+  },
+  {
+    "step_no": 15,
+    "stage": "Visa",
+    "title": "Apply for an ATAS certificate if the course and nationality require it",
+    "duration_realistic": "At least 30 working days, roughly 6 weeks, and longer between April and August",
+    "what_happens": "ATAS applies to sensitive science, engineering and technology subjects identified by a CAH3 code, which the university states on the offer letter or confirms separately. At undergraduate level it bites on some courses with an integrated master's year. Nationals of a listed group of countries, including EU states, the United States, Canada, Australia, Japan, Singapore and South Korea, are exempt, so Indian and Gulf nationals on an affected course generally are not. The certificate must be held before the visa application, and it is valid for 6 months for use in that application.",
+    "the_trap": "Counsellors file ATAS under postgraduate study and never check it for an MEng or similar integrated master's offer, which then blocks the visa in August with no way to accelerate the 30 working days. Applying in the April to August peak is the second trap, because that is exactly when the queue is longest and when the student has the least time left.",
+    "source_url": "https://www.gov.uk/guidance/academic-technology-approval-scheme",
+    "exact_quote": "ATAS applications take at least 30 working days (6 weeks) to process, and some complex ones can take longer.",
+    "date_checked": "22 September 2026",
+    "axes": {
+      "passport": [
+        "foreign"
+      ],
+      "board": [],
+      "residence": []
+    }
+  },
+  {
+    "step_no": 16,
+    "stage": "Visa",
+    "title": "Take a TB test if the student has been living in a listed country",
+    "duration_realistic": "Same day to about a week for the certificate, which is then valid for 6 months",
+    "what_happens": "A TB test is required for a stay of 6 months or more where the applicant has lived in a listed country for 6 months or more and was living there, or in another listed country, within the last 6 months. India is on the gov.uk list of countries where the test is required. The test must be done at a clinic approved by the Home Office, and the certificate is valid for 6 months from the date of the x-ray.",
+    "the_trap": "The rule is driven by residence, not by the passport, and counsellors get this backwards in both directions. The United Arab Emirates, Saudi Arabia, Qatar, Oman, Kuwait and Bahrain are not on the gov.uk list, so an Indian passport holder who has lived in the Gulf throughout will normally not need the test, while the same passport holder who spent the last months in India will. The 6-month certificate validity is the other trap, because a test taken too early for a September start can expire before the visa is filed.",
+    "source_url": "https://www.gov.uk/tb-test-visa",
+    "exact_quote": "If your test shows that you do not have TB, you'll be given a certificate which is valid for 6 months from the date of your x-ray.",
+    "date_checked": "22 September 2026",
+    "axes": {
+      "passport": [
+        "foreign"
+      ],
+      "board": [],
+      "residence": [
+        "abroad"
+      ]
+    }
+  },
+  {
+    "step_no": 17,
+    "stage": "Visa",
+    "title": "Settle the English language evidence the sponsor will accept",
+    "duration_realistic": "Resolved before the CAS is issued, allow 2 to 4 weeks if a test is needed",
+    "what_happens": "For degree level study the requirement is English equivalent to CEFR level B2. It can be met by a Secure English Language Test from an approved provider, by certain UK school qualifications, or by a degree taught in English. A higher education provider may also assess the student's English itself and may set a different test, provided the standard is still equivalent to B2.",
+    "the_trap": "Counsellors send every student to book an IELTS appointment when the university would have assessed them directly, wasting money and weeks of calendar in the busiest period. The opposite error is more damaging, where a medium of instruction letter from an Indian or Gulf school is assumed to be enough and the sponsor refuses it, which stops the CAS.",
+    "source_url": "https://www.gov.uk/student-visa/knowledge-of-english",
+    "exact_quote": "your Higher Education Provider (HEP) can assess your level of English themselves. This means they may ask you to do a different test.",
+    "date_checked": "22 September 2026",
+    "axes": {
+      "passport": [
+        "foreign"
+      ],
+      "board": [],
+      "residence": []
+    }
+  },
+  {
+    "step_no": 18,
+    "stage": "Visa",
+    "title": "Submit the Student visa application and give biometrics",
+    "duration_realistic": "3 weeks outside the UK once the application is submitted, plus the wait for an appointment slot",
+    "what_happens": "From outside the UK the earliest an application can be made is 6 months before the course starts. The application is completed online, the fee and health surcharge are paid, then the applicant attends a visa application centre to give biometrics and hand over documents including the CAS, financial evidence, ATAS certificate and TB certificate where these apply. The published guide is a decision within 3 weeks for applications made outside the UK.",
+    "the_trap": "The 3 weeks is counted on the application itself and says nothing about how long the student waits for an appointment slot, and in Delhi, Mumbai and Dubai those slots are the real bottleneck in July and August. Families also book non-refundable flights against the 3 week figure, then lose the tickets when the decision runs long or documents are queried.",
+    "source_url": "https://www.gov.uk/student-visa/apply",
+    "exact_quote": "You'll usually get a decision on your visa within 3 weeks, if you're outside the UK",
+    "date_checked": "22 September 2026",
+    "axes": {
+      "passport": [
+        "foreign"
+      ],
+      "board": [],
+      "residence": [
+        "abroad"
+      ]
+    }
+  },
+  {
+    "step_no": 19,
+    "stage": "Visa",
+    "title": "Use priority or super priority only where it is actually offered",
+    "duration_realistic": "5 working days on priority, end of the next working day on super priority, where available",
+    "what_happens": "From outside the UK the priority service costs £500 in addition to the application fee and normally returns a decision within 5 working days. The super priority service costs £1,000 in addition to the application fee and normally returns a decision by the end of the next working day. GOV.UK states that applicants are told whether a faster decision can be purchased at the point of applying, so availability is not guaranteed in every country or at every moment.",
+    "the_trap": "Families plan the whole summer around priority and only find out at the application screen that it is not on offer at their visa application centre, which leaves no recovery time. Paying for priority also does not speed up a case that gets referred for further checks, so it buys a faster normal decision, not a guaranteed arrival date.",
+    "source_url": "https://www.gov.uk/faster-decision-visa-settlement/applying-outside-the-uk",
+    "exact_quote": "usually get a decision within 5 working days",
+    "date_checked": "22 September 2026",
+    "axes": {
+      "passport": [
+        "foreign"
+      ],
+      "board": [],
+      "residence": [
+        "abroad"
+      ]
+    }
+  },
+  {
+    "step_no": 20,
+    "stage": "Arrival",
+    "title": "Set up the UKVI account and eVisa instead of waiting for a BRP card",
+    "duration_realistic": "Set up before travel, share code takes minutes to generate",
+    "what_happens": "Immigration status is now held digitally as an eVisa, a digital record of identity and immigration status, accessed through a UK Visas and Immigration account. Biometric residence permits have all expired and been replaced by eVisas. To prove status to a university, a landlord, a bank or an employer, the student generates a share code, which lasts for 90 days and can be used repeatedly until it expires.",
+    "the_trap": "Students arrive expecting a plastic card at the airport, have no UKVI account set up, and cannot prove status to a landlord or a bank in their first week. The 90-day share code life is the second trap, because a code generated in June to send to the university is already dead by late September when the letting agent asks for it.",
+    "source_url": "https://www.gov.uk/view-prove-immigration-status",
+    "exact_quote": "A share code lasts for 90 days. You can use the share code as many times as you need before it expires.",
+    "date_checked": "22 September 2026",
+    "axes": {
+      "passport": [
+        "foreign"
+      ],
+      "board": [],
+      "residence": []
+    }
+  },
+  {
+    "step_no": 21,
+    "stage": "Arrival",
+    "title": "Ignore police registration, meet the university enrolment deadline instead",
+    "duration_realistic": "Enrolment in the first days of term, police registration no longer applies at all",
+    "what_happens": "Police registration for overseas nationals no longer exists. The scheme was closed in August 2022, so no student needs to attend a police station, book an appointment or pay a registration fee on arrival. The deadline that does exist is the university's own enrolment or registration deadline, which is what the sponsor monitors.",
+    "the_trap": "Agent checklists, old school handbooks and recycled pre-departure packs still instruct Indian and Gulf students to register with the police within seven days, and students waste their first week and sometimes money chasing a process that was abolished. Meanwhile the enrolment deadline that genuinely matters to the sponsor gets missed while the student is queuing for something that no longer happens.",
+    "source_url": "https://www.gov.uk/register-with-the-police",
+    "exact_quote": "The police registration scheme ended on 4 August 2022.",
+    "date_checked": "22 September 2026",
+    "axes": {
+      "passport": [
+        "foreign"
+      ],
+      "board": [],
+      "residence": []
+    }
+  },
+  {
+    "step_no": 22,
+    "stage": "Arrival",
+    "title": "Work rights, the bank account and the National Insurance number",
+    "duration_realistic": "First 4 to 6 weeks in the UK, National Insurance number can take up to 4 weeks",
+    "what_happens": "A student sponsored for a full-time degree level course at a higher education provider with a track record of compliance may work 20 hours per week during term time and full time outside term time. Self-employment, business activity and work as a professional sportsperson or sports coach are not permitted. A UK bank account normally needs a passport, proof of immigration status through the share code and a proof of address such as a university bank letter, which universities issue once registration is complete. A National Insurance number is applied for separately and can take up to 4 weeks, but work can start before it arrives if the right to work can be proved.",
+    "the_trap": "The 20 hours is a hard weekly ceiling and not an average across the term, so a student who works 30 hours one week and 10 the next has breached their visa, not their contract, and that is a removal risk rather than an employment issue. Students also treat freelancing and tutoring through an app as casual work, when self-employment is prohibited outright, and they delay the bank account because most banks will not accept a hotel or a temporary address.",
+    "source_url": "https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-student",
+    "exact_quote": "20 hours per week during term-time (full-time employment permitted outside of term-time)",
+    "date_checked": "22 September 2026",
+    "axes": {
+      "passport": [
+        "foreign"
+      ],
+      "board": [],
+      "residence": []
+    }
+  }
+]

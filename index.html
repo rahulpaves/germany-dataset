@@ -865,6 +865,7 @@ footer a:hover{color:#fff;}
   <div class="ccards" id="ccards"></div>
   <p class="ctot" id="ctot"></p>
   <p class="uaenote" id="uaenote"><b>1638 accredited UAE undergraduate programmes</b> sit alongside those, taken from the CAA National Register rather than built one at a time. That file is the whole country instead of a checked sample, and it answers a different question: whether an institution is accredited, in teach-out, or has had its licence revoked. It carries no fees, deadlines or entry requirements, because the register does not publish them and a guess there is worse than a blank.</p>
+  <p class="uaenote"><b>1287 UK undergraduate courses</b> sit alongside those again, compiled from course listings across 150 universities with the UCAS code, the IB, A Level and US requirements, the deadline and the international fee on each. This one is compiled rather than read page by page, so it carries no quote and no checker's name, and every row links to the course page so you can confirm anything before you advise on it. Its 22 step application and visa chain is a different matter: every step there is sourced to gov.uk or UCAS and quoted, the same standard as the nine.</p>
 </section>
 
 <!-- =========================== 4. LIVE SAMPLE =========================== -->
@@ -1812,12 +1813,19 @@ footer a:hover{color:#fff;}
        The UAE is the whole CAA National Register: far larger, the complete
        country rather than a sample, but the register publishes no language, no
        fee and no deadline. Summing them would make the headline claim false. */
-    var verified = idx.filter(function(c){ return c.depth !== "register"; }),
+    /* Verified means no depth marker at all. Written as "not register" this
+       silently swallowed the UK the moment a third tier existed, and the
+       totals line claimed 1,654 English-taught programmes against 296 quotes.
+       check_claims.py guards the static copy; this is the same rule for the
+       numbers the page computes for itself. */
+    var verified = idx.filter(function(c){ return !c.depth; }),
         register = idx.filter(function(c){ return c.depth === "register"; });
 
     host.innerHTML=idx.map(function(c){
       var badge = c.depth === "register"
         ? '<span class="ch reg">complete national register</span>'
+        : c.depth === "compiled"
+        ? '<span class="ch reg">compiled listing &middot; '+c.visa_steps+'-step visa chain</span>'
         : (c.visa_steps ? '<span class="ch">'+c.visa_steps+'-step visa chain</span>'
                         : '<span class="ch no">chain in progress</span>');
       return '<a class="ccard" href="file.html?country='+c.slug+'">'+
