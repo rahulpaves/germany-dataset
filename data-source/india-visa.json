@@ -1,0 +1,312 @@
+[
+ {
+  "step_no": 1,
+  "stage": "Eligibility",
+  "title": "Check each university's board-specific eligibility floors before shortlisting",
+  "duration_realistic": "1-2 weeks per shortlist pass, ideally 12-18 months before entry",
+  "what_happens": "Each private university publishes its own floors per board: subject combinations, minimum aggregates, and programme-specific subject requirements. Ashoka, for example, requires IBDP students to hold 24 credits with three HL and three SL subjects, and Cambridge students to take at least 3 A Levels. Engineering programmes add subject floors, such as VIT's minimum 60 percent aggregate in PCM for NRI applicants. These floors differ university by university, so the check must be repeated for every institution on the list.",
+  "the_trap": "Counsellors assume an IB Diploma or 3 A Levels automatically clears every Indian private university, then discover a programme-level subject rule too late, such as Ashoka requiring Analysis and Approaches or Applications and Interpretation HL for a Mathematics, Economics, Computer Science or Physics major. Students taking Math AI SL or only 2 A Levels can be structurally ineligible for target programmes with no workaround in grade 12.",
+  "source_url": "https://www.ashoka.edu.in/wp-content/uploads/2024/10/Ashoka-Universitys-Board-Specific-Policies-1.pdf",
+  "exact_quote": "The IB Diploma Programme (IBDP) student has to secure a minimum of 24 credits with a minimum of three subjects at the Higher Level (HL), three at the Standard Level (SL), as well as a passing grade in the Extended Essay, Theory of Knowledge, and Creativity, Activity, Service (CAS)",
+  "date_checked": "22 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [
+    "ib",
+    "alevel"
+   ],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 2,
+  "stage": "Eligibility",
+  "title": "Sort the target list into exam-gated vs application-based routes",
+  "duration_realistic": "1-2 weeks, done in grade 11",
+  "what_happens": "Indian undergraduate admission runs on parallel tracks. Some universities, including a set of private and deemed universities, admit through NTA's CUET (UG); engineering at many private universities runs on institutional tests such as MET (Manipal), VITEEE (VIT) or BITSAT (BITS); liberal arts universities such as Ashoka are application-based with rounds. The same university can use different routes for different categories, so the route depends on both the programme and the student's seat category.",
+  "the_trap": "Counsellors used to US or UK applications treat every Indian private university as application-based and miss that a student may need to register for a national or institutional exam months before the application itself. Exam registration windows close early and are separate from the university application, so a missed exam window silently kills an otherwise strong application.",
+  "source_url": "https://cuet.nta.nic.in/",
+  "exact_quote": "The Common University Entrance Test (CUET) Scores is used for admission into UG Programmes in all Central Universities/ Participating Universities (State/Deemed/Private) across the Country.",
+  "date_checked": "22 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 3,
+  "stage": "Eligibility",
+  "title": "Treat medicine and dentistry as NEET-gated for every category, including Foreign/NRI",
+  "duration_realistic": "1 week to verify; NEET runs once a year",
+  "what_happens": "Admission to MBBS and BDS in India is based on NEET rank in every seat category. Manipal states this explicitly for General, Foreign and NRI admissions alike, and seat allotment then runs through government counselling authorities. There is no application-only side door into Indian medicine for foreign or NRI students at recognised institutions.",
+  "the_trap": "Families of NRI and foreign-passport students are routinely told by agents that NRI-quota medical seats can be bought without NEET. At recognised universities the NEET rank requirement applies to the Foreign/NRI category too, and NEET is held once a year, so a student who skips it loses the entire cycle.",
+  "source_url": "https://www.manipal.edu/mu/admission/indian-students.html",
+  "exact_quote": "All General / Foreign / NRI admissions to UG (MBBS / BDS), PG (MD / MS / MDS / PG Diploma) and SS (DM / MCh) programs will be based on the rank obtained in National Eligibility Cum Entrance Test (NEET)",
+  "date_checked": "22 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 4,
+  "stage": "Eligibility",
+  "title": "Apply online for the AIU equivalence certificate for IB and A-Level qualifications",
+  "duration_realistic": "10-15 working days AIU processing; 3-6 weeks including document preparation",
+  "what_happens": "The Association of Indian Universities issues the equivalence certificate that treats foreign school qualifications, including IB and A Levels, as equivalent to Indian 10+2. Applications are online only at evaluation.aiu.ac.in: register, complete the profile, upload self-attested documents, pay the fee (Rs 1180 for school-level applications at last check on the AIU portal) and submit. Universities such as Manipal state that candidates with foreign qualifications must submit the AIU equivalency certificate as per programme requirements.",
+  "the_trap": "Students wait for final IB or A-Level results before applying to AIU, then hit enrolment deadlines while the certificate is still processing. Which documents AIU queries varies case by case, and a single query restarts the clock, so start the AIU application the moment final results and transcripts exist and check each university's rule on when the certificate must actually be produced.",
+  "source_url": "https://www.aiu.ac.in/documents/evaluation/Guidelines%20to%20fill%20application%20form.pdf",
+  "exact_quote": "The processing time for generation of Equivalence Certificate is 10-15 working days",
+  "date_checked": "22 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [
+    "ib",
+    "alevel"
+   ],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 5,
+  "stage": "Eligibility",
+  "title": "Convert IB grades to Indian percentages using the AIU-recognised IB conversion",
+  "duration_realistic": "1-2 days once transcripts are available",
+  "what_happens": "Indian universities work in percentages, so IB grades must be converted. The conversion published for students applying to Indian universities maps each IB grade to a marks range (7 maps to 96-100, 6 to 83-95, 5 to 70-82) and schools calculate equivalent marks by taking the midpoint of the range for each grade. The IB transcript for India carries grades plus suggested percentages, and the school issues the converted statement.",
+  "the_trap": "Counsellors let students self-convert or let each university guess, producing different percentages for the same student across applications. Because a grade 6 midpoint is 89, an IB student's converted aggregate can look lower than a CBSE topper's raw percentage, so check whether the university applies the midpoint conversion or its own table before conceding a cutoff is missed.",
+  "source_url": "https://www.aiu.ac.in/documents/evaluation/Grade%20Conversion%20IB.pdf",
+  "exact_quote": "Schools may use this suggested conversion for calculating the equivalent marks on a scale of 1-100 by giving the midpoint of the range indicated for a particular grade.",
+  "date_checked": "22 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [
+    "ib"
+   ],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 6,
+  "stage": "Eligibility",
+  "title": "Plan around the predicted-grades gap: apply on predictions, confirm on final results",
+  "duration_realistic": "Application rounds run roughly October to May; IB finals arrive in July",
+  "what_happens": "IB May-session results are released in early July and A-Level results in August, but Indian private university rounds open the previous October and several close before results exist. Universities that run rounds, such as Ashoka (whose 2027 intake form opens 7 October 2026), require applicants awaiting results to submit predicted grades, with the school counsellor submitting predictions for IB and Cambridge students. Any resulting admission is provisional against final results and the equivalence paperwork.",
+  "the_trap": "Counsellors wait for final results before applying, by which time early rounds, scholarship pools and hostel allocations are gone; or they treat an offer made on predictions as unconditional. The offer is conditional on final results meeting the university's floor, and a July results drop below prediction can void a seat the family has already paid for, so read the offer letter's conditions line by line.",
+  "source_url": "https://www.ashoka.edu.in/wp-content/uploads/2024/10/Ashoka-Universitys-Board-Specific-Policies-1.pdf",
+  "exact_quote": "In case an applicant is awaiting their final examination results at the time of filling in and submitting the application form, they are required to submit their predicted grades/scores.",
+  "date_checked": "22 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [
+    "ib",
+    "alevel"
+   ],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 7,
+  "stage": "Eligibility",
+  "title": "Solve the migration certificate problem before enrolment",
+  "duration_realistic": "2-8 weeks of chasing documents if left late",
+  "what_happens": "Indian universities' enrolment checklists ask for a migration certificate from the last attended board, an Indian-board document certifying the student has left that board. Manipal University Jaipur, for example, lists the migration certificate in original among documents to be submitted at reporting. IB and Cambridge do not issue migration certificates, so students from these boards must substitute what the university will accept, typically the AIU equivalence certificate plus a school transfer or leaving certificate.",
+  "the_trap": "The admissions office says yes on predicted grades, then the registrar's office at enrolment demands a migration certificate the IB simply does not issue, and the family panics in August. Get the university's international admissions office to confirm in writing, before accepting the offer, exactly which substitute documents satisfy the migration requirement for IB and A-Level students.",
+  "source_url": "https://jaipur.manipal.edu/induction-orientation-program.php",
+  "exact_quote": "Migration Certificate from the last attended Board/University",
+  "date_checked": "22 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [
+    "ib",
+    "alevel"
+   ],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 8,
+  "stage": "Application",
+  "title": "Choose the seat category: Foreign/NRI/NRI-sponsored vs General",
+  "duration_realistic": "1-2 weeks to evidence status; decided before the application form",
+  "what_happens": "Large private universities run a separate Foreign/NRI admissions pipeline with reserved seats, its own application form, its own fee schedule and often no entrance exam. MAHE reserves 15 percent of seats for this category and defines it to include foreign nationals, PIO and OCI card holders, NRIs and NRI-sponsored candidates. Foreign-passport students sit in this category by default; Indian-passport students qualify through their own or a sponsor's NRI status, evidenced by documents such as visas or resident cards.",
+  "the_trap": "Counsellors miss that category choice changes the whole route: the Foreign/NRI track at MAHE needs no entrance exam while the General track needs MET, and eligibility floors and fees differ between tracks at VIT. Choosing General to save money puts an overseas student into an exam pipeline they cannot easily travel for, while category eligibility itself is governed by documented status, not by where the student feels they belong.",
+  "source_url": "https://www.manipal.edu/mu/admission/international-students.html",
+  "exact_quote": "MAHE allocates 15 % of seats under the Foreign / NRI category. This includes Foreign Nationals, Person of Indian Origin (PIO) Card Holders, Overseas Citizen of India (OCI), Non-Resident Indian (NRI) and NRI Sponsored candidates",
+  "date_checked": "22 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 9,
+  "stage": "Application",
+  "title": "Register for institutional entrance tests and book the test slot",
+  "duration_realistic": "Registration windows run months before test sessions in roughly April-June; slot booking windows last days",
+  "what_happens": "Students applying in the General category to exam-gated private programmes register for the institutional test (MET, VITEEE, BITSAT, SRMJEEE and similar) through the university's application portal, then separately book a test slot when the booking system opens. For MET, booking of centre, date and session is first-come-first-serve and subject to availability, and the e-hall ticket is generated only after booking. Foreign/NRI-category applicants at some universities, including MAHE and VIT B.Tech, skip the exam entirely.",
+  "the_trap": "Families treat submitting the application as done and miss that slot booking is a second, separate, time-boxed action; without a booked slot the student cannot sit the exam at all, and Manipal states a booked slot cannot be changed under any circumstance. Students testing from the Gulf must also check whether an overseas or online centre exists that cycle rather than assuming one does.",
+  "source_url": "https://www.manipal.edu/mu/admission/indian-students/online-entrance-exam-overview/instructions.html",
+  "exact_quote": "The booking is allowed based on a first-come-first-serve basis and subject to slot availability.",
+  "date_checked": "22 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 10,
+  "stage": "Application",
+  "title": "Pay the application fee for each university",
+  "duration_realistic": "Same day per application",
+  "what_happens": "Every university charges its own non-refundable application fee, and the amount often differs by category: VIT charges USD 50 for NRI applicants to B.Tech, while Indian-category applications at most large privates run in the low thousands of rupees. The fee is paid online inside the application portal and the application is not processed until payment clears.",
+  "the_trap": "International cards fail on some Indian payment gateways, and students discover this on deadline day; keep a backup card or an India-based payer ready. Also budget for volume: applying across five or six private universities multiplies fees, and none are refundable if the student later withdraws or misses eligibility.",
+  "source_url": "https://vit.ac.in/admissions/international/btech-eligibilityandprocedure",
+  "exact_quote": "Application fee of USD 50 (Non Refundable) to be paid for NRI applicants only",
+  "date_checked": "22 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 11,
+  "stage": "Application",
+  "title": "Upload the document set, including category-status proof",
+  "duration_realistic": "1-2 weeks to assemble cleanly",
+  "what_happens": "The upload set typically covers passport or birth certificate as proof of age and nationality, grade 10 and grade 12 (or predicted) transcripts, and for the NRI category the documents that authenticate the status itself, such as the sponsor's visa or resident card and employer certificate. VIT's NRI checklist asks for 11th grade or AS Level marks alongside the 12th grade sheet, so partial A-Level records are expected and usable at application stage.",
+  "the_trap": "The status documents, not the academic ones, cause rejections: an expired parental resident visa or a sponsor who does not meet the university's definition of NRI-sponsored quietly invalidates the category claim. Verify whose status counts and get the evidencing documents current before the form opens, because fixing a visa copy mid-round is slower than any transcript request.",
+  "source_url": "https://vit.ac.in/admissions/international/btech-eligibilityandprocedure",
+  "exact_quote": "Visa/Resident Card authenticating NRI status",
+  "date_checked": "22 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 12,
+  "stage": "Money",
+  "title": "Accept the provisional offer by paying the first-year fee, and understand the category lock",
+  "duration_realistic": "Days; the deadline printed in the offer letter governs",
+  "what_happens": "Selected candidates receive a provisional admission letter by email and confirm the seat by paying fees by the stated deadline, in the Foreign/NRI category often the full first-year programme fee. At MAHE, confirming a Foreign/NRI seat by paying the first-year fee locks the student out of later taking a General-category seat. First-come-first-serve merit pipelines make speed part of the decision.",
+  "the_trap": "Families pay a Foreign/NRI confirmation early as insurance while waiting on a cheaper General-category or overseas outcome, not realising the payment itself can foreclose the switch and that refund rules are strict and calendar-based. Read the category-switch and refund clauses before paying anything, not after.",
+  "source_url": "https://www.manipal.edu/international",
+  "exact_quote": "Candidates who have confirmed their admission under the Foreign / NRI category, by paying the full first year program fee CANNOT take an admission under the General category.",
+  "date_checked": "22 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 13,
+  "stage": "Money",
+  "title": "Budget against the Foreign/NRI fee schedule, usually denominated in US dollars",
+  "duration_realistic": "1-2 weeks to arrange international transfer per instalment",
+  "what_happens": "Foreign/NRI-category fees are published separately from General-category fees and are substantially higher, with universities like VIT invoicing the category in USD per the offer letter and MAHE publishing distinct Foreign/NRI schedules including concessional ones for SAARC countries. Registration fees are typically non-refundable while caution deposits return after the programme, and all components can be revised by the university's fee committee.",
+  "the_trap": "Counsellors benchmark on the General-category fee they find first and understate cost by a multiple; the correct number is the category-specific schedule in the category's currency. Note also that Indian bank education loans are built for Indian citizens, so foreign-passport students should plan on family funds or scholarships rather than local borrowing, and wire transfers need lead time before each fee deadline.",
+  "source_url": "https://jaipur.manipal.edu/muj/admission/international-students/fees.html",
+  "exact_quote": "The Tuition fee, registration fees and caution deposit is subjected to change and subject to approval of Fee Fixation Committee. Registration fee is non-refundable; caution deposit is refundable on completion of the programme.",
+  "date_checked": "22 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 14,
+  "stage": "Money",
+  "title": "Apply for scholarships through the routes that actually cover this category",
+  "duration_realistic": "4-12 weeks, tied to each scheme's cycle",
+  "what_happens": "Foreign nationals have dedicated channels: the Government of India's Study in India (SII) programme, ICCR scholarships, COMPEX and SPDC, alongside each university's own merit scholarships. MAHE, for instance, admits international candidates through SII, COMPEX and DASA and points to scholarships available through those schemes. NRI and OCI students mostly compete for university merit awards rather than government schemes, and terms vary scheme by scheme.",
+  "the_trap": "Scholarship applications often run on their own portals and calendars separate from the admission application, and some (like SII cohort-based offers) must be locked in before admission is confirmed, not after. Counsellors who bolt scholarships on at the end find the student already enrolled at full fee with the scheme's window closed for the year.",
+  "source_url": "https://www.manipal.edu/mu/admission/international-students.html",
+  "exact_quote": "MAHE Manipal also admits eligible international candidates through Study In India (SII), COMPEX and DASA. Scholarships are available through SII, COMPEX, SPDC, ICCR etc",
+  "date_checked": "22 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 15,
+  "stage": "Visa",
+  "title": "Apply for the Indian Student Visa at the Indian Mission with the confirmed admission letter",
+  "duration_realistic": "Processing time is set by the individual Indian Mission; apply 4-8 weeks before travel",
+  "what_happens": "Foreign-passport students apply for a Student Visa at the Indian Embassy or Consulate in their country of residence, and it is granted against confirmed admission to a recognised institution together with evidence of financial standing. Per MHA, the visa can run up to 5 years or the course duration, whichever is earlier. Students still exploring options can seek a 6-month provisional Student Visa, but a Tourist Visa cannot be converted into study.",
+  "the_trap": "Students fly in on a tourist or e-visa planning to sort the student visa in India; MHA is explicit that exploring on a Tourist Visa and converting does not work, and re-applying from home loses weeks at term start. The financials requirement is also real: missions ask for documentary evidence of funds, and a thin bank statement triggers queries that stall the file.",
+  "source_url": "https://www.mha.gov.in/sites/default/files/student_visa_faq.pdf",
+  "exact_quote": "Student Visa can be of 5 years or for the duration of the course whichever is earlier.",
+  "date_checked": "22 September 2026",
+  "axes": {
+   "passport": [
+    "foreign"
+   ],
+   "board": [],
+   "residence": [
+    "abroad"
+   ]
+  }
+ },
+ {
+  "step_no": 16,
+  "stage": "Visa",
+  "title": "OCI card holders skip the Student Visa and FRRO entirely",
+  "duration_realistic": "No visa action needed if the OCI card is already held; first-time OCI applications take months",
+  "what_happens": "A student holding an OCI card does not need a Student Visa: the card itself is a multiple entry, multi-purpose life-long visa for India, with exemption from registration with local police authorities for any length of stay. OCI holders also get parity with NRIs in the educational field, which is why universities slot them into the Foreign/NRI fee category rather than General.",
+  "the_trap": "Two symmetric errors: families of OCI students waste months applying for a Student Visa they do not need, or families of foreign-passport students without OCI assume Indian heritage alone exempts them and skip the visa. The card, not ancestry, carries the exemption, and a first-time OCI application is far too slow to start in the summer before enrolment.",
+  "source_url": "https://www.cgisf.gov.in/page/faq-s-on-oci/",
+  "exact_quote": "A multiple entry, multi-purpose life-long visa for visiting India.",
+  "date_checked": "22 September 2026",
+  "axes": {
+   "passport": [
+    "foreign"
+   ],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 17,
+  "stage": "Arrival",
+  "title": "Register with the FRRO within 14 days of arrival via the e-FRRO portal",
+  "duration_realistic": "Must be initiated within 14 days of arrival; processing is done online by the jurisdictional FRRO",
+  "what_happens": "Foreign students on a Student Visa valid for more than 180 days must register with the local FRRO/FRO within 14 days of arrival. Registration is applied for online through the e-FRRO portal at indianfrro.gov.in with passport, visa, photographs, the admission letter, proof of local address and financial documents, and universities' international offices routinely assist. OCI card holders are exempt.",
+  "the_trap": "The 14-day clock starts at immigration, not at hostel check-in, and orientation weeks eat it fast; late registration means penalties and a compliance mark that complicates later visa extensions. The address-proof document trips students up most, so get the university's bonafide and accommodation letter issued in week one.",
+  "source_url": "https://www.mha.gov.in/sites/default/files/student_visa_faq.pdf",
+  "exact_quote": "Foreign students holding Student Visa of more than 180 days are required to register himself/herself with the local FRRO/FRO within 14 days of arrival.",
+  "date_checked": "22 September 2026",
+  "axes": {
+   "passport": [
+    "foreign"
+   ],
+   "board": [],
+   "residence": []
+  }
+ },
+ {
+  "step_no": 18,
+  "stage": "Arrival",
+  "title": "Report to campus: originals verification, hostel check-in, bank account and SIM",
+  "duration_realistic": "1-2 weeks to fully settle",
+  "what_happens": "At reporting, the university verifies original documents against the checklist (marksheets, leaving/migration paperwork, passport and visa for international students) and completes hostel check-in. The Government's Study in India onboarding guidance notes that arriving students get assistance from their partner institutes, which in practice covers FRRO help, opening a local bank account and getting an Indian SIM, all of which need passport, visa or OCI card and a local address letter. Fee receipts and photographs are needed repeatedly, so carry multiples.",
+  "the_trap": "Students arrive with digital copies only and stall at every counter: Indian enrolment, banking and SIM processes still run on originals and physical photocopies. The SIM matters more than it looks, since fee portals, banking and even some university systems verify by OTP to an Indian number, so sequence SIM first, then bank, then everything else.",
+  "source_url": "https://studyinindia.gov.in/Onboarding-&-FRRO",
+  "exact_quote": "Also, once the students reach India they will get the required assistance from their respective Study in India partner institutes.",
+  "date_checked": "22 September 2026",
+  "axes": {
+   "passport": [],
+   "board": [],
+   "residence": []
+  }
+ }
+]

@@ -112,6 +112,19 @@
   "size_kb": 18
  },
  {
+  "slug": "india",
+  "name": "India",
+  "flag": "🇮🇳",
+  "programmes": 44,
+  "institutions": 12,
+  "confirmed": 44,
+  "quoted": 44,
+  "fields_min": 38,
+  "fields_typical": 39,
+  "visa_steps": 18,
+  "size_kb": 245
+ },
+ {
   "slug": "uae",
   "name": "UAE",
   "flag": "🇦🇪",
