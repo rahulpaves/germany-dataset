@@ -84,6 +84,30 @@ module.exports = (req, res) => {
   // handed to the next visitor without a code.
   res.setHeader('Cache-Control', 'no-store, private');
 
+  /* Ownership goes on every response, including the 402 and the redirect.
+     Setting it only on the success path meant the header was absent from
+     exactly the responses a stranger sees.
+
+     It sits on the response rather than on every record because repeating a
+     licence string across 3,000 rows adds weight to each download and says
+     nothing this does not. What it claims is the compilation: which
+     programmes were chosen, how they are arranged, the wording of the notes
+     and the traps, and the verification behind them. A deadline is a fact and
+     nobody owns a fact. In the UK and the EU the investment also attracts the
+     database right, which is what the licence names. */
+  res.setHeader('X-Copyright', COPYRIGHT);
+  res.setHeader('X-Licence', LICENCE_URL);
+  res.setHeader('Link', '<' + LICENCE_URL + '>; rel="license"');
+
+  /* A one-way fingerprint of the access token, eight characters. It names
+     nobody and cannot be reversed, but the same subscription always produces
+     the same code, so a file found where it should not be can be traced to
+     the subscription it came from. */
+  if (code) {
+    res.setHeader('X-Trace',
+      crypto.createHmac('sha256', signingSecret() || 'x').update(String(code)).digest('hex').slice(0, 8));
+  }
+
   if (!country) {
     res.statusCode = 400;
     return res.end(JSON.stringify({ error: 'name a country' }));
@@ -112,30 +136,6 @@ module.exports = (req, res) => {
   const payload = part === 'visa'
     ? (PAID[country].visa || [])
     : PAID[country].programmes;
-
-  /* Ownership, on the response rather than on every record. Repeating a
-     licence string across 3,000 rows would add weight to every download and
-     say nothing the header does not.
-
-     What these actually protect is worth being clear about. A deadline or a
-     fee is a fact and nobody owns a fact. What is owned is the compilation:
-     which programmes were chosen, how they are arranged, the wording of the
-     notes and the traps, and the verification work behind them. In the UK and
-     the EU that investment also attracts the database right, which is why the
-     licence names it. */
-  res.setHeader('X-Copyright', COPYRIGHT);
-  res.setHeader('X-Licence', LICENCE_URL);
-  res.setHeader('Link', '<' + LICENCE_URL + '>; rel="license"');
-
-  /* A short, one-way fingerprint of the access token. It identifies nothing
-     about the reader and cannot be reversed into their token, but the same
-     buyer always produces the same eight characters. If a file turns up
-     somewhere it should not be, this is what says which subscription it came
-     from. */
-  if (code) {
-    res.setHeader('X-Trace',
-      crypto.createHmac('sha256', signingSecret() || 'x').update(String(code)).digest('hex').slice(0, 8));
-  }
 
   res.statusCode = 200;
   return res.end(JSON.stringify(payload));
