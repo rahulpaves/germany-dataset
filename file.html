@@ -738,6 +738,11 @@ footer a:hover{color:#fff;}
 .printbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;
   margin-bottom:16px;font-size:13.5px;color:var(--body);}
 @media print{.side,.printbar,.filehead p{display:none;}.filegrid{grid-template-columns:1fr;}}
+/* The printed copy is the one that travels, and .printbar above is hidden
+   exactly when it would have been useful. This is its replacement. */
+.printnote{display:none;}
+@media print{.printnote{display:block;margin-top:18px;padding-top:10px;
+  border-top:1px solid #dfe6ef;font-size:10.5px;line-height:1.5;color:#5a6b85;}}
 </style>
 <script>
 /* Each counselor gets their own link, file.html?c=their-slug. Three things
@@ -940,6 +945,10 @@ function render(i){
 
   document.getElementById("rec").innerHTML =
     '<div class="printbar"><span>Record '+(i+1)+' of '+DATA.length+'</span><span>Pave &middot; germany.pavetheway.ai</span></div>'+
+    '<div class="printnote">&copy; 2026 Pave &middot; germany.pavetheway.ai &middot; ' +
+      esc(r.record_id) + ' &middot; printed ' + new Date().toISOString().slice(0,10) + '. ' +
+      'Licensed to the subscriber for use with their own students. Not for redistribution or ' +
+      'republication. Check the source link before advising: university pages change.</div>'+
     '<div class="sample"><div class="sample-head">'+
       '<span class="tag">'+(ok?"Verified record":"Compiled record")+'</span>'+
       '<h3>'+esc(r.programme)+'</h3>'+
@@ -1026,6 +1035,9 @@ function render(i){
         '<a class="askbtn" href="'+waLink(r,"country")+'" target="_blank" rel="noopener">I need another country</a>'+
       '</div>'+
       '<p class="askfoot">WhatsApp +971 56 892 4365 &middot; rahul@pavetheway.ai &middot; Dubai</p>'+
+      '<p class="askfoot" style="opacity:.7">&copy; 2026 Pave. The compilation, the notes and the ' +
+      'chains are ours; the facts in them belong to nobody. Yours to use with your own students, ' +
+      'not to republish. <a href="terms.html" style="color:#2b4fe3">Terms and copyright</a>.</p>'+
     '</div>';
 
   buildNat();

@@ -55,6 +55,11 @@ const crypto = require('crypto');
 
 const FREE_COUNTRIES = ['germany'];
 
+const COPYRIGHT  = '(c) 2026 Pave. Compilation, selection, arrangement and notes. ' +
+                   'Database right asserted. Licensed to the subscriber for use with their own students. ' +
+                   'Not for redistribution, resale or republication.';
+const LICENCE_URL = 'https://germany.pavetheway.ai/terms.html';
+
 /* Two ways in, and both are checked here.
 
    A Stripe token, issued by api/unlock.js after a real payment. It carries its
@@ -140,6 +145,30 @@ module.exports = (req, res) => {
   const payload = part === 'visa'
     ? (PAID[country].visa || [])
     : PAID[country].programmes;
+
+  /* Ownership, on the response rather than on every record. Repeating a
+     licence string across 3,000 rows would add weight to every download and
+     say nothing the header does not.
+
+     What these actually protect is worth being clear about. A deadline or a
+     fee is a fact and nobody owns a fact. What is owned is the compilation:
+     which programmes were chosen, how they are arranged, the wording of the
+     notes and the traps, and the verification work behind them. In the UK and
+     the EU that investment also attracts the database right, which is why the
+     licence names it. */
+  res.setHeader('X-Copyright', COPYRIGHT);
+  res.setHeader('X-Licence', LICENCE_URL);
+  res.setHeader('Link', '<' + LICENCE_URL + '>; rel="license"');
+
+  /* A short, one-way fingerprint of the access token. It identifies nothing
+     about the reader and cannot be reversed into their token, but the same
+     buyer always produces the same eight characters. If a file turns up
+     somewhere it should not be, this is what says which subscription it came
+     from. */
+  if (code) {
+    res.setHeader('X-Trace',
+      crypto.createHmac('sha256', signingSecret() || 'x').update(String(code)).digest('hex').slice(0, 8));
+  }
 
   res.statusCode = 200;
   return res.end(JSON.stringify(payload));
